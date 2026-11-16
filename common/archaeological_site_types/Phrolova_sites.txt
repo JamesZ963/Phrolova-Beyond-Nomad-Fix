@@ -1,7 +1,7 @@
 pf_solaris_site = { picture = Phrolova_events_solaris_ruins desc = pf_solaris_site_desc stages = 7 weight = 0
  on_roll_failed = { from = { add_stage_clues = 2 } }
  visible = { default_site_visible_trigger = yes } potential = { exists = owner }
- allow = { custom_tooltip = { fail_text = PF_only_phrolova exists = leader leader = { has_leader_flag = Phrolova_scientist } } from = { planet = { solar_system = { is_owned_by = root.owner } } } }
+ allow = { custom_tooltip = { fail_text = PF_only_phrolova exists = leader leader = { has_leader_flag = Phrolova_scientist } }
  stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = Phrolova_event.321 }
 stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = Phrolova_event.322 }
 stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = Phrolova_event.323 }
