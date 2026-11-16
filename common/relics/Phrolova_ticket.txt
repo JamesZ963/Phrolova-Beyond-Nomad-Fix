@@ -1,0 +1,9 @@
+r_pf_sent_ticket = {
+ activation_duration = 1800 portrait = GFX_relic_r_pf_sent_ticket score = 5000
+ resources = { category = relics cost = { unity = 3600 } }
+ triggered_country_modifier = { potential = { always = yes } planet_jobs_produces_mult = 0.15 }
+ possible = { inline_script = { script = relics/activation_checks RELIC = r_pf_sent_ticket } }
+ active_effect = { add_modifier = { modifier = pf_sent_ticket_active days = 1800 }
+ add_modifier = { modifier = relic_activation_cooldown days = 3600 } }
+ ai_weight = { weight = 0 }
+}

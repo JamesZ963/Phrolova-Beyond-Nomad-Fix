@@ -1,0 +1,18 @@
+pf_solaris_fallback = { name = NAME_PF_Solaris_System class = sc_g usage = misc_system_init
+ planet = { class = star size = 25 orbit_distance = 0 }
+ planet = { class = pc_molten size = 12 orbit_distance = 40 }
+ planet = { class = pc_relic size = 25 orbit_distance = 40 orbit_angle = 150 init_effect = { pf_init_solaris = yes } }
+ asteroid_belt = { type = rocky_asteroid_belt radius = 130 }
+ planet = { class = pc_asteroid size = 5 orbit_distance = 50 }
+ planet = { class = pc_gas_giant size = 30 orbit_distance = 60 }
+ planet = { class = pc_frozen size = 18 orbit_distance = 50 }
+ init_effect = { spawn_natural_wormhole = { bypass_type = pf_story_wormhole random_pos = no orbit_angle = 270 } }
+}
+pf_aleph_system = { name = NAME_PF_Aleph_System class = sc_black_hole usage = misc_system_init flags = { pf_aleph_system }
+ planet = { name = NAME_PF_Aleph class = pc_black_hole size = 120 orbit_distance = 0 init_effect = { set_planet_entity = { picture = pf_aleph } add_modifier = { modifier = pf_aleph_star_lore days = -1 } } }
+ asteroid_belt = { type = rocky_asteroid_belt radius = 260 }
+ planet = { name = NAME_PF_Aleph_Asteroid class = pc_asteroid size = 5 orbit_distance = 260 orbit_angle = 140 init_effect = { set_planet_flag = pf_aleph_asteroid pf22_reserve_tunnel_wreck = yes set_planet_entity = { picture = pf_island } add_modifier = { modifier = pf_island_lore days = -1 } prevent_anomaly = yes } }
+ planet = { name = NAME_PF_Battlefield class = pc_shattered size = 15 orbit_distance = 50 orbit_angle = 240 init_effect = { prevent_anomaly = yes set_planet_entity = { picture = pf_battlefield } add_modifier = { modifier = pf_battlefield_lore days = -1 } create_ambient_object = { type = large_debris_object location = this } } }
+ planet = { name = NAME_PF_Rest class = pc_broken size = 18 orbit_distance = 55 orbit_angle = 40 init_effect = { prevent_anomaly = yes set_planet_entity = { picture = pf_rest } add_modifier = { modifier = pf_rest_lore days = -1 } } }
+ init_effect = { pf_ensure_aleph_planet_labels = yes spawn_natural_wormhole = { bypass_type = pf_story_wormhole random_pos = no orbit_angle = 90 } }
+}

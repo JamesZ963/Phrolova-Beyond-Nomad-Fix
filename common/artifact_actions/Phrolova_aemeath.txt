@@ -1,0 +1,10 @@
+artifact_pf_heart_secret = {
+ potential = { has_country_flag = pf_ame_deepen NOT = { has_country_flag = pf_ame_secret_done } }
+ allow = {
+  custom_tooltip = { fail_text = PF_ame_heart_incomplete has_relic = r_phrolova_heart }
+  custom_tooltip = { fail_text = PF_ame_location_required pf_aemeath_location_ready = yes }
+  NOT = { has_special_project = PF_AME_HEART }
+ }
+ effect = { custom_tooltip = PF_text_heart_tooltip country_event = { id = Phrolova_event.902 } }
+ ai_weight = { weight = 0 }
+}

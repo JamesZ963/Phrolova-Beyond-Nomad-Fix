@@ -1,0 +1,8 @@
+ambient_object = {
+ name = "pf_tunnel_derelict"
+ entity = "suizhe_wreck_entity"
+ selectable = yes
+ show_name = yes
+ tooltip = "PF22_tunnel_tooltip"
+ description = "PF22_tunnel_desc"
+}

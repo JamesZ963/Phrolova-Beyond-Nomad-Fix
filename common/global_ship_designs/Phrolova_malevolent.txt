@@ -1,0 +1,81 @@
+ship_design = {
+	name = "NAME_PF_Malevolent_Design"
+	ship_size = pf22_malevolent_horror
+
+	section = {
+		template = "PF22_BOSS_HULL"
+		slot = "mid"
+
+		component = {
+			slot = "PRIMARY_WEAPON_01"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_PRIMARY_WEAPON"
+		}
+
+		component = {
+			slot = "LARGE_WEAPON_01"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_LARGE_WEAPON"
+		}
+
+		component = {
+			slot = "LARGE_WEAPON_02"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_LARGE_WEAPON"
+		}
+
+		component = {
+			slot = "MEDIUM_WEAPON_01"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_MEDIUM_WEAPON"
+		}
+
+		component = {
+			slot = "MEDIUM_WEAPON_02"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_MEDIUM_WEAPON"
+		}
+
+		component = {
+			slot = "SMALL_WEAPON_01"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_SMALL_WEAPON"
+		}
+
+		component = {
+			slot = "SMALL_WEAPON_02"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_SMALL_WEAPON"
+		}
+
+		component = {
+			slot = "POINT_DEFENCE_01"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_PD"
+		}
+
+		component = {
+			slot = "POINT_DEFENCE_02"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_PD"
+		}
+
+		component = {
+			slot = "POINT_DEFENCE_03"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_PD"
+		}
+
+		component = {
+			slot = "POINT_DEFENCE_04"
+			template = "PF22_BOSS_DIMENSIONAL_HORROR_PD"
+		}
+
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "PF22_BOSS_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "PF22_BOSS_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "PF22_BOSS_AUTO_REPAIR"
+		}
+	}
+	required_component="PF22_BOSS_COMBAT_COMPUTER_ARTILLERY_BASIC"
+	required_component="PF22_BOSS_GUARDIAN_SENSORS"
+	# Adding a jump drive with no range so it is visible as a fleet on the galaxy map, but it should not be able to move to different systems
+	required_component="PF22_BOSS_RANGELESS_JUMP_DRIVE"
+}

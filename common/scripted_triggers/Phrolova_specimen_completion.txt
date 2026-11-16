@@ -1,0 +1,91 @@
+pf23_missing_WW01 = {
+ NOT = { has_country_flag = pf_WW01_granted } NOT = { has_country_flag = pf_WW01_pending } NOT = { has_specimen = WW01 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW01@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW02 = {
+ NOT = { has_country_flag = pf_WW02_granted } NOT = { has_country_flag = pf_WW02_pending } NOT = { has_specimen = WW02 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW02@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW03 = {
+ NOT = { has_country_flag = pf_WW03_granted } NOT = { has_country_flag = pf_WW03_pending } NOT = { has_specimen = WW03 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW03@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW04 = {
+ NOT = { has_country_flag = pf_WW04_granted } NOT = { has_country_flag = pf_WW04_pending } NOT = { has_specimen = WW04 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW04@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW05 = {
+ NOT = { has_country_flag = pf_WW05_granted } NOT = { has_country_flag = pf_WW05_pending } NOT = { has_specimen = WW05 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW05@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW06 = {
+ NOT = { has_country_flag = pf_WW06_granted } NOT = { has_country_flag = pf_WW06_pending } NOT = { has_specimen = WW06 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW06@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW07 = {
+ NOT = { has_country_flag = pf_WW07_granted } NOT = { has_country_flag = pf_WW07_pending } NOT = { has_specimen = WW07 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW07@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW08 = {
+ NOT = { has_country_flag = pf_WW08_granted } NOT = { has_country_flag = pf_WW08_pending } NOT = { has_specimen = WW08 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW08@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW09 = {
+ NOT = { has_country_flag = pf_WW09_granted } NOT = { has_country_flag = pf_WW09_pending } NOT = { has_specimen = WW09 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW09@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW10 = {
+ NOT = { has_country_flag = pf_WW10_granted } NOT = { has_country_flag = pf_WW10_pending } NOT = { has_specimen = WW10 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW10@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW11 = {
+ NOT = { has_country_flag = pf_WW11_granted } NOT = { has_country_flag = pf_WW11_pending } NOT = { has_specimen = WW11 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW11@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW12 = {
+ NOT = { has_country_flag = pf_WW12_granted } NOT = { has_country_flag = pf_WW12_pending } NOT = { has_specimen = WW12 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW12@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW13 = {
+ NOT = { has_country_flag = pf_WW13_granted } NOT = { has_country_flag = pf_WW13_pending } NOT = { has_specimen = WW13 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW13@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW14 = {
+ NOT = { has_country_flag = pf_WW14_granted } NOT = { has_country_flag = pf_WW14_pending } NOT = { has_specimen = WW14 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW14@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW15 = {
+ NOT = { has_country_flag = pf_WW15_granted } NOT = { has_country_flag = pf_WW15_pending } NOT = { has_specimen = WW15 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW15@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW16 = {
+ NOT = { has_country_flag = pf_WW16_granted } NOT = { has_country_flag = pf_WW16_pending } NOT = { has_specimen = WW16 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW16@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW17 = {
+ NOT = { has_country_flag = pf_WW17_granted } NOT = { has_country_flag = pf_WW17_pending } NOT = { has_specimen = WW17 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW17@root has_anomaly = yes } } }
+}
+
+pf23_missing_WW18 = {
+ NOT = { has_country_flag = pf_WW18_granted } NOT = { has_country_flag = pf_WW18_pending } NOT = { has_specimen = WW18 }
+ NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW18@root has_anomaly = yes } } }
+}
+
+pf23_has_missing_specimen = {  OR = { pf23_missing_WW01 = yes pf23_missing_WW02 = yes pf23_missing_WW03 = yes pf23_missing_WW04 = yes pf23_missing_WW05 = yes pf23_missing_WW06 = yes pf23_missing_WW07 = yes pf23_missing_WW08 = yes pf23_missing_WW09 = yes pf23_missing_WW10 = yes pf23_missing_WW11 = yes pf23_missing_WW12 = yes pf23_missing_WW13 = yes pf23_missing_WW14 = yes pf23_missing_WW15 = yes pf23_missing_WW16 = yes pf23_missing_WW17 = yes pf23_missing_WW18 = yes } }

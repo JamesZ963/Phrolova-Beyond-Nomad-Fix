@@ -1,0 +1,38 @@
+pf22_reserve_tunnel_wreck = {
+ if = {
+  limit = { NOT = { has_planet_flag = pf_suizhe_model_fixed_0411 } }
+  # Replace the previous placeholder once, including in existing saves.
+  solar_system = {
+   every_system_ambient_object = {
+    limit = { is_ambient_object_type = pf_tunnel_derelict }
+    destroy_ambient_object = this
+   }
+  }
+  create_ambient_object = { type = pf_tunnel_derelict location = this }
+  last_created_ambient_object = {
+   set_location = { target = prev distance = 100 angle = 45 }
+  }
+  set_planet_flag = pf22_wreck_reserved
+  set_planet_flag = pf_suizhe_model_fixed_0411
+ }
+}
+
+pf22_maintenance = {
+ pf_find_targets = yes
+ if = { limit = { exists = event_target:pf_aleph_system }
+  event_target:pf_aleph_system = {
+    pf_ensure_aleph_planet_labels = yes
+   star = { if = { limit = { is_planet_class = pc_black_hole NOT = { planet_size = 120 } } set_planet_size = 120 } }
+   every_system_planet = { limit = { has_planet_flag = pf_aleph_asteroid } pf22_reserve_tunnel_wreck = yes }
+  }
+ }
+ if = { limit = { has_country_flag = pf_festival_talk_4 NOT = { has_country_flag = pf22_finale_complete } exists = event_target:pf_solaris }
+  event_target:pf_solaris = { remove_planet_flag = pf_festival_done }
+ }
+ every_owned_planet = { limit = { has_planet_flag = pf_solaris has_modifier = pf_new_solaris } remove_modifier = pf_new_solaris }
+ every_country = { limit = { is_country_type = pf_malevolent has_country_flag = pf_entity_owner@root }
+  every_owned_fleet = { limit = { has_fleet_flag = pf_entity_fleet NOT = { has_fleet_flag = pf22_design_full_isolation } NOT = { is_in_combat = yes } }
+   set_ship_design = { design = "NAME_PF_Malevolent_Design" } set_fleet_flag = pf22_design_full_isolation
+  }
+ }
+}

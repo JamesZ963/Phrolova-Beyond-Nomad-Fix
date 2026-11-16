@@ -1,0 +1,81 @@
+pf_solaris_flavor_monthly = {
+ every_owned_planet = { limit = { has_planet_flag = pf_solaris }
+  planet = {
+   pf_solaris_flavor_refresh = yes
+   if = { limit = { is_colony = yes NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+    random = { chance = 3 pf_pick_flavor_event = yes }
+   }
+  }
+ }
+ pf_refresh_blackshore = yes
+ if = { limit = { has_country_flag = pf_ame_secret_ack any_owned_planet = { has_planet_flag = pf_solaris is_controlled_by = owner } }
+  if = { limit = { NOT = { has_modifier = pf_ghost_fleet } } add_modifier = { modifier = pf_ghost_fleet days = -1 } }
+ }
+ else = { remove_modifier = pf_ghost_fleet }
+ if = { limit = { any_owned_planet = { has_planet_flag = pf_festival_started NOT = { has_planet_flag = pf_festival_done } NOT = { has_planet_flag = pf_festival_dialogue_open } } }
+  pf_resume_festival = yes
+ }
+ every_owned_starbase = {
+  if = { limit = { solar_system = { any_system_planet = { has_planet_flag = pf_array_cleared is_owned_by = root } } }
+   if = { limit = { NOT = { has_modifier = pf_array_platforms } } add_modifier = { modifier = pf_array_platforms days = -1 } }
+  }
+  else = { remove_modifier = pf_array_platforms }
+ }
+}
+# Planet scope. The old broad +50% relic-world bonus is replaced, not stacked.
+pf_solaris_flavor_refresh = { pf_migrate_restored_features = yes pf17_add_ruins = yes
+ if = { limit = { NOT = { has_planet_flag = pf_flavor_initialized } }
+  set_planet_flag = pf_flavor_initialized set_variable = { which = pf_flavor_count value = 0 }
+  remove_modifier = pm_Phrolova_unstable remove_modifier = pm_Phrolova_beyond remove_modifier = pf_archives_restored
+  if = { limit = { NOT = { has_planet_flag = pf_echo_calibrated } NOT = { has_planet_flag = pf_echo_ended } }
+   add_modifier = { modifier = pf_echo_uncalibrated days = -1 }
+  }
+ }
+ if = { limit = { is_colony = yes NOT = { has_modifier = pf_echo_tides } } add_modifier = { modifier = pf_echo_tides days = -1 } }
+ if = { limit = { owner = { has_country_flag = pf_solaris_ch7 } NOT = { has_modifier = pf_old_memories } }
+  add_modifier = { modifier = pf_old_memories days = -1 }
+ }
+ if = { limit = { pf_three_zones = yes NOT = { has_modifier = pf_institute_rebuilt } }
+  add_modifier = { modifier = pf_institute_rebuilt days = -1 }
+ }
+ if = { limit = { owner = { has_country_flag = pf_ame_secret_ack } NOT = { has_modifier = pf_ghost_frequency } }
+  add_modifier = { modifier = pf_ghost_frequency days = -1 }
+ }
+ if = { limit = { owner = { has_country_flag = pf_aemeath_recruited } NOT = { has_planet_flag = pf_echo_ended } }
+  set_planet_flag = pf_echo_ended remove_modifier = pf_echo_uncalibrated remove_modifier = pf_echo_relief
+  add_modifier = { modifier = pf_echo_final days = -1 }
+ }
+}
+pf_refresh_blackshore = {
+ every_owned_planet = { limit = { has_planet_flag = pf_solaris } planet = {
+  if = { limit = { is_controlled_by = owner exists = leader leader = { has_leader_flag = pf_shorekeeper leader_class = official } }
+   if = { limit = { NOT = { has_modifier = pf_blackshore_watch } } add_modifier = { modifier = pf_blackshore_watch days = -1 } }
+  }
+  else = { remove_modifier = pf_blackshore_watch }
+ } }
+ if = { limit = { any_owned_planet = { has_planet_flag = pf_solaris planet = { is_controlled_by = owner exists = leader leader = { has_leader_flag = pf_shorekeeper leader_class = official } } } }
+  if = { limit = { NOT = { has_modifier = pf_blackshore_empire } } add_modifier = { modifier = pf_blackshore_empire days = -1 } }
+ }
+ else = { remove_modifier = pf_blackshore_empire }
+}
+pf_pick_flavor_event = {
+ random_list = {
+  1 = { modifier = { factor = 0 has_planet_flag = pf_flavor_seen_1 } planet_event = { id = Phrolova_event.950 } }
+  1 = { modifier = { factor = 0 has_planet_flag = pf_flavor_seen_2 } planet_event = { id = Phrolova_event.951 } }
+  1 = { modifier = { factor = 0 has_planet_flag = pf_flavor_seen_3 } planet_event = { id = Phrolova_event.952 } }
+  1 = { modifier = { factor = 0 has_planet_flag = pf_flavor_seen_4 } planet_event = { id = Phrolova_event.953 } }
+  1 = { modifier = { factor = 0 has_planet_flag = pf_flavor_seen_5 } planet_event = { id = Phrolova_event.954 } }
+  1 = { modifier = { factor = 0 has_planet_flag = pf_flavor_seen_6 } planet_event = { id = Phrolova_event.955 } }
+ }
+}
+pf_resume_festival = {
+ pf_find_targets = yes
+ if = { limit = { exists = event_target:pf_solaris event_target:pf_solaris = { has_planet_flag = pf_festival_started NOT = { has_planet_flag = pf_festival_done } } }
+  if = { limit = { NOT = { has_country_flag = pf22_festival_intro_seen } NOT = { has_country_flag = pf_festival_talk_1 } } country_event = { id = Phrolova_event.1860 } }
+  else_if = { limit = { NOT = { has_country_flag = pf_festival_talk_1 } } country_event = { id = Phrolova_event.1770 } }
+  else_if = { limit = { NOT = { has_country_flag = pf_festival_talk_2 } } country_event = { id = Phrolova_event.1771 } }
+  else_if = { limit = { NOT = { has_country_flag = pf_festival_talk_3 } } country_event = { id = Phrolova_event.1772 } }
+  else_if = { limit = { NOT = { has_country_flag = pf_festival_talk_4 } } country_event = { id = Phrolova_event.1773 } }
+  else = { country_event = { id = Phrolova_event.1765 } }
+ }
+}

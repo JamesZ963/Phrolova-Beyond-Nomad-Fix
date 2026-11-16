@@ -1,0 +1,15 @@
+decision_pf_open_gate = {
+ icon = decision_archaeological_site enactment_time = 180
+ resources = { category = decisions cost = { unity = 1000 } }
+ potential = { has_planet_flag = pf_solaris owner = { NOT = { has_country_flag = pf_shorekeeper_recruited } } }
+ allow = { pf_solaris_owner = yes num_uncleared_blockers = 0 }
+ effect = { owner = { country_event = { id = Phrolova_event.9720 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_restore_archives = { owned_planets_only = yes icon = decision_politics enactment_time = 180
+ resources = { category = decisions cost = { unity = 1500 } }
+ potential = { always = no } # Deprecated, replaced by stage16 reconstruction.
+ allow = { pf_solaris_owner = yes num_uncleared_blockers = 0 }
+ effect = { add_modifier = { modifier = pf_archives_restored days = -1 } } ai_weight = { weight = 0 }
+}

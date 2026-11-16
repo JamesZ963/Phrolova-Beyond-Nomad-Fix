@@ -1,0 +1,83 @@
+# Country scope. Paid flags and completion flags survive cancellation and saves.
+pf_aemeath_monthly = {
+ if = { limit = { has_country_flag = denia_recruited NOT = { has_country_flag = pf_denia_recruited } } set_country_flag = pf_denia_recruited }
+ if = { limit = { has_country_flag = pf_denia_recruited NOT = { has_country_flag = pf_denia_age_recorded } }
+  set_country_flag = denia_recruited set_country_flag = pf_denia_age_recorded
+  set_timed_country_flag = { flag = pf_denia_young days = 360 }
+ }
+ if = { limit = { has_country_flag = pf_denia_age_recorded NOT = { has_country_flag = pf_denia_young } pf_aemeath_cast_ready = yes NOT = { has_country_flag = pf_ame_intro_seen } }
+  set_country_flag = pf_ame_intro_pending country_event = { id = Phrolova_event.900 }
+ }
+ if = { limit = { has_country_flag = pf_ame_secret_started NOT = { has_country_flag = pf_ame_secret_done } NOT = { has_special_project = PF_AME_HEART } }
+  remove_country_flag = pf_ame_secret_open pf_open_ame_secret = yes
+ }
+ if = { limit = { has_country_flag = pf_ame_secret_done NOT = { has_country_flag = pf_ame_secret_ack } NOT = { has_country_flag = pf_ame_secret_dialogue_open } has_Phrolova_leader = yes }
+  country_event = { id = Phrolova_event.904 }
+ }
+ if = { limit = { has_country_flag = pf_ame_frequency_paid NOT = { has_country_flag = pf_ame_frequency_done } NOT = { has_special_project = PF_AME_FREQUENCY } }
+  remove_country_flag = pf_ame_frequency_open pf_open_ame_frequency = yes
+ }
+ if = { limit = { has_country_flag = pf_ame_frequency_done NOT = { has_country_flag = pf_ame_first_contact_done } } pf_begin_ame_contact = yes }
+ if = { limit = { has_country_flag = pf_ame_first_contact_done NOT = { has_country_flag = pf_ame_contact_unlocked } NOT = { has_country_flag = pf_ame_contact_dialogue_open } has_Phrolova_leader = yes }
+  country_event = { id = Phrolova_event.914 }
+ }
+ if = { limit = { has_country_flag = pf_ame_contact_unlocked NOT = { has_country_flag = pf_ame_interaction_wait } NOT = { has_country_flag = pf_ame_interaction_open } NOT = { has_country_flag = pf_ame_interaction_4 } }
+  if = { limit = { NOT = { has_country_flag = pf_ame_interaction_1 } } country_event = { id = Phrolova_event.910 } }
+  else_if = { limit = { NOT = { has_country_flag = pf_ame_interaction_2 } } country_event = { id = Phrolova_event.911 } }
+  else_if = { limit = { NOT = { has_country_flag = pf_ame_interaction_3 } } country_event = { id = Phrolova_event.912 } }
+  else = { country_event = { id = Phrolova_event.913 } }
+ }
+ if = { limit = { has_country_flag = pf_ame_recruit_ready NOT = { has_country_flag = pf_ame_recruit_offered } } country_event = { id = Phrolova_event.9730 } }
+ if = { limit = { has_country_flag = pf_ame_secret_ack NOT = { has_technology = tech_pf_tunnel_armament } } add_research_option = tech_pf_tunnel_armament }
+ if = { limit = { has_country_flag = pf_aemeath_recruited } pf_create_aemeath = yes pf_apply_aemeath_portrait = yes }
+}
+pf_open_ame_secret = {
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_ame_deepen has_relic = r_phrolova_heart pf_aemeath_location_ready = yes
+  NOT = { has_country_flag = pf_ame_secret_done } NOT = { has_special_project = PF_AME_HEART } exists = event_target:pf_solaris }
+  set_country_flag = pf_ame_secret_started set_country_flag = pf_ame_secret_open
+  event_target:pf_solaris = { enable_special_project = { name = PF_AME_HEART owner = event_target:pf_owner location = this } }
+ }
+}
+pf_open_ame_frequency = {
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_ame_secret_ack has_country_flag = pf_ame_frequency_paid pf_aemeath_location_ready = yes
+  NOT = { has_country_flag = pf_ame_frequency_done } NOT = { has_special_project = PF_AME_FREQUENCY } exists = event_target:pf_solaris }
+  set_country_flag = pf_ame_frequency_open
+  event_target:pf_solaris = { enable_special_project = { name = PF_AME_FREQUENCY owner = event_target:pf_owner location = this } }
+ }
+}
+pf_pay_ame_frequency = {
+ # Executed in the start event's immediate, never by monthly upkeep.
+ if = { limit = { has_country_flag = pf_ame_secret_ack NOT = { has_country_flag = pf_ame_frequency_done } pf_aemeath_location_ready = yes }
+  if = { limit = { NOT = { has_country_flag = pf_ame_frequency_paid } has_resource = { type = physics_research amount >= 10000 } }
+   add_resource = { physics_research = -10000 } set_country_flag = pf_ame_frequency_paid
+  }
+  if = { limit = { has_country_flag = pf_ame_frequency_paid } pf_open_ame_frequency = yes }
+ }
+}
+pf_begin_ame_contact = {
+ pf17_journal_refresh = yes
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_ame_frequency_done NOT = { has_country_flag = pf_ame_first_contact_done } exists = event_target:pf_solaris }
+  random_country = { limit = { is_country_type = pf_aemeath_signal has_country_flag = pf_ame_signal@event_target:pf_owner } save_event_target_as = pf_ame_signal }
+  if = { limit = { NOT = { exists = event_target:pf_ame_signal } }
+   create_country = { name = NAME_PF_Aemeath_Signal type = pf_aemeath_signal contact_rule = does_first_contact_sites }
+   last_created_country = { set_country_flag = pf_ame_signal@event_target:pf_owner save_event_target_as = pf_ame_signal }
+  }
+  if = { limit = { NOT = { any_active_first_contact = { contact_country = { is_same_value = event_target:pf_ame_signal } } } }
+   establish_contact = { who = event_target:pf_ame_signal location = event_target:pf_solaris.solar_system }
+  }
+ }
+}
+pf_ame_interaction_wait = { remove_country_flag = pf_ame_interaction_open set_timed_country_flag = { flag = pf_ame_interaction_wait days = 360 } }
+pf_create_aemeath = {
+ if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_aemeath } } }
+  create_leader = { background_ethic = ethic_egalitarian  class = commander tier = leader_tier_legendary species = root name = NAME_PF_aemeath custom_description = PF_aemeath_bio
+   immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+   traits = { trait = leader_trait_pf_aemeath trait = leader_trait_pf_aemeath_2 trait = leader_trait_pf_aemeath_3 }
+   effect = { set_leader_flag = pf_aemeath set_leader_flag = leader_death_events_blocked change_leader_portrait = PF_aemeath_0 }
+  }
+  last_created_leader = { set_owner = root }
+ }
+}

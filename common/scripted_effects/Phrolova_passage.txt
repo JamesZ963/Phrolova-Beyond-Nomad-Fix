@@ -1,0 +1,7 @@
+pf_register_passage = {
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_wormhole_open exists = event_target:pf_solaris exists = event_target:pf_aleph_system }
+  add_seen_bypass_type = pf_story_wormhole
+  set_country_flag = pf_passage_registered
+ }
+}

@@ -1,0 +1,146 @@
+# 特质：星枢演构
+leader_trait_Phrolova_X = {
+    cost = 0  # 特质无花费
+    force_councilor_trait = yes  # 强制成为议会特质（当领袖在议会时生效）
+    #icon = "gfx/interface/icons/traits/leader_trait_Phrolova_X.png"  # 特质图标路径
+
+    leader_trait_type = destiny                         # 特质类型为命运特质（destiny）
+    # 引入特质图标定义脚本
+    inline_script = {
+        script = trait/icon_Phrolova_destiny     # 图标定义脚本路径
+        ICON = "gfx/interface/icons/traits/leader_trait_Phrolova_X.png"              # 特质图标（传入变量）
+    }
+
+    # 引入特质修饰符脚本（定义内阁加成）
+    inline_script = trait/icon_Phrolova_councilor
+    # 议会效果（当该领袖在议会任职时）
+    councilor_modifier = {
+        country_naval_cap_mult = 0.1
+        country_naval_cap_add = 1000
+        #海军容量
+        command_limit_add = 100
+        # 舰队指挥上限+200
+        starbase_shipyard_build_speed_mult = 0.10		
+        # 舰船建造速度
+        starbase_shipyard_build_cost_mult = -0.10			
+        # 造舰费用
+        planet_jobs_alloys_produces_mult = 0.1
+        # 岗位生产的合金
+        ship_shield_penetration_add = 0.20
+        # 护盾穿透
+		ship_armor_penetration_add = 0.20
+        # 装甲穿透
+    }
+    # 自身能在这个特质上获得的修正BUFF
+    self_modifier = {
+        leader_scientists_engineering_research_produces_add = 20
+        # 每月工程学研究+
+    }
+
+    leader_class = { scientist }
+    # 仅科学家可用
+    initial = no
+    # 非初始特质
+    randomized = no
+    # 不会随机生成
+    ai_weight = 0
+    # AI权重为0（AI不会获得）
+    notify_on_gained = no
+    # 获得时不通知玩家
+}
+
+# 特质：宙算仪轨
+leader_trait_Phrolova_Z = {
+    cost = 0  # 特质无花费
+    force_councilor_trait = yes  # 强制成为议会特质（当领袖在议会时生效）
+    #icon = "gfx/interface/icons/traits/leader_trait_Phrolova_Z.png"  # 特质图标路径
+
+    leader_trait_type = destiny                         # 特质类型为命运特质（destiny）
+    # 引入特质图标定义脚本
+    inline_script = {
+        script = trait/icon_Phrolova_veteran     # 图标定义脚本路径
+        ICON = "gfx/interface/icons/traits/leader_trait_Phrolova_Z.png"              # 特质图标（传入变量）
+    }
+    # 议会效果（当该领袖在议会任职时）
+    councilor_modifier = {
+        all_technology_research_speed = 0.2
+        # 所有研究速度
+        country_engineering_tech_research_speed = 0.2
+        # 研究速度（工程学）
+    }
+    # 行星能在这个特质上获得的修正BUFF # 不成功换这个modifier
+    planet_modifier = {
+        planet_building_build_speed_mult = 0.3
+        #行星建造速度
+        planet_jobs_physics_research_produces_mult = 0.2
+        # 岗位生产的物理学研究
+        planet_jobs_society_research_produces_mult = 0.2
+        # 岗位生产的社会学研究
+        planet_jobs_engineering_research_produces_mult = 0.3
+        # 岗位生产的工程学研究
+    }
+    # 星域能在这个特质上获得的修正BUFF
+    sector_modifier = {
+        planet_jobs_physics_research_produces_mult = 0.2
+        # 岗位生产的物理学研究
+        planet_jobs_society_research_produces_mult = 0.2
+        # 岗位生产的社会学研究
+        planet_jobs_engineering_research_produces_mult = 0.3
+        # 岗位生产的工程学研究
+    }
+
+    leader_class = { scientist }
+    # 仅科学家可用
+    initial = no
+    # 非初始特质
+    randomized = no
+    # 不会随机生成
+    ai_weight = 0
+    # AI权重为0（AI不会获得）
+    notify_on_gained = no
+    # 获得时不通知玩家
+}
+
+
+# 特质：直到群星的尽头
+leader_trait_Phrolova_Y = {
+    cost = 0  # 特质无花费
+    force_councilor_trait = yes  # 强制成为议会特质（当领袖在议会时生效）
+    #icon = "gfx/interface/icons/traits/leader_trait_Phrolova_Y.png"  # 特质图标路径
+
+    leader_trait_type = destiny                         # 特质类型为命运特质（destiny）
+    inline_script = {
+        script = trait/icon_Phrolova_veteran     # 图标定义脚本路径
+        ICON = "gfx/interface/icons/traits/leader_trait_Phrolova_Y.png"              # 特质图标（传入变量）
+    }
+
+    # 舰船能在这个特质上获得的修正BUFF
+    modifier = {
+        ship_sensor_range_add = 1
+        # 探测范围+
+        ship_hyperlane_range_add = 1
+        # 舰船超空间航道探测范围+
+        ship_cloaking_strength_add = 2
+        # 隐形强度+
+        ship_speed_mult = 0.2
+        # 亚光速航速
+        ship_ftl_jumpdrive_range_mult = 1.5
+        # 跃迁引擎范围
+        ship_jumpdrive_cooldown_mult = -0.5
+        # 跃迁引擎冷却，增益效果应为负数
+        ship_anomaly_generation_chance_mult = 0.5		#异常现象发现机会：+100%
+        ship_anomaly_research_speed_mult = 0.5		#异常现象研究速度：+100%
+        science_ship_survey_speed = 0.5			#调查速度+100%
+        ship_archaeological_site_excavation_speed_mult = 0.5	#考古发掘速度+100%
+    }
+    leader_class = { scientist }
+    # 仅科学家可用
+    initial = no
+    # 非初始特质
+    randomized = no
+    # 不会随机生成
+    ai_weight = 0
+    # AI权重为0（AI不会获得）
+    notify_on_gained = no
+    # 获得时不通知玩家
+}

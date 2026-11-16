@@ -1,0 +1,2 @@
+pf_denia_contact = { length = 1 icon = "GFX_pf_edict_denia"
+ potential = { is_ai = no OR = { has_country_flag = pf_denia_recruited has_country_flag = pf_denia_recruit_pending } } effect = { if = { limit = { has_country_flag = pf_denia_recruited } country_event = { id = Phrolova_event.701 } } else = { country_event = { id = Phrolova_event.9710 } } } ai_weight = { weight = 0 } }

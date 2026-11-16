@@ -1,0 +1,18 @@
+# 担任议员时的内阁加成
+triggered_councilor_modifier = {
+    # 触发条件
+    potential = {
+        is_ruler = yes                          # 必须是统治者
+        has_leader_flag = Phrolova_scientist   # 必须拥有弗洛洛专属领袖标记
+    }
+    
+    # 自定义提示文本（显示在UI上）
+    custom_tooltip = PF_text_councilor_tooltip
+    
+    # 内阁加成效果
+    command_limit_add = 300  # 舰队指挥上限+300
+    ship_shield_penetration_add = 0.20
+    # 护盾穿透
+    ship_armor_penetration_add = 0.20
+    # 装甲穿透
+}

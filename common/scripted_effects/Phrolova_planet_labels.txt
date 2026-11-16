@@ -1,0 +1,17 @@
+# Solar-system scope; used by new systems and old-save maintenance.
+pf_ensure_aleph_planet_labels = {
+ every_system_planet = {
+  limit = { has_modifier = pf_battlefield_lore }
+  if = { limit = { NOT = { has_planet_flag = pf_battlefield_map_label_added } }
+   create_ambient_object = { type = pf_battlefield_map_label location = this }
+   set_planet_flag = pf_battlefield_map_label_added
+  }
+ }
+ every_system_planet = {
+  limit = { has_modifier = pf_rest_lore }
+  if = { limit = { NOT = { has_planet_flag = pf_rest_map_label_added } }
+   create_ambient_object = { type = pf_rest_map_label location = this }
+   set_planet_flag = pf_rest_map_label_added
+  }
+ }
+}

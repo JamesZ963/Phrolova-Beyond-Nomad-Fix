@@ -1,0 +1,79 @@
+# district_ring_world_research = {
+#     icon = district_arcology_research
+#     overlay_icon = GFX_district_research
+#     zone_slots = {
+#         slot_empty
+#     }
+#
+#     show_on_uncolonized = {
+#         always = no
+#     }
+#
+#     potential = {
+#         always = no
+#     }
+#
+#     triggered_name = {
+#         text = city_research_1
+#     }
+# }
+
+Phrolova_Beyond_physics_district = {
+    icon = district_arcology_research
+    overlay_icon = GFX_district_research
+    zone_slots = {
+        slot_empty
+    }
+
+    show_on_uncolonized = {
+        always = no
+    }
+
+    potential = {
+        always = no
+    }
+
+    triggered_name = {
+        text = Phrolova_physics_label
+    }
+}
+
+Phrolova_Beyond_society_district = {
+    icon = district_arcology_research
+    overlay_icon = GFX_district_research
+    zone_slots = {
+        slot_empty
+    }
+
+    show_on_uncolonized = {
+        always = no
+    }
+
+    potential = {
+        always = no
+    }
+
+    triggered_name = {
+        text = Phrolova_society_label
+    }
+}
+
+Phrolova_Beyond_engineering_district = {
+    icon = district_arcology_research
+    overlay_icon = GFX_district_research
+    zone_slots = {
+        slot_empty
+    }
+
+    show_on_uncolonized = {
+        always = no
+    }
+
+    potential = {
+        always = no
+    }
+
+    triggered_name = {
+        text = Phrolova_engineering_label
+    }
+}

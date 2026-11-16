@@ -1,0 +1,385 @@
+# 4.5.3 vanilla alternatives preserved; additions gated to Solaris.
+
+has_any_research_physics_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Beyond_physics }
+            }
+        }
+		has_zone = {
+			zone = zone_research_physics
+		}
+		has_zone = {
+			zone = zone_research_physics_arcology
+		}
+		has_zone = {
+			zone = zone_research_physics_ring_world
+		}
+		has_zone = {
+			zone = zone_research_physics_nexus
+		}
+		has_zone = {
+			zone = zone_research_physics_hive
+		}
+		has_zone = {
+			zone = zone_ark_reactor_physics
+		}
+	}
+}
+
+has_any_research_society_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Beyond_society }
+            }
+        }
+		has_zone = {
+			zone = zone_research_society
+		}
+		has_zone = {
+			zone = zone_research_society_arcology
+		}
+		has_zone = {
+			zone = zone_research_society_ring_world
+		}
+		has_zone = {
+			zone = zone_research_society_nexus
+		}
+		has_zone = {
+			zone = zone_research_society_hive
+		}
+		has_zone = {
+			zone = zone_ark_farm_society
+		}
+	}
+}
+
+has_any_research_engineering_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Hecate_research }
+            }
+        }
+		has_zone = {
+			zone = zone_research_engineering
+		}
+		has_zone = {
+			zone = zone_research_engineering_arcology
+		}
+		has_zone = {
+			zone = zone_research_engineering_ring_world
+		}
+		has_zone = {
+			zone = zone_research_engineering_nexus
+		}
+		has_zone = {
+			zone = zone_research_engineering_hive
+		}
+		has_zone = {
+			zone = zone_ark_military_engineering
+		}
+		has_zone = {
+			zone = zone_ark_forever_cruise_engineering
+		}
+	}
+}
+
+has_any_normal_agriculture_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Hecate_research }
+            has_zone = { zone = zone_Phrolova_Beyond_engineering }
+            }
+        }
+		has_zone = {
+			zone = zone_food
+		}
+		has_zone = {
+			zone = zone_food_wilderness
+		}
+		has_zone = {
+			zone = zone_food_ring_world
+		}
+		has_zone = {
+			zone = zone_food_hive
+		}
+		has_zone = {
+			zone = zone_ark_food
+		}
+	}
+}
+
+has_any_normal_generator_zone = {
+	OR = {
+        AND = {
+            OR = {
+            has_zone = { zone = zone_Phrolova_Hecate_research }
+            has_zone = { zone = zone_Phrolova_Beyond_engineering }
+            has_zone = { zone = zone_pf_asteria }
+            }
+        }
+		has_zone = {
+			zone = zone_energy
+		}
+		has_zone = {
+			zone = zone_energy_wilderness
+		}
+		has_zone = {
+			zone = zone_energy_ring_world
+		}
+		has_zone = {
+			zone = zone_energy_nexus
+		}
+		has_zone = {
+			zone = zone_energy_hive
+		}
+	}
+}
+
+has_any_normal_mining_zone = {
+	OR = {
+        AND = {
+            OR = {
+            has_zone = { zone = zone_Phrolova_Hecate_research }
+            has_zone = { zone = zone_Phrolova_Beyond_engineering }
+            }
+        }
+		has_zone = {
+			zone = zone_minerals
+		}
+		has_zone = {
+			zone = zone_minerals_wilderness
+		}
+		has_zone = {
+			zone = zone_minerals_nexus
+		}
+		has_zone = {
+			zone = zone_minerals_hive
+		}
+	}
+}
+
+has_any_factory_zone = {
+	hidden_trigger = { exists = owner }
+	owner = {
+		country_uses_consumer_goods = yes
+	}
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Hecate_research }
+            has_zone = { zone = zone_Phrolova_Beyond_engineering }
+            }
+        }
+		has_zone = {
+			zone = zone_factory
+		}
+		has_zone = {
+			zone = zone_factory_arcology
+		}
+		has_zone = {
+			zone = zone_factory_ring_world
+		}
+		has_zone = {
+			zone = zone_factory_nexus
+		}
+		has_zone = {
+			zone = zone_factory_hive
+		}
+	}
+}
+
+has_any_foundry_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Hecate_research }
+            has_zone = { zone = zone_Phrolova_Beyond_engineering }
+            }
+        }
+		has_zone = {
+			zone = zone_foundry
+		}
+		has_zone = {
+			zone = zone_foundry_wilderness
+		}
+		has_zone = {
+			zone = zone_foundry_arcology
+		}
+		has_zone = {
+			zone = zone_foundry_ring_world
+		}
+		has_zone = {
+			zone = zone_foundry_nexus
+		}
+		has_zone = {
+			zone = zone_foundry_hive
+		}
+		has_zone = {
+			zone = zone_ark_foundry
+		}
+		has_zone = {
+			zone = zone_ark_military_eco
+		}
+		has_zone = {
+			zone = zone_ark_shipwright
+		}
+	}
+}
+
+has_any_unity_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_Phrolova_Beyond_research }
+            }
+        }
+		has_zone = {
+			zone = zone_unity
+		}
+		has_zone = {
+			zone = zone_unity_spiritualist
+		}
+		has_zone = {
+			zone = zone_unity_bio_trophy
+		}
+		has_zone = {
+			zone = zone_unity_arcology
+		}
+		has_zone = {
+			zone = zone_unity_spiritualist_arcology
+		}
+		has_zone = {
+			zone = zone_unity_bio_trophy_arcology
+		}
+		has_zone = {
+			zone = zone_unity_ring_world
+		}
+		has_zone = {
+			zone = zone_unity_spiritualist_ring_world
+		}
+		has_zone = {
+			zone = zone_unity_bio_trophy_ring_world
+		}
+		has_zone = {
+			zone = zone_unity_nexus
+		}
+		has_zone = {
+			zone = zone_unity_spiritualist_nexus
+		}
+		has_zone = {
+			zone = zone_unity_bio_trophy_nexus
+		}
+		has_zone = {
+			zone = zone_unity_hive
+		}
+		has_zone = {
+			zone = zone_unity_wilderness
+		}
+		has_zone = {
+			zone = zone_research_unity
+		}
+		has_zone = {
+			zone = zone_research_unity_wilderness
+		}
+		has_zone = {
+			zone = zone_habitat_research_unity
+		}
+		has_zone = {
+			zone = zone_ark_research_unity
+		}
+		has_zone = {
+			zone = zone_ark_research_unity_gestalt
+		}
+		has_zone = {
+			zone = zone_ark_sacred_path_pilgrims
+		}
+	}
+}
+
+has_any_trade_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_pf_asteria }
+            }
+        }
+		has_zone = {
+			zone = zone_trade
+		}
+		has_zone = {
+			zone = zone_trade_wilderness
+		}
+		has_zone = {
+			zone = zone_trade_arcology
+		}
+		has_zone = {
+			zone = zone_trade_ring_world
+		}
+		has_zone = {
+			zone = zone_trade_nexus
+		}
+		has_zone = {
+			zone = zone_trade_hive
+		}
+		has_zone = {
+			zone = zone_ark_waystation_trade
+		}
+	}
+}
+
+has_any_fortress_zone = {
+	OR = {
+        AND = {
+            has_planet_flag = pf_solaris
+            OR = {
+            has_zone = { zone = zone_pf_asteria }
+            }
+        }
+		has_zone = {
+			zone = zone_fortress
+		}
+		has_zone = {
+			zone = zone_fortress_wilderness
+		}
+		has_zone = {
+			zone = zone_fortress_arcology
+		}
+		has_zone = {
+			zone = zone_fortress_ring_world
+		}
+		has_zone = {
+			zone = zone_fortress_nexus
+		}
+		has_zone = {
+			zone = zone_fortress_hive
+		}
+		has_zone = {
+			zone = zone_habitat_knights
+		}
+		has_zone = {
+			zone = zone_ark_missile_silos
+		}
+		has_zone = {
+			zone = zone_ark_ammunition_lines
+		}
+		has_zone = {
+			zone = zone_ark_laser_capacitors
+		}
+		has_zone = {
+			zone = zone_ark_flight_decks
+		}
+	}
+}

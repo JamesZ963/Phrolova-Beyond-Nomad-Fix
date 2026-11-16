@@ -1,0 +1,24 @@
+pf_refresh_local_defense = { pf_find_targets = yes every_owned_fleet = {
+ remove_modifier = pf_local_standard remove_modifier = pf_local_full remove_modifier = pf_local_emergency
+ if = { limit = { owner = { has_country_flag = pf_defense_started NOT = { has_country_flag = pf_entity_defeated } } exists = event_target:pf_solaris solar_system = { any_system_planet = { is_same_value = event_target:pf_solaris } } }
+ if = { limit = { owner = { has_country_flag = pf_defense_full } } add_modifier = { modifier = pf_local_full days = -1 } }
+ else_if = { limit = { owner = { has_country_flag = pf_defense_standard } } add_modifier = { modifier = pf_local_standard days = -1 } }
+  else = { add_modifier = { modifier = pf_local_emergency days = -1 } }
+ } } }
+
+pf_refresh_starbase_defense = { pf_find_targets = yes every_owned_starbase = { fleet = {
+ remove_modifier = pf_local_standard remove_modifier = pf_local_full remove_modifier = pf_local_emergency
+ if = { limit = { owner = { has_country_flag = pf_defense_started NOT = { has_country_flag = pf_entity_defeated } } exists = event_target:pf_solaris solar_system = { any_system_planet = { is_same_value = event_target:pf_solaris } } }
+ if = { limit = { owner = { has_country_flag = pf_defense_full } } add_modifier = { modifier = pf_local_full days = -1 } }
+ else_if = { limit = { owner = { has_country_flag = pf_defense_standard } } add_modifier = { modifier = pf_local_standard days = -1 } }
+  else = { add_modifier = { modifier = pf_local_emergency days = -1 } }
+ } } } }
+pf_defense_upkeep_check = {
+ if = { limit = { OR = {
+  AND = { has_country_flag = pf_defense_full OR = { NOT = { has_resource = { type = energy amount >= 300 } } NOT = { has_resource = { type = alloys amount >= 150 } } } }
+  AND = { has_country_flag = pf_defense_standard OR = { NOT = { has_resource = { type = energy amount >= 100 } } NOT = { has_resource = { type = alloys amount >= 50 } } } }
+ } }
+ every_situation = { limit = { is_situation_type = pf_defense } set_situation_approach = pf_defense_emergency }
+ remove_country_flag = pf_defense_standard remove_country_flag = pf_defense_full
+ }
+}

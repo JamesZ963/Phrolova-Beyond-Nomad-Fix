@@ -1,0 +1,11 @@
+pf_resume_dialogues = {
+ if = { limit = { has_country_flag = pf_solaris_ch7 NOT = { has_country_flag = pf_post_solaris_wait } NOT = { has_country_flag = pf_post_solaris_3 } NOT = { has_country_flag = pf_post_solaris_open } has_Phrolova_leader = yes }
+  if = { limit = { has_country_flag = pf_post_solaris_2 } country_event = { id = Phrolova_event.332 } }
+  else_if = { limit = { has_country_flag = pf_post_solaris_1 } country_event = { id = Phrolova_event.331 } }
+  else = { country_event = { id = Phrolova_event.330 } }
+ }
+
+ if = { limit = { has_country_flag = pf_heart_choice_ready NOT = { has_country_flag = pf_heart_choice_done } NOT = { has_country_flag = pf_heart_dialogue_open } has_Phrolova_leader = yes } country_event = { id = Phrolova_event.9741 } }
+ if = { limit = { has_country_flag = pf_danger_started NOT = { has_country_flag = pf_danger_wait } NOT = { has_country_flag = pf_defense_started } NOT = { has_country_flag = pf_danger_dialogue_open } has_Phrolova_leader = yes } country_event = { id = Phrolova_event.610 } }
+ if = { limit = { has_country_flag = pf_entity_defeated NOT = { has_country_flag = pf_void_choice_done } NOT = { has_country_flag = pf_void_dialogue_open } has_Phrolova_leader = yes } country_event = { id = Phrolova_event.630 } }
+}

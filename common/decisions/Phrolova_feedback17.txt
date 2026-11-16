@@ -1,0 +1,6 @@
+decision_pf17_frequency = {
+ owned_planets_only = yes icon = decision_archaeological_site enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_ame_secret_ack NOT = { has_country_flag = pf_ame_frequency_done } } }
+ allow = { pf_solaris_owner = yes owner = { NOT = { has_special_project = PF_AME_FREQUENCY } OR = { has_country_flag = pf_ame_frequency_paid has_resource = { type = physics_research amount >= 10000 } } } }
+ effect = { custom_tooltip = PF_text_frequency_tooltip owner = { country_event = { id = Phrolova_event.905 } } } ai_weight = { weight = 0 }
+}

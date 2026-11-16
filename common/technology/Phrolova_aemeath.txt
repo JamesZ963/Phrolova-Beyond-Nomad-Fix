@@ -1,0 +1,6 @@
+tech_pf_tunnel_armament = {
+ area = physics tier = 4 cost = 10000 category = { particles }
+ icon = "tech_energy_lance_1" is_rare = yes weight = 0
+ prerequisites = { tech_lasers_4 OR = { tech_battleships tech_stingers } }
+ ai_weight = { weight = 0 }
+}

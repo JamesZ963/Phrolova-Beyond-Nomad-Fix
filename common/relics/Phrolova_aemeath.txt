@@ -1,0 +1,22 @@
+# Author-approved relic balance, 2026-11-04.
+r_pf_everstar = {
+ activation_duration = 3600 portrait = GFX_relic_r_pf_everstar score = 3000
+ triggered_country_modifier = {
+  potential = { always = yes }
+  ships_upkeep_mult = -0.10
+  starbase_shipyard_build_speed_mult = 0.15
+  diplo_weight_mult = 1.00
+  starbase_defense_platform_capacity_add = 8
+ }
+ resources = { category = relics cost = { unity = 1000 } }
+ possible = { inline_script = { script = relics/activation_checks RELIC = r_pf_everstar } }
+ active_effect = {
+  add_modifier = { modifier = pf_everstar_active days = 1800 }
+  if = {
+   limit = { pf30_defender_ambition = yes }
+   add_resource = { integrity = 2000 }
+  }
+  add_modifier = { modifier = relic_activation_cooldown days = 3600 }
+ }
+ ai_weight = { weight = 0 }
+}

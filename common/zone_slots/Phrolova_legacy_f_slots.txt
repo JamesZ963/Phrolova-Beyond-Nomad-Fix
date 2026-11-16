@@ -1,0 +1,6 @@
+pf_slot_research_0 = { included_zone_sets = { pf_research } unlock = { pf_solaris_owner = yes } }
+pf_slot_hecate_0 = { included_zone_sets = { pf_hecate } unlock = { pf_solaris_owner = yes } }
+pf_slot_special_0 = { included_zone_sets = { pf_physics pf_society pf_engineering } unlock = { pf_solaris_owner = yes } }
+pf_slot_special_1 = { included_zone_sets = { pf_physics pf_society pf_engineering } unlock = { pf_solaris_owner = yes } }
+pf_slot_special_2 = { included_zone_sets = { pf_physics pf_society pf_engineering } unlock = { pf_solaris_owner = yes } }
+pf_slot_special_3 = { included_zone_sets = { pf_physics pf_society pf_engineering } unlock = { pf_solaris_owner = yes } }

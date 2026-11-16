@@ -1,0 +1,8 @@
+Phrolova_contact = {
+ length = 1
+ icon = "GFX_pf_edict_phrolova"
+ potential = { is_ai = no }
+ allow = { NOT = { has_country_flag = pf_contact_debounce } }
+ effect = { set_timed_country_flag = { flag = pf_contact_debounce days = 1 } country_event = { id = Phrolova_event.201 } }
+ ai_weight = { weight = 0 }
+}

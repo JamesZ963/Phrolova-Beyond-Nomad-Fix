@@ -1,0 +1,59 @@
+pf_create_denia = { if = { limit = { NOT = { any_owned_leader = { has_leader_flag = phrolova_denia } } }
+ create_leader = { background_ethic = ethic_egalitarian  traits = { trait = leader_trait_pf_denia trait = leader_trait_pf_denia_2 trait = leader_trait_pf_denia_3 } class = commander tier = leader_tier_legendary species = root name = NAME_PF_denia custom_description = PF_denia_bio
+ immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+ effect = { set_leader_flag = phrolova_denia set_leader_flag = leader_death_events_blocked change_leader_portrait = PF_denia_0 } }
+ last_created_leader = { set_owner = root } } }
+ pf_portrait_denia = { every_owned_leader = { limit = { has_leader_flag = phrolova_denia }
+ if = { limit = { owner = { has_country_flag = pf_denia_portrait_2 } } change_leader_portrait = PF_denia_2 }
+ else_if = { limit = { owner = { has_country_flag = pf_denia_portrait_1 } } change_leader_portrait = PF_denia_1 }
+ else = { change_leader_portrait = PF_denia_0 } } }
+pf_create_shorekeeper = { if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_shorekeeper } } }
+ create_leader = { background_ethic = ethic_egalitarian  traits = { trait = leader_trait_pf_shorekeeper trait = leader_trait_pf_shorekeeper_2 trait = leader_trait_pf_shorekeeper_3 } class = official tier = leader_tier_legendary species = root name = NAME_PF_shorekeeper custom_description = PF_shorekeeper_bio
+ immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+ effect = { set_leader_flag = pf_shorekeeper set_leader_flag = leader_death_events_blocked change_leader_portrait = PF_shorekeeper_0 } }
+ last_created_leader = { set_owner = root } } }
+ pf_portrait_shorekeeper = { every_owned_leader = { limit = { has_leader_flag = pf_shorekeeper }
+ if = { limit = { owner = { has_country_flag = pf_shorekeeper_portrait_2 } } change_leader_portrait = PF_shorekeeper_2 }
+ else_if = { limit = { owner = { has_country_flag = pf_shorekeeper_portrait_1 } } change_leader_portrait = PF_shorekeeper_1 }
+ else = { change_leader_portrait = PF_shorekeeper_0 } } }
+
+pf_companion_migration = {
+ every_owned_leader = { limit = { has_leader_flag = pf_shorekeeper }
+  if = { limit = { NOT = { leader_class = official } } unassign_leader = this change_leader_class = official }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper } } add_trait = { trait = leader_trait_pf_shorekeeper show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = phrolova_denia }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_denia } } remove_trait = leader_trait_aggressive add_trait = { trait = leader_trait_pf_denia show_message = no } }
+ }
+}
+
+# Idempotent monthly repair for previously recruited leaders.
+pf_ensure_companion_traits = {
+ every_owned_leader = { limit = { has_leader_flag = pf_aemeath }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath } } add_trait = { trait = leader_trait_pf_aemeath show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_aemeath }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath_2 } } add_trait = { trait = leader_trait_pf_aemeath_2 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_aemeath }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath_3 } } add_trait = { trait = leader_trait_pf_aemeath_3 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_shorekeeper }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper } } add_trait = { trait = leader_trait_pf_shorekeeper show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_shorekeeper }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper_2 } } add_trait = { trait = leader_trait_pf_shorekeeper_2 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_shorekeeper }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper_3 } } add_trait = { trait = leader_trait_pf_shorekeeper_3 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = phrolova_denia }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_denia } } add_trait = { trait = leader_trait_pf_denia show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = phrolova_denia }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_denia_2 } } add_trait = { trait = leader_trait_pf_denia_2 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = phrolova_denia }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_denia_3 } } add_trait = { trait = leader_trait_pf_denia_3 show_message = no } }
+ }
+}

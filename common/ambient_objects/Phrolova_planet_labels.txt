@@ -1,0 +1,17 @@
+ambient_object = {
+ name = "pf_battlefield_map_label"
+ entity = "empty_section_entity"
+ selectable = yes
+ show_name = yes
+ tooltip = "pf_battlefield_lore"
+ description = "pf_battlefield_lore_desc"
+}
+
+ambient_object = {
+ name = "pf_rest_map_label"
+ entity = "empty_section_entity"
+ selectable = yes
+ show_name = yes
+ tooltip = "pf_rest_lore"
+ description = "pf_rest_lore_desc"
+}

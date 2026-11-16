@@ -1,0 +1,2 @@
+pf_shorekeeper_contact = { length = 1 icon = "GFX_pf_edict_shorekeeper"
+ potential = { is_ai = no OR = { has_country_flag = pf_shorekeeper_recruited has_country_flag = pf_shorekeeper_recruit_pending } } effect = { if = { limit = { has_country_flag = pf_shorekeeper_recruited } country_event = { id = Phrolova_event.831 } } else = { country_event = { id = Phrolova_event.9720 } } } ai_weight = { weight = 0 } }

@@ -1,0 +1,24 @@
+decision_pf_calibrate_echoes = {
+ owned_planets_only = yes icon = decision_politics enactment_time = 30
+ resources = { category = decisions cost = { unity = 500 physics_research = 500 } }
+ potential = { has_planet_flag = pf_solaris NOT = { has_planet_flag = pf_echo_calibrated } NOT = { has_planet_flag = pf_echo_ended } }
+ allow = { pf_solaris_owner = yes NOT = { has_planet_flag = pf_calibration_cooldown } }
+ effect = {
+  set_planet_flag = pf_echo_calibrated set_timed_planet_flag = { flag = pf_calibration_cooldown days = 1800 }
+  remove_modifier = pf_echo_uncalibrated
+  if = { limit = { NOT = { has_planet_flag = pf_echo_ended } } add_modifier = { modifier = pf_echo_relief days = -1 } }
+ }
+ ai_weight = { weight = 0 }
+}
+decision_pf_resume_heart_secret = {
+ owned_planets_only = yes icon = decision_archaeological_site enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_ame_intro_seen NOT = { has_country_flag = pf_aemeath_recruited } } }
+ allow = { pf_solaris_owner = yes }
+ effect = { owner = { country_event = { id = Phrolova_event.901 } } } ai_weight = { weight = 0 }
+}
+decision_pf_beyond_festival = {
+ owned_planets_only = yes icon = decision_politics enactment_time = 30
+ potential = { has_planet_flag = pf_solaris NOT = { has_planet_flag = pf_festival_done } owner = { has_country_flag = pf_aemeath_recruited } }
+ allow = { custom_tooltip = { fail_text = PF_festival_waiting success_text = none owner = { pf17_all_bonds_complete = yes } pf_solaris_owner = yes NOT = { has_planet_flag = pf_festival_dialogue_open } } }
+ effect = { set_planet_flag = pf_festival_started owner = { pf_resume_festival = yes } } ai_weight = { weight = 0 }
+}

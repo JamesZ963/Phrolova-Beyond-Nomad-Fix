@@ -1,0 +1,459 @@
+# Vanilla fallback only: 00_ascension_perks < 01_Phrolova < time_replaced_ascension_perks.
+# TimeMod owns its later definitions and reads its four documented country flags.
+
+ap_become_the_crisis = {
+	potential = {
+		NOT = { pf24_void_pact_bound = yes }
+		has_nemesis = yes
+		NOR = {
+			is_player_crisis = yes
+			has_defender_of_the_galaxy_ap = yes
+			has_origin = origin_slavers
+			has_origin = origin_endbringers # No additional crisis for Endbringers
+		}
+		is_wilderness_empire = no
+	}
+
+	possible = {
+		custom_tooltip = { fail_text = PF24_pact_blocks_crisis pf24_void_pact_bound = no }
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		custom_tooltip = {
+			fail_text = "must_finish_shroud_forged_situation"
+			OR = {
+				NOT = { has_origin = origin_shroud_forged }
+				NOT = {
+					any_situation = {
+						is_situation_type = situation_shroud_forged
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "locked_by_shroud_forged_situation"
+			OR = {
+				NOT = { has_origin = origin_shroud_forged }
+				NOT = { has_country_flag = finish_shroud_forged_liberation_flag }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_origin = origin_shroud_forged }
+					NOT = { has_country_flag = shroud_forged_can_become_the_crisis }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_ascension_perks_3"
+				num_ascension_perks > 2
+			}
+			NOR = {
+				is_xenophile = yes
+				is_pacifist = yes
+				has_civic = civic_machine_servitor
+				has_valid_civic = civic_hive_familiar_face
+			}
+		}
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_ai_personality = became_the_crisis
+			country_event = { id = timeline.69 } # Timeline Become the crisis
+		}
+		activate_crisis_progression = nemesis_path
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			NOR = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 5
+			any_playable_country = {
+				has_defender_of_the_galaxy_ap = yes
+			}
+			NOT = {
+				any_playable_country = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 0.5
+			is_infernal_empire = yes
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			count_playable_country = {
+				count > 1
+				limit = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			blocks_disruptive_gameplay = yes
+		}
+	}
+}
+
+ap_cosmogenesis = {
+	potential = {
+		NOT = { pf24_void_pact_bound = yes }
+		has_machine_age_dlc = yes
+		NOR = {
+			is_player_crisis = yes
+			has_defender_of_the_galaxy_ap = yes
+			has_origin = origin_slavers # No crisis for MSI
+			has_origin = origin_endbringers # No additional crisis for Endbringers
+		}
+		is_wilderness_empire = no
+	}
+
+	possible = {
+		custom_tooltip = { fail_text = PF24_pact_blocks_crisis pf24_void_pact_bound = no }
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_variable = {
+				which = cosmogenesis_world_advanced_logic_produced
+				value = 0
+			}
+		}
+		activate_crisis_progression = cosmogenesis_path
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			OR = {
+				is_egalitarian = yes
+				is_xenophile = yes
+			}
+		}
+		modifier = {
+			factor = 5
+			any_playable_country = {
+				has_defender_of_the_galaxy_ap = yes
+			}
+			NOT = {
+				any_playable_country = {
+					has_ascension_perk = ap_cosmogenesis
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_discovery_finish
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			vassals > 0
+			any_subject = {
+				any_agreement = {
+					has_active_specialization = specialist_scholarium
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = whisperers_covenant_confirmed
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+	}
+}
+
+ap_behemoths = {
+	potential = {
+		NOT = { pf24_void_pact_bound = yes }
+		has_biogenesis_dlc = yes
+		NOR = {
+			is_player_crisis = yes
+			has_defender_of_the_galaxy_ap = yes
+			has_origin = origin_slavers # No crisis for MSI
+			has_origin = origin_endbringers # No additional crisis for Endbringers
+		}
+	}
+
+	possible = {
+		custom_tooltip = { fail_text = PF24_pact_blocks_crisis pf24_void_pact_bound = no }
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		custom_tooltip = {
+			fail_text = "must_use_bioships"
+			country_uses_bio_ships = yes
+		}
+		is_xenophile = no
+		is_pacifist = no
+	}
+
+	on_enabled = {
+		activate_crisis_progression = behemoth_path
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			is_xenophile = yes
+			is_spiritualist = yes
+		}
+
+		modifier = {
+			factor = 0.5
+			is_lithoid = yes
+		}
+
+		modifier = {
+			factor = 4
+			is_homicidal = yes
+		}
+
+		modifier = {
+			factor = 5
+			any_playable_country = {
+				has_defender_of_the_galaxy_ap = yes
+			}
+			NOT = {
+				any_playable_country = {
+					has_ascension_perk = ap_behemoths
+				}
+			}
+		}
+
+		modifier = {
+			factor = 6
+			has_civic = civic_hive_devouring_swarm
+		}
+
+		modifier = {
+			factor = 2
+			has_tradition = tr_enmity_finish
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_engineered_evolution
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_nihilistic_acquisition
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = eater_covenant_confirmed
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+	}
+}
+
+ap_galactic_hyperthermia = {
+	potential = {
+		NOT = { pf24_void_pact_bound = yes }
+		has_infernals = yes
+		NOR = {
+			is_player_crisis = yes
+			has_defender_of_the_galaxy_ap = yes
+			has_origin = origin_slavers
+			has_origin = origin_endbringers
+			is_wilderness_empire = yes
+		}
+	}
+
+	possible = {
+		custom_tooltip = { fail_text = PF24_pact_blocks_crisis pf24_void_pact_bound = no }
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			OR = {
+				num_ascension_perks > 2
+				has_country_flag = red_giant_discovered_crystallized_entropy
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		NOR = {
+			is_xenophile = yes
+			is_pacifist = yes
+			has_valid_civic = civic_hive_familiar_face
+		}
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_ai_personality = hyperthermia_empire
+			country_event = { id = infernals.1000 }
+		}
+		activate_crisis_progression = hyperthermia_path
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			NOR = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 5
+			any_playable_country = {
+				has_defender_of_the_galaxy_ap = yes
+			}
+			NOT = {
+				any_playable_country = {
+					has_ascension_perk = ap_galactic_hyperthermia
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+		}
+		modifier = {
+			factor = 1.5
+			is_genocidal_infernal = yes
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 0
+			count_playable_country = {
+				count > 0
+				limit = { has_ascension_perk = ap_galactic_hyperthermia }
+			}
+		}
+		modifier = {
+			factor = 0
+			blocks_disruptive_gameplay = yes
+		}
+		modifier = {
+			factor = 0
+			is_infernal_empire = no
+		}
+	}
+}

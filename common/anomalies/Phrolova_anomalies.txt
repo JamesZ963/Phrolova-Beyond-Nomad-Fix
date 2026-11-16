@@ -1,0 +1,60 @@
+phrolova_ww01_category = { picture = Phrolova_events_solaris_ruins level = 1 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 3
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW01@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.101 } } }
+phrolova_ww02_category = { picture = Phrolova_events_solaris_ruins level = 1 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 3
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_ice_asteroid is_planet_class = pc_rare_crystal_asteroid } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW02@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.102 } } }
+phrolova_ww03_category = { picture = Phrolova_events_solaris_ruins level = 2 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 3
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW03@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.103 } } }
+phrolova_ww04_category = { picture = Phrolova_events_solaris_ruins level = 2 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 2
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_continental is_planet_class = pc_ocean is_planet_class = pc_tropical is_planet_class = pc_desert is_planet_class = pc_arid is_planet_class = pc_savannah is_planet_class = pc_alpine is_planet_class = pc_arctic is_planet_class = pc_tundra } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW04@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.104 } } }
+phrolova_ww05_category = { picture = Phrolova_events_solaris_ruins level = 3 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 2
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_barren is_planet_class = pc_nuked } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW05@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.105 } } }
+phrolova_ww06_category = { picture = Phrolova_events_solaris_ruins level = 3 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 2
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_frozen } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW06@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.106 } } }
+phrolova_ww07_category = { picture = Phrolova_events_solaris_ruins level = 4 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 1
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_ocean is_planet_class = pc_tundra } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW07@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.107 } } }
+phrolova_ww08_category = { picture = Phrolova_events_solaris_ruins level = 4 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 1
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_relic is_planet_class = pc_nuked } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW08@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.108 } } }
+phrolova_ww09_category = { picture = Phrolova_events_solaris_ruins level = 5 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 1
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_molten is_planet_class = pc_toxic } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW09@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.109 } } }
+phrolova_ww10_category = { picture = Phrolova_events_solaris_ruins level = 5 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 0.5
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_continental is_planet_class = pc_ocean is_planet_class = pc_tropical is_planet_class = pc_desert is_planet_class = pc_arid is_planet_class = pc_savannah is_planet_class = pc_alpine is_planet_class = pc_arctic is_planet_class = pc_tundra } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW10@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.110 } } }
+phrolova_ww11_category = { picture = Phrolova_events_solaris_ruins level = 6 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 0.5
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_barren is_planet_class = pc_frozen } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW11@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.111 } } }
+phrolova_ww12_category = { picture = Phrolova_events_solaris_ruins level = 6 max_once = yes should_ai_use = no should_ai_and_humans_use = no
+ spawn_chance = { base = 0.5
+ modifier = { factor = 0 OR = { NOT = { from.owner = { has_grand_archive_dlc = yes is_ai = no } } is_star = yes is_colony = yes NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_ice_asteroid is_planet_class = pc_rare_crystal_asteroid } } } } }
+ on_spawn = { if = { limit = { exists = from.owner from.owner = { is_ai = no } } set_planet_flag = pf23_WW12@from.owner } }
+ on_success = { 1 = { anomaly_event = Phrolova_event.112 } } }

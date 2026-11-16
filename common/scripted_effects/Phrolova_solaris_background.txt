@@ -1,0 +1,17 @@
+# Country scope. Visual change only; persist on the story's Solaris.
+pf_apply_solaris_rebuilt_background = {
+ if = {
+  limit = { has_country_flag = pf_shorekeeper_recruited }
+  pf_find_targets = yes
+  if = {
+   limit = { exists = event_target:pf_solaris }
+   event_target:pf_solaris = {
+    if = {
+     limit = { has_planet_flag = pf_solaris NOT = { has_planet_flag = pf_solaris_rebuilt_background } }
+     set_planet_entity = { picture = pf_solaris_rebuilt }
+     set_planet_flag = pf_solaris_rebuilt_background
+    }
+   }
+  }
+ }
+}

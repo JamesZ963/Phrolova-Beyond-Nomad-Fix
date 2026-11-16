@@ -1,0 +1,27 @@
+pf_begin_heart = { if = { limit = { NOT = { has_country_flag = pf_heart_started } } set_country_flag = pf_heart_started country_event = { id = Phrolova_event.1600 } } }
+pf_check_heart = { if = { limit = { has_country_flag = pf_heart_repair_1 has_country_flag = pf_heart_repair_2 has_country_flag = pf_heart_repair_3 has_country_flag = pf_heart_repair_ack_1 has_country_flag = pf_heart_repair_ack_2 has_country_flag = pf_heart_repair_ack_3 NOT = { has_country_flag = pf_heart_choice_ready } }
+ set_country_flag = pf_heart_choice_ready country_event = { id = Phrolova_event.9741 } } }
+pf_open_rescue = { pf_find_targets = yes if = { limit = { has_country_flag = pf_rescue_pending NOT = { has_country_flag = pf_rescue_open } NOT = { has_country_flag = pf_rescue_complete } exists = event_target:pf_solaris event_target:pf_solaris = { pf_solaris_owner = yes } }
+ event_target:pf_solaris = { enable_special_project = { name = PF_RESCUE owner = event_target:pf_owner location = this } } set_country_flag = pf_rescue_open } }
+pf_spawn_malevolent = {
+ pf_find_targets = yes
+ if = { limit = { NOT = { has_country_flag = pf_entity_spawned } exists = event_target:pf_solaris event_target:pf_solaris = { pf_solaris_owner = yes } }
+ set_country_flag = pf_entity_spawned country_event = { id = Phrolova_event.1610 }
+ event_target:pf_solaris = { solar_system = { star = {
+ create_country = { name = NAME_PF_MALEVOLENT type = pf_malevolent }
+ last_created_country = { set_country_flag = pf_entity_owner@event_target:pf_owner save_event_target_as = pf_enemy }
+ create_fleet = { name = NAME_PF_MALEVOLENT settings = { spawn_debris = no is_boss = yes }
+ effect = { set_owner = event_target:pf_enemy set_fleet_flag = pf_entity_fleet
+ create_ship = { name = NAME_PF_MALEVOLENT design = "NAME_PF_Malevolent_Design" }
+ set_location = { target = prev distance = 100 angle = random }
+ set_fleet_stance = aggressive set_aggro_range_measure_from = return_point set_aggro_range = 2000
+ } }
+ } } }
+ } }
+
+pf_resume_heart_projects = { pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_heart_repair_authorized NOT = { has_country_flag = pf_heart_choice_ready } exists = event_target:pf_solaris event_target:pf_solaris = { pf_solaris_owner = yes } }
+ if = { limit = { NOT = { has_country_flag = pf_heart_repair_1 } NOT = { has_special_project = PF_HEART_1 } } event_target:pf_solaris = { enable_special_project = { name = PF_HEART_1 owner = event_target:pf_owner location = this } } }
+ if = { limit = { has_country_flag = pf_heart_repair_ack_1 NOT = { has_country_flag = pf_heart_repair_2 } NOT = { has_special_project = PF_HEART_2 } } event_target:pf_solaris = { enable_special_project = { name = PF_HEART_2 owner = event_target:pf_owner location = this } } }
+ if = { limit = { has_country_flag = pf_heart_repair_ack_2 NOT = { has_country_flag = pf_heart_repair_3 } NOT = { has_special_project = PF_HEART_3 } } event_target:pf_solaris = { enable_special_project = { name = PF_HEART_3 owner = event_target:pf_owner location = this } } }
+ } }

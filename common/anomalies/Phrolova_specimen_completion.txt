@@ -1,0 +1,107 @@
+pf23_specimen_01_category = {
+ desc = pf23_specimen_01_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1921 } }
+}
+
+pf23_specimen_02_category = {
+ desc = pf23_specimen_02_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1922 } }
+}
+
+pf23_specimen_03_category = {
+ desc = pf23_specimen_03_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1923 } }
+}
+
+pf23_specimen_04_category = {
+ desc = pf23_specimen_04_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1924 } }
+}
+
+pf23_specimen_05_category = {
+ desc = pf23_specimen_05_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1925 } }
+}
+
+pf23_specimen_06_category = {
+ desc = pf23_specimen_06_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1926 } }
+}
+
+pf23_specimen_07_category = {
+ desc = pf23_specimen_07_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1927 } }
+}
+
+pf23_specimen_08_category = {
+ desc = pf23_specimen_08_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1928 } }
+}
+
+pf23_specimen_09_category = {
+ desc = pf23_specimen_09_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1929 } }
+}
+
+pf23_specimen_10_category = {
+ desc = pf23_specimen_10_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1930 } }
+}
+
+pf23_specimen_11_category = {
+ desc = pf23_specimen_11_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1931 } }
+}
+
+pf23_specimen_12_category = {
+ desc = pf23_specimen_12_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1932 } }
+}
+
+pf23_specimen_13_category = {
+ desc = pf23_specimen_13_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1933 } }
+}
+
+pf23_specimen_14_category = {
+ desc = pf23_specimen_14_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1934 } }
+}
+
+pf23_specimen_15_category = {
+ desc = pf23_specimen_15_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1935 } }
+}
+
+pf23_specimen_16_category = {
+ desc = pf23_specimen_16_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1936 } }
+}
+
+pf23_specimen_17_category = {
+ desc = pf23_specimen_17_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1937 } }
+}
+
+pf23_specimen_18_category = {
+ desc = pf23_specimen_18_category_desc picture = Phrolova_events_solaris_ruins level = 1
+ should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }
+ on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1938 } }
+}

@@ -1,0 +1,15 @@
+pf_aemeath_cast_ready = {
+ any_owned_leader = { has_leader_flag = pf_shorekeeper leader_class = official }
+ any_owned_leader = { has_leader_flag = Phrolova_scientist leader_class = scientist }
+ any_owned_leader = { has_leader_flag = phrolova_denia leader_class = commander }
+}
+pf_aemeath_location_ready = {
+ has_Phrolova_leader = yes
+ any_owned_planet = { pf_solaris_owner = yes }
+}
+pf_four_companions = {
+ has_country_flag = researched_leaders_Phrolova
+ has_country_flag = pf_shorekeeper_recruited
+ has_country_flag = pf_denia_recruited
+ has_country_flag = pf_aemeath_recruited
+}

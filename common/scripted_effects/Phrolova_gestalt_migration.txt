@@ -1,0 +1,8 @@
+pf_migrate_gestalt_blocker_jobs = {
+	every_owned_planet = {
+		if = { limit = { owner = { is_gestalt = yes } has_modifier = pf_tower_restored } remove_modifier = pf_tower_restored add_modifier = { modifier = pf_tower_restored_gestalt days = -1 } }
+		if = { limit = { owner = { is_gestalt = no } has_modifier = pf_tower_restored_gestalt } remove_modifier = pf_tower_restored_gestalt add_modifier = { modifier = pf_tower_restored days = -1 } }
+		if = { limit = { owner = { is_gestalt = yes } has_modifier = pf_array_garrison } remove_modifier = pf_array_garrison add_modifier = { modifier = pf_array_garrison_gestalt days = -1 } }
+		if = { limit = { owner = { is_gestalt = no } has_modifier = pf_array_garrison_gestalt } remove_modifier = pf_array_garrison_gestalt add_modifier = { modifier = pf_array_garrison days = -1 } }
+	}
+}

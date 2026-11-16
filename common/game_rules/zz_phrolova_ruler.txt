@@ -1,0 +1,9 @@
+# Phrolova remains available for field work unless the player explicitly appoints her.
+# Vanilla baseline: can_leader_be_ruler in common/game_rules/00_rules.txt.
+can_leader_be_ruler = {
+ NOT = { leader_class = envoy }
+ OR = {
+  NOT = { has_leader_flag = Phrolova_scientist }
+  has_leader_flag = pf_player_appointed_ruler
+ }
+}

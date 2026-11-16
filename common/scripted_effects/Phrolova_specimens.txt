@@ -1,0 +1,150 @@
+pf_award_WW01 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW01_granted } }
+ set_country_flag = pf_WW01_discovered set_country_flag = pf_WW01_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW02 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW02_granted } }
+ set_country_flag = pf_WW02_discovered set_country_flag = pf_WW02_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW03 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW03_granted } }
+ set_country_flag = pf_WW03_discovered set_country_flag = pf_WW03_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW04 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW04_granted } }
+ set_country_flag = pf_WW04_discovered set_country_flag = pf_WW04_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW05 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW05_granted } }
+ set_country_flag = pf_WW05_discovered set_country_flag = pf_WW05_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW06 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW06_granted } }
+ set_country_flag = pf_WW06_discovered set_country_flag = pf_WW06_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW07 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW07_granted } }
+ set_country_flag = pf_WW07_discovered set_country_flag = pf_WW07_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW08 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW08_granted } }
+ set_country_flag = pf_WW08_discovered set_country_flag = pf_WW08_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW09 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW09_granted } }
+ set_country_flag = pf_WW09_discovered set_country_flag = pf_WW09_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW10 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW10_granted } }
+ set_country_flag = pf_WW10_discovered set_country_flag = pf_WW10_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW11 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW11_granted } }
+ set_country_flag = pf_WW11_discovered set_country_flag = pf_WW11_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW12 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW12_granted } }
+ set_country_flag = pf_WW12_discovered set_country_flag = pf_WW12_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW13 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW13_granted } }
+ set_country_flag = pf_WW13_discovered set_country_flag = pf_WW13_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW14 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW14_granted } }
+ set_country_flag = pf_WW14_discovered set_country_flag = pf_WW14_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW15 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW15_granted } }
+ set_country_flag = pf_WW15_discovered set_country_flag = pf_WW15_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW16 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW16_granted } }
+ set_country_flag = pf_WW16_discovered set_country_flag = pf_WW16_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW17 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW17_granted } }
+ set_country_flag = pf_WW17_discovered set_country_flag = pf_WW17_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_award_WW18 = {
+ if = { limit = { is_ai = no NOT = { has_country_flag = pf_WW18_granted } }
+ set_country_flag = pf_WW18_discovered set_country_flag = pf_WW18_pending set_country_flag = pf_specimen_pending
+ pf_deliver_specimens = yes
+ } }
+pf_deliver_specimens = {
+ if = { limit = { is_ai = no }
+
+if = { limit = { has_country_flag = pf_WW01_pending has_grand_archive_dlc = yes has_specimen = WW01 } set_country_flag = pf_WW01_granted remove_country_flag = pf_WW01_pending }
+if = { limit = { has_country_flag = pf_WW02_pending has_grand_archive_dlc = yes has_specimen = WW02 } set_country_flag = pf_WW02_granted remove_country_flag = pf_WW02_pending }
+if = { limit = { has_country_flag = pf_WW03_pending has_grand_archive_dlc = yes has_specimen = WW03 } set_country_flag = pf_WW03_granted remove_country_flag = pf_WW03_pending }
+if = { limit = { has_country_flag = pf_WW04_pending has_grand_archive_dlc = yes has_specimen = WW04 } set_country_flag = pf_WW04_granted remove_country_flag = pf_WW04_pending }
+if = { limit = { has_country_flag = pf_WW05_pending has_grand_archive_dlc = yes has_specimen = WW05 } set_country_flag = pf_WW05_granted remove_country_flag = pf_WW05_pending }
+if = { limit = { has_country_flag = pf_WW06_pending has_grand_archive_dlc = yes has_specimen = WW06 } set_country_flag = pf_WW06_granted remove_country_flag = pf_WW06_pending }
+if = { limit = { has_country_flag = pf_WW07_pending has_grand_archive_dlc = yes has_specimen = WW07 } set_country_flag = pf_WW07_granted remove_country_flag = pf_WW07_pending }
+if = { limit = { has_country_flag = pf_WW08_pending has_grand_archive_dlc = yes has_specimen = WW08 } set_country_flag = pf_WW08_granted remove_country_flag = pf_WW08_pending }
+if = { limit = { has_country_flag = pf_WW09_pending has_grand_archive_dlc = yes has_specimen = WW09 } set_country_flag = pf_WW09_granted remove_country_flag = pf_WW09_pending }
+if = { limit = { has_country_flag = pf_WW10_pending has_grand_archive_dlc = yes has_specimen = WW10 } set_country_flag = pf_WW10_granted remove_country_flag = pf_WW10_pending }
+if = { limit = { has_country_flag = pf_WW11_pending has_grand_archive_dlc = yes has_specimen = WW11 } set_country_flag = pf_WW11_granted remove_country_flag = pf_WW11_pending }
+if = { limit = { has_country_flag = pf_WW12_pending has_grand_archive_dlc = yes has_specimen = WW12 } set_country_flag = pf_WW12_granted remove_country_flag = pf_WW12_pending }
+if = { limit = { has_country_flag = pf_WW13_pending has_grand_archive_dlc = yes has_specimen = WW13 } set_country_flag = pf_WW13_granted remove_country_flag = pf_WW13_pending }
+if = { limit = { has_country_flag = pf_WW14_pending has_grand_archive_dlc = yes has_specimen = WW14 } set_country_flag = pf_WW14_granted remove_country_flag = pf_WW14_pending }
+if = { limit = { has_country_flag = pf_WW15_pending has_grand_archive_dlc = yes has_specimen = WW15 } set_country_flag = pf_WW15_granted remove_country_flag = pf_WW15_pending }
+if = { limit = { has_country_flag = pf_WW16_pending has_grand_archive_dlc = yes has_specimen = WW16 } set_country_flag = pf_WW16_granted remove_country_flag = pf_WW16_pending }
+if = { limit = { has_country_flag = pf_WW17_pending has_grand_archive_dlc = yes has_specimen = WW17 } set_country_flag = pf_WW17_granted remove_country_flag = pf_WW17_pending }
+if = { limit = { has_country_flag = pf_WW18_pending has_grand_archive_dlc = yes has_specimen = WW18 } set_country_flag = pf_WW18_granted remove_country_flag = pf_WW18_pending }
+ if = { limit = { has_country_flag = pf_WW01_pending NOT = { has_country_flag = pf_WW01_granted } has_grand_archive_dlc = yes can_give_specimen = WW01 }
+ give_specimen = { key = WW01 } set_country_flag = pf_WW01_granted remove_country_flag = pf_WW01_pending }
+if = { limit = { has_country_flag = pf_WW02_pending NOT = { has_country_flag = pf_WW02_granted } has_grand_archive_dlc = yes can_give_specimen = WW02 }
+ give_specimen = { key = WW02 } set_country_flag = pf_WW02_granted remove_country_flag = pf_WW02_pending }
+if = { limit = { has_country_flag = pf_WW03_pending NOT = { has_country_flag = pf_WW03_granted } has_grand_archive_dlc = yes can_give_specimen = WW03 }
+ give_specimen = { key = WW03 } set_country_flag = pf_WW03_granted remove_country_flag = pf_WW03_pending }
+if = { limit = { has_country_flag = pf_WW04_pending NOT = { has_country_flag = pf_WW04_granted } has_grand_archive_dlc = yes can_give_specimen = WW04 }
+ give_specimen = { key = WW04 } set_country_flag = pf_WW04_granted remove_country_flag = pf_WW04_pending }
+if = { limit = { has_country_flag = pf_WW05_pending NOT = { has_country_flag = pf_WW05_granted } has_grand_archive_dlc = yes can_give_specimen = WW05 }
+ give_specimen = { key = WW05 } set_country_flag = pf_WW05_granted remove_country_flag = pf_WW05_pending }
+if = { limit = { has_country_flag = pf_WW06_pending NOT = { has_country_flag = pf_WW06_granted } has_grand_archive_dlc = yes can_give_specimen = WW06 }
+ give_specimen = { key = WW06 } set_country_flag = pf_WW06_granted remove_country_flag = pf_WW06_pending }
+if = { limit = { has_country_flag = pf_WW07_pending NOT = { has_country_flag = pf_WW07_granted } has_grand_archive_dlc = yes can_give_specimen = WW07 }
+ give_specimen = { key = WW07 } set_country_flag = pf_WW07_granted remove_country_flag = pf_WW07_pending }
+if = { limit = { has_country_flag = pf_WW08_pending NOT = { has_country_flag = pf_WW08_granted } has_grand_archive_dlc = yes can_give_specimen = WW08 }
+ give_specimen = { key = WW08 } set_country_flag = pf_WW08_granted remove_country_flag = pf_WW08_pending }
+if = { limit = { has_country_flag = pf_WW09_pending NOT = { has_country_flag = pf_WW09_granted } has_grand_archive_dlc = yes can_give_specimen = WW09 }
+ give_specimen = { key = WW09 } set_country_flag = pf_WW09_granted remove_country_flag = pf_WW09_pending }
+if = { limit = { has_country_flag = pf_WW10_pending NOT = { has_country_flag = pf_WW10_granted } has_grand_archive_dlc = yes can_give_specimen = WW10 }
+ give_specimen = { key = WW10 } set_country_flag = pf_WW10_granted remove_country_flag = pf_WW10_pending }
+if = { limit = { has_country_flag = pf_WW11_pending NOT = { has_country_flag = pf_WW11_granted } has_grand_archive_dlc = yes can_give_specimen = WW11 }
+ give_specimen = { key = WW11 } set_country_flag = pf_WW11_granted remove_country_flag = pf_WW11_pending }
+if = { limit = { has_country_flag = pf_WW12_pending NOT = { has_country_flag = pf_WW12_granted } has_grand_archive_dlc = yes can_give_specimen = WW12 }
+ give_specimen = { key = WW12 } set_country_flag = pf_WW12_granted remove_country_flag = pf_WW12_pending }
+if = { limit = { has_country_flag = pf_WW13_pending NOT = { has_country_flag = pf_WW13_granted } has_grand_archive_dlc = yes can_give_specimen = WW13 }
+ give_specimen = { key = WW13 } set_country_flag = pf_WW13_granted remove_country_flag = pf_WW13_pending }
+if = { limit = { has_country_flag = pf_WW14_pending NOT = { has_country_flag = pf_WW14_granted } has_grand_archive_dlc = yes can_give_specimen = WW14 }
+ give_specimen = { key = WW14 } set_country_flag = pf_WW14_granted remove_country_flag = pf_WW14_pending }
+if = { limit = { has_country_flag = pf_WW15_pending NOT = { has_country_flag = pf_WW15_granted } has_grand_archive_dlc = yes can_give_specimen = WW15 }
+ give_specimen = { key = WW15 } set_country_flag = pf_WW15_granted remove_country_flag = pf_WW15_pending }
+if = { limit = { has_country_flag = pf_WW16_pending NOT = { has_country_flag = pf_WW16_granted } has_grand_archive_dlc = yes can_give_specimen = WW16 }
+ give_specimen = { key = WW16 } set_country_flag = pf_WW16_granted remove_country_flag = pf_WW16_pending }
+if = { limit = { has_country_flag = pf_WW17_pending NOT = { has_country_flag = pf_WW17_granted } has_grand_archive_dlc = yes can_give_specimen = WW17 }
+ give_specimen = { key = WW17 } set_country_flag = pf_WW17_granted remove_country_flag = pf_WW17_pending }
+if = { limit = { has_country_flag = pf_WW18_pending NOT = { has_country_flag = pf_WW18_granted } has_grand_archive_dlc = yes can_give_specimen = WW18 }
+ give_specimen = { key = WW18 } set_country_flag = pf_WW18_granted remove_country_flag = pf_WW18_pending }
+ if = { limit = { NOR = { has_country_flag = pf_WW01_pending has_country_flag = pf_WW02_pending has_country_flag = pf_WW03_pending has_country_flag = pf_WW04_pending has_country_flag = pf_WW05_pending has_country_flag = pf_WW06_pending has_country_flag = pf_WW07_pending has_country_flag = pf_WW08_pending has_country_flag = pf_WW09_pending has_country_flag = pf_WW10_pending has_country_flag = pf_WW11_pending has_country_flag = pf_WW12_pending has_country_flag = pf_WW13_pending has_country_flag = pf_WW14_pending has_country_flag = pf_WW15_pending has_country_flag = pf_WW16_pending has_country_flag = pf_WW17_pending has_country_flag = pf_WW18_pending } } remove_country_flag = pf_specimen_pending } }
+
+ }

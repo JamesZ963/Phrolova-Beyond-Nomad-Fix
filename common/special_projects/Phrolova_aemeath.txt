@@ -1,0 +1,28 @@
+special_project = {
+ key = PF_AME_HEART cost = 0 days_to_research = 180 tech_department = physics_technology
+ picture = Phrolova_events_yansuan event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_project_scientist count = 1 trigger = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } }
+ abort_trigger = { OR = { NOT = { has_relic = r_phrolova_heart } NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } } }
+ on_cancel = { remove_country_flag = pf_ame_secret_open }
+ on_success = {
+  if = { limit = { fleet = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } }
+   owner = { remove_country_flag = pf_ame_secret_open set_country_flag = pf_ame_secret_done country_event = { id = Phrolova_event.904 } }
+  }
+  else = { owner = { remove_country_flag = pf_ame_secret_open } }
+ }
+}
+special_project = {
+ key = PF_AME_FREQUENCY cost = 0 days_to_research = 180 tech_department = physics_technology
+ picture = Phrolova_events_yansuan event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_project_scientist count = 1 trigger = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_cancel = { remove_country_flag = pf_ame_frequency_open }
+ on_success = {
+  if = { limit = { fleet = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } }
+   owner = { remove_country_flag = pf_ame_frequency_open set_country_flag = pf_ame_frequency_done pf_begin_ame_contact = yes }
+  }
+  else = { owner = { remove_country_flag = pf_ame_frequency_open } }
+ }
+}

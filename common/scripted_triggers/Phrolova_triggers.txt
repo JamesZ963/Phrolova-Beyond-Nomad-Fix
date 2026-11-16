@@ -1,0 +1,21 @@
+has_Phrolova_leader = { any_owned_leader = { has_leader_flag = Phrolova_scientist } }
+pf_solaris_owner = { # planet scope: identity survives rename, migration and occupation
+ exists = owner
+ has_planet_flag = pf_solaris
+ has_planet_flag = pf_solaris@owner
+ owner = { has_country_flag = pf_solaris_complete }
+ is_controlled_by = owner
+}
+pf_three_zones = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_1 value >= 1 } num_districts = { type = district_pf_unique_2 value >= 1 } num_districts = { type = district_pf_unique_3 value >= 1 } num_districts = { type = district_pf_unique_4 value >= 1 } num_districts = { type = district_pf_unique_5 value >= 1 } num_districts = { type = district_pf_unique_6 value >= 1 } }
+pf_safe_system = { # system scope, target set by country before selection
+ is_owned_by = event_target:pf_owner
+ exists = starbase
+ starbase = { is_controlled_by = event_target:pf_owner }
+ NOT = { has_star_flag = hostile_system }
+ NOT = { any_fleet_in_system = { owner = { is_hostile = event_target:pf_owner } } }
+}
+pf_excavator = { # fleet scope; from = site
+ exists = leader
+ leader = { has_leader_flag = Phrolova_scientist }
+ from = { planet = { OR = { has_planet_flag = pf_solaris@root.owner has_planet_flag = pf_aleph@root.owner } } }
+}

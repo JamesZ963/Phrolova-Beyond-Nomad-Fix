@@ -1,0 +1,5 @@
+pf_aemeath_contact = {
+ length = 1 icon = "GFX_pf_edict_aemeath"
+ potential = { is_ai = no has_country_flag = pf_ame_contact_unlocked }
+ effect = { country_event = { id = Phrolova_event.916 } } ai_weight = { weight = 0 }
+}

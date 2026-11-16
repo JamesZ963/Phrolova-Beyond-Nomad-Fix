@@ -1,0 +1,75 @@
+# Test placeholders. Separate identities and all requested governor/council slots.
+leader_trait_pf_denia = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { commander }
+ inline_script = { script = trait/icon CLASS = commander ICON = GFX_pf_trait_denia RARITY = paragon COUNCIL = no TIER = none }
+ fleet_modifier = { ship_fire_rate_mult = 0.20 }
+ councilor_modifier = { ship_fire_rate_mult = 0.12 }
+ planet_modifier = { army_defense_damage_mult = 0.30 }
+ sector_modifier = { army_defense_damage_mult = 0.18 }
+ ai_weight = 0
+}
+leader_trait_pf_shorekeeper = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { official }
+ inline_script = { script = trait/icon CLASS = official ICON = GFX_pf_trait_shorekeeper RARITY = paragon COUNCIL = no TIER = none }
+ councilor_modifier = { all_technology_research_speed = 0.18 }
+ planet_modifier = { planet_researchers_produces_mult = 0.18 }
+ sector_modifier = { planet_researchers_produces_mult = 0.12 }
+ ai_weight = 0
+}
+leader_trait_pf_aemeath = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { commander }
+ inline_script = { script = trait/icon CLASS = commander ICON = GFX_pf_trait_aemeath RARITY = paragon COUNCIL = no TIER = none }
+ fleet_modifier = { ship_disengage_chance_mult = 0.18 }
+ councilor_modifier = { ship_disengage_chance_mult = 0.10 }
+ planet_modifier = { planet_jobs_unity_produces_mult = 0.20 }
+ sector_modifier = { planet_jobs_unity_produces_mult = 0.12 }
+ ai_weight = 0
+}
+
+# Provisional modifiers; named identity is frozen, balance remains editable.
+leader_trait_pf_aemeath_2 = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { commander }
+ inline_script = { script = trait/icon CLASS = commander ICON = GFX_pf_trait_aemeath_2 RARITY = paragon COUNCIL = no TIER = none }
+ councilor_modifier = { all_technology_research_speed = 0.06 }
+ ai_weight = 0
+}
+
+# Provisional modifiers; named identity is frozen, balance remains editable.
+leader_trait_pf_aemeath_3 = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { commander }
+ inline_script = { script = trait/icon CLASS = commander ICON = GFX_pf_trait_aemeath_3 RARITY = paragon COUNCIL = no TIER = none }
+ planet_modifier = { planet_jobs_unity_produces_mult = 0.10 } sector_modifier = { planet_jobs_unity_produces_mult = 0.06 }
+ ai_weight = 0
+}
+
+# Provisional modifiers; named identity is frozen, balance remains editable.
+leader_trait_pf_shorekeeper_2 = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { official }
+ inline_script = { script = trait/icon CLASS = official ICON = GFX_pf_trait_shorekeeper_2 RARITY = paragon COUNCIL = no TIER = none }
+ councilor_modifier = { all_technology_research_speed = 0.08 }
+ ai_weight = 0
+}
+
+# Provisional modifiers; named identity is frozen, balance remains editable.
+leader_trait_pf_shorekeeper_3 = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { official }
+ inline_script = { script = trait/icon CLASS = official ICON = GFX_pf_trait_shorekeeper_3 RARITY = paragon COUNCIL = no TIER = none }
+ planet_modifier = { planet_jobs_unity_produces_mult = 0.08 } sector_modifier = { planet_jobs_unity_produces_mult = 0.05 }
+ ai_weight = 0
+}
+
+# Provisional modifiers; named identity is frozen, balance remains editable.
+leader_trait_pf_denia_2 = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { commander }
+ inline_script = { script = trait/icon CLASS = commander ICON = GFX_pf_trait_denia_2 RARITY = paragon COUNCIL = no TIER = none }
+ councilor_modifier = { all_technology_research_speed = 0.06 }
+ ai_weight = 0
+}
+
+# Provisional modifiers; named identity is frozen, balance remains editable.
+leader_trait_pf_denia_3 = {
+ cost = 0 leader_trait_type = destiny randomized = no initial = no notify_on_gained = no leader_class = { commander }
+ inline_script = { script = trait/icon CLASS = commander ICON = GFX_pf_trait_denia_3 RARITY = paragon COUNCIL = no TIER = none }
+ planet_modifier = { planet_jobs_unity_produces_mult = 0.06 } sector_modifier = { planet_jobs_unity_produces_mult = 0.04 }
+ ai_weight = 0
+}

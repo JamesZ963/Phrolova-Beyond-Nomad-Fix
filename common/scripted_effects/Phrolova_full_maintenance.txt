@@ -1,0 +1,25 @@
+pf_full_maintenance = {
+ pf24_migrate_void_pact = yes
+ pf_migrate_gestalt_blocker_jobs = yes
+ pf23_init_collection = yes
+ pf22_maintenance = yes
+ pf_companion_migration = yes
+ pf_ensure_companion_traits = yes
+ pf_deliver_specimens = yes
+ if = { limit = { has_country_flag = pf_wormhole_reopen has_country_flag = pf_alignment_ready NOT = { has_country_flag = pf_project_open } NOT = { has_country_flag = pf_aleph_created } } pf_open_wormhole_project = yes }
+ if = { limit = { has_country_flag = pf_wormhole_open NOT = { has_country_flag = pf_passage_registered } } pf_register_passage = yes } pf_defense_upkeep_check = yes
+ pf_refresh_local_defense = yes pf_refresh_starbase_defense = yes
+ pf_resume_dialogues = yes
+ if = { limit = { has_country_flag = pf_wait_wormhole_tech has_technology = tech_wormhole_stabilization } pf_open_wormhole_project = yes }
+
+if = { limit = { has_country_flag = pf_denia_recruited } pf_create_denia = yes pf_portrait_denia = yes }
+if = { limit = { has_country_flag = pf_shorekeeper_recruited } pf_create_shorekeeper = yes pf_portrait_shorekeeper = yes pf_apply_solaris_rebuilt_background = yes }
+if = { limit = { has_country_flag = pf_heart_started has_relic = r_phrolova_heart_damaged NOT = { has_country_flag = pf_heart_discovery_ack } } set_country_flag = pf_heart_discovery_ack }
+pf_resume_heart_projects = yes pf_check_heart = yes
+pf_open_rescue = yes
+pf_find_targets = yes
+ if = { limit = { exists = event_target:pf_aleph_system event_target:pf_aleph_system = { is_owned_by = root starbase = { is_controlled_by = root } } }
+ if = { limit = { NOT = { has_modifier = pf_aleph_income } } add_modifier = { modifier = pf_aleph_income days = -1 } } }
+ else = { remove_modifier = pf_aleph_income }
+if = { limit = { has_country_flag = pf_defense_started NOT = { has_country_flag = pf_entity_spawned } NOT = { any_situation = { is_situation_type = pf_defense } } } pf_spawn_malevolent = yes }
+}

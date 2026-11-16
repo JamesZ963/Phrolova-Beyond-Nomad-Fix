@@ -1,0 +1,244 @@
+weapon_component_template = {
+	key = "PF22_BOSS_DIMENSIONAL_HORROR_PRIMARY_WEAPON"
+	size = extra_large
+	type = instant
+	prio_projectile = yes
+
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+	#color = { 0.1 1.0 0.1 1 }
+
+	firing_arc = 15.0
+	min_range = 30.0
+
+	hidden = yes
+	projectile_gfx = "dimensional_titan_laser"
+	tags = {
+		weapon_type_energy
+		x_slot
+	}
+
+ damage = { min = 500.00 max = 5000.00 }
+ windup = { min = 25.00 max = 100.00 }
+ power = 0.00
+	total_fire_time = 150.00
+	range = 250.00
+ accuracy = 0.85 tracking = 0.00
+ hull_damage = 1.00 armor_damage = 1.00 shield_damage = 0.25
+ armor_penetration = 1.00 shield_penetration = 0.00
+ size_damage_factor = 0.00 military_power_multiplier = 1.00
+}
+
+weapon_component_template = {
+	key = "PF22_BOSS_DIMENSIONAL_HORROR_LARGE_WEAPON"
+	size = large
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	tags = {
+		weapon_type_energy
+		l_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	hidden = yes
+	use_ship_main_target = no
+
+ damage = { min = 250.00 max = 1000.00 }
+ windup = { min = 3.00 max = 11.00 }
+ power = 0.00
+	total_fire_time = 16.00
+	range = 250.00
+ accuracy = 0.80 tracking = 0.75
+ hull_damage = 1.00 armor_damage = 1.00 shield_damage = 0.25
+ armor_penetration = 1.00 shield_penetration = 0.00
+ size_damage_factor = 0.00 military_power_multiplier = 1.00
+}
+
+weapon_component_template = {
+	key = "PF22_BOSS_DIMENSIONAL_HORROR_MEDIUM_WEAPON"
+	size = large
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	tags = {
+		weapon_type_energy
+		l_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	hidden = yes
+	use_ship_main_target = no
+
+ damage = { min = 100.00 max = 400.00 }
+ windup = { min = 3.00 max = 10.00 }
+ power = 0.00
+	total_fire_time = 15.00
+	range = 250.00
+ accuracy = 0.80 tracking = 0.50
+ hull_damage = 1.00 armor_damage = 1.00 shield_damage = 0.25
+ armor_penetration = 1.00 shield_penetration = 0.00
+ size_damage_factor = 0.00 military_power_multiplier = 1.00
+}
+
+weapon_component_template = {
+	key = "PF22_BOSS_DIMENSIONAL_HORROR_SMALL_WEAPON"
+	size = small
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	tags = {
+		weapon_type_energy
+		s_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	hidden = yes
+	use_ship_main_target = no
+
+ damage = { min = 50.00 max = 200.00 }
+ windup = { min = 3.00 max = 10.00 }
+ power = 0.00
+	total_fire_time = 14.00
+	range = 250.00
+ accuracy = 0.80 tracking = 0.25
+ hull_damage = 1.00 armor_damage = 1.00 shield_damage = 0.25
+ armor_penetration = 1.00 shield_penetration = 0.00
+ size_damage_factor = 0.00 military_power_multiplier = 1.00
+}
+
+weapon_component_template = {
+	key = "PF22_BOSS_DIMENSIONAL_HORROR_PD"
+	size = point_defence
+	entity = "invisible_turret_entity"
+	type = point_defence
+
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+	#color = { 0.1 1.0 0.1 1 }
+
+	hidden = yes
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	tags = {
+		weapon_type_point_defense
+		weapon_type_energy
+	}
+
+	point_defence_targets = { "missile" "strike_craft" }
+
+ damage = { min = 10.00 max = 50.00 }
+ windup = { min = 3.00 max = 10.00 }
+ power = 0.00
+	total_fire_time = 15.00
+	range = 250.00
+ accuracy = 0.80 tracking = 0.50
+ hull_damage = 1.00 armor_damage = 1.00 shield_damage = 1.00
+ armor_penetration = 0.00 shield_penetration = 0.00
+ size_damage_factor = 0.00 military_power_multiplier = 1.00
+}
+
+utility_component_template = {
+	key = "PF22_BOSS_AUTO_REPAIR"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+
+	modifier = {
+		ship_hull_regen_add_perc = 0.05
+		ship_armor_regen_add_perc = 0.1
+	}
+
+	prerequisites = { tech_regenerative_hull_tissue }
+	component_set = "AUTO_REPAIR"
+
+	ai_weight = {
+		weight = 10
+
+		inline_script = "ai/armor_preference_weight"
+	}
+}
+
+utility_component_template = {
+	key = "PF22_BOSS_GUARDIAN_SENSORS"
+	hidden = yes
+	size = small
+	icon = "GFX_ship_part_sensor_4"
+	icon_frame = 1
+	power = 0
+	sensor_range = 4
+	hyperlane_range = 8
+
+	component_set = "sensor_components"
+}
+
+utility_component_template = {
+	key = "PF22_BOSS_RANGELESS_JUMP_DRIVE"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	should_ai_use = no
+	jumpdrive = yes
+	ship_modifier = {
+		# should not be able to jump anywhere
+		ship_ftl_jumpdrive_range_mult = -1
+	}
+
+	hidden = yes
+}
+
+utility_component_template = {
+	key = "PF22_BOSS_COMBAT_COMPUTER_ARTILLERY_BASIC"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_basic"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}
+	}
+	potential = {
+		from = {
+			country_uses_bio_ships = no
+		}
+		ship_uses_artillery_role = yes
+	}
+
+	show_tech_unlock_if = {
+		country_uses_bio_ships = no
+	}
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	upgrade_path = artillery
+	prerequisites = { "tech_combat_computers_1" }
+	upgrades_to = "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+	ai_tags = { artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
+	ai_tag_weight = 0
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_weapon_range_mult = 0.05
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}

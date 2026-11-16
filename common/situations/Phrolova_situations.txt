@@ -1,0 +1,15 @@
+pf_defense = { picture = GFX_evt_dimensional_horror category = negative
+ initial_progress = 0 start_value = 0
+ stages = { pf_defense_prepare = { end = 12 icon = GFX_pf_defense_fleet } }
+ monthly_progress = { base = 1 }
+ approach = { name = pf_defense_emergency custom_tooltip = PF_defense_emergency_effects default = yes on_select = { owner = { remove_country_flag = pf_defense_standard remove_country_flag = pf_defense_full pf_refresh_local_defense = yes pf_refresh_starbase_defense = yes } } icon = GFX_pf_defense_fist ai_weight = { weight = 1 } }
+ approach = { name = pf_defense_standard custom_tooltip = PF_defense_standard_effects icon = GFX_pf_defense_fleet
+ allow = { owner = { has_resource = { type = energy amount >= 100 } has_resource = { type = alloys amount >= 50 } } }
+ resources = { category = situations upkeep = { energy = 100 alloys = 50 } }
+ on_select = { owner = { remove_country_flag = pf_defense_full set_country_flag = pf_defense_standard pf_refresh_local_defense = yes pf_refresh_starbase_defense = yes } } ai_weight = { weight = 0 } }
+ approach = { name = pf_defense_full custom_tooltip = PF_defense_full_effects icon = GFX_pf_defense_alloys
+ allow = { owner = { has_resource = { type = energy amount >= 300 } has_resource = { type = alloys amount >= 150 } } }
+ resources = { category = situations upkeep = { energy = 300 alloys = 150 } }
+ on_select = { owner = { remove_country_flag = pf_defense_standard set_country_flag = pf_defense_full pf_refresh_local_defense = yes pf_refresh_starbase_defense = yes } } ai_weight = { weight = 0 } }
+ on_progress_complete = { custom_tooltip = PF_defense_completion_effects hidden_effect = { owner = { country_event = { id = Phrolova_event.620 } } destroy_situation = this } }
+}

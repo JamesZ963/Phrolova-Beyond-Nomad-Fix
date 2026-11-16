@@ -1,0 +1,318 @@
+pf23_schedule_year = {
+ set_timed_country_flag = { flag = pf23_specimen_year_wait days = 360 }
+ country_event = { id = Phrolova_event.1900 days = 360 }
+}
+pf23_init_collection = {
+ if = { limit = { is_ai = no has_grand_archive_dlc = yes
+  OR = { has_country_flag = pf22_ticket_received has_relic = r_pf_sent_ticket has_country_flag = pf23_collection_started }
+ }
+  if = { limit = { NOT = { has_country_flag = pf23_collection_started } }
+   set_country_flag = pf23_collection_started pf23_schedule_year = yes
+  }
+  else_if = { limit = { NOT = { has_country_flag = pf23_specimen_year_wait } }
+   set_timed_country_flag = { flag = pf23_specimen_year_wait days = 1 }
+   country_event = { id = Phrolova_event.1900 days = 1 }
+  }
+ }
+}
+pf23_choose_site = {
+ remove_country_flag = pf23_site_found
+ random_system = { limit = { is_owned_by = root exists = starbase starbase = { is_controlled_by = root }
+  any_system_planet = { is_star = no is_colony = no has_anomaly = no OR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold is_planet_class = pc_asteroid is_planet_class = pc_ice_asteroid is_planet_class = pc_rare_crystal_asteroid is_planet_class = pc_frozen is_planet_class = pc_molten is_planet_class = pc_toxic is_planet_class = pc_gas_giant } NOT = { has_planet_flag = pf_solaris } NOT = { has_planet_flag = pf_aleph_asteroid } }
+ }
+ random_system_planet = { limit = { is_star = no is_colony = no has_anomaly = no OR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold is_planet_class = pc_asteroid is_planet_class = pc_ice_asteroid is_planet_class = pc_rare_crystal_asteroid is_planet_class = pc_frozen is_planet_class = pc_molten is_planet_class = pc_toxic is_planet_class = pc_gas_giant } NOT = { has_planet_flag = pf_solaris } NOT = { has_planet_flag = pf_aleph_asteroid } }
+  save_event_target_as = pf23_site event_target:pf23_owner = { set_country_flag = pf23_site_found }
+ }
+ }
+ if = { limit = { NOT = { has_country_flag = pf23_site_found } exists = capital_scope }
+ capital_scope = { solar_system = { spawn_planet = {
+  class = pc_asteroid size = 5 name = NAME_PF23_Archive_Asteroid
+  orbit_distance = 350 orbit_angle = 210
+  init_effect = { save_event_target_as = pf23_site set_planet_flag = pf23_archive_asteroid
+   event_target:pf23_owner = { set_country_flag = pf23_site_found }
+  }
+ } } }
+ }
+}
+
+pf23_spawn_WW01 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW01@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_01_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW02 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW02@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_02_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW03 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW03@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_03_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW04 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW04@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_04_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW05 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW05@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_05_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW06 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW06@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_06_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW07 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW07@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_07_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW08 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW08@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_08_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW09 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW09@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_09_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW10 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW10@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_10_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW11 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW11@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_11_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW12 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW12@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_12_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW13 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW13@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_13_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW14 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW14@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_14_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW15 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW15@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_15_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW16 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW16@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_16_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW17 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW17@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_17_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+
+pf23_spawn_WW18 = {
+ pf23_choose_site = yes
+ if = { limit = { has_country_flag = pf23_site_found }
+ event_target:pf23_site = {
+  set_planet_flag = pf23_WW18@event_target:pf23_owner
+  prevent_anomaly = no
+  set_surveyed = { surveyed = yes surveyor = event_target:pf23_owner }
+  add_anomaly = { category = pf23_specimen_18_category target = event_target:pf23_owner }
+ }
+ set_country_flag = pf23_created_this_check
+ country_event = { id = Phrolova_event.1902 }
+ }
+}
+pf23_scan_collection = {
+ save_event_target_as = pf23_owner remove_country_flag = pf23_created_this_check
+ if = { limit = { pf23_has_missing_specimen = yes }
+ random_list = {
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW01 = yes } } pf23_spawn_WW01 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW02 = yes } } pf23_spawn_WW02 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW03 = yes } } pf23_spawn_WW03 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW04 = yes } } pf23_spawn_WW04 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW05 = yes } } pf23_spawn_WW05 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW06 = yes } } pf23_spawn_WW06 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW07 = yes } } pf23_spawn_WW07 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW08 = yes } } pf23_spawn_WW08 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW09 = yes } } pf23_spawn_WW09 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW10 = yes } } pf23_spawn_WW10 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW11 = yes } } pf23_spawn_WW11 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW12 = yes } } pf23_spawn_WW12 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW13 = yes } } pf23_spawn_WW13 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW14 = yes } } pf23_spawn_WW14 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW15 = yes } } pf23_spawn_WW15 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW16 = yes } } pf23_spawn_WW16 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW17 = yes } } pf23_spawn_WW17 = yes }
+1 = { modifier = { factor = 0 NOT = { pf23_missing_WW18 = yes } } pf23_spawn_WW18 = yes }
+ } }
+ if = { limit = { pf23_has_missing_specimen = yes NOT = { has_country_flag = pf23_created_this_check } }
+  # No capital/valid object: retry without consuming the annual successful slot.
+  set_timed_country_flag = { flag = pf23_specimen_year_wait days = 30 }
+  country_event = { id = Phrolova_event.1900 days = 30 }
+ }
+ else = { pf23_schedule_year = yes }
+}

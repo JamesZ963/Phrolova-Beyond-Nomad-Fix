@@ -1,0 +1,229 @@
+# ID reservations only. Main-chain relics use separate r_phrolova_* keys.
+# Preserve the case of WW01-WW14 when integrating.
+
+WW01 = {
+    icon = "GFX_specimen_WW01"
+    type = historical_item
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = common
+    }
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		country_unity_produces_mult = 0.02
+	}
+}
+
+WW02 = {
+    icon = "GFX_specimen_WW02"
+    type = xeno_geology
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = common
+    }
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		country_society_tech_research_speed = 0.02
+	}
+}
+
+WW03 = {
+    icon = "GFX_specimen_WW03"
+    type = aesthetic_wonder
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = common
+    }
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		planet_researchers_produces_mult = 0.02
+	}
+}
+
+WW04 = {
+    icon = "GFX_specimen_WW04"
+    type = historical_item
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		country_unity_produces_mult = 0.03
+	}
+}
+
+WW05 = {
+    icon = "GFX_specimen_WW05"
+    type = xeno_geology
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_jobs_energy_produces_mult = 0.03
+	}
+}
+
+WW06 = {
+    icon = "GFX_specimen_WW06"
+    type = aesthetic_wonder
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = rare
+    }
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		planet_researchers_produces_mult = 0.03
+	}
+}
+
+WW07 = {
+    icon = "GFX_specimen_WW07"
+    type = xeno_geology
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = epic
+    }
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_jobs_alloys_produces_mult = 0.04
+	}
+}
+
+WW08 = {
+    icon = "GFX_specimen_WW08"
+    type = historical_item
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = epic
+    }
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		ship_weapon_damage = 0.04
+	}
+}
+
+WW09 = {
+    icon = "GFX_specimen_WW09"
+    type = aesthetic_wonder
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = epic
+    }
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		country_physics_tech_research_speed = 0.04
+	}
+}
+
+WW10 = {
+    icon = "GFX_specimen_WW10"
+    type = historical_item
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = exceptional
+    }
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		all_technology_research_speed = 0.05
+	}
+}
+
+WW11 = {
+    icon = "GFX_specimen_WW11"
+    type = aesthetic_wonder
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = exceptional
+    }
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		planet_jobs_unity_produces_mult = 0.05
+	}
+}
+
+WW12 = {
+    icon = "GFX_specimen_WW12"
+    type = xeno_geology
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = exceptional
+    }
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_jobs_energy_produces_mult = 0.05
+	}
+}
+
+# Main-chain exhibit. Never include in the random anomaly pool.
+WW13 = {
+    icon = "GFX_specimen_WW13"
+    type = historical_item
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = exceptional
+    }
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		planet_jobs_produces_mult = 0.05
+	}
+}
+
+# Both choices in the post-battle Phrolova dialogue grant this exhibit.
+# Exceptional is provisional; this entry is never a random anomaly reward.
+WW14 = {
+    icon = "GFX_specimen_WW14"
+    type = xeno_geology
+    inline_script = {
+        script = "grand_archive/set_specimen_rarity"
+        RARITY = exceptional
+    }
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		ship_weapon_damage = 0.05
+	}
+}
+
+WW15 = { icon = GFX_specimen_WW15 type = historical_item inline_script = { script = "grand_archive/set_specimen_rarity" RARITY = rare } 
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		all_technology_research_speed = 0.03
+	}
+}
+
+WW16 = { icon = GFX_specimen_WW16 type = historical_item inline_script = { script = "grand_archive/set_specimen_rarity" RARITY = rare } 
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		planet_researchers_produces_mult = 0.03
+	}
+}
+
+WW17 = { icon = GFX_specimen_WW17 type = historical_item inline_script = { script = "grand_archive/set_specimen_rarity" RARITY = rare } 
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		country_unity_produces_mult = 0.03
+	}
+}
+
+WW18 = { icon = GFX_specimen_WW18 type = historical_item inline_script = { script = "grand_archive/set_specimen_rarity" RARITY = rare } 
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		country_naval_cap_mult = 0.05
+	}
+}

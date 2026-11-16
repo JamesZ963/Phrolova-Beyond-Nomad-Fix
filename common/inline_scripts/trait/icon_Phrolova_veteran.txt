@@ -1,0 +1,19 @@
+# 特质图标背景定义
+icon = {
+    # 第一层（底层）：基础背景图标
+    layer = {
+        icon = icon_Phrolova_trait_destiny
+    }
+    
+    # 第二层（中层）：动态图标层
+    layer = {
+        icon = $ICON$
+    }
+    
+    # 第三层（顶层）：边框装饰层
+    layer = {
+             icon = "GFX_trait_frame_veteran"            # 老练特质边框）
+             color = colors_Phrolova_trait             # 使用颜色着色边框
+         }
+
+}

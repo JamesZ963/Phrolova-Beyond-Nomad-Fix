@@ -1,0 +1,26 @@
+# TimeMod documents these four country flags as MOD interfaces. Do not set
+# forbid_all_crisis_progression, and never clear flags owned by another mod.
+pf28_set_crisis_interface_flags = {
+ set_country_flag = forbid_become_the_crisis
+ set_country_flag = forbid_cosmogenesis
+ set_country_flag = forbid_behemoths
+ set_country_flag = forbid_galactic_hyperthermia
+}
+
+pf24_migrate_void_pact = {
+ pf28_refresh_crisis_interfaces = yes
+ if = {
+  limit = { is_ai = no has_country_flag = pf_void_choice_done NOT = { has_country_flag = pf_void_kept }
+   NOT = { has_country_flag = pf24_void_pact } }
+  set_country_flag = pf24_void_pact
+  if = { limit = { pf24_has_target_crisis = yes }
+   set_country_flag = pf24_legacy_crisis_exception country_event = { id = Phrolova_event.1881 }
+  }
+  else = { country_event = { id = Phrolova_event.1880 } }
+ }
+}
+
+# Idempotent repair after the old-version migration, without replaying notices.
+pf28_refresh_crisis_interfaces = {
+ if = { limit = { pf24_void_pact_bound = yes } pf28_set_crisis_interface_flags = yes }
+}

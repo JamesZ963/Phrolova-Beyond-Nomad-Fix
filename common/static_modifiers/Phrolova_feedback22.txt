@@ -1,0 +1,1 @@
+pf_sent_ticket_active = { icon = "gfx/interface/icons/planet_modifiers/pm_artist_monument_erected.dds" planet_jobs_produces_mult = 0.40 }

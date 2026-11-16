@@ -1,0 +1,6 @@
+pf_unique_slot_1 = { included_zone_sets = { pf_unique_set_1 } unlock = { pf_solaris_owner = yes } }
+pf_unique_slot_2 = { included_zone_sets = { pf_unique_set_2 } unlock = { pf_solaris_owner = yes } }
+pf_unique_slot_3 = { included_zone_sets = { pf_unique_set_3 } unlock = { pf_solaris_owner = yes } }
+pf_unique_slot_4 = { included_zone_sets = { pf_unique_set_4 } unlock = { pf_solaris_owner = yes } }
+pf_unique_slot_5 = { included_zone_sets = { pf_unique_set_5 } unlock = { pf_solaris_owner = yes } }
+pf_unique_slot_6 = { included_zone_sets = { pf_unique_set_6 } unlock = { pf_solaris_owner = yes } }

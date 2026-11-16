@@ -1,0 +1,59 @@
+# Planet scope; safe to repeat and does not stack benefits with old saves.
+pf_migrate_restored_features = {
+ if = { limit = { OR = { has_planet_flag = pf_tower_cleared has_modifier = pf_tower_restored has_modifier = pf_tower_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_tower_restored } } add_deposit = d_pf_tower_restored }
+  remove_modifier = pf_tower_restored remove_modifier = pf_tower_restored_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_pollution_cleared has_modifier = pf_pollution_cleared } }
+  if = { limit = { NOT = { has_deposit = d_pf_pollution_cleared } } add_deposit = d_pf_pollution_cleared }
+  remove_modifier = pf_pollution_cleared
+ }
+ if = { limit = { OR = { has_planet_flag = pf_array_garrisoned has_modifier = pf_array_garrison has_modifier = pf_array_garrison_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_array_garrison } } add_deposit = d_pf_array_garrison }
+  remove_modifier = pf_array_garrison remove_modifier = pf_array_garrison_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_01_restored has_modifier = pf_ruin_01_restored has_modifier = pf_ruin_01_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_01_restored } } add_deposit = d_pf_ruin_01_restored }
+  remove_modifier = pf_ruin_01_restored remove_modifier = pf_ruin_01_restored_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_02_restored has_modifier = pf_ruin_02_restored } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_02_restored } } add_deposit = d_pf_ruin_02_restored }
+  remove_modifier = pf_ruin_02_restored
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_03_restored has_modifier = pf_ruin_03_restored } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_03_restored } } add_deposit = d_pf_ruin_03_restored }
+  remove_modifier = pf_ruin_03_restored
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_04_restored has_modifier = pf_ruin_04_restored } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_04_restored } } add_deposit = d_pf_ruin_04_restored }
+  remove_modifier = pf_ruin_04_restored
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_05_restored has_modifier = pf_ruin_05_restored has_modifier = pf_ruin_05_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_05_restored } } add_deposit = d_pf_ruin_05_restored }
+  remove_modifier = pf_ruin_05_restored remove_modifier = pf_ruin_05_restored_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_06_restored has_modifier = pf_ruin_06_restored has_modifier = pf_ruin_06_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_06_restored } } add_deposit = d_pf_ruin_06_restored }
+  remove_modifier = pf_ruin_06_restored remove_modifier = pf_ruin_06_restored_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_07_restored has_modifier = pf_ruin_07_restored has_modifier = pf_ruin_07_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_07_restored } } add_deposit = d_pf_ruin_07_restored }
+  remove_modifier = pf_ruin_07_restored remove_modifier = pf_ruin_07_restored_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_08_restored has_modifier = pf_ruin_08_restored } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_08_restored } } add_deposit = d_pf_ruin_08_restored }
+  remove_modifier = pf_ruin_08_restored
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_09_restored has_modifier = pf_ruin_09_restored has_modifier = pf_ruin_09_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_09_restored } } add_deposit = d_pf_ruin_09_restored }
+  remove_modifier = pf_ruin_09_restored remove_modifier = pf_ruin_09_restored_gestalt
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_10_restored has_modifier = pf_ruin_10_restored } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_10_restored } } add_deposit = d_pf_ruin_10_restored }
+  remove_modifier = pf_ruin_10_restored
+ }
+ if = { limit = { OR = { has_planet_flag = pf_ruin_11_restored has_modifier = pf_ruin_11_restored has_modifier = pf_ruin_11_restored_gestalt } }
+  if = { limit = { NOT = { has_deposit = d_pf_ruin_11_restored } } add_deposit = d_pf_ruin_11_restored }
+  remove_modifier = pf_ruin_11_restored remove_modifier = pf_ruin_11_restored_gestalt
+ }
+}

@@ -1,0 +1,37 @@
+# Country scope; this explicit whitelist of the four destructive crisis paths.
+pf24_has_target_crisis = {
+ OR = { has_ascension_perk = ap_become_the_crisis has_ascension_perk = ap_cosmogenesis has_ascension_perk = ap_behemoths has_ascension_perk = ap_galactic_hyperthermia }
+}
+pf24_can_give_void = { NOT = { pf24_has_target_crisis = yes } }
+# Recognize already-completed old choices even before the next monthly migration.
+pf24_void_pact_bound = {
+ OR = { has_country_flag = pf24_void_pact
+  AND = { has_country_flag = pf_void_choice_done NOT = { has_country_flag = pf_void_kept } }
+ }
+}
+pf24_nemesis_resonance = { has_ascension_perk = ap_become_the_crisis }
+pf24_cosmogenesis_resonance = {
+ has_ascension_perk = ap_cosmogenesis NOT = { has_ascension_perk = ap_become_the_crisis }
+}
+pf24_behemoth_resonance = {
+ has_ascension_perk = ap_behemoths
+ NOR = { has_ascension_perk = ap_become_the_crisis has_ascension_perk = ap_cosmogenesis }
+}
+
+pf30_hyperthermia_resonance = {
+ has_ascension_perk = ap_galactic_hyperthermia
+ NOR = {
+  has_ascension_perk = ap_become_the_crisis
+  has_ascension_perk = ap_cosmogenesis
+  has_ascension_perk = ap_behemoths
+ }
+}
+pf30_defender_ambition = {
+ OR = {
+  has_crisis_level = crisis_defender_level_1
+  has_crisis_level = crisis_defender_level_2
+  has_crisis_level = crisis_defender_level_3
+  has_crisis_level = crisis_defender_level_4
+  has_crisis_level = crisis_defender_level_5
+ }
+}
