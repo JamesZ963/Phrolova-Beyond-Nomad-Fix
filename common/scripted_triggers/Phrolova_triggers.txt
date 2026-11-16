@@ -1,11 +1,48 @@
 has_Phrolova_leader = { any_owned_leader = { has_leader_flag = Phrolova_scientist } }
-pf_solaris_owner = { # planet scope: identity survives rename, migration and occupation
- exists = owner
- has_planet_flag = pf_solaris
- has_planet_flag = pf_solaris@owner
- owner = { has_country_flag = pf_solaris_complete }
- is_controlled_by = owner
+
+# Planet scope.
+# Settled empires: retain the original planet-owner checks.
+# Nomads: an unowned system can qualify through a waystation owned by a
+# country that has completed Solaris. The country is found by matching the
+# waystation's system to this planet's system.
+pf_solaris_owner = {
+    has_planet_flag = pf_solaris
+    OR = {
+        AND = {
+            exists = owner
+            has_planet_flag = pf_solaris@owner
+            owner = {
+                has_country_flag = pf_solaris_complete
+                is_nomadic = no
+            }
+            is_controlled_by = owner
+        }
+        AND = {
+            NOT = { exists = owner }
+            any_playable_country = {
+                is_nomadic = yes
+                has_country_flag = pf_solaris_complete
+                any_owned_nonprimary_starbase = {
+                    is_waystation_starbase = yes
+                    solar_system = {
+                        is_same_value = root.solar_system
+                    }
+                }
+            }
+        }
+        # Also allow a planet owned by a Nomad empire to pass the identity
+        # check; pf_three_zones will test that empire's Arkships below.
+        AND = {
+            exists = owner
+            has_planet_flag = pf_solaris@owner
+            owner = {
+                has_country_flag = pf_solaris_complete
+                is_nomadic = yes
+            }
+        }
+    }
 }
+
 pf_three_zones = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_1 value >= 1 } num_districts = { type = district_pf_unique_2 value >= 1 } num_districts = { type = district_pf_unique_3 value >= 1 } num_districts = { type = district_pf_unique_4 value >= 1 } num_districts = { type = district_pf_unique_5 value >= 1 } num_districts = { type = district_pf_unique_6 value >= 1 } }
 pf_safe_system = { # system scope, target set by country before selection
  is_owned_by = event_target:pf_owner
