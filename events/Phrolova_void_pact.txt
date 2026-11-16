@@ -1,0 +1,11 @@
+namespace = Phrolova_event
+country_event = {
+ id = Phrolova_event.1880 is_triggered_only = yes
+ title = PF24_pact_notice_title desc = PF24_pact_notice_desc picture = GFX_pf17_relic
+ option = { name = PF24_notice_ok }
+}
+country_event = {
+ id = Phrolova_event.1881 is_triggered_only = yes
+ title = PF24_legacy_notice_title desc = PF24_legacy_notice_desc picture = GFX_pf17_relic
+ option = { name = PF24_notice_ok }
+}

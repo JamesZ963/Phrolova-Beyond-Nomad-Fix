@@ -1,0 +1,154 @@
+namespace = Phrolova_event
+country_event = { id = Phrolova_event.1900 is_triggered_only = yes hide_window = yes
+ trigger = { is_ai = no has_grand_archive_dlc = yes has_country_flag = pf23_collection_started NOT = { has_country_flag = pf23_specimen_year_wait } }
+ immediate = { pf23_scan_collection = yes }
+}
+country_event = { id = Phrolova_event.1902 is_triggered_only = yes
+ trigger = { is_ai = no } title = PF23_notice_title desc = PF23_notice_desc
+ picture = Phrolova_events_solaris_lab location = event_target:pf23_site
+ option = { name = PF23_notice_ok }
+}
+
+ship_event = { id = Phrolova_event.1921 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW01@root.owner } }
+ title = PF23_result_WW01_title desc = PF23_result_WW01_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW01 = yes } }
+ from = { remove_planet_flag = pf23_WW01@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1922 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW02@root.owner } }
+ title = PF23_result_WW02_title desc = PF23_result_WW02_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW02 = yes } }
+ from = { remove_planet_flag = pf23_WW02@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1923 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW03@root.owner } }
+ title = PF23_result_WW03_title desc = PF23_result_WW03_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW03 = yes } }
+ from = { remove_planet_flag = pf23_WW03@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1924 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW04@root.owner } }
+ title = PF23_result_WW04_title desc = PF23_result_WW04_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW04 = yes } }
+ from = { remove_planet_flag = pf23_WW04@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1925 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW05@root.owner } }
+ title = PF23_result_WW05_title desc = PF23_result_WW05_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW05 = yes } }
+ from = { remove_planet_flag = pf23_WW05@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1926 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW06@root.owner } }
+ title = PF23_result_WW06_title desc = PF23_result_WW06_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW06 = yes } }
+ from = { remove_planet_flag = pf23_WW06@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1927 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW07@root.owner } }
+ title = PF23_result_WW07_title desc = PF23_result_WW07_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW07 = yes } }
+ from = { remove_planet_flag = pf23_WW07@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1928 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW08@root.owner } }
+ title = PF23_result_WW08_title desc = PF23_result_WW08_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW08 = yes } }
+ from = { remove_planet_flag = pf23_WW08@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1929 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW09@root.owner } }
+ title = PF23_result_WW09_title desc = PF23_result_WW09_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW09 = yes } }
+ from = { remove_planet_flag = pf23_WW09@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1930 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW10@root.owner } }
+ title = PF23_result_WW10_title desc = PF23_result_WW10_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW10 = yes } }
+ from = { remove_planet_flag = pf23_WW10@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1931 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW11@root.owner } }
+ title = PF23_result_WW11_title desc = PF23_result_WW11_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW11 = yes } }
+ from = { remove_planet_flag = pf23_WW11@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1932 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW12@root.owner } }
+ title = PF23_result_WW12_title desc = PF23_result_WW12_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW12 = yes } }
+ from = { remove_planet_flag = pf23_WW12@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1933 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW13@root.owner } }
+ title = PF23_result_WW13_title desc = PF23_result_WW13_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW13 = yes } }
+ from = { remove_planet_flag = pf23_WW13@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1934 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW14@root.owner } }
+ title = PF23_result_WW14_title desc = PF23_result_WW14_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW14 = yes } }
+ from = { remove_planet_flag = pf23_WW14@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1935 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW15@root.owner } }
+ title = PF23_result_WW15_title desc = PF23_result_WW15_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW15 = yes } }
+ from = { remove_planet_flag = pf23_WW15@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1936 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW16@root.owner } }
+ title = PF23_result_WW16_title desc = PF23_result_WW16_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW16 = yes } }
+ from = { remove_planet_flag = pf23_WW16@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1937 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW17@root.owner } }
+ title = PF23_result_WW17_title desc = PF23_result_WW17_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW17 = yes } }
+ from = { remove_planet_flag = pf23_WW17@root.owner } } }
+}
+
+ship_event = { id = Phrolova_event.1938 is_triggered_only = yes
+ trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW18@root.owner } }
+ title = PF23_result_WW18_title desc = PF23_result_WW18_desc picture = Phrolova_events_solaris_lab
+ option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
+ hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW18 = yes } }
+ from = { remove_planet_flag = pf23_WW18@root.owner } } }
+}

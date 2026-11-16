@@ -1,0 +1,892 @@
+namespace = Phrolova_event
+country_event = {
+ id = Phrolova_event.229
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ title = PF_bond_ready_title
+ desc = PF_bond_ready_desc
+ picture = GFX_leader_recruitment_bg_renowned
+ is_triggered_only = yes
+ trigger = { has_country_flag = pf_bond_pending }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_pending hidden_effect = { country_event = {
+ id = Phrolova_event.230
+  } } }
+ 
+}
+country_event = {
+ id = Phrolova_event.1
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { is_ai = no NOT = { has_country_flag = researched_leaders_Phrolova } }
+
+immediate = { country_event = {
+ id = Phrolova_event.9700
+  days = 43 } }
+}
+country_event = {
+ id = Phrolova_event.2
+
+ immediate = { play_sound = pf_theme_phrolova  remove_country_flag = pf17_question_phrolova  pf_preview_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.2.name
+ desc = Phrolova_event.2.desc
+ picture = GFX_leader_recruitment_bg_renowned
+ trigger = { is_ai = no NOT = { has_country_flag = researched_leaders_Phrolova } }
+
+ show_sound = event_default
+ event_window_type = leader_recruit
+ auto_opens = yes
+ picture_event_data = { portrait = event_target:pf_speaker room = shroud_room }
+option = { name = PF17_branch_phrolova trigger = { NOT = { has_country_flag = pf17_question_phrolova } } response_text = PF17_branch_phrolova_reply is_dialog_only = yes set_country_flag = pf17_question_phrolova }
+option = { name = PF17_branch_phrolova_0 trigger = { has_country_flag = pf17_question_phrolova } response_text = PF17_branch_phrolova_0_reply is_dialog_only = yes }
+option = { name = PF17_branch_phrolova_1 trigger = { has_country_flag = pf17_question_phrolova } response_text = PF17_branch_phrolova_1_reply is_dialog_only = yes }
+option = { name = PF17_branch_phrolova_back trigger = { has_country_flag = pf17_question_phrolova } response_text = PF17_branch_phrolova_back_reply is_dialog_only = yes remove_country_flag = pf17_question_phrolova }
+option = { name = PF17_phrolova_q0 trigger = { NOT = { has_country_flag = pf17_question_phrolova } } response_text = PF17_phrolova_q0_reply is_dialog_only = yes }
+option = { name = PF17_phrolova_q1 trigger = { NOT = { has_country_flag = pf17_question_phrolova } } response_text = PF17_phrolova_q1_reply is_dialog_only = yes }
+option = { name = PF17_phrolova_q2 trigger = { NOT = { has_country_flag = pf17_question_phrolova } } response_text = PF17_phrolova_q2_reply is_dialog_only = yes }
+
+ option = { name = PF_recruit tag = hire_leader hidden_effect = { pf_hire_phrolova = yes country_event = {
+ id = Phrolova_event.3
+  } } }
+ option = { name = PF_recruit_later tag = dismiss_leader }
+}
+country_event = {
+ id = Phrolova_event.3
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { NOT = { has_country_flag = researched_leaders_Phrolova } }
+
+immediate = { set_country_flag = researched_leaders_Phrolova create_Phrolova_leader = yes initialize_Phrolova_relationship = yes }
+}
+country_event = {
+ id = Phrolova_event.201
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.201.name
+ desc = Phrolova_event.201.desc
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_resume_phrolova_recruit trigger = { NOT = { has_country_flag = researched_leaders_Phrolova } } hidden_effect = { country_event = { id = Phrolova_event.9700 } } }
+option = { name = PF_resume_denia_recruit trigger = { has_country_flag = pf_denia_recruit_pending NOT = { has_country_flag = pf_denia_recruited } } hidden_effect = { country_event = { id = Phrolova_event.9710 } } }
+option = { name = PF_resume_shorekeeper_recruit trigger = { has_country_flag = pf_shorekeeper_recruit_pending NOT = { has_country_flag = pf_shorekeeper_recruited } } hidden_effect = { country_event = { id = Phrolova_event.9720 } } }
+option = { name = PF_resume_solaris_story trigger = { has_country_flag = pf_solaris_ch7 NOT = { has_country_flag = pf_post_solaris_wait } NOT = { has_country_flag = pf_post_solaris_3 } } hidden_effect = {
+ if = { limit = { has_country_flag = pf_post_solaris_2 } country_event = { id = Phrolova_event.332 } }
+ else_if = { limit = { has_country_flag = pf_post_solaris_1 } country_event = { id = Phrolova_event.331 } }
+ else = { country_event = { id = Phrolova_event.330 } }
+} }
+option = { name = PF_resume_heart_discovery trigger = { has_country_flag = pf_heart_started NOT = { has_country_flag = pf_heart_discovery_ack } NOT = { has_country_flag = pf_heart_choice_done } } hidden_effect = { country_event = { id = Phrolova_event.1600 } } }
+option = { name = PF17_resume_1601 trigger = { has_country_flag = pf_heart_discovery_ack NOT = { has_country_flag = pf_heart_repair_authorized } } hidden_effect = { country_event = {
+ id = Phrolova_event.1601
+  } } }
+option = { name = PF17_resume_1602 trigger = { has_country_flag = pf_heart_repair_1 NOT = { has_country_flag = pf_heart_repair_ack_1 } } hidden_effect = { country_event = {
+ id = Phrolova_event.1602
+  } } }
+option = { name = PF17_resume_1603 trigger = { has_country_flag = pf_heart_repair_ack_1 has_country_flag = pf_heart_repair_2 NOT = { has_country_flag = pf_heart_repair_ack_2 } } hidden_effect = { country_event = {
+ id = Phrolova_event.1603
+  } } }
+option = { name = PF17_resume_1604 trigger = { has_country_flag = pf_heart_repair_ack_2 has_country_flag = pf_heart_repair_3 NOT = { has_country_flag = pf_heart_repair_ack_3 } } hidden_effect = { country_event = {
+ id = Phrolova_event.1604
+  } } }
+
+ option = { name = PF17_phrolova_contact_q0 response_text = PF17_phrolova_contact_q0_reply is_dialog_only = yes }
+
+option = { name = PF_full_201_0 trigger = { has_Phrolova_leader = yes } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+ option = { name = PF_full_201_1 trigger = { has_country_flag = pf_bond_pending } hidden_effect = { country_event = {
+ id = Phrolova_event.230
+  } } }
+ option = { name = PF_full_201_2 trigger = { has_Phrolova_leader = yes } hidden_effect = { country_event = {
+ id = Phrolova_event.250
+  } } }
+ option = { name = PF_full_201_3 trigger = { has_Phrolova_leader = yes } hidden_effect = { country_event = {
+ id = Phrolova_event.5
+  } } }
+ option = { name = PF_full_201_4 trigger = { has_country_flag = pf_developer_mode } hidden_effect = { country_event = {
+ id = Phrolova_event.260
+  } } }
+ option = { name = PF_full_201_5 trigger = { has_country_flag = pf_specimen_pending } hidden_effect = { pf_deliver_specimens = yes } }
+ option = { name = PF_resume_wormhole trigger = { has_country_flag = pf_alignment_ready NOT = { has_country_flag = pf_project_open } NOT = { has_country_flag = pf_aleph_created } } hidden_effect = { country_event = {
+ id = Phrolova_event.411
+  } } }
+ option = { name = PF_ame_progress trigger = { has_country_flag = pf_ame_intro_seen NOT = { has_country_flag = pf_aemeath_recruited } } hidden_effect = { country_event = {
+ id = Phrolova_event.901
+  } } }
+ option = { name = PF22_resume_festival trigger = { has_Phrolova_leader = yes NOT = { has_country_flag = pf22_finale_complete } any_owned_planet = { has_planet_flag = pf_solaris has_planet_flag = pf_festival_started } } hidden_effect = { pf_resume_festival = yes } }
+ option = { name = PF22_resume_void trigger = { has_Phrolova_leader = yes has_country_flag = pf_entity_defeated NOT = { has_country_flag = pf_void_choice_done } } hidden_effect = { country_event = { id = Phrolova_event.630 } } }
+ option = { name = PF22_resume_passage trigger = { has_Phrolova_leader = yes has_country_flag = pf_wormhole_open NOT = { has_country_flag = pf22_passage_departed } } hidden_effect = { country_event = { id = Phrolova_event.1840 } } }
+ option = { name = PF_full_201_6 }
+
+ option = { name = PF_debug_open hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
+}
+
+country_event = {
+ id = Phrolova_event.210
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.210.name
+ picture = GFX_leader_recruitment_bg_renowned
+
+desc = { trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } text = PF_daily_0_0 }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_daily_0_0_a trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } text = PF_daily_1_0 }
+ option = { name = PF_daily_1_0_a trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } text = PF_daily_2_0 }
+ option = { name = PF_daily_2_0_a trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } text = PF_daily_3_0 }
+ option = { name = PF_daily_3_0_a trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } text = PF_daily_4_0 }
+ option = { name = PF_daily_4_0_a trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_5 } text = PF_daily_5_0 }
+ option = { name = PF_daily_5_0_a trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.211
+
+ 
+ immediate = { pf_speaker_phrolova = yes   }
+ is_triggered_only = yes
+ title = Phrolova_event.211.name
+ picture = GFX_leader_recruitment_bg_renowned
+
+desc = { trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } text = PF_daily_0_1 }
+ event_window_type = leader_conversation
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_daily_0_1_a trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } text = PF_daily_1_1 }
+ option = { name = PF_daily_1_1_a trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } text = PF_daily_2_1 }
+ option = { name = PF_daily_2_1_a trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } text = PF_daily_3_1 }
+ option = { name = PF_daily_3_1_a trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } text = PF_daily_4_1 }
+ option = { name = PF_daily_4_1_a trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_5 } text = PF_daily_5_1 }
+ option = { name = PF_daily_5_1_a trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.212
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.212.name
+ picture = GFX_leader_recruitment_bg_renowned
+
+desc = { trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } text = PF_daily_0_2 }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_daily_0_2_a trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } text = PF_daily_1_2 }
+ option = { name = PF_daily_1_2_a trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } text = PF_daily_2_2 }
+ option = { name = PF_daily_2_2_a trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } text = PF_daily_3_2 }
+ option = { name = PF_daily_3_2_a trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } text = PF_daily_4_2 }
+ option = { name = PF_daily_4_2_a trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_5 } text = PF_daily_5_2 }
+ option = { name = PF_daily_5_2_a trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.213
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.213.name
+ picture = GFX_leader_recruitment_bg_renowned
+
+desc = { trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } text = PF_daily_0_3 }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_daily_0_3_a trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } text = PF_daily_1_3 }
+ option = { name = PF_daily_1_3_a trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } text = PF_daily_2_3 }
+ option = { name = PF_daily_2_3_a trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } text = PF_daily_3_3 }
+ option = { name = PF_daily_3_3_a trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } text = PF_daily_4_3 }
+ option = { name = PF_daily_4_3_a trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_5 } text = PF_daily_5_3 }
+ option = { name = PF_daily_5_3_a trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.215
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.215.name
+ picture = GFX_leader_recruitment_bg_renowned
+
+desc = { trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } text = PF_daily_0_4 }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_daily_0_4_a trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } text = PF_daily_1_4 }
+ option = { name = PF_daily_1_4_a trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } text = PF_daily_2_4 }
+ option = { name = PF_daily_2_4_a trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } text = PF_daily_3_4 }
+ option = { name = PF_daily_3_4_a trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } text = PF_daily_4_4 }
+ option = { name = PF_daily_4_4_a trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+desc = { trigger = { has_country_flag = Phrolova_bond_5 } text = PF_daily_5_4 }
+ option = { name = PF_daily_5_4_a trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = {
+ id = Phrolova_event.202
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.220
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { if = { limit = { has_country_flag = pf_bond_wait_started NOT = { has_country_flag = pf_bond_wait } NOT = { has_country_flag = Phrolova_bond_5 } } set_country_flag = pf_bond_pending remove_country_flag = pf_bond_wait_started country_event = {
+ id = Phrolova_event.229
+  } } }
+}
+country_event = {
+ id = Phrolova_event.221
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { initialize_Phrolova_relationship = yes country_event = {
+ id = Phrolova_event.220
+  } }
+}
+country_event = {
+ id = Phrolova_event.222
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { initialize_Phrolova_relationship = yes country_event = {
+ id = Phrolova_event.220
+  } }
+}
+country_event = {
+ id = Phrolova_event.223
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { initialize_Phrolova_relationship = yes country_event = {
+ id = Phrolova_event.220
+  } }
+}
+country_event = {
+ id = Phrolova_event.224
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { initialize_Phrolova_relationship = yes country_event = {
+ id = Phrolova_event.220
+  } }
+}
+country_event = {
+ id = Phrolova_event.225
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { initialize_Phrolova_relationship = yes country_event = {
+ id = Phrolova_event.220
+  } }
+}
+country_event = {
+ id = Phrolova_event.230
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { has_country_flag = pf_bond_pending }
+
+immediate = { if = { limit = { NOT = { has_country_flag = Phrolova_bond_1 } } country_event = {
+ id = Phrolova_event.231
+  } }
+if = { limit = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } country_event = {
+ id = Phrolova_event.232
+  } }
+if = { limit = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } country_event = {
+ id = Phrolova_event.233
+  } }
+if = { limit = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } country_event = {
+ id = Phrolova_event.9703
+  } }
+if = { limit = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } country_event = {
+ id = Phrolova_event.235
+  } }
+ }
+}
+country_event = {
+ id = Phrolova_event.231
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.231.name
+ desc = Phrolova_event.231.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_bond_1_a hidden_effect = { if = { limit = { has_country_flag = pf_bond_pending NOT = { has_country_flag = Phrolova_bond_1 } } set_country_flag = Phrolova_bond_1 add_resource = { energy = 250 minerals = 250 unity = 100 } remove_country_flag = pf_bond_pending remove_country_flag = pf_bond_wait_started pf_begin_bond_wait = yes } } }
+
+}
+country_event = {
+ id = Phrolova_event.271
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.271.name
+ desc = Phrolova_event.271.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_replay_back hidden_effect = { country_event = {
+ id = Phrolova_event.240
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.232
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.232.name
+ desc = Phrolova_event.232.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_bond_2_a hidden_effect = { if = { limit = { has_country_flag = pf_bond_pending has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } set_country_flag = Phrolova_bond_2 add_resource = { energy = 250 minerals = 250 unity = 100 } remove_country_flag = pf_bond_pending remove_country_flag = pf_bond_wait_started pf_begin_bond_wait = yes } } }
+
+}
+country_event = {
+ id = Phrolova_event.272
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.272.name
+ desc = Phrolova_event.272.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_replay_back hidden_effect = { country_event = {
+ id = Phrolova_event.240
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.233
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.233.name
+ desc = Phrolova_event.233.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_bond_3_a hidden_effect = { if = { limit = { has_country_flag = pf_bond_pending has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } set_country_flag = Phrolova_bond_3 add_resource = { energy = 250 minerals = 250 unity = 100 } remove_country_flag = pf_bond_pending remove_country_flag = pf_bond_wait_started pf_begin_bond_wait = yes } } }
+
+}
+country_event = {
+ id = Phrolova_event.273
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.273.name
+ desc = Phrolova_event.273.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_replay_back hidden_effect = { country_event = {
+ id = Phrolova_event.240
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.234
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.234.name
+ desc = Phrolova_event.234.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_bond_4_a hidden_effect = { if = { limit = { has_country_flag = pf_bond_pending has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } set_country_flag = Phrolova_bond_4 add_resource = { energy = 250 minerals = 250 unity = 100 } remove_country_flag = pf_bond_pending remove_country_flag = pf_bond_wait_started pf_begin_bond_wait = yes } } }
+
+}
+country_event = {
+ id = Phrolova_event.274
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.274.name
+ desc = Phrolova_event.274.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_replay_back hidden_effect = { country_event = {
+ id = Phrolova_event.240
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.235
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.235.name
+ desc = Phrolova_event.235.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_bond_5_a hidden_effect = { if = { limit = { has_country_flag = pf_bond_pending has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } set_country_flag = Phrolova_bond_5 pf17_journal_refresh = yes add_resource = { energy = 250 minerals = 250 unity = 100 } remove_country_flag = pf_bond_pending remove_country_flag = pf_bond_wait_started set_country_flag = Phrolova_finale_received set_country_flag = pf_portrait_1 pf_apply_portrait = yes pf_begin_solaris_wait = yes } } }
+
+}
+country_event = {
+ id = Phrolova_event.275
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.275.name
+ desc = Phrolova_event.275.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_replay_back hidden_effect = { country_event = {
+ id = Phrolova_event.240
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.240
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.240.name
+ desc = Phrolova_event.240.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_replay_1 trigger = { has_country_flag = Phrolova_bond_1 } hidden_effect = { country_event = {
+ id = Phrolova_event.271
+  } } }
+ option = { name = PF_replay_2 trigger = { has_country_flag = Phrolova_bond_2 } hidden_effect = { country_event = {
+ id = Phrolova_event.272
+  } } }
+ option = { name = PF_replay_3 trigger = { has_country_flag = Phrolova_bond_3 } hidden_effect = { country_event = {
+ id = Phrolova_event.273
+  } } }
+ option = { name = PF_replay_4 trigger = { has_country_flag = Phrolova_bond_4 } hidden_effect = { country_event = {
+ id = Phrolova_event.274
+  } } }
+ option = { name = PF_replay_5 trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = {
+ id = Phrolova_event.275
+  } } }
+ option = { name = PF_back hidden_effect = { country_event = {
+ id = Phrolova_event.201
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.214
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { country_event = {
+ id = Phrolova_event.275
+  } }
+}
+country_event = {
+ id = Phrolova_event.250
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.250.name
+ desc = Phrolova_event.250.desc
+ picture = GFX_leader_recruitment_bg_renowned
+
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_portrait_0 trigger = { always = yes } hidden_effect = { remove_country_flag = pf_portrait_1 remove_country_flag = pf_portrait_2 pf_apply_portrait = yes } }
+ option = { name = PF_portrait_1 trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { remove_country_flag = pf_portrait_1 remove_country_flag = pf_portrait_2 set_country_flag = pf_portrait_1 pf_apply_portrait = yes } }
+ option = { name = PF_portrait_2 trigger = { has_country_flag = pf_solaris_complete } hidden_effect = { remove_country_flag = pf_portrait_1 remove_country_flag = pf_portrait_2 set_country_flag = pf_portrait_2 pf_apply_portrait = yes } }
+ option = { name = PF_back hidden_effect = { country_event = {
+ id = Phrolova_event.201
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.5
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.5.name
+ desc = Phrolova_event.5.desc
+ picture = Phrolova_events_jieguan
+
+ option = { name = PF_ruler trigger = { has_Phrolova_leader = yes NOT = { ruler = { has_leader_flag = Phrolova_scientist } } } hidden_effect = { add_Phrolova_leader_ruler = yes } }
+ option = { name = PF_restore_ruler trigger = { ruler = { has_leader_flag = Phrolova_scientist } any_owned_leader = { NOT = { has_leader_flag = Phrolova_scientist } } } hidden_effect = { remove_Phrolova_leader_ruler = yes } }
+ option = { name = PF_back hidden_effect = { country_event = {
+ id = Phrolova_event.201
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.4
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.4.name
+ desc = Phrolova_event.4.desc
+ picture = Phrolova_events_fenbie
+ trigger = { has_country_flag = researched_leaders_Phrolova from = { has_leader_flag = Phrolova_scientist } }
+
+immediate = { clone_leader = { target = from immortal = yes effect = { set_leader_flag = Phrolova_scientist } } pf_apply_portrait = yes }
+ option = { name = PF_returned }
+ option = { name = PF_fire_again hidden_effect = { country_event = {
+ id = Phrolova_event.401
+  } } }
+
+}
+country_event = {
+ id = Phrolova_event.8
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.8.name
+ desc = Phrolova_event.8.desc
+ picture = Phrolova_events_shouchuang
+ trigger = { has_country_flag = researched_leaders_Phrolova from = { has_leader_flag = Phrolova_scientist } }
+
+immediate = { clone_leader = { target = from immortal = yes effect = { set_leader_flag = Phrolova_scientist } } pf_apply_portrait = yes }
+ option = { name = PF_returned }
+
+}
+country_event = {
+ id = Phrolova_event.401
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.401.name
+ desc = Phrolova_event.401.desc
+ picture = Phrolova_events_bushi
+
+ option = { name = PF_close }
+
+}
+country_event = {
+ id = Phrolova_event.801
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { if = { limit = { has_country_flag = researched_leaders_Phrolova } create_Phrolova_leader = yes pf_apply_portrait = yes } }
+}
+country_event = {
+ id = Phrolova_event.9
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { is_ai = no has_country_flag = researched_leaders_Phrolova }
+
+immediate = {
+ initialize_Phrolova_relationship = yes
+ create_Phrolova_leader = yes
+ pf_apply_portrait = yes
+ country_event = {
+ id = Phrolova_event.220
+  }
+ pf_begin_solaris_wait = yes
+ if = { limit = { has_country_flag = pf_solaris_wait_started NOT = { has_country_flag = pf_solaris_wait } NOT = { has_country_flag = pf_solaris_created } } country_event = {
+ id = Phrolova_event.310
+  } }
+ pf_refresh_techs = yes
+ pf_check_alignment = yes
+ pf_full_maintenance = yes
+ if = { limit = { has_country_flag = pf_alignment_started NOT = { has_country_flag = pf_alignment_wait } NOT = { has_country_flag = pf_alignment_ready } } country_event = {
+ id = Phrolova_event.410
+  } }
+}
+}
+country_event = {
+ id = Phrolova_event.6
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { country_event = {
+ id = Phrolova_event.260
+  } }
+}
+country_event = {
+ id = Phrolova_event.301
+
+ 
+ is_triggered_only = yes
+ hide_window = yes
+
+immediate = { country_event = {
+ id = Phrolova_event.201
+  } }
+}
+country_event = {
+ id = Phrolova_event.202
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ 
+ is_triggered_only = yes
+ title = Phrolova_event.202.name
+ desc = Phrolova_event.202.desc
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+
+
+ option = { name = PF_cg_replay_meet trigger = { has_country_flag = researched_leaders_Phrolova } hidden_effect = { country_event = { id = Phrolova_event.9702 } } }
+ option = { name = PF_cg_replay_memory trigger = { has_country_flag = researched_leaders_Phrolova has_country_flag = Phrolova_bond_4 } hidden_effect = { country_event = { id = Phrolova_event.9705 } } }
+ option = { name = PF17_phrolova_contact_q1 response_text = PF17_phrolova_contact_q1_reply is_dialog_only = yes }
+ option = { name = PF17_phrolova_contact_q2 response_text = PF17_phrolova_contact_q2_reply is_dialog_only = yes }
+ option = { name = PF_full_202_0 trigger = { always = yes } hidden_effect = { country_event = {
+ id = Phrolova_event.210
+  } } }
+ option = { name = PF_full_202_1 trigger = { has_country_flag = Phrolova_bond_1 } hidden_effect = { country_event = {
+ id = Phrolova_event.9740
+  } } }
+ option = { name = PF_full_202_2 trigger = { has_country_flag = Phrolova_bond_2 } hidden_effect = { country_event = {
+ id = Phrolova_event.212
+  } } }
+ option = { name = PF_full_202_3 trigger = { has_country_flag = Phrolova_bond_3 } hidden_effect = { country_event = {
+ id = Phrolova_event.213
+  } } }
+ option = { name = PF_full_202_7 hidden_effect = { country_event = {
+ id = Phrolova_event.216
+  } } }
+ option = { name = PF_full_202_4 trigger = { has_country_flag = Phrolova_bond_4 } hidden_effect = { country_event = {
+ id = Phrolova_event.215
+  } } }
+ option = { name = PF_full_202_5 hidden_effect = { country_event = {
+ id = Phrolova_event.240
+  } } }
+ option = { name = PF_full_202_6 hidden_effect = { country_event = {
+ id = Phrolova_event.201
+  } } }
+}
+
+country_event = {
+ id = Phrolova_event.216
+
+ immediate = { pf_speaker_phrolova = yes }
+
+ is_triggered_only = yes
+ title = Phrolova_event.216.name
+ picture = GFX_leader_recruitment_bg_renowned
+ event_window_type = leader_conversation
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ desc = { trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } text = PF17_phrolova_d04_0 }
+ option = { name = PF17_phrolova_d04_0_a trigger = { NOT = { has_country_flag = Phrolova_bond_1 } } hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+ desc = { trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } text = PF17_phrolova_d04_1 }
+ option = { name = PF17_phrolova_d04_1_a trigger = { has_country_flag = Phrolova_bond_1 NOT = { has_country_flag = Phrolova_bond_2 } } hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+ desc = { trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } text = PF17_phrolova_d04_2 }
+ option = { name = PF17_phrolova_d04_2_a trigger = { has_country_flag = Phrolova_bond_2 NOT = { has_country_flag = Phrolova_bond_3 } } hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+ desc = { trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } text = PF17_phrolova_d04_3 }
+ option = { name = PF17_phrolova_d04_3_a trigger = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } } hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+ desc = { trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } text = PF17_phrolova_d04_4 }
+ option = { name = PF17_phrolova_d04_4_a trigger = { has_country_flag = Phrolova_bond_4 NOT = { has_country_flag = Phrolova_bond_5 } } hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+ desc = { trigger = { has_country_flag = Phrolova_bond_5 } text = PF17_phrolova_d04_5 }
+ option = { name = PF17_phrolova_d04_5_a trigger = { has_country_flag = Phrolova_bond_5 } hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+}

@@ -1,0 +1,110 @@
+namespace = Phrolova_event
+planet_event = {
+ id = Phrolova_event.950
+
+  is_triggered_only = yes
+ title = Phrolova_event.950.name desc = Phrolova_event.950.desc picture = Phrolova_events_solaris_ruins
+ trigger = { has_planet_flag = pf_solaris is_colony = yes NOT = { has_planet_flag = pf_flavor_seen_1 } NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+ immediate = { set_planet_flag = pf_flavor_seen_1 change_variable = { which = pf_flavor_count value = 1 } set_timed_planet_flag = { flag = pf_flavor_cooldown days = 1800 } }
+ option = { name = PF22_flavor_0_material custom_tooltip = PF22_flavor_material_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_1 } } set_planet_flag = pf_flavor_claimed_1 owner = { add_resource = { energy = 500 minerals = 300 } } } } }
+ option = { name = PF22_flavor_0_study custom_tooltip = PF22_flavor_0_study_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_1 } } set_planet_flag = pf_flavor_claimed_1 add_modifier = { modifier = pf_flavor_research days = 360 } } } }
+}
+planet_event = {
+ id = Phrolova_event.951
+
+  is_triggered_only = yes
+ title = Phrolova_event.951.name desc = Phrolova_event.951.desc picture = Phrolova_events_solaris_ruins
+ trigger = { has_planet_flag = pf_solaris is_colony = yes NOT = { has_planet_flag = pf_flavor_seen_2 } NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+ immediate = { set_planet_flag = pf_flavor_seen_2 change_variable = { which = pf_flavor_count value = 1 } set_timed_planet_flag = { flag = pf_flavor_cooldown days = 1800 } }
+ option = { name = PF22_flavor_1_material custom_tooltip = PF22_flavor_material_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_2 } } set_planet_flag = pf_flavor_claimed_2 owner = { add_resource = { energy = 500 minerals = 300 } } } } }
+ option = { name = PF22_flavor_1_study custom_tooltip = PF22_flavor_1_study_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_2 } } set_planet_flag = pf_flavor_claimed_2 add_modifier = { modifier = pf_flavor_flowers days = 360 } } } }
+}
+planet_event = {
+ id = Phrolova_event.952
+
+  is_triggered_only = yes
+ title = Phrolova_event.952.name desc = Phrolova_event.952.desc picture = Phrolova_events_solaris_ruins
+ trigger = { has_planet_flag = pf_solaris is_colony = yes NOT = { has_planet_flag = pf_flavor_seen_3 } NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+ immediate = { set_planet_flag = pf_flavor_seen_3 change_variable = { which = pf_flavor_count value = 1 } set_timed_planet_flag = { flag = pf_flavor_cooldown days = 1800 } }
+ option = { name = PF22_flavor_2_material custom_tooltip = PF22_flavor_material_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_3 } } set_planet_flag = pf_flavor_claimed_3 owner = { add_resource = { energy = 500 minerals = 300 } } } } }
+ option = { name = PF22_flavor_2_study custom_tooltip = PF22_flavor_2_study_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_3 } } set_planet_flag = pf_flavor_claimed_3 add_modifier = { modifier = pf_flavor_defense days = 360 } } } }
+}
+planet_event = {
+ id = Phrolova_event.953
+
+  is_triggered_only = yes
+ title = Phrolova_event.953.name desc = Phrolova_event.953.desc picture = Phrolova_events_solaris_ruins
+ trigger = { has_planet_flag = pf_solaris is_colony = yes NOT = { has_planet_flag = pf_flavor_seen_4 } NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+ immediate = { set_planet_flag = pf_flavor_seen_4 change_variable = { which = pf_flavor_count value = 1 } set_timed_planet_flag = { flag = pf_flavor_cooldown days = 1800 } }
+ option = { name = PF22_flavor_3_material custom_tooltip = PF22_flavor_material_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_4 } } set_planet_flag = pf_flavor_claimed_4 owner = { add_resource = { energy = 500 minerals = 300 } } } } }
+ option = { name = PF22_flavor_3_study custom_tooltip = PF22_flavor_3_study_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_4 } } set_planet_flag = pf_flavor_claimed_4 add_modifier = { modifier = pf_flavor_logs days = 360 } } } }
+}
+planet_event = {
+ id = Phrolova_event.954
+
+  is_triggered_only = yes
+ title = Phrolova_event.954.name desc = Phrolova_event.954.desc picture = Phrolova_events_solaris_ruins
+ trigger = { has_planet_flag = pf_solaris is_colony = yes NOT = { has_planet_flag = pf_flavor_seen_5 } NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+ immediate = { set_planet_flag = pf_flavor_seen_5 change_variable = { which = pf_flavor_count value = 1 } set_timed_planet_flag = { flag = pf_flavor_cooldown days = 1800 } }
+ option = { name = PF22_flavor_4_material custom_tooltip = PF22_flavor_material_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_5 } } set_planet_flag = pf_flavor_claimed_5 owner = { add_resource = { energy = 500 minerals = 300 } } } } }
+ option = { name = PF22_flavor_4_study custom_tooltip = PF22_flavor_4_study_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_5 } } set_planet_flag = pf_flavor_claimed_5 add_modifier = { modifier = pf_flavor_storm days = 360 } } } }
+}
+planet_event = {
+ id = Phrolova_event.955
+
+  is_triggered_only = yes
+ title = Phrolova_event.955.name desc = Phrolova_event.955.desc picture = Phrolova_events_solaris_ruins
+ trigger = { has_planet_flag = pf_solaris is_colony = yes NOT = { has_planet_flag = pf_flavor_seen_6 } NOT = { has_planet_flag = pf_flavor_cooldown } check_variable = { which = pf_flavor_count value < 3 } }
+ immediate = { set_planet_flag = pf_flavor_seen_6 change_variable = { which = pf_flavor_count value = 1 } set_timed_planet_flag = { flag = pf_flavor_cooldown days = 1800 } }
+ option = { name = PF22_flavor_5_material custom_tooltip = PF22_flavor_material_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_6 } } set_planet_flag = pf_flavor_claimed_6 owner = { add_resource = { energy = 500 minerals = 300 } } } } }
+ option = { name = PF22_flavor_5_study custom_tooltip = PF22_flavor_5_study_reward hidden_effect = { if = { limit = { NOT = { has_planet_flag = pf_flavor_claimed_6 } } set_planet_flag = pf_flavor_claimed_6 add_modifier = { modifier = pf_flavor_shadow days = 360 } } } }
+}
+country_event = {
+ id = Phrolova_event.960
+
+  is_triggered_only = yes
+ title = Phrolova_event.960.name desc = Phrolova_event.960.desc picture = GFX_leader_recruitment_bg_renowned
+ trigger = { pf17_all_bonds_complete = yes  NOT = { has_country_flag = pf_festival_talk_1 } }
+ immediate = { pf_speaker_phrolova = yes  pf_find_targets = yes event_target:pf_solaris = { set_planet_flag = pf_festival_dialogue_open } }
+ event_window_type = leader_conversation
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_festival_next hidden_effect = { if = { limit = { NOT = { has_country_flag = pf_festival_talk_1 } } set_country_flag = pf_festival_talk_1 country_event = {
+ id = Phrolova_event.1771
+  } } } }
+}
+country_event = {
+ id = Phrolova_event.961
+
+  is_triggered_only = yes
+ title = Phrolova_event.961.name desc = Phrolova_event.961.desc picture = GFX_leader_recruitment_bg_renowned
+ trigger = { pf17_all_bonds_complete = yes has_country_flag = pf_festival_talk_1 NOT = { has_country_flag = pf_festival_talk_2 } }
+ immediate = { pf_speaker_denia = yes  pf_find_targets = yes event_target:pf_solaris = { set_planet_flag = pf_festival_dialogue_open } }
+ event_window_type = leader_conversation
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_festival_next hidden_effect = { if = { limit = { NOT = { has_country_flag = pf_festival_talk_2 } } set_country_flag = pf_festival_talk_2 country_event = {
+ id = Phrolova_event.1772
+  } } } }
+}
+country_event = {
+ id = Phrolova_event.962
+
+  is_triggered_only = yes
+ title = Phrolova_event.962.name desc = Phrolova_event.962.desc picture = GFX_leader_recruitment_bg_renowned
+ trigger = { pf17_all_bonds_complete = yes has_country_flag = pf_festival_talk_2 NOT = { has_country_flag = pf_festival_talk_3 } }
+ immediate = { pf_speaker_shorekeeper = yes  pf_find_targets = yes event_target:pf_solaris = { set_planet_flag = pf_festival_dialogue_open } }
+ event_window_type = leader_conversation
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_festival_next hidden_effect = { if = { limit = { NOT = { has_country_flag = pf_festival_talk_3 } } set_country_flag = pf_festival_talk_3 country_event = {
+ id = Phrolova_event.1773
+  } } } }
+}
+country_event = { id = Phrolova_event.963 is_triggered_only = yes
+ title = Phrolova_event.963.name desc = Phrolova_event.963.desc
+ trigger = { pf17_all_bonds_complete = yes has_country_flag = pf_festival_talk_3 NOT = { has_country_flag = pf_festival_talk_4 } }
+ immediate = { pf_speaker_aemeath = yes pf_find_targets = yes event_target:pf_solaris = { set_planet_flag = pf_festival_dialogue_open } } event_window_type = leader_conversation
+ picture = GFX_leader_recruitment_bg_renowned
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_festival_next hidden_effect = {
+ if = { limit = { NOT = { has_country_flag = pf_festival_talk_4 } }
+ set_country_flag = pf_festival_talk_4 country_event = { id = Phrolova_event.1765 } } } }
+}
