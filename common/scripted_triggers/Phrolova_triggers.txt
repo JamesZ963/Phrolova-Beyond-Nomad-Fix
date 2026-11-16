@@ -43,7 +43,65 @@ pf_solaris_owner = {
     }
 }
 
-pf_three_zones = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_1 value >= 1 } num_districts = { type = district_pf_unique_2 value >= 1 } num_districts = { type = district_pf_unique_3 value >= 1 } num_districts = { type = district_pf_unique_4 value >= 1 } num_districts = { type = district_pf_unique_5 value >= 1 } num_districts = { type = district_pf_unique_6 value >= 1 } }
+# Planet scope.
+# Settled owners are checked on this planet. Nomad owners are checked on
+# one of their Arkships (all six district types must be present on the same Arkship).
+pf_three_zones = {
+    pf_solaris_owner = yes
+    if = {
+        limit = {
+            exists = owner
+            owner = { is_nomadic = yes }
+        }
+        owner = {
+            any_owned_planet = {
+                is_planet_class = pc_ark
+                num_districts = { type = district_pf_unique_1 value >= 1 }
+                num_districts = { type = district_pf_unique_2 value >= 1 }
+                num_districts = { type = district_pf_unique_3 value >= 1 }
+                num_districts = { type = district_pf_unique_4 value >= 1 }
+                num_districts = { type = district_pf_unique_5 value >= 1 }
+                num_districts = { type = district_pf_unique_6 value >= 1 }
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            exists = owner
+            owner = { is_nomadic = no }
+        }
+        num_districts = { type = district_pf_unique_1 value >= 1 }
+        num_districts = { type = district_pf_unique_2 value >= 1 }
+        num_districts = { type = district_pf_unique_3 value >= 1 }
+        num_districts = { type = district_pf_unique_4 value >= 1 }
+        num_districts = { type = district_pf_unique_5 value >= 1 }
+        num_districts = { type = district_pf_unique_6 value >= 1 }
+    }
+    else = {
+        # The planet is unowned; find the Nomad owner of a waystation
+        # in its system, then inspect that country's Arkships.
+        any_playable_country = {
+            is_nomadic = yes
+            has_country_flag = pf_solaris_complete
+            any_owned_nonprimary_starbase = {
+                is_waystation_starbase = yes
+                solar_system = {
+                    is_same_value = root.solar_system
+                }
+            }
+            any_owned_planet = {
+                is_planet_class = pc_ark
+                num_districts = { type = district_pf_unique_1 value >= 1 }
+                num_districts = { type = district_pf_unique_2 value >= 1 }
+                num_districts = { type = district_pf_unique_3 value >= 1 }
+                num_districts = { type = district_pf_unique_4 value >= 1 }
+                num_districts = { type = district_pf_unique_5 value >= 1 }
+                num_districts = { type = district_pf_unique_6 value >= 1 }
+            }
+        }
+    }
+}
+
 pf_safe_system = { # system scope, target set by country before selection
  is_owned_by = event_target:pf_owner
  exists = starbase
