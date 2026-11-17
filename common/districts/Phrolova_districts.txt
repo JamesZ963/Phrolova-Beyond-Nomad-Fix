@@ -1,7 +1,7 @@
 district_pf_unique_1 = { icon = pf_unique_1 overlay_icon = GFX_pf_district_no_overlay district_width = 1
  on_built = { owner = { pf_check_alignment = yes } }
  base_buildtime = 360 is_uncapped = { always = no }
- potential = { has_planet_flag = pf_solaris }
+ potential = { OR = { has_planet_flag = pf_solaris uses_district_set = nomad }
  allow = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_1 value < 1 } }
  prerequisites = { tech_pf_special_1 } zone_slots = { pf_unique_slot_1 }
  resources = { category = planet_districts cost = { minerals = 800 } upkeep = { energy = 4 } }
@@ -10,7 +10,7 @@ district_pf_unique_1 = { icon = pf_unique_1 overlay_icon = GFX_pf_district_no_ov
 district_pf_unique_2 = { icon = pf_unique_2 overlay_icon = GFX_pf_district_no_overlay district_width = 1
  on_built = { owner = { pf_check_alignment = yes } }
  base_buildtime = 360 is_uncapped = { always = no }
- potential = { has_planet_flag = pf_solaris }
+ potential = { OR = { has_planet_flag = pf_solaris uses_district_set = nomad }
  allow = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_2 value < 1 } }
  prerequisites = { tech_pf_special_2 } zone_slots = { pf_unique_slot_2 }
  resources = { category = planet_districts cost = { minerals = 800 } upkeep = { energy = 4 } }
@@ -19,7 +19,7 @@ district_pf_unique_2 = { icon = pf_unique_2 overlay_icon = GFX_pf_district_no_ov
 district_pf_unique_3 = { icon = pf_unique_3 overlay_icon = GFX_pf_district_no_overlay district_width = 1
  on_built = { owner = { pf_check_alignment = yes } }
  base_buildtime = 360 is_uncapped = { always = no }
- potential = { has_planet_flag = pf_solaris }
+ potential = { OR = { has_planet_flag = pf_solaris uses_district_set = nomad }
  allow = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_3 value < 1 } }
  prerequisites = { tech_pf_special_3 } zone_slots = { pf_unique_slot_3 }
  resources = { category = planet_districts cost = { minerals = 800 } upkeep = { energy = 4 } }
@@ -28,7 +28,7 @@ district_pf_unique_3 = { icon = pf_unique_3 overlay_icon = GFX_pf_district_no_ov
 district_pf_unique_4 = { icon = pf_unique_4 overlay_icon = GFX_pf_district_no_overlay district_width = 1
  on_built = { owner = { pf_check_alignment = yes } }
  base_buildtime = 360 is_uncapped = { always = no }
- potential = { has_planet_flag = pf_solaris }
+ potential = { OR = { has_planet_flag = pf_solaris uses_district_set = nomad }
  allow = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_4 value < 1 } }
  prerequisites = { tech_pf_special_4 } zone_slots = { pf_unique_slot_4 }
  resources = { category = planet_districts cost = { minerals = 800 } upkeep = { energy = 4 } }
@@ -37,7 +37,7 @@ district_pf_unique_4 = { icon = pf_unique_4 overlay_icon = GFX_pf_district_no_ov
 district_pf_unique_5 = { icon = pf_unique_5 overlay_icon = GFX_pf_district_no_overlay district_width = 1
  on_built = { owner = { pf_check_alignment = yes } }
  base_buildtime = 360 is_uncapped = { always = no }
- potential = { has_planet_flag = pf_solaris }
+ potential = { OR = { has_planet_flag = pf_solaris uses_district_set = nomad }
  allow = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_5 value < 1 } }
  prerequisites = { tech_pf_special_5 } zone_slots = { pf_unique_slot_5 }
  resources = { category = planet_districts cost = { minerals = 800 } upkeep = { energy = 4 } }
@@ -46,7 +46,7 @@ district_pf_unique_5 = { icon = pf_unique_5 overlay_icon = GFX_pf_district_no_ov
 district_pf_unique_6 = { icon = pf_unique_6 overlay_icon = GFX_pf_district_no_overlay district_width = 1
  on_built = { owner = { pf_check_alignment = yes } }
  base_buildtime = 360 is_uncapped = { always = no }
- potential = { has_planet_flag = pf_solaris }
+ potential = { OR = { has_planet_flag = pf_solaris uses_district_set = nomad }
  allow = { pf_solaris_owner = yes num_districts = { type = district_pf_unique_6 value < 1 } }
  prerequisites = { tech_pf_special_6 } zone_slots = { pf_unique_slot_6 }
  resources = { category = planet_districts cost = { minerals = 800 } upkeep = { energy = 4 } }
