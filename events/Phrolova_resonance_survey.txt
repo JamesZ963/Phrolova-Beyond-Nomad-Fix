@@ -1,0 +1,47 @@
+ship_event = {
+    id = Phrolova_event.10470
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        exists = owner
+        owner = { is_ai = no }
+        exists = leader
+        leader = { has_trait = leader_trait_pf_resonance_awakening leader_class = scientist }
+        from = { pf_resonance_survey_target = yes }
+    }
+    immediate = {
+        owner = { save_event_target_as = pf_sk_survey_country }
+        from = {
+            set_planet_flag = pf_resonance_survey_checked
+            random = {
+                chance = 10
+                add_anomaly = { category = pf_sk_resource_echo target = event_target:pf_sk_survey_country }
+            }
+        }
+    }
+}
+
+ship_event = {
+    id = Phrolova_event.10471
+    is_triggered_only = yes
+    title = PF_SK_RESOURCE_TITLE
+    desc = PF_SK_RESOURCE_DESC
+    picture = GFX_evt_ship_in_orbit
+    option = {
+        name = PF_SK_RESOURCE_REPLY
+        custom_tooltip = PF_SK_RESOURCE_EFFECT
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = { NOT = { has_planet_flag = pf_resonance_resource_claimed } }
+                    set_planet_flag = pf_resonance_resource_claimed
+                    random_list = {
+                        1 = { add_deposit = d_exotic_gases_1 }
+                        1 = { add_deposit = d_rare_crystals_1 }
+                        1 = { add_deposit = d_volatile_motes_1 }
+                    }
+                }
+            }
+        }
+    }
+}

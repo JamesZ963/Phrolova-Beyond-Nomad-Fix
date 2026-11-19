@@ -1,289 +1,1840 @@
 namespace = Phrolova_event
-
-country_event = { id = Phrolova_event.9950 is_triggered_only = yes title = PF_debug_art_0 desc = PF_debug_preview_desc picture = GFX_pf_art_phrolova_meet diplomatic = yes custom_gui = "pf_ui_pf_art_phrolova_meet" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
+country_event = {
+ id = Phrolova_event.9900
+ is_triggered_only = yes
+ title = PF46_DEBUG_TITLE
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_ROLE_0
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12200
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_ROLE_1
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12201
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_ROLE_2
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12202
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_ROLE_3
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12203
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_ROLE_4
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12204
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_GALLERY
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+ option = {
+  name = PF_debug_music
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_RESEARCH
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12210
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_B_TEST
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9440
+   }
+  }
+ }
+ option = {
+  name = PF_DEBUG_CLOSE
+ }
+}
+country_event = {
+ id = Phrolova_event.12200
+ is_triggered_only = yes
+ title = PF46_DEBUG_ROLE_0
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_EVENT_9700
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   is_ai = no
+   NOT = {
+    has_country_flag = researched_leaders_Phrolova
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9700
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_310
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = Phrolova_bond_3
+   NOT = {
+    has_country_flag = pf_solaris_wait
+   }
+   NOT = {
+    has_country_flag = pf_solaris_created
+   }
+   NOT = {
+    has_country_flag = pf_solaris_notice
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.310
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_311
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.311
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11020
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_home_running
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11020
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_234
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_home_running
+   NOT = {
+    has_country_flag = pf075_home_awarded
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.234
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_332
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_home_running
+   has_country_flag = pf075_home_outfit_done
+   NOT = {
+    has_country_flag = pf_post_solaris_3
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.332
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_1780
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1780
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11021
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_grand_running
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11021
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_235
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_grand_running
+   NOT = {
+    has_country_flag = pf075_grand_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.235
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12201
+ is_triggered_only = yes
+ title = PF46_DEBUG_ROLE_1
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_EVENT_9710
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   OR = {
+    NOT = {
+     has_country_flag = pf_denia_recruited
+    }
+    has_country_flag = pf_denia_b_recruit_replay
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9710
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9713
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_denia_recruited
+   has_country_flag = pf_denia_bond_pending
+   NOT = {
+    has_country_flag = pf_denia_bond_3
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9713
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9714
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_denia_recruited
+   has_country_flag = pf_denia_bond_pending
+   NOT = {
+    has_country_flag = pf_denia_bond_3
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9714
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12202
+ is_triggered_only = yes
+ title = PF46_DEBUG_ROLE_2
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_EVENT_9720
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   NOT = {
+    has_country_flag = pf_shorekeeper_recruited
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9720
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_10412
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.10412
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_10461
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_sk_ascension_completed
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.10461
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_10470
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   any_owned_ship = { pf46_can_debug_resonance_survey = yes }
+  }
+  hidden_effect = {
+   random_owned_ship = {
+    limit = { pf46_can_debug_resonance_survey = yes }
+    save_event_target_as = pf46_survey_ship
+    solar_system = {
+     random_system_planet = {
+      limit = { pf_resonance_survey_target = yes }
+      save_event_target_as = pf46_survey_target
+     }
+    }
+    event_target:pf46_survey_ship = {
+     ship_event = { id = Phrolova_event.10470 scopes = { from = event_target:pf46_survey_target } }
+    }
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12203
+ is_triggered_only = yes
+ title = PF46_DEBUG_ROLE_3
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_EVENT_9730
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_ame_recruit_ready
+   NOT = {
+    has_country_flag = pf_aemeath_recruited
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9730
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_910
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_ame_contact_unlocked
+   NOT = {
+    has_country_flag = pf_ame_interaction_wait
+   }
+   NOT = {
+    has_country_flag = pf_ame_interaction_1
+   }
+   pf_aemeath_heart_route_allowed = yes
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.910
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_911
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_ame_contact_unlocked
+   NOT = {
+    has_country_flag = pf_ame_interaction_wait
+   }
+   has_country_flag = pf_ame_interaction_1
+   NOT = {
+    has_country_flag = pf_ame_interaction_2
+   }
+   pf_aemeath_heart_route_allowed = yes
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.911
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_912
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_ame_contact_unlocked
+   NOT = {
+    has_country_flag = pf_ame_interaction_wait
+   }
+   has_country_flag = pf_ame_interaction_2
+   NOT = {
+    has_country_flag = pf_ame_interaction_3
+   }
+   pf_aemeath_heart_route_allowed = yes
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.912
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_913
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_ame_contact_unlocked
+   NOT = {
+    has_country_flag = pf_ame_interaction_wait
+   }
+   has_country_flag = pf_ame_interaction_3
+   NOT = {
+    has_country_flag = pf_ame_interaction_4
+   }
+   pf_aemeath_heart_route_allowed = yes
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.913
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11011
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_prepare_finished
+   NOT = {
+    has_country_flag = pf075_variant_chosen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11011
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11012
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_prepare_finished
+   NOT = {
+    has_country_flag = pf075_variant_chosen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11012
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11014
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_restart_finished
+   has_country_flag = pf075_restart_paid
+   has_country_flag = pf075_variant_chosen
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11014
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11016
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_daily_invited
+   has_country_flag = pf_aemeath_bond_2
+   NOT = {
+    has_country_flag = pf_aemeath_bond_3
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11016
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_11018
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf075_ame_final_invited
+   NOT = {
+    has_country_flag = pf075_ame_final_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11018
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12204
+ is_triggered_only = yes
+ title = PF46_DEBUG_ROLE_4
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_EVENT_9417
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_b03_wake_done
+   NOT = {
+    has_country_flag = pf_morin_recruited
+   }
+   NOT = {
+    has_country_flag = pf_cg_morin_meet_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9417
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9434
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   has_country_flag = pf_b09_done
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9434
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9468
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   OR = {
+    has_country_flag = pf_b21_started
+    has_country_flag = pf_b21_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9468
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9470
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   OR = {
+    NOT = {
+     has_country_flag = pf_b22_b_done
+    }
+    has_country_flag = pf_b_ending_replay
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9470
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9471
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  allow = {
+   OR = {
+    NOT = {
+     has_country_flag = pf_b22_c_done
+    }
+    has_country_flag = pf_b_ending_replay
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9471
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_EVENT_9473
+  custom_tooltip = PF46_DEBUG_REAL_TT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9473
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12300
+ is_triggered_only = yes
+ title = PF22_ticket_title
+ desc = PF22_ticket_offer_desc
+ picture = GFX_pf17_festival_group
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_group
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12301
+ is_triggered_only = yes
+ title = PF17_1770_title
+ desc = PF17_1770_desc
+ picture = GFX_pf17_festival_phrolova
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_phrolova
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12302
+ is_triggered_only = yes
+ title = PF17_1771_title
+ desc = PF17_1771_desc
+ picture = GFX_pf17_festival_denia
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_denia
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12303
+ is_triggered_only = yes
+ title = PF17_1772_title
+ desc = PF17_1772_desc
+ picture = GFX_pf17_festival_shorekeeper
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_shorekeeper
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12304
+ is_triggered_only = yes
+ title = PF17_1773_title
+ desc = PF17_1773_desc
+ picture = GFX_pf17_festival_aemeath
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_aemeath
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12305
+ is_triggered_only = yes
+ title = PF17_1780_title
+ desc = PF17_1780_desc
+ picture = GFX_pf_art_relic_1780
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_1780
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12306
+ is_triggered_only = yes
+ title = PF17_1781_title
+ desc = PF17_1781_desc
+ picture = GFX_pf_art_relic_1781
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_1781
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12307
+ is_triggered_only = yes
+ title = PF_cg_morin_meet_title
+ desc = PF_cg_morin_meet_desc
+ picture = GFX_pf_art_morin_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12308
+ is_triggered_only = yes
+ title = PF_B09_COMPLETE_TITLE
+ desc = PF_B09_COMPLETE_DESC
+ picture = GFX_pf_art_morin_record
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_record
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12309
+ is_triggered_only = yes
+ title = PF_B21_TITLE
+ desc = PF_B21_DESC
+ picture = GFX_pf_art_morin_ending
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12310
+ is_triggered_only = yes
+ title = PF_B22_DENIA_TITLE
+ desc = PF_B22_DENIA_DESC
+ picture = GFX_pf_art_morin_ending_denia
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_denia
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12311
+ is_triggered_only = yes
+ title = PF_B22_SHORE_TITLE
+ desc = PF_B22_SHORE_DESC
+ picture = GFX_pf_art_morin_ending_shore
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_shore
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12312
+ is_triggered_only = yes
+ title = PF_MORIN_MEMORY_TITLE
+ desc = PF_MORIN_MEMORY_DESC
+ picture = GFX_pf_art_morin_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12313
+ is_triggered_only = yes
+ title = PF_cg_phrolova_meet_title
+ desc = PF_cg_phrolova_meet_desc
+ picture = GFX_pf_art_phrolova_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_phrolova_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12314
+ is_triggered_only = yes
+ title = PF_cg_phrolova_memory_title
+ desc = PF_cg_phrolova_memory_desc
+ picture = GFX_pf_art_phrolova_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_phrolova_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12315
+ is_triggered_only = yes
+ title = PF_cg_denia_meet_title
+ desc = PF_cg_denia_meet_desc
+ picture = GFX_pf_art_denia_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_denia_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12316
+ is_triggered_only = yes
+ title = PF_cg_denia_memory_title
+ desc = PF_cg_denia_memory_desc
+ picture = GFX_pf_art_denia_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_denia_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12317
+ is_triggered_only = yes
+ title = PF_cg_shorekeeper_meet_title
+ desc = PF_cg_shorekeeper_meet_desc
+ picture = GFX_pf_art_shorekeeper_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_shorekeeper_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12318
+ is_triggered_only = yes
+ title = PF_cg_shorekeeper_memory_title
+ desc = PF_cg_shorekeeper_memory_desc
+ picture = GFX_pf_art_shorekeeper_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_shorekeeper_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12319
+ is_triggered_only = yes
+ title = PF_cg_aemeath_meet_title
+ desc = PF_cg_aemeath_meet_desc
+ picture = GFX_pf_art_aemeath_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_aemeath_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12320
+ is_triggered_only = yes
+ title = PF_cg_aemeath_memory_title
+ desc = PF_cg_aemeath_memory_desc
+ picture = GFX_pf_art_aemeath_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_aemeath_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12321
+ is_triggered_only = yes
+ title = PF_cg_concert_title
+ desc = PF_cg_concert_desc
+ picture = GFX_pf_art_concert
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_concert
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12322
+ is_triggered_only = yes
+ title = PF_B22_PHROLOVA_TITLE
+ desc = PF_B22_PHROLOVA_DESC
+ picture = GFX_pf_art_morin_ending_phrolova
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_phrolova
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12323
+ is_triggered_only = yes
+ title = PF_B_DEPART_TITLE
+ desc = PF_B_DEPART_DESC
+ picture = GFX_pf_art_morin_departure
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_departure
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12324
+ is_triggered_only = yes
+ title = PF_SK_ACTIVATION_TITLE
+ desc = PF_SK_ACTIVATION_DESC
+ picture = GFX_pf_sk_activation
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_activation
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12325
+ is_triggered_only = yes
+ title = PF_SK_HIGHEST_TITLE
+ desc = PF_SK_HIGHEST_DESC
+ picture = GFX_pf_sk_highest
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_highest
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12326
+ is_triggered_only = yes
+ title = PF_AMX_LIFE_TITLE
+ desc = PF_AMX_LIFE_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_aemeath_life2
+ custom_gui = pf_ui_pf_art_075_aemeath_life2
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12327
+ is_triggered_only = yes
+ title = PF_AMX_RESTARTED_TITLE
+ desc = PF_AMX_RESTARTED_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_suizhe_restart
+ custom_gui = pf_ui_pf_art_075_suizhe_restart
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12328
+ is_triggered_only = yes
+ title = PF_AMX_FINAL_TITLE
+ desc = PF_AMX_FINAL_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_aemeath_final
+ custom_gui = pf_ui_pf_art_075_aemeath_final
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12329
+ is_triggered_only = yes
+ title = PF_PHX_HOME_TITLE
+ desc = PF_PHX_HOME_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_phrolova_home
+ custom_gui = pf_ui_pf_art_075_phrolova_home
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12330
+ is_triggered_only = yes
+ title = PF_PHX_GRAND_TITLE
+ desc = PF_PHX_GRAND_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_phrolova_grand
+ custom_gui = pf_ui_pf_art_075_phrolova_grand
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12331
+ is_triggered_only = yes
+ title = PF_AMX_AFTER_TITLE
+ desc = PF_AMX_AFTER_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_044_aemeath_terrace
+ custom_gui = pf_ui_pf_art_044_aemeath_terrace
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12220
+ is_triggered_only = yes
+ title = PF46_DEBUG_GALLERY
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_CG_1765
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12300
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_1770
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12301
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_1771
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12302
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_1772
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12303
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_1773
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12304
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_1780
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12305
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_1781
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12306
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9417
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12307
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_NEXT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12221
+ is_triggered_only = yes
+ title = PF46_DEBUG_GALLERY
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_CG_9434
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12308
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9468
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12309
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9470
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12310
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9471
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12311
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9473
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12312
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9701
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12313
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9704
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12314
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9711
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12315
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_PREV
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12220
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_NEXT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12222
+ is_triggered_only = yes
+ title = PF46_DEBUG_GALLERY
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_CG_9714
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12316
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9721
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12317
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9724
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12318
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9731
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12319
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9734
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12320
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9740
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12321
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9836
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12322
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_9850
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12323
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_PREV
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12221
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_NEXT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12223
+ is_triggered_only = yes
+ title = PF46_DEBUG_GALLERY
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_CG_10412
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12324
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_10461
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12325
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_11010
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12326
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_11014
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12327
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_11018
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12328
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_11020
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12329
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_11021
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12330
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_12110
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12331
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_PREV
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12222
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_NEXT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12224
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.9921
+ is_triggered_only = yes
+ title = PF_debug_music
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_SOUND_pf_b_morin_ending
+  hidden_effect = {
+   play_sound = pf_b_morin_ending
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_theme_morin
+  hidden_effect = {
+   play_sound = pf_theme_morin
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_theme_phrolova
+  hidden_effect = {
+   play_sound = pf_theme_phrolova
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_theme_denia
+  hidden_effect = {
+   play_sound = pf_theme_denia
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_theme_shorekeeper
+  hidden_effect = {
+   play_sound = pf_theme_shorekeeper
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_theme_aemeath
+  hidden_effect = {
+   play_sound = pf_theme_aemeath
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_aemeath_finale
+  hidden_effect = {
+   play_sound = pf_aemeath_finale
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf17_entity_music
+  hidden_effect = {
+   play_sound = pf17_entity_music
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf17_finale
+  hidden_effect = {
+   play_sound = pf17_finale
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf17_festival_music
+  hidden_effect = {
+   play_sound = pf17_festival_music
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF46_SOUND_pf_performance
+  hidden_effect = {
+   play_sound = pf_performance
+   country_event = {
+    id = Phrolova_event.9921
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12210
+ is_triggered_only = yes
+ title = PF46_DEBUG_RESEARCH
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_GRANT
+  custom_tooltip = PF46_DEBUG_GRANT_TT
+  hidden_effect = {
+   pf46_offer_ancient_pd = yes
+   pf46_offer_fire_control = yes
+   pf46_offer_light_array = yes
+   pf46_offer_heavy_array = yes
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
 }
 
-country_event = { id = Phrolova_event.9951 is_triggered_only = yes title = PF_debug_art_1 desc = PF_debug_preview_desc picture = GFX_pf_art_phrolova_memory diplomatic = yes custom_gui = "pf_ui_pf_art_phrolova_memory" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
+country_event = {
+ id = Phrolova_event.12332
+ is_triggered_only = yes
+ title = PF17_1782_title
+ desc = PF17_1782_desc
+ picture = GFX_pf_art_relic_1782
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_1782
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12224
+   }
+  }
+ }
 }
 
-country_event = { id = Phrolova_event.9952 is_triggered_only = yes title = PF_debug_art_2 desc = PF_debug_preview_desc picture = GFX_pf_art_phrolova_festival diplomatic = yes custom_gui = "pf_ui_pf_art_phrolova_festival" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
+country_event = {
+ id = Phrolova_event.12333
+ is_triggered_only = yes
+ title = r_pf_star_order
+ desc = r_pf_star_order_desc
+ picture = GFX_pf_art_relic_shorekeeper
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_shorekeeper
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12224
+   }
+  }
+ }
 }
 
-country_event = { id = Phrolova_event.9953 is_triggered_only = yes title = PF_debug_art_3 desc = PF_debug_preview_desc picture = GFX_pf_art_denia_meet diplomatic = yes custom_gui = "pf_ui_pf_art_denia_meet" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
+country_event = {
+ id = Phrolova_event.12334
+ is_triggered_only = yes
+ title = r_pf_math_instrument
+ desc = r_pf_math_instrument_desc
+ picture = GFX_pf_art_relic_morin
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_morin
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12224
+   }
+  }
+ }
 }
 
-country_event = { id = Phrolova_event.9954 is_triggered_only = yes title = PF_debug_art_4 desc = PF_debug_preview_desc picture = GFX_pf_art_denia_memory diplomatic = yes custom_gui = "pf_ui_pf_art_denia_memory" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
-}
-
-country_event = { id = Phrolova_event.9955 is_triggered_only = yes title = PF_debug_art_5 desc = PF_debug_preview_desc picture = GFX_pf_art_denia_festival diplomatic = yes custom_gui = "pf_ui_pf_art_denia_festival" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
-}
-
-country_event = { id = Phrolova_event.9956 is_triggered_only = yes title = PF_debug_art_6 desc = PF_debug_preview_desc picture = GFX_pf_art_shorekeeper_meet diplomatic = yes custom_gui = "pf_ui_pf_art_shorekeeper_meet" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
-}
-
-country_event = { id = Phrolova_event.9957 is_triggered_only = yes title = PF_debug_art_7 desc = PF_debug_preview_desc picture = GFX_pf_art_shorekeeper_memory diplomatic = yes custom_gui = "pf_ui_pf_art_shorekeeper_memory" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
-}
-
-country_event = { id = Phrolova_event.9901 is_triggered_only = yes title = PF_debug_gallery_0 desc = PF_debug_preview_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_art_0 hidden_effect = { country_event = { id = Phrolova_event.9950 } } }
-option = { name = PF_debug_art_1 hidden_effect = { country_event = { id = Phrolova_event.9951 } } }
-option = { name = PF_debug_art_2 hidden_effect = { country_event = { id = Phrolova_event.9952 } } }
-option = { name = PF_debug_art_3 hidden_effect = { country_event = { id = Phrolova_event.9953 } } }
-option = { name = PF_debug_art_4 hidden_effect = { country_event = { id = Phrolova_event.9954 } } }
-option = { name = PF_debug_art_5 hidden_effect = { country_event = { id = Phrolova_event.9955 } } }
-option = { name = PF_debug_art_6 hidden_effect = { country_event = { id = Phrolova_event.9956 } } }
-option = { name = PF_debug_art_7 hidden_effect = { country_event = { id = Phrolova_event.9957 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
-}
-
-country_event = { id = Phrolova_event.9958 is_triggered_only = yes title = PF_debug_art_8 desc = PF_debug_preview_desc picture = GFX_pf_art_shorekeeper_festival diplomatic = yes custom_gui = "pf_ui_pf_art_shorekeeper_festival" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9959 is_triggered_only = yes title = PF_debug_art_9 desc = PF_debug_preview_desc picture = GFX_pf_art_aemeath_meet diplomatic = yes custom_gui = "pf_ui_pf_art_aemeath_meet" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9960 is_triggered_only = yes title = PF_debug_art_10 desc = PF_debug_preview_desc picture = GFX_pf_art_aemeath_memory diplomatic = yes custom_gui = "pf_ui_pf_art_aemeath_memory" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9961 is_triggered_only = yes title = PF_debug_art_11 desc = PF_debug_preview_desc picture = GFX_pf_art_aemeath_festival diplomatic = yes custom_gui = "pf_ui_pf_art_aemeath_festival" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9962 is_triggered_only = yes title = PF_debug_art_12 desc = PF_debug_preview_desc picture = GFX_pf_art_concert diplomatic = yes custom_gui = "pf_ui_pf_art_concert" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9963 is_triggered_only = yes title = PF_debug_art_13 desc = PF_debug_preview_desc picture = GFX_pf_art_rebuilt diplomatic = yes custom_gui = "pf_ui_pf_art_rebuilt" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9964 is_triggered_only = yes title = PF_debug_art_14 desc = PF_debug_preview_desc picture = GFX_pf_art_group diplomatic = yes custom_gui = "pf_ui_pf_art_group" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9965 is_triggered_only = yes title = PF_debug_art_15 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_1 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_1" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-}
-
-country_event = { id = Phrolova_event.9902 is_triggered_only = yes title = PF_debug_gallery_1 desc = PF_debug_preview_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_art_8 hidden_effect = { country_event = { id = Phrolova_event.9958 } } }
-option = { name = PF_debug_art_9 hidden_effect = { country_event = { id = Phrolova_event.9959 } } }
-option = { name = PF_debug_art_10 hidden_effect = { country_event = { id = Phrolova_event.9960 } } }
-option = { name = PF_debug_art_11 hidden_effect = { country_event = { id = Phrolova_event.9961 } } }
-option = { name = PF_debug_art_12 hidden_effect = { country_event = { id = Phrolova_event.9962 } } }
-option = { name = PF_debug_art_13 hidden_effect = { country_event = { id = Phrolova_event.9963 } } }
-option = { name = PF_debug_art_14 hidden_effect = { country_event = { id = Phrolova_event.9964 } } }
-option = { name = PF_debug_art_15 hidden_effect = { country_event = { id = Phrolova_event.9965 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
-}
-
-country_event = { id = Phrolova_event.9966 is_triggered_only = yes title = PF_debug_art_16 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_2 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_2" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9967 is_triggered_only = yes title = PF_debug_art_17 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_3 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_3" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9968 is_triggered_only = yes title = PF_debug_art_18 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_4 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_4" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9969 is_triggered_only = yes title = PF_debug_art_19 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_5 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_5" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9970 is_triggered_only = yes title = PF_debug_art_20 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_6 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_6" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9971 is_triggered_only = yes title = PF_debug_art_21 desc = PF_debug_preview_desc picture = GFX_pf_art_solaris_7 diplomatic = yes custom_gui = "pf_ui_pf_art_solaris_7" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9972 is_triggered_only = yes title = PF_debug_art_22 desc = PF_debug_preview_desc picture = GFX_pf_art_mystery diplomatic = yes custom_gui = "pf_ui_pf_art_mystery" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9973 is_triggered_only = yes title = PF_debug_art_23 desc = PF_debug_preview_desc picture = GFX_pf_art_island diplomatic = yes custom_gui = "pf_ui_pf_art_island" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-}
-
-country_event = { id = Phrolova_event.9903 is_triggered_only = yes title = PF_debug_gallery_2 desc = PF_debug_preview_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_art_16 hidden_effect = { country_event = { id = Phrolova_event.9966 } } }
-option = { name = PF_debug_art_17 hidden_effect = { country_event = { id = Phrolova_event.9967 } } }
-option = { name = PF_debug_art_18 hidden_effect = { country_event = { id = Phrolova_event.9968 } } }
-option = { name = PF_debug_art_19 hidden_effect = { country_event = { id = Phrolova_event.9969 } } }
-option = { name = PF_debug_art_20 hidden_effect = { country_event = { id = Phrolova_event.9970 } } }
-option = { name = PF_debug_art_21 hidden_effect = { country_event = { id = Phrolova_event.9971 } } }
-option = { name = PF_debug_art_22 hidden_effect = { country_event = { id = Phrolova_event.9972 } } }
-option = { name = PF_debug_art_23 hidden_effect = { country_event = { id = Phrolova_event.9973 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
-}
-
-country_event = { id = Phrolova_event.9974 is_triggered_only = yes title = PF_debug_art_24 desc = PF_debug_preview_desc picture = GFX_pf_art_heart_damaged diplomatic = yes custom_gui = "pf_ui_pf_art_heart_damaged" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9975 is_triggered_only = yes title = PF_debug_art_25 desc = PF_debug_preview_desc picture = GFX_pf_art_heart_repaired diplomatic = yes custom_gui = "pf_ui_pf_art_heart_repaired" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9976 is_triggered_only = yes title = PF_debug_art_26 desc = PF_debug_preview_desc picture = GFX_pf_art_frequency diplomatic = yes custom_gui = "pf_ui_pf_art_frequency" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9977 is_triggered_only = yes title = PF_debug_art_27 desc = PF_debug_preview_desc picture = GFX_pf_art_battlefield diplomatic = yes custom_gui = "pf_ui_pf_art_battlefield" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9978 is_triggered_only = yes title = PF_debug_art_28 desc = PF_debug_preview_desc picture = GFX_pf_art_rest diplomatic = yes custom_gui = "pf_ui_pf_art_rest" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9979 is_triggered_only = yes title = PF_debug_art_29 desc = PF_debug_preview_desc picture = GFX_pf_art_ruins diplomatic = yes custom_gui = "pf_ui_pf_art_ruins" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9980 is_triggered_only = yes title = PF_debug_art_30 desc = PF_debug_preview_desc picture = GFX_pf_art_entity diplomatic = yes custom_gui = "pf_ui_pf_art_entity" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9981 is_triggered_only = yes title = PF_debug_art_31 desc = PF_debug_preview_desc picture = GFX_pf_art_death diplomatic = yes custom_gui = "pf_ui_pf_art_death" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-}
-
-country_event = { id = Phrolova_event.9904 is_triggered_only = yes title = PF_debug_gallery_3 desc = PF_debug_preview_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_art_24 hidden_effect = { country_event = { id = Phrolova_event.9974 } } }
-option = { name = PF_debug_art_25 hidden_effect = { country_event = { id = Phrolova_event.9975 } } }
-option = { name = PF_debug_art_26 hidden_effect = { country_event = { id = Phrolova_event.9976 } } }
-option = { name = PF_debug_art_27 hidden_effect = { country_event = { id = Phrolova_event.9977 } } }
-option = { name = PF_debug_art_28 hidden_effect = { country_event = { id = Phrolova_event.9978 } } }
-option = { name = PF_debug_art_29 hidden_effect = { country_event = { id = Phrolova_event.9979 } } }
-option = { name = PF_debug_art_30 hidden_effect = { country_event = { id = Phrolova_event.9980 } } }
-option = { name = PF_debug_art_31 hidden_effect = { country_event = { id = Phrolova_event.9981 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
-}
-
-country_event = { id = Phrolova_event.9982 is_triggered_only = yes title = PF_debug_art_32 desc = PF_debug_preview_desc picture = GFX_pf_art_relic_1780 diplomatic = yes custom_gui = "pf_ui_pf_art_relic_1780" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9905 } } }
-}
-
-country_event = { id = Phrolova_event.9983 is_triggered_only = yes title = PF_debug_art_33 desc = PF_debug_preview_desc picture = GFX_pf_art_relic_1781 diplomatic = yes custom_gui = "pf_ui_pf_art_relic_1781" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9905 } } }
-}
-
-country_event = { id = Phrolova_event.9984 is_triggered_only = yes title = PF_debug_art_34 desc = PF_debug_preview_desc picture = GFX_pf_art_relic_1782 diplomatic = yes custom_gui = "pf_ui_pf_art_relic_1782" custom_gui_option = "pf_cinematic_option" 
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9905 } } }
-}
-
-country_event = { id = Phrolova_event.9905 is_triggered_only = yes title = PF_debug_gallery_4 desc = PF_debug_preview_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_art_32 hidden_effect = { country_event = { id = Phrolova_event.9982 } } }
-option = { name = PF_debug_art_33 hidden_effect = { country_event = { id = Phrolova_event.9983 } } }
-option = { name = PF_debug_art_34 hidden_effect = { country_event = { id = Phrolova_event.9984 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
-}
-
-country_event = { id = Phrolova_event.9900 is_triggered_only = yes title = PF_debug_title desc = PF_debug_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_real hidden_effect = { country_event = { id = Phrolova_event.9920 } } }
-option = { name = PF_debug_music hidden_effect = { country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_gallery_0 hidden_effect = { country_event = { id = Phrolova_event.9901 } } }
-option = { name = PF_debug_gallery_1 hidden_effect = { country_event = { id = Phrolova_event.9902 } } }
-option = { name = PF_debug_gallery_2 hidden_effect = { country_event = { id = Phrolova_event.9903 } } }
-option = { name = PF_debug_gallery_3 hidden_effect = { country_event = { id = Phrolova_event.9904 } } }
-option = { name = PF_debug_gallery_4 hidden_effect = { country_event = { id = Phrolova_event.9905 } } }
-option = { name = PF_debug_contact hidden_effect = { country_event = { id = Phrolova_event.201 } } }
-}
-
-country_event = { id = Phrolova_event.9930 is_triggered_only = yes title = PF_debug_group_0 desc = PF_debug_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_real_2 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9700 } } }
-option = { name = PF_debug_real_700 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9710 } } }
-option = { name = PF_debug_real_800 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9720 } } }
-option = { name = PF_debug_real_915 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9730 } } }
-option = { name = PF_debug_real_216 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.216 } } }
-option = { name = PF_debug_real_1710 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9713 } } }
-option = { name = PF_debug_real_1730 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9723 } } }
-option = { name = PF_debug_real_1750 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9733 } } }
-option = { name = PF_debug_real_211 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9740 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9920 } } }
-}
-
-country_event = { id = Phrolova_event.9931 is_triggered_only = yes title = PF_debug_group_1 desc = PF_debug_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_real_310 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.310 } } }
-option = { name = PF_debug_real_311 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.311 } } }
-option = { name = PF_debug_real_321 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_322 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_323 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_324 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_325 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_326 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_327 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_416 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.416 } } }
-option = { name = PF_debug_real_431 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_432 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_433 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9920 } } }
-}
-
-country_event = { id = Phrolova_event.9932 is_triggered_only = yes title = PF_debug_group_2 desc = PF_debug_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_real_1600 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1600 } } }
-option = { name = PF_debug_real_1601 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1601 } } }
-option = { name = PF_debug_real_1602 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1602 } } }
-option = { name = PF_debug_real_1603 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1603 } } }
-option = { name = PF_debug_real_1604 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1604 } } }
-option = { name = PF_debug_real_600 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.9741 } } }
-option = { name = PF_debug_real_1610 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1610 } } }
-option = { name = PF_debug_real_1611 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1611 } } }
-option = { name = PF_debug_real_630 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.630 } } }
-option = { name = PF_debug_real_1780 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1780 } } }
-option = { name = PF_debug_real_1781 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1781 } } }
-option = { name = PF_debug_real_1782 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1782 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9920 } } }
-}
-
-country_event = { id = Phrolova_event.9933 is_triggered_only = yes title = PF_debug_group_3 desc = PF_debug_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_real_900 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.900 } } }
-option = { name = PF_debug_real_904 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.904 } } }
-option = { name = PF_debug_real_908 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_909 custom_tooltip = PF_debug_context_required allow = { always = no } }
-option = { name = PF_debug_real_910 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.910 } } }
-option = { name = PF_debug_real_911 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.911 } } }
-option = { name = PF_debug_real_912 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.912 } } }
-option = { name = PF_debug_real_913 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.913 } } }
-option = { name = PF_debug_real_1770 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1770 } } }
-option = { name = PF_debug_real_1771 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1771 } } }
-option = { name = PF_debug_real_1772 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1772 } } }
-option = { name = PF_debug_real_1773 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1773 } } }
-option = { name = PF_debug_real_1765 custom_tooltip = PF_debug_real_tip hidden_effect = { country_event = { id = Phrolova_event.1765 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9920 } } }
-}
-
-country_event = { id = Phrolova_event.9920 is_triggered_only = yes title = PF_debug_real desc = PF_debug_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_group_0 hidden_effect = { country_event = { id = Phrolova_event.9930 } } }
-option = { name = PF_debug_group_1 hidden_effect = { country_event = { id = Phrolova_event.9931 } } }
-option = { name = PF_debug_group_2 hidden_effect = { country_event = { id = Phrolova_event.9932 } } }
-option = { name = PF_debug_group_3 hidden_effect = { country_event = { id = Phrolova_event.9933 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
-}
-
-country_event = { id = Phrolova_event.9921 is_triggered_only = yes title = PF_debug_music desc = PF_debug_preview_desc picture = Phrolova_events_yansuan 
-option = { name = PF_debug_music_pf_performance custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf_performance country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_music_pf17_entity_music custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf17_entity_music country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_music_pf17_festival_music custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf17_festival_music country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_music_pf_theme_phrolova custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf_theme_phrolova country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_music_pf_theme_denia custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf_theme_denia country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_music_pf_theme_shorekeeper custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf_theme_shorekeeper country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_music_pf_theme_aemeath custom_tooltip = PF_debug_preview_desc hidden_effect = { play_sound = pf_theme_aemeath country_event = { id = Phrolova_event.9921 } } }
-option = { name = PF_debug_back hidden_effect = { country_event = { id = Phrolova_event.9900 } } }
+country_event = {
+ id = Phrolova_event.12224
+ is_triggered_only = yes
+ title = PF46_DEBUG_GALLERY
+ desc = PF46_DEBUG_DESC
+ picture = Phrolova_events_yansuan
+ option = {
+  name = PF46_DEBUG_CG_1782
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12332
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_10443
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12333
+   }
+  }
+ }
+ option = {
+  name = PF46_DEBUG_CG_11070
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12334
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_PREV
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12223
+   }
+  }
+ }
+ option = {
+  name = PF_debug_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9900
+   }
+  }
+ }
 }

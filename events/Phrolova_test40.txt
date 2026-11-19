@@ -1,0 +1,15 @@
+namespace = Phrolova_event
+event = { id = Phrolova_event.11980 is_triggered_only = yes hide_window = yes
+ immediate = { every_country = { limit = { is_ai = no is_country_type = default }
+  pf075_suizhe_maintenance = yes pf40_sync_suizhe_command = yes pf23_init_collection = yes
+  log = "PF41_REBUILD_LOAD_MAINTENANCE_APPLIED"
+ } }
+}
+leader_event = { id = Phrolova_event.11981 is_triggered_only = yes hide_window = yes
+ trigger = { exists = owner owner = { is_ai = no } }
+ immediate = { owner = { country_event = { id = Phrolova_event.11982 days = 1 } } }
+}
+country_event = { id = Phrolova_event.11982 is_triggered_only = yes hide_window = yes
+ trigger = { is_ai = no }
+ immediate = { pf40_sync_suizhe_command = yes }
+}

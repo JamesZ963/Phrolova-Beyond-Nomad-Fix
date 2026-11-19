@@ -14,14 +14,30 @@ country_event = {
 country_event = {
  id = Phrolova_event.9701
  is_triggered_only = yes
- trigger = { is_ai = no NOT = { has_country_flag = researched_leaders_Phrolova } }
+ trigger = {
+  is_ai = no
+  NOT = {
+   has_country_flag = researched_leaders_Phrolova
+  }
+ }
  title = PF_cg_phrolova_meet_title
  desc = PF_cg_phrolova_meet_desc
  picture = GFX_pf_art_phrolova_meet
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_phrolova_meet"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_phrolova_meet_seen country_event = { id = Phrolova_event.2 } } }
+ custom_gui = pf_ui_pf_art_phrolova_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_phrolova_meet_seen
+   country_event = {
+    id = Phrolova_event.2
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9701
+ }
 }
 
 country_event = {
@@ -37,46 +53,75 @@ country_event = {
  option = { name = PF_replay_back hidden_effect = { country_event = { id = Phrolova_event.202 } } }
 }
 
-country_event = {
- id = Phrolova_event.9703
- is_triggered_only = yes hide_window = yes
- trigger = { has_country_flag = researched_leaders_Phrolova has_country_flag = pf_bond_pending NOT = { has_country_flag = Phrolova_bond_5 } }
- immediate = {
-  if = { limit = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = Phrolova_bond_4 } NOT = { has_country_flag = pf_cg_phrolova_memory_seen } } country_event = { id = Phrolova_event.9704 } }
-  else = { country_event = { id = Phrolova_event.234 } }
- }
+country_event = { id = Phrolova_event.9703 is_triggered_only = yes hide_window = yes
+ immediate = { if = { limit = { has_country_flag = pf075_home_running } pf075_resume_home = yes } }
 }
 
 country_event = {
  id = Phrolova_event.9704
  is_triggered_only = yes
- trigger = { has_country_flag = researched_leaders_Phrolova has_country_flag = pf_bond_pending NOT = { has_country_flag = Phrolova_bond_5 } }
  title = PF_cg_phrolova_memory_title
  desc = PF_cg_phrolova_memory_desc
  picture = GFX_pf_art_phrolova_memory
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_phrolova_memory"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_phrolova_memory_seen country_event = { id = Phrolova_event.234 } } }
+ custom_gui = pf_ui_pf_art_phrolova_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_PHX_MEMORY_REPLY
+  hidden_effect = {
+   if = {
+    limit = {
+     has_country_flag = pf075_home_running
+     NOT = {
+      has_country_flag = pf075_home_memory_done
+     }
+    }
+    set_country_flag = pf_cg_phrolova_memory_seen
+    set_country_flag = pf075_home_memory_done
+    country_event = {
+     id = Phrolova_event.331
+    }
+   }
+  }
+ }
+ trigger = {
+  has_country_flag = pf075_home_running
+  has_country_flag = pf075_home_awarded
+  NOT = {
+   has_country_flag = pf075_home_memory_done
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9704
+ }
 }
 
 country_event = {
- id = Phrolova_event.9705
- is_triggered_only = yes
- trigger = { has_country_flag = researched_leaders_Phrolova has_country_flag = Phrolova_bond_4 }
- title = PF_cg_phrolova_memory_title
- desc = PF_cg_phrolova_memory_desc
- picture = GFX_pf_art_phrolova_memory
- diplomatic = yes
- custom_gui = "pf_ui_pf_art_phrolova_memory"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_replay_back hidden_effect = { country_event = { id = Phrolova_event.202 } } }
+    id = Phrolova_event.9705
+    is_triggered_only = yes
+    title = PF_cg_phrolova_memory_title
+    desc = PF_cg_phrolova_memory_desc
+    picture = GFX_pf_art_phrolova_memory
+    diplomatic = yes
+    custom_gui = pf_ui_pf_art_phrolova_memory
+    custom_gui_option = pf_cinematic_option
+    option = {
+        name = PF_replay_back
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.202
+            }
+        }
+    }
+    trigger = {
+        has_country_flag = pf_cg_phrolova_memory_seen
+    }
 }
 
 country_event = {
  id = Phrolova_event.9710
  is_triggered_only = yes hide_window = yes
- trigger = { NOT = { has_country_flag = pf_denia_recruited } }
+ trigger = { OR = { NOT = { has_country_flag = pf_denia_recruited } has_country_flag = pf_denia_b_recruit_replay } }
  immediate = { set_country_flag = pf_denia_recruit_pending
   if = { limit = { NOT = { has_country_flag = pf_cg_denia_meet_seen } } country_event = { id = Phrolova_event.9711 } }
   else = { country_event = { id = Phrolova_event.700 } }
@@ -86,14 +131,32 @@ country_event = {
 country_event = {
  id = Phrolova_event.9711
  is_triggered_only = yes
- trigger = { NOT = { has_country_flag = pf_denia_recruited } }
+ trigger = {
+  OR = {
+   NOT = {
+    has_country_flag = pf_denia_recruited
+   }
+   has_country_flag = pf_denia_b_recruit_replay
+  }
+ }
  title = PF_cg_denia_meet_title
  desc = PF_cg_denia_meet_desc
  picture = GFX_pf_art_denia_meet
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_denia_meet"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_denia_meet_seen country_event = { id = Phrolova_event.700 } } }
+ custom_gui = pf_ui_pf_art_denia_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_denia_meet_seen
+   country_event = {
+    id = Phrolova_event.700
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9711
+ }
 }
 
 country_event = {
@@ -122,14 +185,31 @@ country_event = {
 country_event = {
  id = Phrolova_event.9714
  is_triggered_only = yes
- trigger = { has_country_flag = pf_denia_recruited has_country_flag = pf_denia_bond_pending NOT = { has_country_flag = pf_denia_bond_3 } }
+ trigger = {
+  has_country_flag = pf_denia_recruited
+  has_country_flag = pf_denia_bond_pending
+  NOT = {
+   has_country_flag = pf_denia_bond_3
+  }
+ }
  title = PF_cg_denia_memory_title
  desc = PF_cg_denia_memory_desc
  picture = GFX_pf_art_denia_memory
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_denia_memory"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_denia_memory_seen country_event = { id = Phrolova_event.1710 } } }
+ custom_gui = pf_ui_pf_art_denia_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_denia_memory_seen
+   country_event = {
+    id = Phrolova_event.1710
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9714
+ }
 }
 
 country_event = {
@@ -158,14 +238,29 @@ country_event = {
 country_event = {
  id = Phrolova_event.9721
  is_triggered_only = yes
- trigger = { NOT = { has_country_flag = pf_shorekeeper_recruited } }
+ trigger = {
+  NOT = {
+   has_country_flag = pf_shorekeeper_recruited
+  }
+ }
  title = PF_cg_shorekeeper_meet_title
  desc = PF_cg_shorekeeper_meet_desc
  picture = GFX_pf_art_shorekeeper_meet
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_shorekeeper_meet"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_shorekeeper_meet_seen country_event = { id = Phrolova_event.800 } } }
+ custom_gui = pf_ui_pf_art_shorekeeper_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_shorekeeper_meet_seen
+   country_event = {
+    id = Phrolova_event.800
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9721
+ }
 }
 
 country_event = {
@@ -194,14 +289,31 @@ country_event = {
 country_event = {
  id = Phrolova_event.9724
  is_triggered_only = yes
- trigger = { has_country_flag = pf_shorekeeper_recruited has_country_flag = pf_shorekeeper_bond_pending NOT = { has_country_flag = pf_shorekeeper_bond_3 } }
+ trigger = {
+  has_country_flag = pf_shorekeeper_recruited
+  has_country_flag = pf_shorekeeper_bond_pending
+  NOT = {
+   has_country_flag = pf_shorekeeper_bond_3
+  }
+ }
  title = PF_cg_shorekeeper_memory_title
  desc = PF_cg_shorekeeper_memory_desc
  picture = GFX_pf_art_shorekeeper_memory
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_shorekeeper_memory"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_shorekeeper_memory_seen country_event = { id = Phrolova_event.1730 } } }
+ custom_gui = pf_ui_pf_art_shorekeeper_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_shorekeeper_memory_seen
+   country_event = {
+    id = Phrolova_event.1730
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9724
+ }
 }
 
 country_event = {
@@ -230,14 +342,30 @@ country_event = {
 country_event = {
  id = Phrolova_event.9731
  is_triggered_only = yes
- trigger = { has_country_flag = pf_ame_recruit_ready NOT = { has_country_flag = pf_aemeath_recruited } }
+ trigger = {
+  has_country_flag = pf_ame_recruit_ready
+  NOT = {
+   has_country_flag = pf_aemeath_recruited
+  }
+ }
  title = PF_cg_aemeath_meet_title
  desc = PF_cg_aemeath_meet_desc
  picture = GFX_pf_art_aemeath_meet
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_aemeath_meet"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_aemeath_meet_seen country_event = { id = Phrolova_event.915 } } }
+ custom_gui = pf_ui_pf_art_aemeath_meet
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_aemeath_meet_seen
+   country_event = {
+    id = Phrolova_event.915
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9731
+ }
 }
 
 country_event = {
@@ -266,14 +394,31 @@ country_event = {
 country_event = {
  id = Phrolova_event.9734
  is_triggered_only = yes
- trigger = { has_country_flag = pf_aemeath_recruited has_country_flag = pf_aemeath_bond_pending NOT = { has_country_flag = pf_aemeath_bond_3 } }
+ trigger = {
+  has_country_flag = pf_aemeath_recruited
+  has_country_flag = pf_aemeath_bond_pending
+  NOT = {
+   has_country_flag = pf_aemeath_bond_3
+  }
+ }
  title = PF_cg_aemeath_memory_title
  desc = PF_cg_aemeath_memory_desc
  picture = GFX_pf_art_aemeath_memory
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_aemeath_memory"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_cg_continue hidden_effect = { set_country_flag = pf_cg_aemeath_memory_seen country_event = { id = Phrolova_event.1750 } } }
+ custom_gui = pf_ui_pf_art_aemeath_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   set_country_flag = pf_cg_aemeath_memory_seen
+   country_event = {
+    id = Phrolova_event.1750
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9734
+ }
 }
 
 country_event = {
@@ -297,23 +442,59 @@ country_event = {
  desc = PF_cg_concert_desc
  picture = GFX_pf_art_concert
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_concert"
- custom_gui_option = "pf_cinematic_option"
- immediate = { if = { limit = { NOT = { has_country_flag = pf_music_cooldown } } play_sound = pf_performance set_timed_country_flag = { flag = pf_music_cooldown days = 30 } } }
- option = { name = PF_cg_continue hidden_effect = { country_event = { id = Phrolova_event.211 } } }
+ custom_gui = pf_ui_pf_art_concert
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.211
+   }
+  }
+ }
+ immediate = {
+  if = {
+   limit = {
+    NOT = {
+     has_country_flag = pf_music_cooldown
+    }
+   }
+   play_sound = pf_performance
+   set_timed_country_flag = {
+    flag = pf_music_cooldown
+    days = 30
+   }
+  }
+  set_country_flag = pf28_memory_seen_9740
+ }
 }
 
 # Display only; keep the original keep/dismantle choice and rewards in event 600.
 country_event = {
  id = Phrolova_event.9741
  is_triggered_only = yes
- trigger = { has_country_flag = pf_heart_choice_ready NOT = { has_country_flag = pf_heart_choice_done } has_Phrolova_leader = yes }
+ trigger = {
+  has_country_flag = pf_heart_choice_ready
+  NOT = {
+   has_country_flag = pf_heart_choice_done
+  }
+  has_Phrolova_leader = yes
+ }
  title = PF_cg_heart_repaired_title
  desc = PF_cg_heart_repaired_desc
  picture = GFX_pf_art_heart_repaired
  diplomatic = yes
- custom_gui = "pf_ui_pf_art_heart_repaired"
- custom_gui_option = "pf_cinematic_option"
- immediate = { set_country_flag = pf_heart_dialogue_open }
- option = { name = PF_cg_continue hidden_effect = { country_event = { id = Phrolova_event.600 } } }
+ custom_gui = pf_ui_pf_art_heart_repaired
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_cg_continue
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.600
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf_heart_dialogue_open
+ }
 }

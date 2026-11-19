@@ -1,0 +1,211 @@
+namespace = Phrolova_event
+
+# Standalone answer pages allow the native window to measure the full reply.
+country_event = {
+ id = Phrolova_event.11970
+ is_triggered_only = yes
+ title = Phrolova_event.202.name
+ desc = PF17_phrolova_contact_q0_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.202
+   }
+  }
+ }
+ custom_gui = pf_phrolova_conversation
+}
+country_event = {
+ id = Phrolova_event.11971
+ is_triggered_only = yes
+ title = Phrolova_event.202.name
+ desc = PF17_phrolova_contact_q1_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.202
+   }
+  }
+ }
+ custom_gui = pf_phrolova_conversation
+}
+country_event = {
+ id = Phrolova_event.11972
+ is_triggered_only = yes
+ title = NAME_PF_denia
+ desc = PF17_denia_contact_q0_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_denia = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1700
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11973
+ is_triggered_only = yes
+ title = NAME_PF_denia
+ desc = PF17_denia_contact_q1_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_denia = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1700
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11974
+ is_triggered_only = yes
+ title = NAME_PF_shorekeeper
+ desc = PF17_shorekeeper_contact_q0_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_shorekeeper = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1720
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11975
+ is_triggered_only = yes
+ title = NAME_PF_shorekeeper
+ desc = PF17_shorekeeper_contact_q1_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_shorekeeper = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1720
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11976
+ is_triggered_only = yes
+ title = NAME_PF_aemeath
+ desc = PF17_aemeath_contact_q0_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_aemeath = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1740
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11977
+ is_triggered_only = yes
+ title = NAME_PF_aemeath
+ desc = PF17_aemeath_contact_q1_reply
+ picture = GFX_leader_recruitment_bg_renowned
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ immediate = {
+  pf_speaker_aemeath = yes
+ }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1740
+   }
+  }
+ }
+}

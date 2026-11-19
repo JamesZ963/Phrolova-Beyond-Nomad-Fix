@@ -1,0 +1,18 @@
+namespace = Phrolova_event
+event = {
+ id = Phrolova_event.11960
+ is_triggered_only = yes hide_window = yes
+ immediate = { every_playable_country = { limit = { is_ai = no } pf36_sync_platforms_and_relic = yes } }
+}
+country_event = {
+ id = Phrolova_event.11961
+ is_triggered_only = yes hide_window = yes
+ trigger = { is_ai = no }
+ immediate = { pf36_sync_platforms_and_relic = yes }
+}
+country_event = {
+ id = Phrolova_event.11963
+ is_triggered_only = yes hide_window = yes
+ trigger = { is_ai = no any_owned_planet = { has_planet_flag = pf_solaris has_deposit = d_pf_array_garrison } }
+ immediate = { country_event = { id = Phrolova_event.11961 days = 1 } }
+}

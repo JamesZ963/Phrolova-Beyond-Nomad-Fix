@@ -1,0 +1,655 @@
+# B11-B22 first-playable closure events.
+
+# ---------- B11 pirate raid ----------
+country_event = {
+ id = Phrolova_event.9450
+ is_triggered_only = yes
+ title = PF_B_RAID_WARNING_TITLE
+ desc = PF_B_RAID_WARNING_DESC
+ picture = GFX_pf_art_morin_project_small
+ trigger = { has_country_flag = pf_b_forge_stage_1 NOT = { has_country_flag = pf_b11_raid_preparing } NOT = { has_country_flag = pf_b11_raid_spawned } NOT = { has_country_flag = pf_b11_raid_won } }
+ option = { name = PF_B_RAID_PREPARE custom_tooltip = PF_B_RAID_STRENGTH_NOTE hidden_effect = { set_country_flag = pf_b11_raid_preparing country_event = { id = Phrolova_event.9814 days = 60 }  country_event = { id = Phrolova_event.9833 } } }
+ option = { name = PF_B11_RAID_LATER }
+}
+
+country_event = {
+ id = Phrolova_event.9451
+ is_triggered_only = yes
+ title = PF_B11_RAID_ARRIVE_TITLE
+ desc = PF_B11_RAID_ARRIVE_DESC
+ picture = GFX_pf_art_battlefield_small
+ option = { name = PF_B11_RAID_ARRIVE_OPTION }
+}
+
+country_event = {
+ id = Phrolova_event.9452
+ is_triggered_only = yes
+ title = PF_B_RAID_VICTORY_TITLE
+ desc = PF_B_RAID_VICTORY_DESC
+ picture = GFX_pf_art_morin_project_small
+ option = { name = PF_B11_RAID_WON_OPTION hidden_effect = { country_event = { id = Phrolova_event.9842 } } }
+}
+
+
+
+# ---------- B12/B13 ----------
+country_event = {
+ id = Phrolova_event.9455
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_B12_TITLE
+ desc = PF_B12_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes set_country_flag = pf_b12_done  }
+
+ custom_gui = pf_scroll_dialogue_9455
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_B12_OPTION hidden_effect = { country_event = { id = Phrolova_event.9450 } } }
+}
+
+country_event = {
+ id = Phrolova_event.9456
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_B13_TITLE
+ desc = PF_B13_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_B13_OPTION
+ }
+ custom_gui = pf_scroll_dialogue_9456
+}
+
+# ---------- B14 three-stage archive site ----------
+fleet_event = {
+ id = Phrolova_event.9457
+ is_triggered_only = yes
+ archaeology = yes
+ show_sound = event_default
+ location = from
+ immediate = { from = { set_site_progress_locked = yes } }
+ after = { from = { set_site_progress_locked = no } }
+ title = PF_B_ARCH_STAGE_1_TITLE
+ desc = PF_B_ARCH_STAGE_1_DESC
+ picture = GFX_pf_art_solaris_3_small
+ option = { name = PF_B14_OPTION }
+}
+
+fleet_event = {
+ id = Phrolova_event.9458
+ is_triggered_only = yes
+ archaeology = yes
+ show_sound = event_default
+ location = from
+ immediate = { from = { set_site_progress_locked = yes } }
+ after = { from = { set_site_progress_locked = no } }
+ title = PF_B_ARCH_STAGE_2_TITLE
+ desc = PF_B_ARCH_STAGE_2_DESC
+ picture = GFX_pf_art_solaris_6_small
+ option = { name = PF_B14_OPTION custom_tooltip = PF_B_ECOLOGY_REWARD hidden_effect = { owner = { set_country_flag = pf_b_ecology_found country_event = { id = Phrolova_event.9852 } } } }
+}
+
+fleet_event = {
+ id = Phrolova_event.9459
+ is_triggered_only = yes
+ archaeology = yes
+ show_sound = event_default
+ location = from
+ immediate = { from = { set_site_progress_locked = yes } }
+ after = { from = { set_site_progress_locked = no } }
+ title = PF_B_ARCH_STAGE_3_TITLE
+ desc = PF_B_ARCH_STAGE_3_DESC
+ picture = GFX_pf_art_morin_project_small
+ option = { name = PF_B14_OPTION if = { limit = { owner = { has_country_flag = pf_b_forge_stage_2 } } custom_tooltip = PF_B_CIVIL_STRONG_REWARD } hidden_effect = { owner = {
+  set_country_flag = pf_b14_done
+  country_event = { id = Phrolova_event.9852 }
+  country_event = { id = Phrolova_event.9833 }
+ } } }
+}
+
+# ---------- B17/B18 ----------
+country_event = {
+ id = Phrolova_event.9460
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_B17_TITLE
+ desc = PF_B17_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_B17_ACCEPT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9463
+   }
+   set_country_flag = pf_b17_done
+   set_country_flag = pf_b18_done
+   remove_country_flag = pf_b17_pending
+   country_event = {
+    id = Phrolova_event.9833
+   }
+  }
+ }
+ option = {
+  name = PF_B17_WAIT
+  hidden_effect = {
+   set_country_flag = pf_b17_done
+   set_country_flag = pf_b18_done
+   remove_country_flag = pf_b17_pending
+   country_event = {
+    id = Phrolova_event.9833
+   }
+  }
+ }
+ custom_gui = pf_b17_scroll_conversation
+}
+
+# Console-only preview of the long conversation.
+country_event = {
+ id = Phrolova_event.11560
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_B17_TITLE
+ desc = PF_B17_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = {
+  random_owned_leader = {
+   limit = { has_leader_flag = Phrolova_scientist }
+   save_event_target_as = pf_speaker
+  }
+ }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = { name = PF_B17_ACCEPT }
+ option = { name = PF_B17_WAIT }
+ custom_gui = pf_b17_scroll_conversation
+}
+
+country_event = {
+ id = Phrolova_event.9463
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_B18_TITLE
+ desc = PF_B18_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes }
+
+ custom_gui = "pf_morin_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_B18_PREPARE custom_tooltip = PF_B19_RISK_NOTE allow = { pf_b_has_solaris = yes } hidden_effect = { pf_b19_start_preparation = yes } }
+ option = { name = PF_B19_LATER }
+}
+
+# ---------- B19 two ether dragons ----------
+country_event = {
+ id = Phrolova_event.9464
+ is_triggered_only = yes
+ title = PF_B19_BATTLE_TITLE
+ desc = PF_B19_BATTLE_DESC
+ picture = GFX_pf_art_morin_forge_small
+ option = { name = PF_B19_START }
+ 
+}
+
+country_event = {
+ id = Phrolova_event.9465
+ is_triggered_only = yes
+ title = PF_B19_WON_TITLE
+ desc = PF_B19_WON_DESC
+ picture = GFX_pf_art_morin_dragon_victory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_dragon_victory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_B19_RETURN
+  custom_tooltip = PF_B19_DRAGON_ARMOR_REWARD
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_b19_dragon_armor_rewarded
+     }
+    }
+    set_country_flag = pf_b19_dragon_armor_rewarded
+    if = {
+     limit = {
+      NOT = {
+       has_technology = tech_dragon_armor
+      }
+     }
+     add_research_option = tech_dragon_armor
+     add_tech_progress = {
+      tech = tech_dragon_armor
+      progress = 0.25
+     }
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_b20_pending
+     }
+     NOT = {
+      has_country_flag = pf_b20_done
+     }
+    }
+    set_country_flag = pf_b20_pending
+    country_event = {
+     id = Phrolova_event.9467
+    }
+   }
+   country_event = {
+    id = Phrolova_event.9833
+   }
+  }
+ }
+ immediate = {
+
+ }
+}
+
+
+
+# ---------- B20 Denia return ----------
+country_event = {
+ id = Phrolova_event.9467
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b20_recruit_denia = yes }
+}
+
+# ---------- B21/B22 ending ----------
+country_event = {
+ id = Phrolova_event.9468
+ is_triggered_only = yes
+ trigger = {
+  OR = {
+   has_country_flag = pf_b21_started
+   has_country_flag = pf_b21_done
+  }
+ }
+ title = PF_B21_TITLE
+ desc = PF_B21_DESC
+ picture = GFX_pf_art_morin_ending
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_B21_OPTION
+  hidden_effect = {
+   if = {
+    limit = {
+     has_country_flag = pf_b21_done
+    }
+    set_country_flag = pf_b_ending_replay
+   }
+   set_country_flag = pf_b21_done
+   remove_country_flag = pf_b21_pending
+   country_event = {
+    id = Phrolova_event.9470
+   }
+   country_event = {
+    id = Phrolova_event.9833
+   }
+  }
+ }
+ immediate = {
+  pf_speaker_morin = yes
+  pf_b_morin_stage_up = yes
+  set_country_flag = pf075_complete_morin
+  set_country_flag = pf28_memory_seen_9468
+  set_country_flag = pf_personal_ending_seen
+  pf23_init_collection = yes
+ }
+}
+
+
+
+country_event = {
+ id = Phrolova_event.9470
+ is_triggered_only = yes
+ trigger = {
+  OR = {
+   NOT = {
+    has_country_flag = pf_b22_b_done
+   }
+   has_country_flag = pf_b_ending_replay
+  }
+ }
+ title = PF_B22_DENIA_TITLE
+ desc = PF_B22_DENIA_DESC
+ picture = GFX_pf_art_morin_ending_denia
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_denia
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_B22_DENIA_OPTION
+  hidden_effect = {
+   set_country_flag = pf_b22_b_done
+   country_event = {
+    id = Phrolova_event.9471
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9470
+ }
+}
+
+country_event = {
+ id = Phrolova_event.9471
+ is_triggered_only = yes
+ trigger = {
+  OR = {
+   NOT = {
+    has_country_flag = pf_b22_c_done
+   }
+   has_country_flag = pf_b_ending_replay
+  }
+ }
+ title = PF_B22_SHORE_TITLE
+ desc = PF_B22_SHORE_DESC
+ picture = GFX_pf_art_morin_ending_shore
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_shore
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_B22_SHORE_OPTION
+  hidden_effect = {
+   set_country_flag = pf_b22_c_done
+   country_event = {
+    id = Phrolova_event.9836
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9471
+ }
+}
+
+# ---------- Morin bond and private memory CG ----------
+country_event = {
+    id = Phrolova_event.9472
+    is_triggered_only = yes
+    trigger = {
+        has_country_flag = pf_b_forge_stage_3
+        NOT = {
+            has_country_flag = pf_b16_gift_confirmed
+        }
+    }
+    event_window_type = leader_conversation
+    title = PF_B16_GIFT_TITLE
+    desc = PF_B16_GIFT_DESC
+    picture = GFX_pf_art_morin_project_small
+    immediate = {
+        pf_speaker_morin = yes
+        set_country_flag = pf_b16_gift_seen
+    }
+    custom_gui = pf_scroll_dialogue_9472
+    custom_gui_option = pf_character_conversation_option
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    option = {
+        name = PF_B16_GIFT_OPTION
+        custom_tooltip = PF_B16_GIFT_EFFECT
+        hidden_effect = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_relic = r_pf_math_instrument
+                    }
+                }
+                add_relic = r_pf_math_instrument
+            }
+            set_country_flag = pf_b16_gift_confirmed
+            country_event = {
+                id = Phrolova_event.11070
+            }
+        }
+    }
+}
+
+country_event = {
+ id = Phrolova_event.9473
+ is_triggered_only = yes
+ title = PF_MORIN_MEMORY_TITLE
+ desc = PF_MORIN_MEMORY_DESC
+ picture = GFX_pf_art_morin_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_memory
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_MORIN_MEMORY_OPTION
+ }
+ immediate = {
+  set_country_flag = pf_cg_morin_memory_seen
+  set_country_flag = pf28_memory_seen_9473
+ }
+}
+
+country_event = {
+ id = Phrolova_event.9480
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_MORIN_BOND_1_TITLE
+ desc = PF_MORIN_BOND_1_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes }
+
+ custom_gui = pf_scroll_dialogue_9480
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_MORIN_BOND_1_OPTION hidden_effect = {
+  set_country_flag = pf_morin_bond_1 remove_country_flag = pf_morin_bond_pending set_timed_country_flag = { flag = pf_morin_bond_wait days = 720 }
+  pf_portrait_morin = yes
+  country_event = { id = Phrolova_event.9833 } } }
+}
+
+country_event = {
+ id = Phrolova_event.9481
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_MORIN_BOND_2_TITLE
+ desc = PF_MORIN_BOND_2_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes }
+
+ custom_gui = pf_scroll_dialogue_9481
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_MORIN_BOND_2_OPTION hidden_effect = {
+  set_country_flag = pf_morin_bond_2 remove_country_flag = pf_morin_bond_pending set_timed_country_flag = { flag = pf_morin_bond_wait days = 720 }
+  set_country_flag = pf_morin_portrait_1 pf_portrait_morin = yes country_event = { id = Phrolova_event.9473 }
+  country_event = { id = Phrolova_event.9833 } } }
+}
+
+country_event = {
+ id = Phrolova_event.9482
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_MORIN_BOND_3_TITLE
+ desc = PF_MORIN_BOND_3_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes }
+
+ custom_gui = pf_scroll_dialogue_9482
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_MORIN_BOND_3_OPTION hidden_effect = {
+  set_country_flag = pf_morin_bond_3 remove_country_flag = pf_morin_bond_pending
+  set_country_flag = pf_morin_portrait_2 pf_portrait_morin = yes
+  country_event = { id = Phrolova_event.9833 } } }
+}
+
+country_event = {
+ id = Phrolova_event.9483
+ is_triggered_only = yes
+ trigger = { has_country_flag = pf_morin_recruited }
+ title = PF_MORIN_POST_PROGRESS
+ desc = PF_MORIN_POST_PROGRESS_DESC
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = { pf_speaker_morin = yes }
+ event_window_type = leader_conversation
+ custom_gui = pf_morin_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_B_BACK hidden_effect = { country_event = { id = Phrolova_event.9809 } } }
+}
+
+# ---------- B15 second pirate wave ----------
+country_event = {
+ id = Phrolova_event.9477
+ is_triggered_only = yes
+ title = PF_B15_RAID_WARNING_TITLE
+ desc = PF_B15_RAID_WARNING_DESC
+ picture = GFX_pf_art_morin_project_small
+ trigger = { has_country_flag = pf_b_forge_stage_2 has_country_flag = pf_b11_raid_won NOT = { has_country_flag = pf_b15_raid_preparing } NOT = { has_country_flag = pf_b15_raid_spawned } NOT = { has_country_flag = pf_b15_raid_won } }
+ option = { name = PF_B15_RAID_PREPARE custom_tooltip = PF_B15_RAID_STRENGTH_NOTE hidden_effect = { set_country_flag = pf_b15_raid_preparing country_event = { id = Phrolova_event.9815 days = 90 }  country_event = { id = Phrolova_event.9833 } } }
+ option = { name = PF_B15_RAID_LATER }
+}
+
+country_event = {
+ id = Phrolova_event.9478
+ is_triggered_only = yes
+ title = PF_B15_RAID_ARRIVE_TITLE
+ desc = PF_B15_RAID_ARRIVE_DESC
+ picture = GFX_pf_art_battlefield_small
+ option = { name = PF_B15_RAID_ARRIVE_OPTION }
+}
+
+country_event = {
+ id = Phrolova_event.9479
+ is_triggered_only = yes
+ title = PF_B15_RAID_VICTORY_TITLE
+ desc = PF_B15_RAID_VICTORY_DESC
+ picture = GFX_pf_art_morin_project_small
+ option = { name = PF_B15_RAID_VICTORY_OPTION }
+}
+
+country_event = {
+ id = Phrolova_event.9484
+ is_triggered_only = yes
+ title = PF_B15_RAID_FAIL_TITLE
+ desc = PF_B15_RAID_FAIL_DESC
+ picture = GFX_pf_art_solaris_1_small
+ option = { name = PF_B15_RAID_RETRY hidden_effect = {
+  remove_country_flag = pf_b15_raid_failed set_timed_country_flag = { flag = pf_b15_raid_deadline days = 180 } pf_b15_check_raid = yes
+ } }
+ option = { name = PF_B15_RAID_HOLD }
+}
+
+country_event = {
+ id = Phrolova_event.9811
+ is_triggered_only = yes
+ title = PF_MORIN_CLASS_ASK
+ desc = PF_MORIN_CLASS_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes }
+
+ event_window_type = leader_conversation
+ custom_gui = "pf_morin_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_B_BACK hidden_effect = { country_event = { id = Phrolova_event.9809 } } }
+}
+
+country_event = {
+ id = Phrolova_event.9812
+ is_triggered_only = yes
+ title = PF_MORIN_PIN_ASK
+ desc = PF_MORIN_PIN_DESC
+ picture = GFX_pf_art_morin_project_small
+ immediate = { pf_speaker_morin = yes }
+
+ event_window_type = leader_conversation
+ custom_gui = "pf_morin_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_B_BACK hidden_effect = { country_event = { id = Phrolova_event.9809 } } }
+}
+
+
+
+country_event = {
+ id = Phrolova_event.9814
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_country_flag = pf_b11_raid_preparing }
+ immediate = { remove_country_flag = pf_b11_raid_preparing pf_b11_spawn_raid = yes }
+}
+
+country_event = {
+ id = Phrolova_event.9815
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_country_flag = pf_b15_raid_preparing }
+ immediate = { remove_country_flag = pf_b15_raid_preparing pf_b15_spawn_raid = yes }
+}
+
+# Console-only previews of the short reading viewport on two additional leaders.
+
+country_event = {
+ id = Phrolova_event.11567
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = Phrolova_event.9422.name
+ desc = Phrolova_event.9422.desc
+ picture = GFX_pf_art_morin_forge_small
+ immediate = {
+  random_owned_leader = {
+   limit = { has_leader_flag = pf_morin }
+   save_event_target_as = pf_speaker
+  }
+ }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = { name = PF_CONTACT_BYE }
+ custom_gui = pf_scroll_dialogue_9422
+}
+
+country_event = {
+ id = Phrolova_event.11568
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = Phrolova_event.9411.name
+ desc = Phrolova_event.9411.desc
+ picture = GFX_pf_art_solaris_2_small
+ immediate = {
+  random_owned_leader = {
+   limit = { has_leader_flag = pf_shorekeeper }
+   save_event_target_as = pf_speaker
+  }
+ }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = { name = PF_CONTACT_BYE }
+ custom_gui = pf_scroll_dialogue_9411
+}

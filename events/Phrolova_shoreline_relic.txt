@@ -1,0 +1,42 @@
+country_event = {
+    id = Phrolova_event.10442
+    is_triggered_only = yes
+    title = PF_SK_RELIC_GIFT_TITLE
+    desc = PF_SK_RELIC_GIFT_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_scroll_dialogue_10442
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = { has_country_flag = pf_sk_stage_4_done NOT = { has_country_flag = pf_sk_relic_received } }
+    immediate = { pf_speaker_shorekeeper = yes set_country_flag = pf_sk_relic_gift_seen }
+    option = {
+        name = PF_SK_RELIC_GIFT_REPLY
+        custom_tooltip = PF_SK_RELIC_GIFT_EFFECT
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_country_flag = pf_sk_relic_received } }
+                if = { limit = { NOT = { has_relic = r_pf_star_order } } add_relic = r_pf_star_order }
+                set_country_flag = pf_sk_relic_received
+            }
+            country_event = { id = Phrolova_event.10443 }
+        }
+    }
+}
+
+country_event = {
+ id = Phrolova_event.10443
+ is_triggered_only = yes
+ title = r_pf_star_order
+ desc = r_pf_star_order_desc
+ option = {
+  name = PF_SK_RELIC_DISPLAY_REPLY
+ }
+ picture = GFX_pf_art_relic_shorekeeper
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_shorekeeper
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+
+ }
+}

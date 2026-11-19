@@ -113,12 +113,13 @@ ship_event = { id = Phrolova_event.1933 is_triggered_only = yes
  from = { remove_planet_flag = pf23_WW13@root.owner } } }
 }
 
-ship_event = { id = Phrolova_event.1934 is_triggered_only = yes
- trigger = { exists = owner owner = { is_ai = no } from = { has_planet_flag = pf23_WW14@root.owner } }
- title = PF23_result_WW14_title desc = PF23_result_WW14_desc picture = Phrolova_events_solaris_lab
- option = { name = PF23_collect custom_tooltip = PF23_capacity_tooltip
- hidden_effect = { owner = { if = { limit = { is_ai = no } pf_award_WW14 = yes } }
- from = { remove_planet_flag = pf23_WW14@root.owner } } }
+# Resolves the retired anomaly still present in older saves.
+ship_event = {
+ id = Phrolova_event.1934
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { exists = owner from = { has_planet_flag = pf23_WW14@root.owner } }
+ immediate = { from = { remove_planet_flag = pf23_WW14@root.owner } }
 }
 
 ship_event = { id = Phrolova_event.1935 is_triggered_only = yes

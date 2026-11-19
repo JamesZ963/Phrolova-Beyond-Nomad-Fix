@@ -1,0 +1,1258 @@
+namespace = Phrolova_event
+country_event = {
+ id = Phrolova_event.11300
+ is_triggered_only = yes
+ title = PF_CONTACT_MEMORIES
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = {
+  pf_guard_all_leaders = yes
+  pf_speaker_phrolova = yes
+ }
+ event_window_type = leader_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ desc = PF_MEMORY_DESC
+ option = {
+  name = PF_MEMORY_LABEL_1765
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_1765
+    has_country_flag = pf22_finale_complete
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12004
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_1770
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_1770
+    has_country_flag = pf22_finale_complete
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12006
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9701
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9701
+    has_country_flag = researched_leaders_Phrolova
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12021
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9704
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9704
+    has_country_flag = pf_cg_phrolova_memory_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12022
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9740
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9740
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12029
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_11020
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_11020
+    has_country_flag = pf075_home_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12042
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_11021
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_11021
+    has_country_flag = pf075_grand_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12043
+   }
+  }
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.202
+   }
+  }
+ }
+ custom_gui = pf_phrolova_conversation
+}
+country_event = {
+ id = Phrolova_event.11310
+ is_triggered_only = yes
+ title = PF_CONTACT_MEMORIES
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = {
+  pf_guard_all_leaders = yes
+  pf_speaker_denia = yes
+ }
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ desc = PF_MEMORY_DESC
+ option = {
+  name = PF_MEMORY_LABEL_1771
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_1771
+    has_country_flag = pf22_finale_complete
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12007
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9711
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9711
+    has_country_flag = pf_denia_recruited
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12023
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9714
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9714
+    has_country_flag = pf_cg_denia_memory_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12024
+   }
+  }
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1700
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11320
+ is_triggered_only = yes
+ title = PF_CONTACT_MEMORIES
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = {
+  pf_guard_all_leaders = yes
+  pf_speaker_shorekeeper = yes
+ }
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ desc = PF_MEMORY_DESC
+ option = {
+  name = PF_MEMORY_LABEL_1772
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_1772
+    has_country_flag = pf22_finale_complete
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12008
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9721
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9721
+    has_country_flag = pf_shorekeeper_recruited
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12025
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9724
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9724
+    has_country_flag = pf_cg_shorekeeper_memory_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12026
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_10412
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_10412
+    has_country_flag = pf_sk_stage_1_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12033
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_10461
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_10461
+    has_country_flag = pf_shorekeeper_bond_4
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12036
+   }
+  }
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1720
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11330
+ is_triggered_only = yes
+ title = PF_CONTACT_MEMORIES
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = {
+  pf_guard_all_leaders = yes
+  pf_speaker_aemeath = yes
+ }
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ desc = PF_MEMORY_DESC
+ option = {
+  name = PF_MEMORY_LABEL_1773
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_1773
+    has_country_flag = pf22_finale_complete
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12009
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9731
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9731
+    has_country_flag = pf_aemeath_recruited
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12027
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9734
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9734
+    has_country_flag = pf_cg_aemeath_memory_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12028
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_11010
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_11010
+    has_country_flag = pf075_life_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12037
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_11014
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_11014
+    has_country_flag = pf075_suizhe_launched
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12038
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_11018
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_11018
+    has_country_flag = pf075_complete_aemeath
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12041
+   }
+  }
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1740
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11340
+ is_triggered_only = yes
+ title = PF_CONTACT_MEMORIES
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = {
+  pf_guard_all_leaders = yes
+  pf_speaker_morin = yes
+ }
+ event_window_type = leader_conversation
+ custom_gui = pf_morin_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ desc = PF_MEMORY_DESC
+ option = {
+  name = PF_MEMORY_LABEL_9417
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9417
+    has_country_flag = pf_morin_recruited
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12014
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9434
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9434
+    has_country_flag = pf_b_record_cg_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12015
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9468
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9468
+    has_country_flag = pf_b21_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12017
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9470
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9470
+    has_country_flag = pf_b22_b_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12018
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9471
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9471
+    has_country_flag = pf_b22_c_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12019
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9473
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9473
+    has_country_flag = pf_cg_morin_memory_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12020
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9836
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9836
+    has_country_flag = pf_b22_done
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12031
+   }
+  }
+ }
+ option = {
+  name = PF_MEMORY_LABEL_9850
+  trigger = {
+   OR = {
+    has_country_flag = pf28_memory_seen_9850
+    has_country_flag = pf_b_departure_cg_seen
+   }
+  }
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12032
+   }
+  }
+ }
+ option = {
+  name = PF_back
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9809
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12004
+ is_triggered_only = yes
+ title = PF22_ticket_title
+ desc = PF22_ticket_offer_desc
+ picture = GFX_pf17_festival_group
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_group
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_1765
+   has_country_flag = pf22_finale_complete
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}
+
+country_event = {
+ id = Phrolova_event.12006
+ is_triggered_only = yes
+ title = PF17_1770_title
+ desc = PF17_1770_desc
+ picture = GFX_pf17_festival_phrolova
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_phrolova
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_1770
+   has_country_flag = pf22_finale_complete
+  }
+ }
+ immediate = {
+  play_sound = pf17_festival_music
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12007
+ is_triggered_only = yes
+ title = PF17_1771_title
+ desc = PF17_1771_desc
+ picture = GFX_pf17_festival_denia
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_denia
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_1771
+   has_country_flag = pf22_finale_complete
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11310
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12008
+ is_triggered_only = yes
+ title = PF17_1772_title
+ desc = PF17_1772_desc
+ picture = GFX_pf17_festival_shorekeeper
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_shorekeeper
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_1772
+   has_country_flag = pf22_finale_complete
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11320
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12009
+ is_triggered_only = yes
+ title = PF17_1773_title
+ desc = PF17_1773_desc
+ picture = GFX_pf17_festival_aemeath
+ diplomatic = yes
+ custom_gui = pf_cinematic_festival_aemeath
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_1773
+   has_country_flag = pf22_finale_complete
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11330
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12014
+ is_triggered_only = yes
+ title = PF_cg_morin_meet_title
+ desc = PF_cg_morin_meet_desc
+ picture = GFX_pf_art_morin_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_meet
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9417
+   has_country_flag = pf_morin_recruited
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12015
+ is_triggered_only = yes
+ title = PF_B09_COMPLETE_TITLE
+ desc = PF_B09_COMPLETE_DESC
+ picture = GFX_pf_art_morin_record
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_record
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9434
+   has_country_flag = pf_b_record_cg_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12017
+ is_triggered_only = yes
+ title = PF_B21_TITLE
+ desc = PF_B21_DESC
+ picture = GFX_pf_art_morin_ending
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9468
+   has_country_flag = pf_b21_done
+  }
+ }
+ immediate = {
+  pf_speaker_morin = yes
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12018
+ is_triggered_only = yes
+ title = PF_B22_DENIA_TITLE
+ desc = PF_B22_DENIA_DESC
+ picture = GFX_pf_art_morin_ending_denia
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_denia
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9470
+   has_country_flag = pf_b22_b_done
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12019
+ is_triggered_only = yes
+ title = PF_B22_SHORE_TITLE
+ desc = PF_B22_SHORE_DESC
+ picture = GFX_pf_art_morin_ending_shore
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_shore
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9471
+   has_country_flag = pf_b22_c_done
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12020
+ is_triggered_only = yes
+ title = PF_MORIN_MEMORY_TITLE
+ desc = PF_MORIN_MEMORY_DESC
+ picture = GFX_pf_art_morin_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_memory
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9473
+   has_country_flag = pf_cg_morin_memory_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12021
+ is_triggered_only = yes
+ title = PF_cg_phrolova_meet_title
+ desc = PF_cg_phrolova_meet_desc
+ picture = GFX_pf_art_phrolova_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_phrolova_meet
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9701
+   has_country_flag = researched_leaders_Phrolova
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12022
+ is_triggered_only = yes
+ title = PF_cg_phrolova_memory_title
+ desc = PF_cg_phrolova_memory_desc
+ picture = GFX_pf_art_phrolova_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_phrolova_memory
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9704
+   has_country_flag = pf_cg_phrolova_memory_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12023
+ is_triggered_only = yes
+ title = PF_cg_denia_meet_title
+ desc = PF_cg_denia_meet_desc
+ picture = GFX_pf_art_denia_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_denia_meet
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9711
+   has_country_flag = pf_denia_recruited
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11310
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12024
+ is_triggered_only = yes
+ title = PF_cg_denia_memory_title
+ desc = PF_cg_denia_memory_desc
+ picture = GFX_pf_art_denia_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_denia_memory
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9714
+   has_country_flag = pf_cg_denia_memory_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11310
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12025
+ is_triggered_only = yes
+ title = PF_cg_shorekeeper_meet_title
+ desc = PF_cg_shorekeeper_meet_desc
+ picture = GFX_pf_art_shorekeeper_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_shorekeeper_meet
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9721
+   has_country_flag = pf_shorekeeper_recruited
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11320
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12026
+ is_triggered_only = yes
+ title = PF_cg_shorekeeper_memory_title
+ desc = PF_cg_shorekeeper_memory_desc
+ picture = GFX_pf_art_shorekeeper_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_shorekeeper_memory
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9724
+   has_country_flag = pf_cg_shorekeeper_memory_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11320
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12027
+ is_triggered_only = yes
+ title = PF_cg_aemeath_meet_title
+ desc = PF_cg_aemeath_meet_desc
+ picture = GFX_pf_art_aemeath_meet
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_aemeath_meet
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9731
+   has_country_flag = pf_aemeath_recruited
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11330
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12028
+ is_triggered_only = yes
+ title = PF_cg_aemeath_memory_title
+ desc = PF_cg_aemeath_memory_desc
+ picture = GFX_pf_art_aemeath_memory
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_aemeath_memory
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9734
+   has_country_flag = pf_cg_aemeath_memory_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11330
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12029
+ is_triggered_only = yes
+ title = PF_cg_concert_title
+ desc = PF_cg_concert_desc
+ picture = GFX_pf_art_concert
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_concert
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9740
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12031
+ is_triggered_only = yes
+ title = PF_B22_PHROLOVA_TITLE
+ desc = PF_B22_PHROLOVA_DESC
+ picture = GFX_pf_art_morin_ending_phrolova
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_phrolova
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9836
+   has_country_flag = pf_b22_done
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12032
+ is_triggered_only = yes
+ title = PF_B_DEPART_TITLE
+ desc = PF_B_DEPART_DESC
+ picture = GFX_pf_art_morin_departure
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_departure
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_9850
+   has_country_flag = pf_b_departure_cg_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11340
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12033
+ is_triggered_only = yes
+ title = PF_SK_ACTIVATION_TITLE
+ desc = PF_SK_ACTIVATION_DESC
+ picture = GFX_pf_sk_activation
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_activation
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_10412
+   has_country_flag = pf_sk_stage_1_done
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11320
+   }
+  }
+ }
+}
+
+country_event = {
+ id = Phrolova_event.12036
+ is_triggered_only = yes
+ title = PF_SK_HIGHEST_TITLE
+ desc = PF_SK_HIGHEST_DESC
+ picture = GFX_pf_sk_highest
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_highest
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_10461
+   has_country_flag = pf_shorekeeper_bond_4
+  }
+ }
+ immediate = {
+  play_sound = pf_theme_shorekeeper
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11320
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12037
+ is_triggered_only = yes
+ title = PF_AMX_LIFE_TITLE
+ desc = PF_AMX_LIFE_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_aemeath_life2
+ custom_gui = pf_ui_pf_art_075_aemeath_life2
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_11010
+   has_country_flag = pf075_life_seen
+  }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11330
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12038
+ is_triggered_only = yes
+ title = PF_AMX_RESTARTED_TITLE
+ desc = PF_AMX_RESTARTED_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_suizhe_restart
+ custom_gui = pf_ui_pf_art_075_suizhe_restart
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_11014
+   has_country_flag = pf075_suizhe_launched
+  }
+ }
+ immediate = {
+  play_sound = pf_theme_aemeath
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11330
+   }
+  }
+ }
+}
+
+
+country_event = {
+ id = Phrolova_event.12041
+ is_triggered_only = yes
+ title = PF_AMX_FINAL_TITLE
+ desc = PF_AMX_FINAL_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_aemeath_final
+ custom_gui = pf_ui_pf_art_075_aemeath_final
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_11018
+   has_country_flag = pf075_complete_aemeath
+  }
+ }
+ option = {
+  name = PF_AMX_FINAL_NEXT
+  trigger = { OR = { has_country_flag = pf28_memory_seen_12110 has_country_flag = pf075_ame_final_done } }
+  hidden_effect = { country_event = { id = Phrolova_event.12112 } }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  trigger = { NOR = { has_country_flag = pf28_memory_seen_12110 has_country_flag = pf075_ame_final_done } }
+  hidden_effect = { country_event = { id = Phrolova_event.11330 } }
+ }
+ immediate = {
+  play_sound = pf_aemeath_finale
+ }
+}
+country_event = {
+ id = Phrolova_event.12042
+ is_triggered_only = yes
+ title = PF_PHX_HOME_TITLE
+ desc = PF_PHX_HOME_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_phrolova_home
+ custom_gui = pf_ui_pf_art_075_phrolova_home
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_11020
+   has_country_flag = pf075_home_done
+  }
+ }
+ immediate = {
+  play_sound = pf_theme_phrolova
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.12043
+ is_triggered_only = yes
+ title = PF_PHX_GRAND_TITLE
+ desc = PF_PHX_GRAND_DESC
+ diplomatic = yes
+ picture = GFX_pf_art_075_phrolova_grand
+ custom_gui = pf_ui_pf_art_075_phrolova_grand
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  OR = {
+   has_country_flag = pf28_memory_seen_11021
+   has_country_flag = pf075_grand_done
+  }
+ }
+ immediate = {
+  play_sound = pf_performance
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.11300
+   }
+  }
+ }
+}

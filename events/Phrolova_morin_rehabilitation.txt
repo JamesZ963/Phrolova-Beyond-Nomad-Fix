@@ -1,0 +1,32 @@
+country_event = {
+ id = Phrolova_event.9830
+ is_triggered_only = yes
+ event_window_type = leader_conversation
+ title = PF_MORIN_RECOVERY_TITLE
+ desc = PF_MORIN_RECOVERY_DESC
+ picture = GFX_pf_art_morin_project_small
+ custom_gui = "pf_morin_conversation"
+ custom_gui_option = "pf_character_conversation_option"
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ trigger = { has_country_flag = pf_morin_recruited NOT = { has_country_flag = pf_morin_rehabilitation_done } }
+ immediate = {
+  set_country_flag = pf_morin_rehabilitation_done
+  remove_country_flag = pf_morin_rehabilitation_wait
+  every_owned_leader = { limit = { has_leader_flag = pf_morin } remove_trait = leader_trait_pf_morin_injured }
+  pf_speaker_morin = yes
+ }
+ option = { name = PF_MORIN_RECOVERY_OPTION custom_tooltip = PF_MORIN_RECOVERY_EFFECT }
+}
+country_event = {
+ id = Phrolova_event.9831
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { has_country_flag = pf_morin_recruited NOT = { has_country_flag = pf_b04_done } }
+ immediate = { remove_country_flag = pf_morin_fragment_wait pf_b_after_recruit = yes }
+}
+country_event = {
+ id = Phrolova_event.9832
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_morin_recruit_timeline = yes }
+}

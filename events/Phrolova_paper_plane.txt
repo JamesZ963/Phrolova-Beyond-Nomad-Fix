@@ -1,0 +1,167 @@
+namespace = Phrolova_event
+
+country_event = {
+ id = Phrolova_event.12110
+ is_triggered_only = yes
+ immediate = { set_country_flag = pf28_memory_seen_12110 }
+ title = PF_AMX_AFTER_TITLE
+ desc = PF_AMX_AFTER_DESC
+ trigger = { has_country_flag = pf44_ame_final_started NOT = { has_country_flag = pf075_ame_final_done } }
+ diplomatic = yes
+ picture = GFX_pf_art_044_aemeath_terrace
+ custom_gui = pf_ui_pf_art_044_aemeath_terrace
+ custom_gui_option = pf_cinematic_option
+ option = {
+ name = PF_AMX_AFTER_NEXT
+ hidden_effect = {
+  country_event = {
+   id = Phrolova_event.12111
+  }
+ }
+}
+}
+
+country_event = {
+ id = Phrolova_event.12111
+ is_triggered_only = yes
+ immediate = { set_country_flag = pf28_memory_seen_12111 }
+ title = PF_AMX_PLANE_TITLE
+ desc = PF_AMX_PLANE_DESC
+ trigger = {
+  has_country_flag = pf44_ame_final_started
+  NOT = {
+   has_country_flag = pf075_ame_final_done
+  }
+ }
+ diplomatic = yes
+ picture = GFX_pf_art_044_aemeath_terrace
+ custom_gui = pf_ui_pf_art_044_aemeath_terrace
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_AMX_PLANE_OPT_1
+  custom_tooltip = PF_AMX_PLANE_TT_1
+  custom_tooltip = PF44_EVERSTAR_ROUTE_REWARD_TT
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      pf44_has_paper_plane = yes
+     }
+    }
+    add_relic = r_pf_paper_plane
+    set_country_flag = pf44_paper_plane_1
+   }
+   pf44_finish_aemeath_finale = yes
+  }
+ }
+ option = {
+  name = PF_AMX_PLANE_OPT_2
+  custom_tooltip = PF_AMX_PLANE_TT_2
+  custom_tooltip = PF44_EVERSTAR_ROUTE_REWARD_TT
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      pf44_has_paper_plane = yes
+     }
+    }
+    add_relic = r_pf_paper_plane_2
+    set_country_flag = pf44_paper_plane_2
+   }
+   pf44_finish_aemeath_finale = yes
+  }
+ }
+ option = {
+  name = PF_AMX_PLANE_OPT_3
+  custom_tooltip = PF_AMX_PLANE_TT_3
+  custom_tooltip = PF44_EVERSTAR_ROUTE_REWARD_TT
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      pf44_has_paper_plane = yes
+     }
+    }
+    add_relic = r_pf_paper_plane_3
+    set_country_flag = pf44_paper_plane_3
+   }
+   pf44_finish_aemeath_finale = yes
+  }
+ }
+ option = {
+  name = PF_AMX_PLANE_OPT_4
+  custom_tooltip = PF_AMX_PLANE_TT_4
+  custom_tooltip = PF44_EVERSTAR_ROUTE_REWARD_TT
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      pf44_has_paper_plane = yes
+     }
+    }
+    add_relic = r_pf_paper_plane_4
+    set_country_flag = pf44_paper_plane_4
+   }
+   pf44_finish_aemeath_finale = yes
+  }
+ }
+ option = {
+  name = PF_AMX_PLANE_OPT_5
+  custom_tooltip = PF_AMX_PLANE_TT_5
+  custom_tooltip = PF44_EVERSTAR_ROUTE_REWARD_TT
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      pf44_has_paper_plane = yes
+     }
+    }
+    add_relic = r_pf_paper_plane_5
+    set_country_flag = pf44_paper_plane_5
+   }
+   pf44_finish_aemeath_finale = yes
+  }
+ }
+}
+
+country_event = {
+ id = Phrolova_event.12112
+ is_triggered_only = yes
+ title = PF_AMX_AFTER_TITLE
+ desc = PF_AMX_AFTER_DESC
+ trigger = { OR = { has_country_flag = pf28_memory_seen_12110 has_country_flag = pf075_ame_final_done } }
+ diplomatic = yes
+ picture = GFX_pf_art_044_aemeath_terrace
+ custom_gui = pf_ui_pf_art_044_aemeath_terrace
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_AMX_AFTER_NEXT
+  trigger = { OR = { has_country_flag = pf28_memory_seen_12111 has_country_flag = pf075_ame_final_done } }
+  hidden_effect = { country_event = { id = Phrolova_event.12113 } }
+ }
+ option = {
+  name = PF_MEMORY_BACK
+  trigger = { NOR = { has_country_flag = pf28_memory_seen_12111 has_country_flag = pf075_ame_final_done } }
+  hidden_effect = { country_event = { id = Phrolova_event.11330 } }
+ }
+}
+
+country_event = {
+ id = Phrolova_event.12113
+ is_triggered_only = yes
+ title = PF_AMX_PLANE_TITLE
+ desc = PF_AMX_PLANE_DESC
+ trigger = { OR = { has_country_flag = pf28_memory_seen_12111 has_country_flag = pf075_ame_final_done } }
+ diplomatic = yes
+ picture = GFX_pf_art_044_aemeath_terrace
+ custom_gui = pf_ui_pf_art_044_aemeath_terrace
+ custom_gui_option = pf_cinematic_option
+ option = {
+ name = PF_MEMORY_BACK
+ hidden_effect = {
+  country_event = {
+   id = Phrolova_event.11330
+  }
+ }
+}
+}

@@ -1,22 +1,42 @@
 namespace = Phrolova_event
 country_event = {
  id = Phrolova_event.310
-
- 
  is_triggered_only = yes
  title = Phrolova_event.310.name
  desc = Phrolova_event.310.desc
  picture = GFX_leader_recruitment_bg_renowned
- trigger = { has_country_flag = Phrolova_bond_5 NOT = { has_country_flag = pf_solaris_wait } NOT = { has_country_flag = pf_solaris_created } NOT = { has_country_flag = pf_solaris_notice } }
- immediate = { pf_speaker_phrolova = yes  set_country_flag = pf_solaris_notice }
+ trigger = {
+  has_country_flag = Phrolova_bond_3
+  NOT = {
+   has_country_flag = pf_solaris_wait
+  }
+  NOT = {
+   has_country_flag = pf_solaris_created
+  }
+  NOT = {
+   has_country_flag = pf_solaris_notice
+  }
+ }
+ immediate = {
+  pf_speaker_phrolova = yes
+  set_country_flag = pf_solaris_notice
+ }
  diplomatic = yes
  event_window_type = leader_conversation
- custom_gui = "pf_character_conversation"
- custom_gui_option = "pf_character_conversation_option"
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF_full_310_0 hidden_effect = { country_event = {
- id = Phrolova_event.312
-  } } }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_full_310_0
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.312
+   }
+  }
+ }
+ custom_gui = pf_scroll_dialogue_310
 }
 country_event = {
  id = Phrolova_event.312
@@ -31,16 +51,26 @@ country_event = {
 }
 country_event = {
  id = Phrolova_event.311
- immediate = { play_sound = pf17_discovery } 
- 
  is_triggered_only = yes
  title = Phrolova_event.311.name
  desc = Phrolova_event.311.desc
  picture = GFX_pf17_solaris
  diplomatic = yes
- custom_gui = "pf_cinematic_solaris"
- custom_gui_option = "pf_cinematic_option"
- option = { name = PF_full_311_0 hidden_effect = { pf_find_targets = yes begin_event_chain = { event_chain = pf_journey_chain target = this } } }
+ custom_gui = pf_cinematic_solaris
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_full_311_0
+  hidden_effect = {
+   pf_find_targets = yes
+   begin_event_chain = {
+    event_chain = pf_journey_chain
+    target = this
+   }
+  }
+ }
+ immediate = {
+  play_sound = pf17_discovery
+ }
 }
 fleet_event = {
  id = Phrolova_event.321
@@ -54,7 +84,30 @@ fleet_event = {
  title = Phrolova_event.321.name
  desc = Phrolova_event.321.desc
  picture = GFX_pf_art_solaris_1_small
- option = { name = PF_full_321_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch1 } } set_country_flag = pf_solaris_ch1 add_resource = { alloys = 5000 } pf_award_WW15 = yes } } } } }
+ option = { name = PF_full_321_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch1 } } set_country_flag = pf_solaris_ch1 add_resource = { alloys = 5000 } pf_award_WW15 = yes } } } } 
+ 
+
+ tooltip = {
+  if = {
+   limit = {
+    exists = leader
+    leader = {
+     has_leader_flag = Phrolova_scientist
+    }
+   }
+   owner = {
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_solaris_ch1
+      }
+     }
+     custom_tooltip = PF49_RES_alloys_5000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -74,7 +127,30 @@ fleet_event = {
  title = Phrolova_event.322.name
  desc = Phrolova_event.322.desc
  picture = GFX_pf_art_solaris_2_small
- option = { name = PF_full_322_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch2 } } set_country_flag = pf_solaris_ch2 add_resource = { minerals = 5000 } pf_award_WW16 = yes } } } } }
+ option = { name = PF_full_322_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch2 } } set_country_flag = pf_solaris_ch2 add_resource = { minerals = 5000 } pf_award_WW16 = yes } } } } 
+ 
+
+ tooltip = {
+  if = {
+   limit = {
+    exists = leader
+    leader = {
+     has_leader_flag = Phrolova_scientist
+    }
+   }
+   owner = {
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_solaris_ch2
+      }
+     }
+     custom_tooltip = PF49_RES_minerals_5000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -94,7 +170,30 @@ fleet_event = {
  title = Phrolova_event.323.name
  desc = Phrolova_event.323.desc
  picture = GFX_pf_art_solaris_3_small
- option = { name = PF_full_323_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch3 } } set_country_flag = pf_solaris_ch3 add_resource = { energy = 5000 } } } } } }
+ option = { name = PF_full_323_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch3 } } set_country_flag = pf_solaris_ch3 add_resource = { energy = 5000 } } } } } 
+ 
+
+ tooltip = {
+  if = {
+   limit = {
+    exists = leader
+    leader = {
+     has_leader_flag = Phrolova_scientist
+    }
+   }
+   owner = {
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_solaris_ch3
+      }
+     }
+     custom_tooltip = PF49_RES_energy_5000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -114,7 +213,30 @@ fleet_event = {
  title = Phrolova_event.324.name
  desc = Phrolova_event.324.desc
  picture = GFX_pf_art_solaris_4_small
- option = { name = PF_full_324_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch4 } } set_country_flag = pf_solaris_ch4 add_resource = { society_research = 5000 } pf_award_WW17 = yes } } } } }
+ option = { name = PF_full_324_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch4 } } set_country_flag = pf_solaris_ch4 add_resource = { society_research = 5000 } pf_award_WW17 = yes } } } } 
+ 
+
+ tooltip = {
+  if = {
+   limit = {
+    exists = leader
+    leader = {
+     has_leader_flag = Phrolova_scientist
+    }
+   }
+   owner = {
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_solaris_ch4
+      }
+     }
+     custom_tooltip = PF49_RES_society_research_5000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -134,7 +256,30 @@ fleet_event = {
  title = Phrolova_event.325.name
  desc = Phrolova_event.325.desc
  picture = GFX_pf_art_solaris_5_small
- option = { name = PF_full_325_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch5 } } set_country_flag = pf_solaris_ch5 add_resource = { engineering_research = 5000 } pf_award_WW18 = yes } } } } }
+ option = { name = PF_full_325_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch5 } } set_country_flag = pf_solaris_ch5 add_resource = { engineering_research = 5000 } pf_award_WW18 = yes } } } } 
+ 
+
+ tooltip = {
+  if = {
+   limit = {
+    exists = leader
+    leader = {
+     has_leader_flag = Phrolova_scientist
+    }
+   }
+   owner = {
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_solaris_ch5
+      }
+     }
+     custom_tooltip = PF49_RES_engineering_research_5000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -154,7 +299,30 @@ fleet_event = {
  title = Phrolova_event.326.name
  desc = Phrolova_event.326.desc
  picture = GFX_pf_art_solaris_6_small
- option = { name = PF_full_326_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch6 } } set_country_flag = pf_solaris_ch6 add_resource = { physics_research = 5000 } } } } } }
+ option = { name = PF_full_326_0 hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch6 } } set_country_flag = pf_solaris_ch6 add_resource = { physics_research = 5000 } } } } } 
+ 
+
+ tooltip = {
+  if = {
+   limit = {
+    exists = leader
+    leader = {
+     has_leader_flag = Phrolova_scientist
+    }
+   }
+   owner = {
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_solaris_ch6
+      }
+     }
+     custom_tooltip = PF49_RES_physics_research_5000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -163,83 +331,168 @@ fleet_event = {
  
 }
 fleet_event = {
- id = Phrolova_event.327
-
- 
- is_triggered_only = yes
- archaeology = yes
- show_sound = event_default
- immediate = { from = { set_site_progress_locked = yes } }
- after = { from = { set_site_progress_locked = no } }
- title = Phrolova_event.327.name
- desc = Phrolova_event.327.desc
- picture = GFX_pf_art_solaris_7_small
- option = { name = PF_full_327_0 custom_tooltip = PF_full_327_0_tooltip hidden_effect = { if = { limit = { exists = leader leader = { has_leader_flag = Phrolova_scientist } } owner = { if = { limit = { NOT = { has_country_flag = pf_solaris_ch7 } } set_country_flag = pf_solaris_ch7 if = { limit = { NOT = { has_country_flag = pf_oblivion_received } } if = { limit = { NOT = { has_relic = r_Phrolova_oblivion } } add_relic = r_Phrolova_oblivion } set_country_flag = pf_oblivion_received country_event = { id = Phrolova_event.1780 } } set_country_flag = pf_solaris_complete pf_refresh_techs = yes give_technology = { tech = tech_pf_theatre message = yes } set_timed_country_flag = { flag = pf_post_solaris_wait days = 30 } country_event = {
- id = Phrolova_event.330
-  days = 30 } } } } from = { planet = { remove_planet_flag = planet_under_investigation remove_modifier = pm_Phrolova_unstable add_modifier = { modifier = pf_old_memories days = -1 } } } } }
-
- 
-
- 
-
- 
+    id = Phrolova_event.327
+    is_triggered_only = yes
+    archaeology = yes
+    show_sound = event_default
+    immediate = {
+        from = {
+            set_site_progress_locked = yes
+        }
+    }
+    after = {
+        from = {
+            set_site_progress_locked = no
+        }
+    }
+    title = Phrolova_event.327.name
+    desc = Phrolova_event.327.desc
+    picture = GFX_pf_art_solaris_7_small
+    option = {
+        name = PF_full_327_0
+        custom_tooltip = PF_full_327_0_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    exists = leader
+                    leader = {
+                        has_leader_flag = Phrolova_scientist
+                    }
+                }
+                owner = {
+                    if = {
+                        limit = {
+                            NOT = {
+                                has_country_flag = pf_solaris_ch7
+                            }
+                        }
+                        set_country_flag = pf_solaris_ch7
+                        set_country_flag = pf_solaris_complete
+                        pf_refresh_techs = yes
+                        give_technology = {
+                            tech = tech_pf_theatre
+                            message = yes
+                        }
+                    }
+                }
+            }
+            from = {
+                planet = {
+                    remove_planet_flag = planet_under_investigation
+                    remove_modifier = pm_Phrolova_unstable
+                    set_planet_flag = pf_solaris_memory_decoded
+                    remove_modifier = pf_solaris_memory
+                    add_modifier = {
+                        modifier = pf_old_memories
+                        days = -1
+                    }
+                }
+            }
+        }
+    }
 }
-country_event = {
- id = Phrolova_event.330
 
- 
- is_triggered_only = yes
- trigger = { has_country_flag = pf_solaris_ch7 NOT = { has_country_flag = pf_post_solaris_1 } has_Phrolova_leader = yes }
- immediate = { pf_speaker_phrolova = yes  set_country_flag = pf_post_solaris_open }
- title = Phrolova_event.330.name
- desc = Phrolova_event.330.desc
- picture = GFX_leader_recruitment_bg_renowned
- diplomatic = yes
- event_window_type = leader_conversation
- custom_gui = "pf_character_conversation"
- custom_gui_option = "pf_character_conversation_option"
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF_full_330_0 hidden_effect = { set_country_flag = pf_post_solaris_1 country_event = {
- id = Phrolova_event.331
-  } } }
-}
 country_event = {
  id = Phrolova_event.331
-
- immediate = { pf_speaker_phrolova = yes }
-
- 
  is_triggered_only = yes
- trigger = { has_country_flag = pf_post_solaris_1 NOT = { has_country_flag = pf_post_solaris_2 } }
  title = Phrolova_event.331.name
  desc = Phrolova_event.331.desc
  picture = GFX_leader_recruitment_bg_renowned
  diplomatic = yes
  event_window_type = leader_conversation
- custom_gui = "pf_character_conversation"
- custom_gui_option = "pf_character_conversation_option"
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF_full_331_0 hidden_effect = { set_country_flag = pf_post_solaris_2 set_country_flag = pf_portrait_2 pf_apply_portrait = yes country_event = {
- id = Phrolova_event.332
-  } } }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_full_331_0
+  custom_tooltip = PF_PHX_OUTFIT_TT
+  hidden_effect = {
+   if = {
+    limit = {
+     has_country_flag = pf075_home_running
+     NOT = {
+      has_country_flag = pf075_home_outfit_done
+     }
+    }
+    set_country_flag = pf075_home_outfit_done
+    set_country_flag = pf_post_solaris_2
+    country_event = {
+     id = Phrolova_event.332
+    }
+   }
+  }
+ }
+ trigger = {
+  has_country_flag = pf075_home_running
+  has_country_flag = pf075_home_memory_done
+  NOT = {
+   has_country_flag = pf075_home_outfit_done
+  }
+ }
+ immediate = {
+  set_country_flag = pf075_skin_3_unlocked
+  set_country_flag = pf_portrait_2
+  pf_apply_portrait = yes
+  pf_speaker_phrolova = yes
+ }
+ custom_gui = pf_scroll_dialogue_331
 }
 country_event = {
  id = Phrolova_event.332
-
- immediate = { pf_speaker_phrolova = yes }
-
- 
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
  is_triggered_only = yes
- trigger = { has_country_flag = pf_post_solaris_2 NOT = { has_country_flag = pf_post_solaris_3 } }
  title = Phrolova_event.332.name
  desc = Phrolova_event.332.desc
  picture = GFX_leader_recruitment_bg_renowned
  diplomatic = yes
  event_window_type = leader_conversation
- custom_gui = "pf_character_conversation"
- custom_gui_option = "pf_character_conversation_option"
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF_full_332_0 hidden_effect = { if = { limit = { NOT = { has_country_flag = pf_oblivion_received } } if = { limit = { NOT = { has_relic = r_Phrolova_oblivion } } add_relic = r_Phrolova_oblivion } } remove_country_flag = pf_post_solaris_open set_country_flag = pf_oblivion_received set_country_flag = pf_post_solaris_3 } }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_full_332_0
+  custom_tooltip = PF_full_332_0_tooltip
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_post_solaris_3
+     }
+    }
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf_oblivion_received
+      }
+      NOT = {
+       has_relic = r_Phrolova_oblivion
+      }
+     }
+     add_relic = r_Phrolova_oblivion
+    }
+    remove_country_flag = pf_post_solaris_open
+    set_country_flag = pf_oblivion_received
+    set_country_flag = pf_post_solaris_3
+    country_event = {
+     id = Phrolova_event.1780
+    }
+   }
+  }
+ }
+ trigger = {
+  has_country_flag = pf075_home_running
+  has_country_flag = pf075_home_outfit_done
+  NOT = {
+   has_country_flag = pf_post_solaris_3
+  }
+ }
+ custom_gui = pf_scroll_dialogue_332
 }
 country_event = {
  id = Phrolova_event.410
@@ -254,42 +507,90 @@ country_event = {
 }
 country_event = {
  id = Phrolova_event.414
-
- immediate = { pf_speaker_phrolova = yes }
-
- 
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
  is_triggered_only = yes
  title = Phrolova_event.414.name
  desc = Phrolova_event.414.desc
  picture = GFX_leader_recruitment_bg_renowned
  diplomatic = yes
  event_window_type = leader_conversation
- custom_gui = "pf_character_conversation"
- custom_gui_option = "pf_character_conversation_option"
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF_full_414_0 hidden_effect = { country_event = {
- id = Phrolova_event.411
-  } } }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_full_414_0
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.411
+   }
+  }
+ }
+ custom_gui = pf_scroll_dialogue_414
 }
 country_event = {
  id = Phrolova_event.411
-
- immediate = { pf_speaker_phrolova = yes }
-
- 
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
  is_triggered_only = yes
- trigger = { has_country_flag = pf_alignment_ready NOT = { has_country_flag = pf_aleph_created } }
+ trigger = {
+  has_country_flag = pf_alignment_ready
+  NOT = {
+   has_country_flag = pf_aleph_created
+  }
+ }
  title = Phrolova_event.411.name
  desc = Phrolova_event.411.desc
  picture = GFX_leader_recruitment_bg_renowned
  diplomatic = yes
  event_window_type = leader_conversation
- custom_gui = "pf_character_conversation"
- custom_gui_option = "pf_character_conversation_option"
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF_full_411_0 trigger = { has_technology = tech_wormhole_stabilization } hidden_effect = { pf_open_wormhole_project = yes } }
- option = { name = PF_full_411_1 trigger = { NOT = { has_technology = tech_wormhole_stabilization } } hidden_effect = { add_research_option = tech_wormhole_stabilization if = { limit = { NOT = { has_technology = tech_hyper_drive_2 } } add_research_option = tech_hyper_drive_2 } set_country_flag = pf_wait_wormhole_tech } }
- option = { name = PF_full_411_2 }
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF_full_411_0
+  trigger = {
+   has_technology = tech_wormhole_stabilization
+  }
+  hidden_effect = {
+   pf_open_wormhole_project = yes
+  }
+ }
+ option = {
+  name = PF_full_411_1
+  custom_tooltip = PF_WORMHOLE_RESEARCH_OPTION_TT
+  if = {
+   limit = { NOT = { has_technology = tech_hyper_drive_2 } }
+   custom_tooltip = PF_HYPERDRIVE_RESEARCH_OPTION_TT
+  }
+  trigger = {
+   NOT = {
+    has_technology = tech_wormhole_stabilization
+   }
+  }
+  hidden_effect = {
+   add_research_option = tech_wormhole_stabilization
+   if = {
+    limit = {
+     NOT = {
+      has_technology = tech_hyper_drive_2
+     }
+    }
+    add_research_option = tech_hyper_drive_2
+   }
+   set_country_flag = pf_wait_wormhole_tech
+  }
+ }
+ option = {
+  name = PF_full_411_2
+ }
+ custom_gui = pf_phrolova_conversation
 }
 country_event = {
  id = Phrolova_event.412
@@ -309,15 +610,31 @@ country_event = {
   } }
  } } } } } }
 }
-country_event = { id = Phrolova_event.413 is_triggered_only = yes
- title = Phrolova_event.413.name desc = Phrolova_event.413.desc
- 
- immediate = { pf_speaker_phrolova = yes }
- diplomatic = yes event_window_type = leader_conversation
- custom_gui = "pf_character_conversation" custom_gui_option = "pf_character_conversation_option"
+country_event = {
+ id = Phrolova_event.413
+ is_triggered_only = yes
+ title = Phrolova_event.413.name
+ desc = Phrolova_event.413.desc
+ immediate = {
+  pf_speaker_phrolova = yes
+ }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui_option = pf_character_conversation_option
  picture = GFX_leader_recruitment_bg_renowned
- picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
- option = { name = PF22_passage_talk hidden_effect = { country_event = { id = Phrolova_event.1840 } } }
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF22_passage_talk
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.1840
+   }
+  }
+ }
+ custom_gui = pf_phrolova_conversation
 }
 
 fleet_event = {
@@ -326,7 +643,7 @@ fleet_event = {
  
  is_triggered_only = yes
  hide_window = yes
- trigger = { owner = { has_country_flag = pf_aleph_created NOT = { has_country_flag = pf_aleph_entered } } solar_system = { has_star_flag = pf_aleph@root.owner } }
+ trigger = { owner = { has_country_flag = pf_aleph_created NOT = { has_country_flag = pf_aleph_entered } NOT = { has_country_flag = pf_b_aleph_created_by_b } } solar_system = { has_star_flag = pf_aleph@root.owner } }
  immediate = { owner = { set_country_flag = pf_aleph_entered country_event = {
  id = Phrolova_event.416
   } } }
@@ -342,8 +659,11 @@ country_event = {
  desc = Phrolova_event.416.desc
  picture = GFX_leader_recruitment_bg_renowned
  event_window_type = leader_conversation
+ custom_gui_option = pf_character_conversation_option
  picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
  option = { name = PF_full_416_0 }
+
+ custom_gui = pf_scroll_dialogue_416
 }
 fleet_event = {
  id = Phrolova_event.431
@@ -355,7 +675,39 @@ fleet_event = {
  title = Phrolova_event.431.name
  desc = Phrolova_event.431.desc
  picture = GFX_pf_art_island_small
- option = { name = PF_full_431_0 hidden_effect = { owner = { if = { limit = { NOT = { has_country_flag = pf_aleph_ch1 } } set_country_flag = pf_aleph_ch1 pf_reward_research = yes } } } }
+ option = { name = PF_full_431_0 hidden_effect = { owner = { if = { limit = { NOT = { has_country_flag = pf_aleph_ch1 } } set_country_flag = pf_aleph_ch1 pf_reward_research = yes } } } 
+ 
+
+ tooltip = {
+  owner = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_aleph_ch1
+     }
+    }
+    add_monthly_resource_mult = {
+     resource = physics_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+    add_monthly_resource_mult = {
+     resource = society_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+    add_monthly_resource_mult = {
+     resource = engineering_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -373,7 +725,39 @@ fleet_event = {
  title = Phrolova_event.432.name
  desc = Phrolova_event.432.desc
  picture = GFX_pf_art_island_small
- option = { name = PF_full_432_0 hidden_effect = { owner = { if = { limit = { NOT = { has_country_flag = pf_aleph_ch2 } } set_country_flag = pf_aleph_ch2 pf_reward_research = yes } } } }
+ option = { name = PF_full_432_0 hidden_effect = { owner = { if = { limit = { NOT = { has_country_flag = pf_aleph_ch2 } } set_country_flag = pf_aleph_ch2 pf_reward_research = yes } } } 
+ 
+
+ tooltip = {
+  owner = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_aleph_ch2
+     }
+    }
+    add_monthly_resource_mult = {
+     resource = physics_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+    add_monthly_resource_mult = {
+     resource = society_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+    add_monthly_resource_mult = {
+     resource = engineering_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+   }
+  }
+ }
+}
 
  
 
@@ -391,7 +775,39 @@ fleet_event = {
  title = Phrolova_event.433.name
  desc = Phrolova_event.433.desc
  picture = GFX_pf_art_heart_damaged_small
- option = { name = PF_full_433_0 hidden_effect = { owner = { if = { limit = { NOT = { has_country_flag = pf_aleph_ch3 } } set_country_flag = pf_aleph_ch3 pf_reward_research = yes pf_begin_heart = yes } } } }
+ option = { name = PF_full_433_0 hidden_effect = { owner = { if = { limit = { NOT = { has_country_flag = pf_aleph_ch3 } } set_country_flag = pf_aleph_ch3 pf_reward_research = yes pf_begin_heart = yes } } } 
+ 
+
+ tooltip = {
+  owner = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_aleph_ch3
+     }
+    }
+    add_monthly_resource_mult = {
+     resource = physics_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+    add_monthly_resource_mult = {
+     resource = society_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+    add_monthly_resource_mult = {
+     resource = engineering_research
+     value = 6
+     min = 300
+     max = 10000
+    }
+   }
+  }
+ }
+}
 
  
 

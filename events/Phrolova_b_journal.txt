@@ -1,0 +1,6 @@
+country_event = {
+ id = Phrolova_event.9833
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b_journal_refresh = yes }
+}

@@ -1,0 +1,23 @@
+country_event = {
+ id = Phrolova_event.9861 is_triggered_only = yes hide_window = yes
+ trigger = { has_country_flag = pf_b19_preparing NOT = { has_country_flag = pf_b19_won } }
+ immediate = {
+  change_variable = { which = pf_b19_prepare_days value = 1 }
+  every_situation = { limit = { is_situation_type = pf_b19_prepare } add_situation_progress = 1 }
+  if = { limit = { check_variable = { which = pf_b19_prepare_days value >= 120 } pf_b_has_solaris = yes }
+   remove_country_flag = pf_b19_preparing every_situation = { limit = { is_situation_type = pf_b19_prepare } destroy_situation = this }
+   pf_b19_spawn_battle = yes
+  } else = { country_event = { id = Phrolova_event.9861 days = 1 } }
+  country_event = { id = Phrolova_event.9862 }
+ }
+}
+country_event = {
+ id = Phrolova_event.9862 is_triggered_only = yes hide_window = yes
+ immediate = { pf_b19_refresh_core_defense = yes }
+}
+
+fleet_event = {
+ id = Phrolova_event.9863 is_triggered_only = yes hide_window = yes
+ trigger = { owner = { OR = { has_country_flag = pf_b19_preparing has_country_flag = pf_b19_engaged } } }
+ immediate = { owner = { country_event = { id = Phrolova_event.9862 } } }
+}

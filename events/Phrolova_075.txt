@@ -1,0 +1,545 @@
+namespace = Phrolova_event
+
+country_event = { id = Phrolova_event.11000 is_triggered_only = yes hide_window = yes trigger = { is_ai = no } immediate = { pf075_monthly = yes } }
+
+country_event = {
+ id = Phrolova_event.11010
+ is_triggered_only = yes
+ title = PF_AMX_LIFE_TITLE
+ desc = PF_AMX_LIFE_DESC
+ trigger = {
+  has_country_flag = pf_aemeath_recruited
+  NOT = {
+   has_country_flag = pf075_life_seen
+  }
+ }
+ diplomatic = yes
+ option = {
+  name = PF075_CONTINUE
+  hidden_effect = {
+   set_country_flag = pf075_life_seen
+  }
+ }
+ picture = GFX_pf_art_075_aemeath_life2
+ custom_gui = pf_ui_pf_art_075_aemeath_life2
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  set_country_flag = pf075_life_seen
+  set_country_flag = pf28_memory_seen_11010
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11011
+ is_triggered_only = yes
+ title = PF_AMX_PREPARED_TITLE
+ desc = PF_AMX_PREPARED_DESC
+ trigger = {
+  has_country_flag = pf075_prepare_finished
+  NOT = {
+   has_country_flag = pf075_variant_chosen
+  }
+ }
+ immediate = {
+  pf_speaker_aemeath = yes
+ }
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture = GFX_leader_recruitment_bg_renowned
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ option = {
+  name = PF075_CONTINUE
+  custom_tooltip = PF46_REWARD_fire_control
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_aemeath_bond_1
+     }
+    }
+    set_country_flag = pf_aemeath_bond_pending
+    country_event = {
+     id = Phrolova_event.1750
+    }
+   }
+   else = {
+    country_event = {
+     id = Phrolova_event.11012
+    }
+   }
+  }
+ }
+}
+
+country_event = {
+    id = Phrolova_event.11012
+    is_triggered_only = yes
+    title = PF_AMX_CHOICE_TITLE
+    desc = PF_AMX_CHOICE_DESC
+    trigger = {
+        has_country_flag = pf075_prepare_finished
+        NOT = {
+            has_country_flag = pf075_variant_chosen
+        }
+    }
+    immediate = {
+        pf_speaker_aemeath = yes
+    }
+    diplomatic = yes
+    event_window_type = leader_conversation
+    custom_gui = pf_character_conversation
+    custom_gui_option = pf_character_conversation_option
+    picture = GFX_leader_recruitment_bg_renowned
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    option = {
+        name = PF_AMX_CHOOSE_MELEE
+        custom_tooltip = PF_AMX_MELEE_TT
+        hidden_effect = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = pf075_variant_chosen
+                    }
+                }
+                set_country_flag = pf075_suizhe_melee
+                set_country_flag = pf075_variant_chosen
+                pf075_open_restart = yes
+            }
+        }
+    }
+    option = {
+        name = PF_AMX_CHOOSE_IMPERIAL
+        custom_tooltip = PF_AMX_IMPERIAL_TT
+        hidden_effect = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = pf075_variant_chosen
+                    }
+                }
+                set_country_flag = pf075_suizhe_imperial
+                set_country_flag = pf075_variant_chosen
+                pf075_open_restart = yes
+            }
+        }
+    }
+}
+
+country_event = {
+ id = Phrolova_event.11014
+ is_triggered_only = yes
+ title = PF_AMX_RESTARTED_TITLE
+ desc = PF_AMX_RESTARTED_DESC
+ trigger = {
+  has_country_flag = pf075_restart_finished
+  has_country_flag = pf075_restart_paid
+  has_country_flag = pf075_variant_chosen
+ }
+ diplomatic = yes
+ option = {
+  name = PF075_CONTINUE
+  custom_tooltip = PF46_REWARD_light_array
+  custom_tooltip = PF44_JOURNEY_GROWTH_TT
+  custom_tooltip = PF_AMX_LAUNCH_TT
+  hidden_effect = {
+   pf075_spawn_suizhe = yes
+   if = {
+    limit = {
+     has_country_flag = pf075_suizhe_launched
+     NOT = {
+      has_country_flag = pf_aemeath_bond_2
+     }
+    }
+    set_country_flag = pf_aemeath_bond_pending
+    country_event = {
+     id = Phrolova_event.9734
+    }
+   }
+  }
+ }
+ picture = GFX_pf_art_075_suizhe_restart
+ custom_gui = pf_ui_pf_art_075_suizhe_restart
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  play_sound = pf_theme_aemeath
+  set_country_flag = pf28_memory_seen_11014
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11015
+ is_triggered_only = yes
+ title = PF_AMX_REBUILT_TITLE
+ desc = PF_AMX_REBUILT_DESC
+ trigger = {
+  has_country_flag = pf075_rebuild_finished
+  has_country_flag = pf075_rebuild_paid
+ }
+ diplomatic = yes
+ option = {
+  name = PF075_CONTINUE
+  custom_tooltip = PF_AMX_REBUILD_TT
+  hidden_effect = {
+   pf075_spawn_suizhe = yes
+  }
+ }
+ picture = GFX_pf_art_075_suizhe_restart
+ custom_gui = pf_ui_pf_art_075_suizhe_restart
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  set_country_flag = pf28_memory_seen_11015
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11016
+ is_triggered_only = yes
+ title = PF_AMX_RETURN_TITLE
+ desc = PF_AMX_RETURN_DESC
+ trigger = {
+  has_country_flag = pf075_daily_invited
+  has_country_flag = pf_aemeath_bond_2
+  NOT = {
+   has_country_flag = pf_aemeath_bond_3
+  }
+ }
+ diplomatic = yes
+ option = {
+  name = PF075_CONTINUE
+  hidden_effect = {
+   if = {
+    limit = {
+     has_country_flag = pf_aemeath_bond_2
+     NOT = {
+      has_country_flag = pf_aemeath_bond_3
+     }
+    }
+    set_country_flag = pf_aemeath_bond_pending
+    end_event_chain = pf075_daily_invitation
+    country_event = {
+     id = Phrolova_event.1750
+    }
+   }
+  }
+ }
+ picture = GFX_pf_art_075_aemeath_life
+ custom_gui = pf_ui_pf_art_075_aemeath_life
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  set_country_flag = pf28_memory_seen_11016
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11018
+ is_triggered_only = yes
+ title = PF_AMX_FINAL_TITLE
+ desc = PF_AMX_FINAL_DESC
+ trigger = {
+  has_country_flag = pf075_ame_final_invited
+  NOT = {
+   has_country_flag = pf075_ame_final_done
+  }
+ }
+ diplomatic = yes
+ picture = GFX_pf_art_075_aemeath_final
+ custom_gui = pf_ui_pf_art_075_aemeath_final
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  play_sound = pf_aemeath_finale
+  set_country_flag = pf075_complete_aemeath
+  set_country_flag = pf28_memory_seen_11018
+  set_country_flag = pf_personal_ending_seen
+  pf23_init_collection = yes
+  set_country_flag = pf44_ame_final_started
+ }
+ option = {
+  name = PF_AMX_FINAL_NEXT
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.12110
+   }
+  }
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11020
+ is_triggered_only = yes
+ title = PF_PHX_HOME_TITLE
+ desc = PF_PHX_HOME_DESC
+ trigger = {
+  has_country_flag = pf075_home_running
+ }
+ diplomatic = yes
+ option = {
+  name = PF075_CONTINUE
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.234
+   }
+  }
+ }
+ picture = GFX_pf_art_075_phrolova_home
+ custom_gui = pf_ui_pf_art_075_phrolova_home
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  play_sound = pf_theme_phrolova
+  set_country_flag = pf28_memory_seen_11020
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11021
+ is_triggered_only = yes
+ title = PF_PHX_GRAND_TITLE
+ desc = PF_PHX_GRAND_DESC
+ trigger = {
+  has_country_flag = pf075_grand_running
+ }
+ diplomatic = yes
+ option = {
+  name = PF075_CONTINUE
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.235
+   }
+  }
+ }
+ picture = GFX_pf_art_075_phrolova_grand
+ custom_gui = pf_ui_pf_art_075_phrolova_grand
+ custom_gui_option = pf_cinematic_option
+ immediate = {
+  play_sound = pf_performance
+  set_country_flag = pf28_memory_seen_11021
+  set_country_flag = pf_personal_ending_seen
+  pf23_init_collection = yes
+ }
+}
+
+
+
+country_event = { id = Phrolova_event.11030 is_triggered_only = yes
+ title = PF_AMX_AID_FIRST_TITLE desc = PF_AMX_AID_FIRST_DESC
+ trigger = {  } immediate = { pf_speaker_aemeath = yes }
+ diplomatic = yes event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation" custom_gui_option = "pf_character_conversation_option"
+ picture = GFX_leader_recruitment_bg_renowned picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF075_CONTINUE custom_tooltip = PF_AMX_AID_TT hidden_effect = { pf075_sync_aid_trait = yes } }
+}
+
+country_event = { id = Phrolova_event.11031 is_triggered_only = yes
+ title = PF_AMX_DEFENDER_1_TITLE desc = PF_AMX_DEFENDER_1_DESC
+ trigger = { has_country_flag = pf_aemeath_recruited NOT = { has_country_flag = pf075_defender_1_seen } } immediate = { pf_speaker_aemeath = yes set_country_flag = pf075_defender_1_seen }
+ diplomatic = yes event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation" custom_gui_option = "pf_character_conversation_option"
+ picture = GFX_leader_recruitment_bg_renowned picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF075_CONTINUE hidden_effect = { set_country_flag = pf075_defender_1_seen } }
+}
+
+country_event = { id = Phrolova_event.11032 is_triggered_only = yes
+ title = PF_AMX_DEFENDER_5_TITLE desc = PF_AMX_DEFENDER_5_DESC
+ trigger = { has_country_flag = pf_aemeath_recruited NOT = { has_country_flag = pf075_defender_5_seen } } immediate = { pf_speaker_aemeath = yes set_country_flag = pf075_defender_5_seen set_country_flag = pf075_defender_1_seen }
+ diplomatic = yes event_window_type = leader_conversation
+ custom_gui = "pf_character_conversation" custom_gui_option = "pf_character_conversation_option"
+ picture = GFX_leader_recruitment_bg_renowned picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF075_CONTINUE hidden_effect = { set_country_flag = pf075_defender_1_seen set_country_flag = pf075_defender_5_seen set_country_flag = pf075_defender_1_seen } }
+}
+
+country_event = { id = Phrolova_event.11060 is_triggered_only = yes hide_window = yes trigger = { is_ai = no } immediate = { 
+ save_event_target_as = pf_owner
+ if = { limit = { exists = fromfrom } fromfrom = { remove_fleet_flag = pf075_aid_active } }
+ 
+if = { limit = { from = { pf075_crisis_country = yes } } set_country_flag = pf075_crisis_participated }
+if = { limit = { from = { is_country_type = swarm } } set_country_flag = pf075_fought_swarm }
+if = { limit = { from = { OR = { is_country_type = extradimensional is_country_type = extradimensional_2 is_country_type = extradimensional_3 } } } set_country_flag = pf075_fought_unbidden }
+if = { limit = { from = { is_country_type = ai_empire } } set_country_flag = pf075_fought_contingency }
+if = { limit = { from = { OR = { is_country_type = synth_queen is_country_type = awakened_synth_queen } } } set_country_flag = pf075_fought_queen }
+
+ if = { limit = { has_country_flag = pf_aemeath_recruited exists = fromfrom exists = fromfromfrom
+  fromfrom = { exists = leader leader = { has_leader_flag = pf_aemeath }
+   any_owned_ship = { has_ship_flag = pf075_suizhe_origin@root }
+   exists = space_owner space_owner = { is_country_type = default NOT = { is_same_value = root } NOT = { is_hostile = root } NOT = { is_at_war_with = root } }
+  }
+  fromfromfrom = { fleet_power >= 5000 }
+ }
+  fromfrom = { save_event_target_as = pf075_battle_fleet space_owner = { save_event_target_as = pf075_recipient } }
+  if = { limit = { from = { OR = { is_at_war_with = event_target:pf075_recipient is_hostile = event_target:pf075_recipient } } }
+   every_country = { event_target:pf075_battle_fleet = { remove_fleet_flag = pf075_aid_for@prev } }
+   event_target:pf075_battle_fleet = { set_fleet_flag = pf075_aid_for@event_target:pf075_recipient set_fleet_flag = pf075_aid_active }
+  }
+ }
+ } }
+
+country_event = {
+ id = Phrolova_event.11061
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = {
+  is_ai = no
+ }
+ immediate = {
+  save_event_target_as = pf_owner
+  if = {
+   limit = {
+    exists = fromfrom
+    fromfrom = {
+     has_fleet_flag = pf075_aid_active
+     exists = leader
+     leader = {
+      has_leader_flag = pf_aemeath
+     }
+     any_owned_ship = {
+      has_ship_flag = pf075_suizhe_origin@root
+     }
+    }
+   }
+   fromfrom = {
+    save_event_target_as = pf075_battle_fleet
+    remove_fleet_flag = pf075_aid_active
+   }
+   random_country = {
+    limit = {
+     event_target:pf075_battle_fleet = {
+      has_fleet_flag = pf075_aid_for@prev
+     }
+    }
+    save_event_target_as = pf075_recipient
+   }
+   if = {
+    limit = {
+     exists = event_target:pf075_recipient
+     event_target:pf075_recipient = {
+      NOT = {
+       has_country_flag = pf075_aid_cd@root
+      }
+     }
+    }
+    event_target:pf075_recipient = {
+     set_timed_country_flag = {
+      flag = pf075_aid_cd@event_target:pf_owner
+      days = 720
+     }
+     set_timed_country_flag = {
+      flag = pf075_aid_goodwill@event_target:pf_owner
+      days = 7200
+     }
+    }
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf075_aid_trust_received
+      }
+     }
+     set_country_flag = pf075_aid_trust_received
+     add_modifier = {
+      modifier = pf075_aid_trust
+      days = -1
+     }
+    }
+    if = {
+     limit = {
+      event_target:pf075_recipient = {
+       NOT = {
+        has_country_flag = pf075_aid_seen@root
+       }
+      }
+     }
+     event_target:pf075_recipient = {
+      set_country_flag = pf075_aid_seen@event_target:pf_owner
+     }
+     change_variable = {
+      which = pf075_distinct_aid
+      value = 1
+     }
+    }
+    pf075_pay_integrity = yes
+    pf075_sync_aid_trait = yes
+    if = {
+     limit = {
+      NOT = {
+       has_country_flag = pf075_first_aid_seen
+      }
+     }
+     set_country_flag = pf075_first_aid_seen
+     country_event = {
+      id = Phrolova_event.11030
+     }
+    }
+   }
+  }
+ }
+}
+
+country_event = { id = Phrolova_event.11062 is_triggered_only = yes hide_window = yes
+ trigger = { exists = fromfrom fromfrom = { has_ship_flag = pf075_suizhe } }
+ immediate = {
+  fromfrom = { save_event_target_as = pf075_destroyed_suizhe }
+  every_country = { limit = { has_country_flag = pf075_suizhe_launched
+   event_target:pf075_destroyed_suizhe = { has_ship_flag = pf075_suizhe_origin@prev } }
+   set_country_flag = pf075_suizhe_destroyed
+  }
+ }
+}
+
+country_event = { id = Phrolova_event.11090 is_triggered_only = yes hide_window = yes
+ immediate = {
+  if = { limit = { OR = { has_country_flag = pf075_party_reschedule has_country_flag = pf075_grand_reschedule } }
+   subtract_variable = { which = pf075_delay_days value = 1 }
+   if = { limit = { check_variable = { which = pf075_delay_days value < 0 } } set_variable = { which = pf075_delay_days value = 0 } }
+   country_event = { id = Phrolova_event.11090 days = 1 }
+  }
+  else = { set_variable = { which = pf075_delay_days value = 0 } }
+ }
+}
+
+country_event = { id = Phrolova_event.11023 is_triggered_only = yes hide_window = yes
+ immediate = {
+  if = { limit = { has_country_flag = pf075_home_running } pf075_resume_home = yes }
+  else_if = { limit = { has_country_flag = pf075_grand_running } country_event = { id = Phrolova_event.235 } }
+ }
+}
+
+country_event = {
+ id = Phrolova_event.11480
+ is_triggered_only = yes
+ title = PF_SK_OVERVIEW_TITLE
+ desc = PF_SK_OVERVIEW_DESC
+ diplomatic = yes
+ event_window_type = leader_conversation
+ custom_gui = pf_character_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture = GFX_leader_recruitment_bg_renowned
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ show_sound = event_default
+ immediate = { pf_speaker_shorekeeper = yes
+ set_variable = {
+        which = pf48_observed_nodes
+        value = 0
+    }
+    every_owned_planet = {
+        limit = {
+            NOT = {
+                has_planet_flag = pf_solaris
+            }
+            is_controlled_by = owner
+            has_active_building = building_pf_blackshore_node
+        }
+        root = {
+            change_variable = {
+                which = pf48_observed_nodes
+                value = 1
+            }
+        }
+    } }
+ option = { name = PF48_SK_RECORDS is_dialog_only = yes response_text = PF48_SK_RECORDS_DESC custom_tooltip = PF48_SK_RECORDS_DESC }
+ option = { name = PF_back hidden_effect = { country_event = { id = Phrolova_event.1720 } } }
+}

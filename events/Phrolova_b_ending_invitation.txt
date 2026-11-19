@@ -1,0 +1,73 @@
+country_event = {
+ id = Phrolova_event.9834
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { has_country_flag = pf_b20_shared_recruit_flow NOT = { has_country_flag = pf_b21_done } NOT = { has_country_flag = pf_b21_started } }
+ immediate = {
+  remove_country_flag = pf_b21_invitation_wait
+  if = { limit = { NOT = { has_country_flag = pf_b21_invited } }
+   set_country_flag = pf_b21_invited
+   begin_event_chain = { event_chain = pf_b21_invitation target = this }
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.9835
+ is_triggered_only = yes
+ title = PF_B21_PHROLOVA_TITLE
+ desc = PF_B21_PHROLOVA_DESC
+ picture = GFX_leader_recruitment_bg_renowned
+ event_window_type = leader_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = {
+  portrait = event_target:pf_speaker
+  tooltip = no
+ }
+ trigger = {
+  OR = {
+   has_country_flag = pf_b21_started
+   has_country_flag = pf_b21_done
+  }
+ }
+ immediate = {
+  pf_speaker_phrolova = yes
+  play_sound = pf_b_morin_ending
+ }
+ option = {
+  name = PF_B21_PHROLOVA_OPTION
+  hidden_effect = {
+   country_event = {
+    id = Phrolova_event.9468
+   }
+  }
+ }
+ custom_gui = pf_phrolova_conversation
+}
+country_event = {
+ id = Phrolova_event.9836
+ is_triggered_only = yes
+ trigger = {
+  OR = {
+   NOT = {
+    has_country_flag = pf_b22_done
+   }
+   has_country_flag = pf_b_ending_replay
+  }
+ }
+ title = PF_B22_PHROLOVA_TITLE
+ desc = PF_B22_PHROLOVA_DESC
+ picture = GFX_pf_art_morin_ending_phrolova
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_ending_phrolova
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_B22_PHROLOVA_OPTION
+  hidden_effect = {
+   set_country_flag = pf_b22_done
+   remove_country_flag = pf_b_ending_replay
+  }
+ }
+ immediate = {
+  set_country_flag = pf28_memory_seen_9836
+ }
+}

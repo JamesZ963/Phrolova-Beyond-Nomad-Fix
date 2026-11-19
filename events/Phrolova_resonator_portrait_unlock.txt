@@ -1,0 +1,20 @@
+namespace = Phrolova_event
+event = {
+ id = Phrolova_event.11950
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = {
+  every_playable_country = {
+   limit = { is_ai = no has_ascension_perk = ap_pf_resonator }
+   set_global_flag = pf_resonator_portraits_unlocked
+   refresh_portraits = character
+  }
+ }
+}
+country_event = {
+ id = Phrolova_event.11951
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { is_ai = no has_ascension_perk = ap_pf_resonator NOT = { has_global_flag = pf_resonator_portraits_unlocked } }
+ immediate = { set_global_flag = pf_resonator_portraits_unlocked refresh_portraits = character }
+}

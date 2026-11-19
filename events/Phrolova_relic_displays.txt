@@ -1,0 +1,17 @@
+namespace = Phrolova_event
+country_event = {
+ id = Phrolova_event.11070
+ is_triggered_only = yes
+ title = r_pf_math_instrument
+ desc = r_pf_math_instrument_desc
+ picture = GFX_pf_art_relic_morin
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_relic_morin
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_B_RELIC_DISPLAY_CLOSE
+ }
+ immediate = {
+
+ }
+}

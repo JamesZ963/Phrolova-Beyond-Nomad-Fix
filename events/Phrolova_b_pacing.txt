@@ -1,0 +1,99 @@
+# B-route pacing v7: no additional global on_action or daily country polling.
+country_event = {
+ id = Phrolova_event.9840 is_triggered_only = yes hide_window = yes
+ immediate = {
+  if = { limit = {
+   OR = { has_special_project = PF_B01_POLAR_SURVEY has_country_flag = pf_b_polar_native_complete }
+   NOT = { has_country_flag = pf_b03_wake_done }
+  }
+   if = { limit = {
+    OR = {
+     is_researching_special_project = PF_B01_POLAR_SURVEY
+     any_owned_leader = { is_researching_special_project = PF_B01_POLAR_SURVEY }
+     has_country_flag = pf_b_polar_native_complete
+    }
+   }
+    change_variable = { which = pf_b_polar_days value = 1 }
+    if = { limit = { check_variable = { which = pf_b_polar_days value >= 40 } NOT = { has_country_flag = pf_b01_done } }
+     set_country_flag = pf_b01_done country_event = { id = Phrolova_event.9411 }
+    }
+    if = { limit = { check_variable = { which = pf_b_polar_days value >= 80 } NOT = { has_country_flag = pf_b02_done } }
+     set_country_flag = pf_b02_done country_event = { id = Phrolova_event.9412 }
+    }
+   }
+   if = { limit = { has_country_flag = pf_b_polar_native_complete has_country_flag = pf_b02_done check_variable = { which = pf_b_polar_days value >= 120 } }
+    set_country_flag = pf_b03_wake_done remove_country_flag = pf_b_polar_ticking country_event = { id = Phrolova_event.9417 }
+   }
+   else = { country_event = { id = Phrolova_event.9840 days = 1 } }
+  }
+  else = { remove_country_flag = pf_b_polar_ticking }
+ }
+}
+country_event = {
+ id = Phrolova_event.9841 is_triggered_only = yes hide_window = yes
+ immediate = {
+  if = { limit = { has_country_flag = pf_b_local_research_active NOT = { has_country_flag = pf_b04_done } }
+   if = { limit = { pf_b_has_solaris = yes any_owned_leader = { has_leader_flag = pf_morin } } change_variable = { which = pf_b_local_days value = 30 } }
+   if = { limit = { check_variable = { which = pf_b_local_days value >= 180 } }
+    remove_country_flag = pf_b_local_research_active remove_country_flag = pf_b_local_ticking set_country_flag = pf_b04_done
+    pf_b_merge_local_results = yes end_event_chain = pf_b_local_research
+    country_event = { id = Phrolova_event.9415 }
+   } else = { country_event = { id = Phrolova_event.9841 days = 30 } }
+  } else = { remove_country_flag = pf_b_local_ticking }
+ }
+}
+country_event = {
+ id = Phrolova_event.9842 is_triggered_only = yes hide_window = yes
+ trigger = { has_country_flag = pf_b11_raid_won NOT = { has_country_flag = pf_b_records_announced } }
+ immediate = {
+  set_country_flag = pf_b_records_announced set_country_flag = pf_b12_done set_country_flag = pf_b13_done set_country_flag = pf_b14_started
+  
+  pf_b14_spawn_site = yes country_event = { id = Phrolova_event.9456 } country_event = { id = Phrolova_event.9833 }
+ }
+}
+country_event = {
+ id = Phrolova_event.9843 is_triggered_only = yes hide_window = yes
+ trigger = { has_country_flag = pf_b05_done has_country_flag = pf_b06_done has_technology = tech_wormhole_stabilization pf_b_has_solaris = yes NOT = { has_country_flag = pf_b09_started } NOT = { has_country_flag = pf_b09_done } }
+ immediate = { set_country_flag = pf_b09_started country_event = { id = Phrolova_event.9850 } country_event = { id = Phrolova_event.9833 } }
+}
+country_event = {
+ id = Phrolova_event.9844 is_triggered_only = yes hide_window = yes
+ trigger = { OR = { has_country_flag = pf_heart_abandoned has_country_flag = pf_b00_done has_country_flag = pf_morin_recruited } }
+ immediate = { pf_b_pacing_refresh = yes }
+}
+country_event = {
+ id = Phrolova_event.9852 is_triggered_only = yes hide_window = yes
+ immediate = { pf_b_civil_rewards = yes }
+}
+country_event = {
+ id = Phrolova_event.9850
+ is_triggered_only = yes
+ title = PF_B_DEPART_TITLE
+ desc = PF_B_DEPART_DESC
+ picture = GFX_pf_art_morin_departure
+ diplomatic = yes
+ custom_gui = pf_ui_pf_art_morin_departure
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  has_country_flag = pf_b09_started
+  NOT = {
+   has_country_flag = pf_b09_done
+  }
+  NOT = {
+   has_country_flag = pf_b_departure_confirmed
+  }
+ }
+ option = {
+  name = PF_B_DEPART_GO
+  hidden_effect = {
+   set_country_flag = pf_b_departure_confirmed
+   country_event = {
+    id = Phrolova_event.9823
+   }
+  }
+ }
+ immediate = {
+  set_country_flag = pf_b_departure_cg_seen
+  set_country_flag = pf28_memory_seen_9850
+ }
+}

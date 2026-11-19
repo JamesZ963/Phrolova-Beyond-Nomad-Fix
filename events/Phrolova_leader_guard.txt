@@ -1,0 +1,22 @@
+namespace = Phrolova_event
+country_event = {
+ id = Phrolova_event.11100 is_triggered_only = yes hide_window = yes
+ trigger = {  OR = { has_country_flag = researched_leaders_Phrolova has_country_flag = pf_denia_recruited has_country_flag = pf_shorekeeper_recruited has_country_flag = pf_aemeath_recruited has_country_flag = pf_morin_recruited }  NOT = { has_country_flag = pf_guard_busy } }
+ immediate = { set_country_flag = pf_guard_busy
+  pf_guard_restore_phrolova = yes
+  pf_guard_restore_denia = yes
+  pf_guard_restore_shorekeeper = yes
+  pf_guard_restore_aemeath = yes
+  pf_guard_restore_morin = yes
+ remove_country_flag = pf_guard_busy pf_guard_all_leaders = yes }
+}
+country_event = {
+ id = Phrolova_event.11101 is_triggered_only = yes hide_window = yes
+ trigger = {  OR = { has_country_flag = researched_leaders_Phrolova has_country_flag = pf_denia_recruited has_country_flag = pf_shorekeeper_recruited has_country_flag = pf_aemeath_recruited has_country_flag = pf_morin_recruited }  NOT = { has_country_flag = pf_guard_busy } }
+ immediate = { pf_guard_all_leaders = yes }
+}
+leader_event = {
+ id = Phrolova_event.11102 is_triggered_only = yes hide_window = yes
+ trigger = { exists = owner }
+ immediate = { owner = { country_event = { id = Phrolova_event.11101 } } }
+}

@@ -1,0 +1,59 @@
+namespace = Phrolova_event
+
+country_event = {
+ id = Phrolova_event.11080
+ is_triggered_only = yes
+ trigger = { has_country_flag = pf_morin_recruited }
+ title = Phrolova_event.9800.name
+ desc = PF_MORIN_RECRUIT_SELF_REPLY
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = { pf_speaker_morin = yes }
+ event_window_type = leader_conversation
+ custom_gui = pf_morin_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_B_BACK hidden_effect = { country_event = { id = Phrolova_event.9800 } } }
+}
+
+country_event = {
+ id = Phrolova_event.11081
+ is_triggered_only = yes
+ trigger = { has_country_flag = pf_morin_recruited }
+ title = PF_MORIN_CONTACT_APPEARANCE
+ desc = PF_MORIN_APPEARANCE_DESC
+ picture = GFX_leader_recruitment_bg_renowned
+ immediate = { pf_speaker_morin = yes }
+ event_window_type = leader_conversation
+ custom_gui = pf_morin_conversation
+ custom_gui_option = pf_character_conversation_option
+ picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+ option = { name = PF_MORIN_OUTFIT_0
+  hidden_effect = {
+   remove_country_flag = pf_morin_outfit_base remove_country_flag = pf_morin_outfit_1 remove_country_flag = pf_morin_outfit_2
+   set_country_flag = pf_morin_outfit_base
+   pf_portrait_morin = yes
+   country_event = { id = Phrolova_event.11081 }
+  }
+ }
+ option = { name = PF_MORIN_OUTFIT_1 trigger = { OR = { has_country_flag = pf_morin_portrait_1 has_country_flag = pf_morin_portrait_2 } }
+  hidden_effect = {
+   remove_country_flag = pf_morin_outfit_base remove_country_flag = pf_morin_outfit_1 remove_country_flag = pf_morin_outfit_2
+   set_country_flag = pf_morin_outfit_1
+   pf_portrait_morin = yes
+   country_event = { id = Phrolova_event.11081 }
+  }
+ }
+ option = { name = PF_MORIN_OUTFIT_2 trigger = { has_country_flag = pf_morin_portrait_2 }
+  hidden_effect = {
+   remove_country_flag = pf_morin_outfit_base remove_country_flag = pf_morin_outfit_1 remove_country_flag = pf_morin_outfit_2
+   set_country_flag = pf_morin_outfit_2
+   pf_portrait_morin = yes
+   country_event = { id = Phrolova_event.11081 }
+  }
+ }
+ option = { name = PF_B_BACK hidden_effect = { country_event = { id = Phrolova_event.9800 } } }
+}
+
+
+
+

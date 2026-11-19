@@ -1,0 +1,1122 @@
+country_event = {
+    id = Phrolova_event.10400
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        is_ai = no
+        has_country_flag = pf_shorekeeper_recruited
+    }
+    immediate = {
+        if = {
+            limit = {
+                has_ascension_perk = ap_pf_resonator
+                NOT = {
+                    has_country_flag = pf_sk_ascension_completed
+                }
+            }
+            pf_sk_first_conversion = {
+                PORTRAIT = event_target:pf_sk_original_species
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_sk_clock_initialized
+                }
+            }
+            set_country_flag = pf_sk_clock_initialized
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = pf_shorekeeper_bond_initialized
+                    }
+                    NOT = {
+                        has_country_flag = pf_shorekeeper_bond_1
+                    }
+                }
+                set_timed_country_flag = {
+                    flag = pf_shorekeeper_bond_wait
+                    days = 720
+                }
+            }
+            set_country_flag = pf_shorekeeper_bond_initialized
+        }
+        pf_sk_refresh_network = yes
+        if = {
+            limit = {
+                has_country_flag = pf_sk_stage_4_done
+                NOT = {
+                    has_country_flag = pf_sk_relic_gift_seen
+                }
+                NOT = {
+                    has_country_flag = pf_sk_relic_received
+                }
+            }
+            country_event = {
+                id = Phrolova_event.10442
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = pf_sk_stage_3_done
+                NOT = {
+                    has_country_flag = pf_sk_recording_wait
+                }
+                NOT = {
+                    has_country_flag = pf_sk_recording_seen
+                }
+            }
+            set_country_flag = pf_sk_recording_seen
+            country_event = {
+                id = Phrolova_event.10436
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = pf_sk_stage_3_done
+                NOT = {
+                    has_country_flag = pf_sk_members_wait
+                }
+                NOT = {
+                    has_country_flag = pf_sk_members_seen
+                }
+            }
+            set_country_flag = pf_sk_members_seen
+            country_event = {
+                id = Phrolova_event.10435
+            }
+        }
+        if = {
+            limit = {
+                pf_sk_has_solaris = yes
+            }
+            pf_sk_find_solaris = yes
+            if = {
+                limit = {
+                    NOT = {
+                        has_country_flag = pf_sk_stage_1_unlocked
+                    }
+                    OR = {
+                        NOT = {
+                            has_country_flag = pf_shorekeeper_bond_wait
+                        }
+                        has_country_flag = pf_shorekeeper_bond_1
+                    }
+                }
+                set_country_flag = pf_sk_stage_1_unlocked
+                begin_event_chain = {
+                    event_chain = pf_sk_stage_1
+                    target = this
+                }
+                country_event = {
+                    id = Phrolova_event.10410
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_1_done
+                    has_country_flag = pf_shorekeeper_bond_1
+                    NOT = {
+                        has_country_flag = pf_sk_stage_2_unlocked
+                    }
+                    has_country_flag = pf_sk_tethys_recorded
+                    NOT = {
+                        has_country_flag = pf_sk_tethys_wait
+                    }
+                    pf_sk_has_tethys = yes
+                    event_target:pf_sk_solaris = {
+                        num_uncleared_blockers = 0
+                    }
+                }
+                set_country_flag = pf_sk_stage_2_unlocked
+                begin_event_chain = {
+                    event_chain = pf_sk_stage_2
+                    target = this
+                }
+                country_event = {
+                    id = Phrolova_event.10420
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_2_done
+                    has_country_flag = pf_shorekeeper_bond_2
+                    NOT = {
+                        has_country_flag = pf_sk_stage_3_unlocked
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_after_2_wait
+                    }
+                    has_country_flag = pf_sk_four_recorded
+                    NOT = {
+                        has_country_flag = pf_sk_four_wait
+                    }
+                    check_variable = {
+                        which = pf_sk_node_count
+                        value >= 4
+                    }
+                    pf_sk_has_tethys = yes
+                }
+                set_country_flag = pf_sk_stage_3_unlocked
+                begin_event_chain = {
+                    event_chain = pf_sk_stage_3
+                    target = this
+                }
+                country_event = {
+                    id = Phrolova_event.10430
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_3_done
+                    has_country_flag = pf_shorekeeper_bond_3
+                    NOT = {
+                        has_country_flag = pf_sk_stage_4_unlocked
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_after_3_wait
+                    }
+                    has_country_flag = pf_sk_eight_recorded
+                    NOT = {
+                        has_country_flag = pf_sk_eight_wait
+                    }
+                    check_variable = {
+                        which = pf_sk_node_count
+                        value >= 8
+                    }
+                    pf_sk_has_tethys = yes
+                }
+                set_country_flag = pf_sk_stage_4_unlocked
+                begin_event_chain = {
+                    event_chain = pf_sk_stage_4
+                    target = this
+                }
+                country_event = {
+                    id = Phrolova_event.10440
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_1_finished
+                    NOT = {
+                        has_country_flag = pf_sk_stage_1_done
+                    }
+                }
+                country_event = {
+                    id = Phrolova_event.10411
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_2_finished
+                    NOT = {
+                        has_country_flag = pf_sk_stage_2_done
+                    }
+                }
+                country_event = {
+                    id = Phrolova_event.10421
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_3_finished
+                    NOT = {
+                        has_country_flag = pf_sk_stage_3_done
+                    }
+                }
+                country_event = {
+                    id = Phrolova_event.10431
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_stage_4_finished
+                    NOT = {
+                        has_country_flag = pf_sk_stage_4_done
+                    }
+                }
+                country_event = {
+                    id = Phrolova_event.10441
+                }
+            }
+            if = {
+                limit = {
+                    has_country_flag = pf_sk_ascension_completed
+                    NOT = {
+                        has_country_flag = pf_sk_highest_wait
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_highest_invited
+                    }
+                    NOT = {
+                        has_country_flag = pf_shorekeeper_bond_4
+                    }
+                }
+                set_country_flag = pf_sk_highest_invited
+                begin_event_chain = {
+                    event_chain = pf_sk_highest_invitation
+                    target = this
+                }
+            }
+        }
+    }
+}
+country_event = {
+    id = Phrolova_event.10401
+    is_triggered_only = yes hide_window = yes
+    immediate = { pf_sk_refresh_network = yes }
+}
+country_event = {
+    id = Phrolova_event.10402
+    is_triggered_only = yes hide_window = yes
+    trigger = { has_country_flag = pf_sk_stage_4_done from = { pf_sk_normal_leader = yes } }
+    immediate = { from = { add_trait = { trait = leader_trait_pf_resonance_awakening show_message = no } } }
+}
+leader_event = {
+    id = Phrolova_event.10403
+    is_triggered_only = yes hide_window = yes
+    trigger = { pf_sk_normal_leader = yes exists = owner owner = { has_country_flag = pf_sk_stage_4_done } }
+    immediate = { add_trait = { trait = leader_trait_pf_resonance_awakening show_message = no } }
+}
+namespace = Phrolova_event
+
+country_event = {
+    id = Phrolova_event.10410
+    is_triggered_only = yes
+    title = PF_SK_STAGE_1_TITLE
+    desc = PF_SK_STAGE_1_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_scroll_dialogue_10410
+    custom_gui_option = pf_character_conversation_option
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    trigger = {
+        has_country_flag = pf_sk_stage_1_unlocked
+        NOT = {
+            has_country_flag = pf_sk_stage_1_done
+        }
+    }
+    immediate = {
+        pf_speaker_shorekeeper = yes
+    }
+    option = {
+        name = PF_SK_STAGE_1_APPROVE
+        trigger = {
+            NOT = {
+                has_country_flag = pf_sk_stage_1_started
+            }
+        }
+        allow = {
+            pf_sk_has_solaris = yes
+            OR = {
+                has_country_flag = pf_sk_stage_1_funded
+                AND = {
+                    resource_stockpile_compare = {
+                        resource = energy
+                        value >= 2000
+                    }
+                    resource_stockpile_compare = {
+                        resource = minerals
+                        value >= 2000
+                    }
+                }
+            }
+        }
+        custom_tooltip = PF_SK_STAGE_1_EFFECT
+        hidden_effect = {
+            if = {
+                limit = {
+                    pf_sk_has_solaris = yes
+                    OR = {
+                        has_country_flag = pf_sk_stage_1_funded
+                        AND = {
+                            resource_stockpile_compare = {
+                                resource = energy
+                                value >= 2000
+                            }
+                            resource_stockpile_compare = {
+                                resource = minerals
+                                value >= 2000
+                            }
+                        }
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_stage_1_started
+                    }
+                }
+                pf_sk_find_solaris = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = pf_sk_stage_1_funded
+                        }
+                    }
+                    add_resource = {
+                        energy = -2000
+                        minerals = -2000
+                    }
+                    set_country_flag = pf_sk_stage_1_funded
+                }
+                set_country_flag = pf_sk_stage_1_started
+                enable_special_project = {
+                    name = PF_SK_PROJECT_1
+                    location = event_target:pf_sk_solaris
+                    owner = this
+                }
+                end_event_chain = pf_sk_stage_1
+            }
+        }
+    }
+    option = {
+        name = PF_SK_LATER
+    }
+}
+
+country_event = {
+    id = Phrolova_event.10411
+    is_triggered_only = yes
+    title = PF_SK_STAGE_1_DONE_TITLE
+    desc = PF_SK_STAGE_1_DONE_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = "pf_character_conversation"
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = { has_country_flag = pf_sk_stage_1_finished NOT = { has_country_flag = pf_sk_stage_1_done } pf_sk_has_solaris = yes }
+    immediate = { pf_speaker_shorekeeper = yes set_country_flag = pf_sk_stage_1_done remove_country_flag = pf_sk_stage_1_started end_event_chain = pf_sk_stage_1
+        pf_sk_find_solaris = yes
+        begin_event_chain = { event_chain = pf_sk_central_build target = this } }
+    option = { name = PF_SK_STAGE_1_DONE_REPLY custom_tooltip = PF_SK_STAGE_1_DONE_EFFECT hidden_effect = { if = { limit = { NOT = { has_country_flag = pf_shorekeeper_bond_1 } }
+                set_country_flag = pf_shorekeeper_bond_pending
+                country_event = { id = Phrolova_event.9723 }
+            } } }
+}
+
+country_event = {
+    id = Phrolova_event.10420
+    is_triggered_only = yes
+    title = PF_SK_STAGE_2_TITLE
+    desc = PF_SK_STAGE_2_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_scroll_dialogue_10420
+    custom_gui_option = pf_character_conversation_option
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    trigger = {
+        has_country_flag = pf_sk_stage_2_unlocked
+        NOT = {
+            has_country_flag = pf_sk_stage_2_done
+        }
+    }
+    immediate = {
+        pf_speaker_shorekeeper = yes
+    }
+    option = {
+        name = PF_SK_STAGE_2_APPROVE
+        trigger = {
+            NOT = {
+                has_country_flag = pf_sk_stage_2_started
+            }
+        }
+        allow = {
+            pf_sk_has_solaris = yes
+            OR = {
+                has_country_flag = pf_sk_stage_2_funded
+                AND = {
+                    resource_stockpile_compare = {
+                        resource = energy
+                        value >= 3000
+                    }
+                    OR = {
+                        AND = {
+                            is_gestalt = no
+                            resource_stockpile_compare = {
+                                resource = consumer_goods
+                                value >= 1000
+                            }
+                        }
+                        AND = {
+                            is_gestalt = yes
+                            resource_stockpile_compare = {
+                                resource = alloys
+                                value >= 1000
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = { limit = { has_country_flag = pf_sk_stage_2_funded } custom_tooltip = PF48_SK_STAGE_2_PAID }
+        else_if = { limit = { is_gestalt = yes } custom_tooltip = PF48_SK_STAGE_2_GESTALT }
+        else = { custom_tooltip = PF_SK_STAGE_2_EFFECT }
+        hidden_effect = {
+            if = {
+                limit = {
+                    pf_sk_has_solaris = yes
+                    OR = {
+                        has_country_flag = pf_sk_stage_2_funded
+                        AND = {
+                            resource_stockpile_compare = {
+                                resource = energy
+                                value >= 3000
+                            }
+                            OR = {
+                                AND = {
+                                    is_gestalt = no
+                                    resource_stockpile_compare = {
+                                        resource = consumer_goods
+                                        value >= 1000
+                                    }
+                                }
+                                AND = {
+                                    is_gestalt = yes
+                                    resource_stockpile_compare = {
+                                        resource = alloys
+                                        value >= 1000
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_stage_2_started
+                    }
+                }
+                pf_sk_find_solaris = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = pf_sk_stage_2_funded
+                        }
+                    }
+                    add_resource = {
+                        energy = -3000
+                    }
+                    if = {
+                        limit = {
+                            is_gestalt = yes
+                        }
+                        add_resource = {
+                            alloys = -1000
+                        }
+                    }
+                    else = {
+                        add_resource = {
+                            consumer_goods = -1000
+                        }
+                    }
+                    set_country_flag = pf_sk_stage_2_funded
+                }
+                set_country_flag = pf_sk_stage_2_started
+                enable_special_project = {
+                    name = PF_SK_PROJECT_2
+                    location = event_target:pf_sk_solaris
+                    owner = this
+                }
+                end_event_chain = pf_sk_stage_2
+            }
+        }
+    }
+    option = {
+        name = PF_SK_LATER
+    }
+}
+
+country_event = {
+    id = Phrolova_event.10421
+    is_triggered_only = yes
+    title = PF_SK_STAGE_2_DONE_TITLE
+    desc = PF_SK_STAGE_2_DONE_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_scroll_dialogue_10421
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = { has_country_flag = pf_sk_stage_2_finished NOT = { has_country_flag = pf_sk_stage_2_done } pf_sk_has_solaris = yes }
+    immediate = { pf_speaker_shorekeeper = yes set_country_flag = pf_sk_stage_2_done remove_country_flag = pf_sk_stage_2_started end_event_chain = pf_sk_stage_2
+        set_timed_country_flag = { flag = pf_sk_after_2_wait days = 360 }
+        add_research_option = tech_pf_blackshore_nodes
+        if = { limit = { NOT = { has_technology = tech_pf_blackshore_nodes } } add_tech_progress = { tech = tech_pf_blackshore_nodes progress = 0.25 } }
+        begin_event_chain = { event_chain = pf_sk_network target = this } }
+    option = { name = PF_SK_STAGE_2_DONE_REPLY custom_tooltip = PF_SK_STAGE_2_DONE_EFFECT hidden_effect = { if = { limit = { NOT = { has_country_flag = pf_shorekeeper_bond_2 } }
+                set_country_flag = pf_shorekeeper_bond_pending
+                country_event = { id = Phrolova_event.9723 }
+            } } }
+}
+
+country_event = {
+    id = Phrolova_event.10430
+    is_triggered_only = yes
+    title = PF_SK_STAGE_3_TITLE
+    desc = PF_SK_STAGE_3_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_scroll_dialogue_10430
+    custom_gui_option = pf_character_conversation_option
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    trigger = {
+        has_country_flag = pf_sk_stage_3_unlocked
+        NOT = {
+            has_country_flag = pf_sk_stage_3_done
+        }
+    }
+    immediate = {
+        pf_speaker_shorekeeper = yes
+    }
+    option = {
+        name = PF_SK_STAGE_3_APPROVE
+        trigger = {
+            NOT = {
+                has_country_flag = pf_sk_stage_3_started
+            }
+        }
+        allow = {
+            pf_sk_has_solaris = yes
+            OR = {
+                has_country_flag = pf_sk_stage_3_funded
+                AND = {
+                    resource_stockpile_compare = {
+                        resource = energy
+                        value >= 4000
+                    }
+                    resource_stockpile_compare = {
+                        resource = unity
+                        value >= 1500
+                    }
+                }
+            }
+        }
+        custom_tooltip = PF_SK_STAGE_3_EFFECT
+        hidden_effect = {
+            if = {
+                limit = {
+                    pf_sk_has_solaris = yes
+                    OR = {
+                        has_country_flag = pf_sk_stage_3_funded
+                        AND = {
+                            resource_stockpile_compare = {
+                                resource = energy
+                                value >= 4000
+                            }
+                            resource_stockpile_compare = {
+                                resource = unity
+                                value >= 1500
+                            }
+                        }
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_stage_3_started
+                    }
+                }
+                pf_sk_find_solaris = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = pf_sk_stage_3_funded
+                        }
+                    }
+                    add_resource = {
+                        energy = -4000
+                        unity = -1500
+                    }
+                    set_country_flag = pf_sk_stage_3_funded
+                }
+                set_country_flag = pf_sk_stage_3_started
+                enable_special_project = {
+                    name = PF_SK_PROJECT_3
+                    location = event_target:pf_sk_solaris
+                    owner = this
+                }
+                end_event_chain = pf_sk_stage_3
+            }
+        }
+    }
+    option = {
+        name = PF_SK_LATER
+    }
+}
+
+country_event = {
+ id = Phrolova_event.10431
+ is_triggered_only = yes
+ title = PF_SK_STAGE_3_DONE_TITLE
+ desc = PF_SK_STAGE_3_DONE_DESC
+ picture = GFX_pf_sk_network
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_network
+ custom_gui_option = pf_cinematic_option
+ trigger = {
+  has_country_flag = pf_sk_stage_3_finished
+  NOT = {
+   has_country_flag = pf_sk_stage_3_done
+  }
+  pf_sk_has_solaris = yes
+ }
+ option = {
+  name = PF_SK_STAGE_3_DONE_REPLY
+  custom_tooltip = PF_SK_STAGE_3_DONE_EFFECT
+  hidden_effect = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf_shorekeeper_bond_3
+     }
+    }
+    set_country_flag = pf_shorekeeper_bond_pending
+    country_event = {
+     id = Phrolova_event.9723
+    }
+   }
+  }
+ }
+ immediate = {
+  pf_speaker_shorekeeper = yes
+  set_country_flag = pf_sk_stage_3_done
+  remove_country_flag = pf_sk_stage_3_started
+  end_event_chain = pf_sk_stage_3
+  set_timed_country_flag = {
+   flag = pf_sk_after_3_wait
+   days = 720
+  }
+  set_timed_country_flag = {
+   flag = pf_sk_members_wait
+   days = 180
+  }
+  set_timed_country_flag = {
+   flag = pf_sk_recording_wait
+   days = 360
+  }
+  set_country_flag = pf28_memory_seen_10431
+ }
+}
+
+country_event = {
+    id = Phrolova_event.10440
+    is_triggered_only = yes
+    title = PF_SK_STAGE_4_TITLE
+    desc = PF_SK_STAGE_4_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_scroll_dialogue_10440
+    custom_gui_option = pf_character_conversation_option
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    trigger = {
+        has_country_flag = pf_sk_stage_4_unlocked
+        NOT = {
+            has_country_flag = pf_sk_stage_4_done
+        }
+    }
+    immediate = {
+        pf_speaker_shorekeeper = yes
+    }
+    option = {
+        name = PF_SK_STAGE_4_APPROVE
+        trigger = {
+            NOT = {
+                has_country_flag = pf_sk_stage_4_started
+            }
+        }
+        allow = {
+            pf_sk_has_solaris = yes
+            OR = {
+                has_country_flag = pf_sk_stage_4_funded
+                AND = {
+                    resource_stockpile_compare = {
+                        resource = energy
+                        value >= 8000
+                    }
+                    resource_stockpile_compare = {
+                        resource = alloys
+                        value >= 2000
+                    }
+                    resource_stockpile_compare = {
+                        resource = unity
+                        value >= 3000
+                    }
+                }
+            }
+        }
+        custom_tooltip = PF_SK_STAGE_4_EFFECT
+        hidden_effect = {
+            if = {
+                limit = {
+                    pf_sk_has_solaris = yes
+                    OR = {
+                        has_country_flag = pf_sk_stage_4_funded
+                        AND = {
+                            resource_stockpile_compare = {
+                                resource = energy
+                                value >= 8000
+                            }
+                            resource_stockpile_compare = {
+                                resource = alloys
+                                value >= 2000
+                            }
+                            resource_stockpile_compare = {
+                                resource = unity
+                                value >= 3000
+                            }
+                        }
+                    }
+                    NOT = {
+                        has_country_flag = pf_sk_stage_4_started
+                    }
+                }
+                pf_sk_find_solaris = yes
+                if = {
+                    limit = {
+                        NOT = {
+                            has_country_flag = pf_sk_stage_4_funded
+                        }
+                    }
+                    add_resource = {
+                        energy = -8000
+                        alloys = -2000
+                        unity = -3000
+                    }
+                    set_country_flag = pf_sk_stage_4_funded
+                }
+                set_country_flag = pf_sk_stage_4_started
+                enable_special_project = {
+                    name = PF_SK_PROJECT_4
+                    location = event_target:pf_sk_solaris
+                    owner = this
+                }
+                end_event_chain = pf_sk_stage_4
+            }
+        }
+    }
+    option = {
+        name = PF_SK_LATER
+    }
+}
+
+country_event = {
+    id = Phrolova_event.10441
+    is_triggered_only = yes
+    title = PF_SK_STAGE_4_DONE_TITLE
+    desc = PF_SK_STAGE_4_DONE_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = "pf_character_conversation"
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = { has_country_flag = pf_sk_stage_4_finished NOT = { has_country_flag = pf_sk_stage_4_done } pf_sk_has_solaris = yes }
+    immediate = { pf_speaker_shorekeeper = yes set_country_flag = pf_sk_stage_4_done remove_country_flag = pf_sk_stage_4_started end_event_chain = pf_sk_stage_4
+        pf_sk_refresh_network = yes }
+    option = { name = PF_SK_STAGE_4_DONE_REPLY custom_tooltip = PF_SK_STAGE_4_DONE_EFFECT hidden_effect = { country_event = { id = Phrolova_event.10442 } } }
+}
+
+country_event = {
+    id = Phrolova_event.10480
+    is_triggered_only = yes
+    title = PF_SK_OVERVIEW_TITLE
+    desc = PF_SK_OVERVIEW_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = pf_character_conversation
+    custom_gui_option = pf_character_conversation_option
+    picture_event_data = {
+        portrait = event_target:pf_speaker
+        tooltip = no
+    }
+    trigger = {
+
+    }
+    immediate = {
+        pf_speaker_shorekeeper = yes
+    }
+    option = { name = PF48_VIEW_NETWORK hidden_effect = { country_event = { id = Phrolova_event.11480 } } }
+ option = {
+        name = PF_SK_STAGE_1_TITLE
+        trigger = {
+            has_country_flag = pf_sk_stage_1_unlocked
+            NOT = {
+                has_country_flag = pf_sk_stage_1_done
+            }
+            NOT = {
+                has_country_flag = pf_sk_stage_1_started
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10410
+            }
+        }
+    }
+    option = {
+        name = PF_SK_STAGE_2_TITLE
+        trigger = {
+            has_country_flag = pf_sk_stage_2_unlocked
+            NOT = {
+                has_country_flag = pf_sk_stage_2_done
+            }
+            NOT = {
+                has_country_flag = pf_sk_stage_2_started
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10420
+            }
+        }
+    }
+    option = {
+        name = PF_SK_STAGE_3_TITLE
+        trigger = {
+            has_country_flag = pf_sk_stage_3_unlocked
+            NOT = {
+                has_country_flag = pf_sk_stage_3_done
+            }
+            NOT = {
+                has_country_flag = pf_sk_stage_3_started
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10430
+            }
+        }
+    }
+    option = {
+        name = PF_SK_STAGE_4_TITLE
+        trigger = {
+            has_country_flag = pf_sk_stage_4_unlocked
+            NOT = {
+                has_country_flag = pf_sk_stage_4_done
+            }
+            NOT = {
+                has_country_flag = pf_sk_stage_4_started
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10440
+            }
+        }
+    }
+    option = {
+        name = PF_SK_RELIC_GIFT_TITLE
+        trigger = {
+            has_country_flag = pf_sk_stage_4_done
+            NOT = {
+                has_country_flag = pf_sk_relic_received
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10442
+            }
+        }
+    }
+    option = {
+        name = PF_SK_INVITATION_OPEN
+        trigger = {
+            has_country_flag = pf_sk_highest_invited
+            NOT = {
+                has_country_flag = pf_shorekeeper_bond_4
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10460
+            }
+        }
+    }
+    option = {
+        name = PF_SK_REPLAY
+        trigger = {
+            has_country_flag = pf_shorekeeper_bond_4
+        }
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10461
+            }
+        }
+    }
+    option = {
+        name = PF_SK_DEBUG_OPEN
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.10490
+            }
+        }
+    }
+    option = {
+        name = PF_back
+        hidden_effect = {
+            country_event = {
+                id = Phrolova_event.1720
+            }
+        }
+    }
+}
+
+country_event = {
+    id = Phrolova_event.10460
+    is_triggered_only = yes
+    title = PF_SK_INVITATION_TITLE
+    desc = PF_SK_INVITATION_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = "pf_character_conversation"
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = { has_country_flag = pf_sk_highest_invited }
+    immediate = { pf_speaker_shorekeeper = yes  }
+    
+    option = { name = PF_SK_ACCEPT_INVITATION hidden_effect = { country_event = { id = Phrolova_event.10461 } } }
+    option = { name = PF_SK_LATER }
+
+}
+
+country_event = {
+ id = Phrolova_event.10461
+ is_triggered_only = yes
+ title = PF_SK_HIGHEST_TITLE
+ desc = PF_SK_HIGHEST_DESC
+ trigger = {
+  has_country_flag = pf_sk_ascension_completed
+ }
+ picture = GFX_pf_sk_highest
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_highest
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_SK_HIGHEST_REPLY
+  custom_tooltip = PF_SK_HIGHEST_EFFECT
+  hidden_effect = {
+   set_country_flag = pf_shorekeeper_bond_4
+   end_event_chain = pf_sk_highest_invitation
+  }
+ }
+ immediate = {
+  play_sound = pf_theme_shorekeeper
+  set_country_flag = pf075_complete_shorekeeper
+  set_country_flag = pf28_memory_seen_10461
+  set_country_flag = pf_personal_ending_seen
+  pf23_init_collection = yes
+ }
+}
+country_event = {
+ id = Phrolova_event.10412
+ is_triggered_only = yes
+ title = PF_SK_ACTIVATION_TITLE
+ desc = PF_SK_ACTIVATION_DESC
+ picture = GFX_pf_sk_activation
+ diplomatic = yes
+ custom_gui = pf_ui_pf_sk_activation
+ custom_gui_option = pf_cinematic_option
+ option = {
+  name = PF_SK_ACTIVATION_REPLY
+ }
+ immediate = {
+  end_event_chain = pf_sk_central_build
+  set_country_flag = pf28_memory_seen_10412
+ }
+}
+
+
+
+
+country_event = {
+    id = Phrolova_event.10435
+    is_triggered_only = yes
+    title = PF_SK_MEMBERS_TITLE
+    desc = PF_SK_MEMBERS_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = "pf_character_conversation"
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = {  }
+    immediate = { pf_speaker_shorekeeper = yes  }
+    option = { name = PF_SK_MEMBERS_REPLY }
+}
+
+country_event = {
+    id = Phrolova_event.10436
+    is_triggered_only = yes
+    title = PF_SK_RECORDING_TITLE
+    desc = PF_SK_RECORDING_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = "pf_character_conversation"
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = {  }
+    immediate = { pf_speaker_shorekeeper = yes  }
+    option = { name = PF_SK_RECORDING_REPLY }
+}
+
+country_event = {
+    id = Phrolova_event.10490
+    is_triggered_only = yes
+    title = PF_SK_DEBUG_TITLE
+    desc = PF_SK_DEBUG_DESC
+    picture = GFX_leader_recruitment_bg_renowned
+    event_window_type = leader_conversation
+    custom_gui = "pf_character_conversation"
+    custom_gui_option = "pf_character_conversation_option"
+    picture_event_data = { portrait = event_target:pf_speaker tooltip = no }
+    trigger = {  }
+    immediate = { pf_speaker_shorekeeper = yes  }
+    option = { name = PF_SK_DEBUG_RESOURCES hidden_effect = { add_resource = { energy = 50000 minerals = 50000 alloys = 25000 consumer_goods = 10000 unity = 25000 } country_event = { id = Phrolova_event.10490 } } 
+ 
+
+ tooltip = {
+  custom_tooltip = PF49_RES_energy_50000_minerals_50000_alloys_25000_consumer_goods_10000_unity_25000
+ }
+}
+    option = { name = PF_SK_DEBUG_WAIT custom_tooltip = PF_SK_DEBUG_WAIT_EFFECT hidden_effect = {
+        remove_country_flag = pf_shorekeeper_bond_wait remove_country_flag = pf_sk_tethys_wait
+        remove_country_flag = pf_sk_four_wait remove_country_flag = pf_sk_eight_wait
+        remove_country_flag = pf_sk_after_2_wait remove_country_flag = pf_sk_after_3_wait remove_country_flag = pf_sk_highest_wait
+        country_event = { id = Phrolova_event.10400 }
+    } }
+    option = {
+        name = PF_SK_DEBUG_STAGE_1
+        trigger = { NOT = { has_country_flag = pf_sk_stage_1_done } }
+        custom_tooltip = PF_SK_DEBUG_MUTATION
+        hidden_effect = { set_country_flag = pf_sk_stage_1_funded set_country_flag = pf_sk_stage_1_finished country_event = { id = Phrolova_event.10411 } }
+    }
+    option = {
+        name = PF_SK_DEBUG_STAGE_2
+        trigger = { NOT = { has_country_flag = pf_sk_stage_2_done } }
+        custom_tooltip = PF_SK_DEBUG_MUTATION
+        hidden_effect = { set_country_flag = pf_sk_stage_2_funded set_country_flag = pf_sk_stage_2_finished country_event = { id = Phrolova_event.10421 } }
+    }
+    option = {
+        name = PF_SK_DEBUG_STAGE_3
+        trigger = { NOT = { has_country_flag = pf_sk_stage_3_done } }
+        custom_tooltip = PF_SK_DEBUG_MUTATION
+        hidden_effect = { set_country_flag = pf_sk_stage_3_funded set_country_flag = pf_sk_stage_3_finished country_event = { id = Phrolova_event.10431 } }
+    }
+    option = {
+        name = PF_SK_DEBUG_STAGE_4
+        trigger = { NOT = { has_country_flag = pf_sk_stage_4_done } }
+        custom_tooltip = PF_SK_DEBUG_MUTATION
+        hidden_effect = { set_country_flag = pf_sk_stage_4_funded set_country_flag = pf_sk_stage_4_finished country_event = { id = Phrolova_event.10441 } }
+    }
+    option = { name = PF_SK_DEBUG_TECH hidden_effect = { give_technology = { tech = tech_pf_blackshore_nodes message = no } country_event = { id = Phrolova_event.10490 } } }
+    option = { name = PF_back hidden_effect = { country_event = { id = Phrolova_event.10480 } } }
+}
+
+leader_event = {
+    id = Phrolova_event.10404
+    is_triggered_only = yes hide_window = yes
+    trigger = { exists = owner owner = { has_country_flag = pf_sk_stage_4_done } }
+    immediate = { owner = { country_event = { id = Phrolova_event.10401 days = 1 } } }
+}

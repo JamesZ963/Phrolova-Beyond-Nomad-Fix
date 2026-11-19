@@ -1,0 +1,39 @@
+# Country-root continuations avoid deeply nested post-init expansion.
+country_event = {
+ id = Phrolova_event.9824
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b_resume_projects = yes }
+}
+country_event = {
+ id = Phrolova_event.9820
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b_forge_ensure = yes }
+}
+country_event = {
+ id = Phrolova_event.9821
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b09_resume = yes }
+}
+country_event = {
+ id = Phrolova_event.9822
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b_closure_monthly = yes }
+}
+country_event = {
+ id = Phrolova_event.9823
+ is_triggered_only = yes
+ hide_window = yes
+ trigger = { has_country_flag = pf_b09_started NOT = { has_country_flag = pf_b09_done } }
+ immediate = { pf_b09_acquire_site = yes pf_b09_enable = yes }
+}
+
+country_event = {
+ id = Phrolova_event.9825
+ is_triggered_only = yes
+ hide_window = yes
+ immediate = { pf_b_after_recruit = yes }
+}

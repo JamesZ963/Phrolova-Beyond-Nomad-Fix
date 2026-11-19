@@ -1,0 +1,7 @@
+namespace = Phrolova_event
+
+
+
+
+
+country_event = { id = Phrolova_event.11500 is_triggered_only = yes hide_window = yes trigger = { is_ai = no } immediate = { pf28_refresh_all_guides = yes } }
