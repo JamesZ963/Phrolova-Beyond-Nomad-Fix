@@ -1,5 +1,5 @@
-namespace = Phrolova_event
-
+#namespace = Phrolova_event
+#
 # One galaxy-wide pass for deposits that were generated before the scope fix.
 #country_event = {
 # id = Phrolova_event.11510
@@ -20,7 +20,7 @@ namespace = Phrolova_event
 #  set_global_flag = pf30_solaris_deposits_sanitized
 # }
 #}
-
+#
 # One timer per Solaris, including uncolonized planets or changes of ownership.
 #carrier_event = {
 # id = Phrolova_event.11511
@@ -32,7 +32,7 @@ namespace = Phrolova_event
 #  carrier_event = { id = Phrolova_event.11511 days = 30 }
 # }
 #}
-
+#
 # Native colonization and terraforming hooks; this does not start another timer.
 #carrier_event = {
 # id = Phrolova_event.11512
