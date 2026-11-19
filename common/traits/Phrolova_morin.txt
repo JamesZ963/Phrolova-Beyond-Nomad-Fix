@@ -1,0 +1,136 @@
+leader_trait_pf_morin = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf_morin
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ councilor_modifier = {
+  country_naval_cap_mult = 0.05
+  country_naval_cap_add = 500
+  command_limit_add = 50
+  starbase_shipyard_build_speed_mult = 0.05
+  starbase_shipyard_build_cost_mult = -0.05
+  planet_jobs_alloys_produces_mult = 0.05
+  ship_shield_penetration_add = 0.10
+  ship_armor_penetration_add = 0.10
+ }
+ self_modifier = {
+  leader_scientists_engineering_research_produces_add = 10
+ }
+}
+
+leader_trait_pf_morin_2 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf_morin_2
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ councilor_modifier = {
+  all_technology_research_speed = 0.1
+  country_engineering_tech_research_speed = 0.1
+ }
+ planet_modifier = {
+  planet_building_build_speed_mult = 0.15
+  planet_jobs_physics_research_produces_mult = 0.1
+  planet_jobs_society_research_produces_mult = 0.1
+  planet_jobs_engineering_research_produces_mult = 0.15
+ }
+ sector_modifier = {
+  planet_jobs_physics_research_produces_mult = 0.1
+  planet_jobs_society_research_produces_mult = 0.1
+  planet_jobs_engineering_research_produces_mult = 0.15
+ }
+}
+
+leader_trait_pf_morin_3 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf_morin_3
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ modifier = {
+  ship_sensor_range_add = 2
+  ship_hyperlane_range_add = 2
+  ship_cloaking_strength_add = 2
+  ship_speed_mult = 0.1
+  ship_ftl_jumpdrive_range_mult = 0.75
+  ship_jumpdrive_cooldown_mult = -0.25
+  ship_anomaly_generation_chance_mult = 0.25
+  ship_anomaly_research_speed_mult = 0.25
+  science_ship_survey_speed = 0.25
+  ship_archaeological_site_excavation_speed_mult = 0.25
+ }
+}
+
+leader_trait_pf_morin_4 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf_morin_4
+  script = trait/icon_pf_companion
+ }
+ modifier = {
+  ship_archaeological_site_excavation_speed_mult = 0.30
+  ship_astral_rift_speed_mult = 0.30
+  ship_archaeological_site_clues_add = 4
+  ship_astral_rift_clues_add = 4
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf_morin_injured = {
+ leader_trait_type = negative
+ inline_script = { script = trait/icon_negative_no_tiers ICON = "GFX_leader_trait_maimed" COUNCIL = no }
+ self_modifier = { leader_lifespan_add = -40 }
+ modifier = { science_ship_survey_speed = -0.75 }
+ leader_class = { scientist }
+ initial = no
+ randomized = no
+ notify_on_gained = no
+}

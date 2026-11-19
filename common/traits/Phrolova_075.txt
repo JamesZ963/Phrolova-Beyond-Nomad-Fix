@@ -1,0 +1,349 @@
+leader_trait_pf075_sunset_1 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_sunset
+  script = trait/icon_pf_companion
+ }
+ councilor_modifier = {
+  planet_jobs_alloys_produces_mult = 0.05
+  planet_jobs_unity_produces_mult = 0.05
+  country_naval_cap_mult = 0.05
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_sunset_2 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_sunset
+  script = trait/icon_pf_companion
+ }
+ councilor_modifier = {
+  planet_jobs_alloys_produces_mult = 0.10
+  planet_jobs_unity_produces_mult = 0.10
+  country_naval_cap_mult = 0.10
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_sunset_3 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_sunset
+  script = trait/icon_pf_companion
+ }
+ councilor_modifier = {
+  planet_jobs_alloys_produces_mult = 0.15
+  planet_jobs_unity_produces_mult = 0.15
+  country_naval_cap_mult = 0.15
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_sunset_4 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  scientist
+ }
+ inline_script = {
+  CLASS = scientist
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_sunset
+  script = trait/icon_pf_companion
+ }
+ councilor_modifier = {
+  planet_jobs_alloys_produces_mult = 0.20
+  planet_jobs_unity_produces_mult = 0.20
+  country_naval_cap_mult = 0.20
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_journey_1 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ fleet_modifier = {
+  ship_weapon_damage = 0.15
+  ship_fire_rate_mult = 0.10
+  ship_disengage_chance_mult = 0.10
+ }
+}
+
+leader_trait_pf075_journey_2 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ fleet_modifier = {
+  ship_weapon_damage = 0.20
+  ship_fire_rate_mult = 0.14
+  ship_disengage_chance_mult = 0.14
+ }
+}
+
+leader_trait_pf075_journey_3 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ fleet_modifier = {
+  ship_weapon_damage = 0.26
+  ship_fire_rate_mult = 0.17
+  ship_disengage_chance_mult = 0.17
+ }
+}
+
+leader_trait_pf075_journey_4 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ fleet_modifier = {
+  ship_weapon_damage = 0.31
+  ship_fire_rate_mult = 0.21
+  ship_disengage_chance_mult = 0.21
+ }
+}
+
+leader_trait_pf075_journey_5 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ fleet_modifier = {
+  ship_weapon_damage = 0.37
+  ship_fire_rate_mult = 0.24
+  ship_disengage_chance_mult = 0.24
+ }
+}
+
+leader_trait_pf075_journey_6 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ ai_weight = 0
+ fleet_modifier = {
+  ship_weapon_damage = 0.42
+  ship_fire_rate_mult = 0.28
+  ship_disengage_chance_mult = 0.28
+ }
+}
+
+leader_trait_pf075_journey_7 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ fleet_modifier = {
+  ship_weapon_damage = 0.33
+  ship_fire_rate_mult = 0.22
+  ship_disengage_chance_mult = 0.22
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_journey_8 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ fleet_modifier = {
+  ship_weapon_damage = 0.36
+  ship_fire_rate_mult = 0.24
+  ship_disengage_chance_mult = 0.24
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_journey_9 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ fleet_modifier = {
+  ship_weapon_damage = 0.39
+  ship_fire_rate_mult = 0.26
+  ship_disengage_chance_mult = 0.26
+ }
+ ai_weight = 0
+}
+
+leader_trait_pf075_journey_10 = {
+ cost = 0
+ leader_trait_type = destiny
+ randomized = no
+ initial = no
+ notify_on_gained = no
+ leader_class = {
+  commander
+ }
+ inline_script = {
+  CLASS = commander
+  RARITY = paragon
+  COUNCIL = no
+  TIER = none
+  ICON = GFX_pf42_pf075_journey
+  script = trait/icon_pf_companion
+ }
+ fleet_modifier = {
+  ship_weapon_damage = 0.42
+  ship_fire_rate_mult = 0.28
+  ship_disengage_chance_mult = 0.28
+ }
+ ai_weight = 0
+}

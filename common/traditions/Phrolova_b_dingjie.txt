@@ -1,0 +1,34 @@
+# Author-approved values, 2026-11-13. Adoption remains unchanged.
+tr_pf_b_dingjie_adopt = {
+ unlocks_agenda = agenda_pf_b_ai_assistant
+ modifier = { specimens_produces_mult = 0.30 }
+ ai_weight = { weight = 0 }
+}
+tr_pf_b_dingjie_1 = {
+ modifier = { country_energy_produces_mult = 0.15 planet_jobs_upkeep_mult = -0.15 }
+ ai_weight = { weight = 0 }
+}
+tr_pf_b_dingjie_2 = {
+ possible = { has_tradition = tr_pf_b_dingjie_1 }
+ modifier = { planet_researchers_produces_mult = 0.1 station_researchers_produces_mult = 0.2 }
+ ai_weight = { weight = 0 }
+}
+tr_pf_b_dingjie_3 = {
+ modifier = { megastructures_cost_mult = -0.15 megastructure_build_speed_mult = 0.15 }
+ ai_weight = { weight = 0 }
+}
+tr_pf_b_dingjie_4 = {
+ possible = { has_tradition = tr_pf_b_dingjie_3 }
+ modifier = { ship_armor_mult = 0.2 ship_shield_mult = 0.2 ships_upkeep_mult = 0.05 }
+ ai_weight = { weight = 0 }
+}
+tr_pf_b_dingjie_5 = {
+ possible = { has_tradition = tr_pf_b_dingjie_3 }
+ modifier = { planet_crime_mult = -0.2 pop_happiness = 0.1 }
+ ai_weight = { weight = 0 }
+}
+tr_pf_b_dingjie_finish = {
+ custom_tooltip_with_modifiers = tr_pf_b_dingjie_finish_desc
+ modifier = { planet_decision_enact_speed_mult = 0.15 country_edict_fund_add = 40 planet_bureaucrats_produces_mult = 0.1 }
+ ai_weight = { weight = 0 }
+}

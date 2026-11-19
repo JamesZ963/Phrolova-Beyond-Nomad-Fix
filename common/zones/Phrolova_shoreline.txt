@@ -1,0 +1,14 @@
+zone_pf_tidal_center = {
+    icon = GFX_zone_pf_tidal_center
+    base_buildtime = 1
+    zone_sets = { pf_tidal_set }
+    potential = { has_planet_flag = pf_solaris }
+    unlock = { owner = { has_country_flag = pf_sk_stage_1_done } }
+    planet_limit = { base = 1 }
+    included_building_sets = { government unity pf_tethys_set }
+    include = { building_pf_tethys }
+    max_buildings = 3
+    resources = { category = planet_zones }
+    country_modifier = { sector_max_jumps_add = 2 }
+    ai_priority = 0
+}

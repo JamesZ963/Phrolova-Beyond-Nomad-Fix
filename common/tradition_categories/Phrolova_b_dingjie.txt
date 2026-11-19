@@ -1,0 +1,14 @@
+tradition_pf_b_dingjie = {
+ tree_template = "tree_11_12"
+ adoption_bonus = "tr_pf_b_dingjie_adopt"
+ finish_bonus = "tr_pf_b_dingjie_finish"
+ traditions = {
+  "tr_pf_b_dingjie_1"
+  "tr_pf_b_dingjie_2"
+  "tr_pf_b_dingjie_3"
+  "tr_pf_b_dingjie_4"
+  "tr_pf_b_dingjie_5"
+ }
+ potential = { OR = { has_country_flag = pf_b_dingjie_confirmed has_country_flag = pf_b16_gift_confirmed has_tradition = tr_pf_b_dingjie_adopt } }
+ ai_weight = { weight = 0 }
+}

@@ -1,0 +1,4 @@
+pf_tidal_slot = {
+    included_zone_sets = { pf_tidal_set }
+    unlock = { owner = { has_country_flag = pf_sk_stage_1_done } }
+}

@@ -4,8 +4,8 @@ zone_Phrolova_Beyond_research = { icon = GFX_zone_Phrolova_Beyond_research base_
  resources = { category = planet_zones cost = { minerals = 400 } upkeep = { energy = 3 } }
  country_modifier = { country_base_unity_produces_add = 300 }
  planet_modifier = { planet_amenities_add = 1000 planet_stability_add = 10 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_culture_worker_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_evaluator_add = 100 }
+ triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_culture_worker_add = 200 }
+ triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_evaluator_add = 200 }
  
  include = { building_maintenance_depot }
  max_buildings = 3 included_building_sets = { entertainment medical government unity pf_theatre }
@@ -50,8 +50,8 @@ zone_Phrolova_Beyond_engineering = { icon = GFX_zone_Phrolova_Beyond_engineering
  resources = { category = planet_zones cost = { minerals = 400 } upkeep = { energy = 3 } }
  country_modifier = { country_base_alloys_produces_add = 300 }
  planet_modifier = { planet_pop_assembly_mult = 0.50 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_roboticist_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_replicator_add = 100 }
+ triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_roboticist_add = 200 }
+ triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_replicator_add = 200 }
  
  include = { building_robot_assembly_plant building_robot_assembly_complex building_machine_assembly_plant building_machine_assembly_complex building_spawning_pool building_offspring_nest building_clone_vats building_clone_army_clone_vat building_posthumous_employment_center }
  max_buildings = 3 included_building_sets = { government mining generator farming industrial foundry factory harvest }
