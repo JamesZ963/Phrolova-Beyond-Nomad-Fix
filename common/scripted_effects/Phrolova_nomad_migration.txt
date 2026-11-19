@@ -1,3 +1,6 @@
+event_target:pf_solaris = {
+    pf_migrate_restored_features = yes
+}
 
 # ============================================================
 # Transfer one planet flag to the destination Arkship.
@@ -11,7 +14,7 @@ pf_nomad_copy_flag = {
         }
 
         event_target:pf_nomad_arkship = {
-            set_carrier_flag = $FLAG$
+            set_planet_flag = $FLAG$
         }
 
         remove_planet_flag = $FLAG$
@@ -104,6 +107,9 @@ pf_nomad_transfer_solaris = {
             FLAG = pf17_ruins_added
         }
 
+        pf_nomad_copy_flag = {
+            FLAG = pf_solaris_memory_decoded
+        }
 
         # ----------------------------------------------------
         # Solaris progress flags
