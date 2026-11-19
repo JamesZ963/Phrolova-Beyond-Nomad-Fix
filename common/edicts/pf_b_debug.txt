@@ -1,0 +1,6 @@
+# 本轮原型专用调试入口。需通过控制台 effect set_country_flag = pf_b_debug_mode 开启。
+pf_b_debug_menu = { length = 1 icon = "GFX_pf46_debug_blackflower"
+ potential = { is_ai = no pf_b_debug_on = yes }
+ effect = { country_event = { id = Phrolova_event.9440 } }
+ ai_weight = { weight = 0 }
+}

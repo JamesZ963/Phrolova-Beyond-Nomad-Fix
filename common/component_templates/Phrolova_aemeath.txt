@@ -1,16 +1,71 @@
 # Independent tunnel armament: 10-200 range, full shield/armor penetration, +50% hull damage (1.5 multiplier).
 weapon_component_template = {
- key = "PF_TUNNEL_ARMAMENT" size = extra_large type = instant
- icon = "GFX_ship_part_energy_lance_1" icon_frame = 1
- firing_arc = 25 use_ship_main_target = no
- prerequisites = { tech_pf_tunnel_armament } component_set = "PF_TUNNEL_ARMAMENT" projectile_gfx = "particle_lance"
- potential = { OR = { from = { country_uses_bio_ships = no } is_arkship_ship = yes } }
- show_tech_unlock_if = { country_uses_bio_ships = no }
- power = -200 damage = { min = 600 max = 1500 } hull_damage = 1.5 shield_damage = 1.0 armor_damage = 1.0
- shield_penetration = 1.0 armor_penetration = 1.0
- windup = { min = 12 max = 47 } total_fire_time = 70 min_range = 10 range = 200 accuracy = 0.85 tracking = 0
- tags = { weapon_type_energy weapon_role_artillery x_slot }
- resources = { category = ship_components cost = { alloys = 550 rare_crystals = 5.863 } upkeep = { alloys = 0.81 energy = 4.05 } }
- target_weights = { titan = 3 battleship = 2 stinger_stage_1 = 1.5 stinger_stage_2 = 2 stinger_stage_3 = 2 }
- ai_weight = { weight = 0 }
+ key = PF_TUNNEL_ARMAMENT
+ size = extra_large
+ type = instant
+ icon_frame = 1
+ firing_arc = 25
+ use_ship_main_target = no
+ prerequisites = {
+  tech_pf_tunnel_armament
+ }
+ component_set = PF_TUNNEL_ARMAMENT
+ projectile_gfx = particle_lance
+ potential = {
+  OR = {
+   from = {
+    country_uses_bio_ships = no
+   }
+   is_arkship_ship = yes
+  }
+ }
+ show_tech_unlock_if = {
+  country_uses_bio_ships = no
+ }
+ power = -200
+ hull_damage = 1.5
+ shield_damage = 1.0
+ armor_damage = 1.0
+ shield_penetration = 1.0
+ armor_penetration = 1.0
+ windup = {
+  min = 12
+  max = 47
+ }
+ total_fire_time = 70
+ min_range = 10
+ range = 200
+ accuracy = 0.85
+ tracking = 0
+ tags = {
+  weapon_type_energy
+  weapon_role_artillery
+  x_slot
+ }
+ resources = {
+  category = ship_components
+  cost = {
+   alloys = 550
+   rare_crystals = 5.863
+  }
+  upkeep = {
+   alloys = 0.81
+   energy = 4.05
+  }
+ }
+ target_weights = {
+  titan = 3
+  battleship = 2
+  stinger_stage_1 = 1.5
+  stinger_stage_2 = 2
+  stinger_stage_3 = 2
+ }
+ ai_weight = {
+  weight = 0
+ }
+ damage = {
+  min = 1500
+  max = 2200
+ }
+ icon = GFX_pf46_heavy_array
 }

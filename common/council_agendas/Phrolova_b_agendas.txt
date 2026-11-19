@@ -1,0 +1,14 @@
+# Preparation modifier ends when the agenda launches; launch modifier lasts ten years.
+agenda_pf_b_ai_assistant = {
+ agenda_cost = 7000
+ potential = { has_tradition = tr_pf_b_dingjie_adopt }
+ allow = { has_tradition = tr_pf_b_dingjie_adopt }
+ modifier = {
+  science_ship_survey_speed = 0.20
+  ship_archaeological_site_clues_add = 3
+  ship_anomaly_generation_chance_mult = 0.20
+  species_leader_exp_gain = 0.40
+ }
+ agenda_finish_modifier_duration = 3600
+ finish_modifier = agenda_pf_b_ai_assistant_finish
+}

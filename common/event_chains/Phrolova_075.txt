@@ -1,0 +1,25 @@
+pf075_home_invitation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_phrolova_home_small
+}
+pf075_grand_invitation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_phrolova_grand_small
+}
+pf075_party_invitation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_shorekeeper_festival_small
+}
+pf075_daily_invitation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_aemeath_life_small
+}
+pf075_ame_final_invitation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_aemeath_life2_small
+}

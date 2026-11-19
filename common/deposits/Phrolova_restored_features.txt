@@ -15,92 +15,294 @@ d_pf_pollution_cleared = {
 }
 
 d_pf_array_garrison = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_pf_submerged_vault
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_soldier_add = 800 army_defense_health_mult = 0.50 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_warrior_drone_add = 800 army_defense_health_mult = 0.50 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ icon = d_pf_submerged_vault
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_soldier_add = 800
+  army_defense_health_mult = 0.50
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_warrior_drone_add = 800
+  army_defense_health_mult = 0.50
+ }
+ custom_tooltip = PF_ARRAY_PLATFORM_CAPACITY_EFFECT
 }
 
 d_pf_ruin_01_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_physicist_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_calculator_physicist_add = 100 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_physicist_add = 200
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_calculator_physicist_add = 200
+ }
+ icon = d_central_spire
 }
 
 d_pf_ruin_02_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- planet_modifier = { planet_housing_add = 2 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ planet_modifier = {
+  planet_building_build_speed_mult = 0.15
+ }
+ icon = unused/d_landing_ship
 }
 
 d_pf_ruin_03_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- planet_modifier = { planet_jobs_produces_mult = 0.02 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ planet_modifier = {
+  planet_jobs_produces_mult = 0.02
+ }
+ icon = d_reactor
 }
 
 d_pf_ruin_04_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- planet_modifier = { planet_housing_add = 2 planet_amenities_add = 5 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ planet_modifier = {
+  planet_housing_add = 2000
+  planet_jobs_trade_produces_mult = 0.10
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_trader_add = 200
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_logistics_drone_add = 200
+ }
+ icon = d_city
 }
 
 d_pf_ruin_05_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_biologist_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_calculator_biologist_add = 100 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_biologist_add = 200
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_calculator_biologist_add = 200
+ }
+ icon = d_ancient_vault
 }
 
 d_pf_ruin_06_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_clerk_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_logistics_drone_add = 100 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_clerk_add = 200
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_logistics_drone_add = 200
+ }
+ icon = unused/d_space_walk
 }
 
 d_pf_ruin_07_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_technician_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_technician_drone_add = 100 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_technician_add = 200
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_technician_drone_add = 200
+ }
+ icon = d_station_reactor
 }
 
 d_pf_ruin_08_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- planet_modifier = { planet_jobs_energy_produces_mult = 0.05 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ planet_modifier = {
+  planet_jobs_energy_produces_mult = 0.05
+ }
+ icon = d_solar_array
 }
 
 d_pf_ruin_09_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_farmer_add = 100 planet_amenities_add = 5 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_agri_drone_add = 100 planet_amenities_add = 5 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_farmer_add = 200
+  planet_amenities_add = 500
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_agri_drone_add = 200
+  planet_amenities_add = 500
+ }
+ icon = d_natural_farmland
 }
 
 d_pf_ruin_10_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- planet_modifier = { planet_housing_add = 2 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ planet_modifier = {
+  planet_buildings_upkeep_mult = -0.10
+ }
+ icon = d_mining_tunnels
 }
 
 d_pf_ruin_11_restored = {
- is_for_colonizable = yes category = deposit_cat_rare icon = d_city_ruins
- potential = { always = no }
- drop_weight = { weight = 0 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_miner_add = 100 }
- triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_mining_drone_add = 100 }
+ is_for_colonizable = yes
+ category = deposit_cat_rare
+ potential = {
+  always = no
+ }
+ drop_weight = {
+  weight = 0
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = no
+   }
+  }
+  job_miner_add = 200
+ }
+ triggered_planet_modifier = {
+  potential = {
+   owner = {
+    is_gestalt = yes
+   }
+  }
+  job_mining_drone_add = 200
+ }
+ icon = d_mineral_fields
 }

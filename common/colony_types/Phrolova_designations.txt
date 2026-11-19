@@ -1,6 +1,12 @@
 col_Phrolova_garden = {
  icon = GFX_col_Phrolova_garden
  potential = { has_planet_flag = pf_solaris pf_solaris_owner = yes }
- planet_modifier = { planet_researchers_produces_mult = 0.20 planet_zone_Phrolova_Beyond_research_build_speed_mult = 0.35 planet_zone_Phrolova_Hecate_research_build_speed_mult = 0.35 planet_zone_Phrolova_Beyond_physics_build_speed_mult = 0.35 planet_zone_Phrolova_Beyond_society_build_speed_mult = 0.35 planet_zone_Phrolova_Beyond_engineering_build_speed_mult = 0.35 }
+ planet_modifier = {
+  researcher_jobs_bonus_workforce_mult = 0.30
+  planet_researchers_produces_mult = 0.20
+  planet_jobs_unity_produces_mult = 0.25
+  planet_building_build_speed_mult = 0.50
+  pop_housing_usage_mult = -0.20
+ }
  weight_modifier = { base = 0 }
 }

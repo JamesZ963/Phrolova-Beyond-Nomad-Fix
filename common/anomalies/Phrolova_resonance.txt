@@ -1,0 +1,10 @@
+pf_sk_resource_echo = {
+    picture = GFX_pf_sk_project_small
+    desc = pf_sk_resource_echo_desc
+    level = 2
+    max_once = no
+    should_ai_use = no
+    should_ai_and_humans_use = no
+    spawn_chance = { base = 0 }
+    on_success = { 1 = { anomaly_event = Phrolova_event.10471 } }
+}

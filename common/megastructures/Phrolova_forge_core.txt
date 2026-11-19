@@ -1,0 +1,57 @@
+# B线第一轮拟造炉芯调试原型：框架、半完成炉芯、拟造炉芯。
+# 三个类型均只由B线项目成功时 spawn_megastructure 生成，potential = always no 隐藏正常建造菜单入口。
+# 实体采用4.5.3原版戴森球阶段模型作为占位；正式模型待美术定稿后替换。
+
+pf_forge_frame = {
+ entity = "dyson_sphere_phase_01_entity"
+ construction_entity = "dyson_sphere_frame_entity"
+ portrait = "GFX_megastructure_dyson_sphere_background"
+ show_galactic_map_icon = yes
+ show_in_outliner = yes
+ build_time = 1
+ resources = {
+  category = megastructures
+  cost = { alloys = 1 }
+  produces = { energy = @pf_b_forge_energy_1 }
+ }
+ country_modifier = { all_technology_research_speed = @pf_b_forge_research_1 }
+ potential = { always = no }
+ possible = { always = no }
+ construction_blocks_and_blocked_by = none
+}
+
+pf_forge_half = {
+ entity = "dyson_sphere_phase_03_entity"
+ construction_entity = "dyson_sphere_part_2_entity"
+ portrait = "GFX_megastructure_dyson_sphere_background"
+ show_galactic_map_icon = yes
+ show_in_outliner = yes
+ build_time = 1
+ resources = {
+  category = megastructures
+  cost = { alloys = 1 }
+  produces = { energy = @pf_b_forge_energy_2 }
+ }
+ country_modifier = { all_technology_research_speed = @pf_b_forge_research_2 }
+ potential = { always = no }
+ possible = { always = no }
+ construction_blocks_and_blocked_by = none
+}
+
+pf_forge_core = {
+ entity = "dyson_sphere_phase_05_entity"
+ construction_entity = "dyson_sphere_part_4_entity"
+ portrait = "GFX_megastructure_dyson_sphere_background"
+ show_galactic_map_icon = yes
+ show_in_outliner = yes
+ build_time = 1
+ resources = {
+  category = megastructures
+  cost = { alloys = 1 }
+  produces = { energy = @pf_b_forge_energy_3 }
+ }
+ country_modifier = { all_technology_research_speed = @pf_b_forge_research_3 megastructure_build_speed_mult = 0.20 country_energy_produces_mult = 0.10 }
+ potential = { always = no }
+ possible = { always = no }
+ construction_blocks_and_blocked_by = none
+}

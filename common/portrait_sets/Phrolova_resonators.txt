@@ -1,0 +1,437 @@
+pf_resonator_look_hum = {
+ species_class = HUM
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   wuwa_species_all
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  wuwa_species_all
+ }
+}
+pf_resonator_look_robot = {
+ species_class = ROBOT
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_robot
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_robot
+ }
+}
+pf_resonator_look_machine = {
+ species_class = MACHINE
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_machine
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_machine
+ }
+}
+pf_resonator_look_salvager = {
+ species_class = SALVAGER
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_salvager
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_salvager
+ }
+}
+pf_resonator_look_shroudwalker = {
+ species_class = SHROUDWALKER
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_shroudwalker
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_shroudwalker
+ }
+}
+pf_resonator_look_mindwarden_enclave = {
+ species_class = MINDWARDEN_ENCLAVE
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_mindwarden_enclave
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_mindwarden_enclave
+ }
+}
+pf_resonator_look_paragon = {
+ species_class = PARAGON
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_paragon
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_paragon
+ }
+}
+pf_resonator_look_msi_slaver = {
+ species_class = MSI_SLAVER
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_msi_slaver
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_msi_slaver
+ }
+}
+pf_resonator_look_solarpunk = {
+ species_class = SOLARPUNK
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_solarpunk
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_solarpunk
+ }
+}
+pf_resonator_look_mam = {
+ species_class = MAM
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_mam
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_mam
+ }
+}
+pf_resonator_look_rep = {
+ species_class = REP
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_rep
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_rep
+ }
+}
+pf_resonator_look_avi = {
+ species_class = AVI
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_avi
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_avi
+ }
+}
+pf_resonator_look_art = {
+ species_class = ART
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_art
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_art
+ }
+}
+pf_resonator_look_mol = {
+ species_class = MOL
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_mol
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_mol
+ }
+}
+pf_resonator_look_fun = {
+ species_class = FUN
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_fun
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_fun
+ }
+}
+pf_resonator_look_plant = {
+ species_class = PLANT
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_plant
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_plant
+ }
+}
+pf_resonator_look_lithoid = {
+ species_class = LITHOID
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_lithoid
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_lithoid
+ }
+}
+pf_resonator_look_necroid = {
+ species_class = NECROID
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_necroid
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_necroid
+ }
+}
+pf_resonator_look_aquatic = {
+ species_class = AQUATIC
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_aquatic
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_aquatic
+ }
+}
+pf_resonator_look_tox = {
+ species_class = TOX
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_tox
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_tox
+ }
+}
+pf_resonator_look_biogenesis_01 = {
+ species_class = BIOGENESIS_01
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_biogenesis_01
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_biogenesis_01
+ }
+}
+pf_resonator_look_mindwarden = {
+ species_class = MINDWARDEN
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_mindwarden
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_mindwarden
+ }
+}
+pf_resonator_look_inf = {
+ species_class = INF
+ conditional_portraits = {
+  playable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+  portraits = {
+   pf_resonator_group_inf
+  }
+  randomizable = {
+   has_global_flag = game_started
+   has_global_flag = pf_resonator_portraits_unlocked
+  }
+ }
+ non_randomized_portraits = {
+  pf_resonator_group_inf
+ }
+}

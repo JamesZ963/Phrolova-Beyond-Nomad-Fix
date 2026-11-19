@@ -1,0 +1,4 @@
+on_single_player_save_game_load = { events = { Phrolova_event.11960 } }
+on_monthly_pulse_country = { events = { Phrolova_event.11961 } }
+on_megastructure_built = { events = { Phrolova_event.11963 } }
+on_megastructure_upgraded = { events = { Phrolova_event.11963 } }

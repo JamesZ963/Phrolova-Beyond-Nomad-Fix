@@ -1,0 +1,16 @@
+# B线首版能源/防护组件方向：宙算护盾阵列，占用辅助槽。
+utility_component_template = {
+ key = "PF_B_MATH_SHIELD"
+ size = aux
+ icon = "GFX_pf_b_math_shield"
+ icon_frame = 1
+ power = 0
+ resources = { category = ship_components cost = { alloys = 25 } upkeep = { energy = 0.25 } }
+ prerequisites = { "tech_pf_b_forge" }
+ component_set = "PF_B_MATH_SHIELD"
+ modifier = {
+  ship_shield_mult = 0.10
+  ship_shield_regen_add_static = 5
+ }
+ ai_weight = { weight = 0 }
+}

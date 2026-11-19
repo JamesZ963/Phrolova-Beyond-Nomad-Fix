@@ -1,0 +1,90 @@
+pf_b_progress_06_restore = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_07_recovery = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_08_fragment = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_09_tunnel = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_10_validation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_11_frame = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_12_trial = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_13_records = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_14_archive = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_15_half = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_16_core = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_18_prepare = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_progress_19_start = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_local_research = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_expedition_wait = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_receive_ready = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_raid_11_retry = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf_b_raid_15_retry = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}

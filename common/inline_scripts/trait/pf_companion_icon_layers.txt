@@ -1,0 +1,5 @@
+icon = {
+ layer = { icon = icon_Phrolova_trait_destiny }
+ layer = { icon = $ICON$ color = pf_companion_glyph_black }
+ layer = { icon = GFX_trait_frame_veteran color = colors_Phrolova_trait }
+}

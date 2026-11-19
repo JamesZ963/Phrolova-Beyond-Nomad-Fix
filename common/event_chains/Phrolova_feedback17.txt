@@ -1,6 +1,25 @@
-pf17_heart_pulse = { icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds" }
-pf17_heart_secret = { icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds" }
-pf17_frequency_ready = { icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds" }
-pf17_festival = { icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds" }
-
-pf_ame_contact_hint = { icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds" }
+pf17_heart_pulse = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_heart_repaired_small
+}
+pf17_heart_secret = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = Phrolova_events_yansuan
+}
+pf17_frequency_ready = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = Phrolova_events_yansuan
+}
+pf17_festival = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_shorekeeper_festival_small
+}
+pf_ame_contact_hint = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_frequency_final_small
+}

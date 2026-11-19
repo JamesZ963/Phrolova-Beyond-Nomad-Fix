@@ -1,0 +1,5 @@
+# Keep native tooltip subtitles, rarity and ordering while sharing one visual.
+inline_script = { script = trait/subtitle/council_$COUNCIL$ RARITY = $RARITY$ CLASS = $CLASS$ }
+inline_script = { script = trait/pf_companion_icon_layers ICON = $ICON$ }
+leader_trait_rarity = $RARITY$
+sorting_priority = @trait_sorting_priority_$RARITY$_$COUNCIL$_$TIER$

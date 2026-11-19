@@ -1,0 +1,8 @@
+pf_morin_contact = { length = 1 icon = "GFX_pf_edict_morin"
+ potential = { is_ai = no OR = { has_country_flag = pf_morin_recruited has_country_flag = pf_morin_pending } }
+ effect = {
+  if = { limit = { has_country_flag = pf_morin_recruited } country_event = { id = Phrolova_event.9800 } }
+  else = { country_event = { id = Phrolova_event.9413 } }
+ }
+ ai_weight = { weight = 0 }
+}

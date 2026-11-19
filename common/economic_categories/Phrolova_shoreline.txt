@@ -1,0 +1,6 @@
+planet_pf_blackflowers = {
+    parent = planet_bureaucrats
+    icon = job_pf_blackflower
+    modifier_category = colony
+    generate_mult_modifiers = { produces upkeep }
+}

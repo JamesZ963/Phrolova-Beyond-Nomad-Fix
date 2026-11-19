@@ -1,0 +1,15 @@
+component_set = {
+ key = PF_AMX_ANCIENT_PD
+ icon = GFX_pf46_ancient_pd
+ icon_frame = 1
+}
+component_set = {
+ key = PF_AMX_LIGHT_ARRAY
+ icon = GFX_pf46_light_array
+ icon_frame = 1
+}
+component_set = {
+ key = PF_AMX_FIRE_CONTROL
+ icon = GFX_pf46_fire_control
+ icon_frame = 1
+}

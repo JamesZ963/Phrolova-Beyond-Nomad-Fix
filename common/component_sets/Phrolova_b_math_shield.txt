@@ -1,0 +1,5 @@
+component_set = {
+ key = "PF_B_MATH_SHIELD"
+ icon = "GFX_ship_part_shield_5"
+ icon_frame = 1
+}

@@ -1,0 +1,176 @@
+weapon_component_template = {
+ key = SUZHE_BLADE_T
+ size = titanic
+ type = instant
+ icon = GFX_ship_part_perdition_beam
+ icon_frame = 1
+ component_set = SUZHE_BLADE
+ potential = {
+  is_ship_size = pf075_suizhe_imperial
+ }
+ slot_restriction = {
+  suizhe_t_slot
+ }
+ firing_arc = 180
+ min_range = 0
+ prio_projectile = yes
+ use_ship_main_target = yes
+ tags = {
+  weapon_type_energy
+  t_slot
+ }
+ ai_tags = {
+  weapon_role_artillery
+ }
+ projectile_gfx = suizhe_sword_strike
+ resources = {
+  category = ship_components
+  cost = {
+   alloys = 1000
+  }
+  upkeep = {
+   energy = 2
+  }
+ }
+ ai_weight = {
+  weight = 0
+ }
+}
+weapon_component_template = {
+ key = SUZHE_X_CANNON
+ size = extra_large
+ type = instant
+ icon = GFX_ship_part_arc_emitter_2
+ icon_frame = 1
+ potential = {
+  is_ship_size = pf075_suizhe_imperial
+ }
+ firing_arc = 180
+ min_range = 0
+ use_ship_main_target = no
+ component_set = SUZHE_X_WEAPON
+ projectile_gfx = focused_arc_emitter
+ tags = {
+  weapon_type_energy
+  weapon_role_artillery
+  x_slot
+ }
+ ai_tags = {
+  weapon_role_artillery
+  artillery
+  artillery_stealth
+ }
+ ai_tag_weight = 0
+ resources = {
+  category = ship_components
+  cost = {
+   alloys = 833
+   rare_crystals = 8.800
+  }
+  upkeep = {
+   alloys = 1.215
+   energy = 6.08
+  }
+ }
+ target_weights = {
+  titan = 3
+  battleship = 2
+  stinger_stage_1 = 1.5
+  stinger_stage_2 = 2
+  stinger_stage_3 = 2
+ }
+ ai_weight = {
+  weight = 0
+ }
+ entity = suizhe_x_entity
+ slot_restriction = {
+  suizhe_x_slot
+ }
+}
+weapon_component_template = {
+ key = SUZHE_L_CANNON
+ size = large
+ type = instant
+ firing_arc = 180
+ min_range = 0
+ icon_frame = 1
+ potential = {
+  is_ship_size = pf075_suizhe_imperial
+ }
+ component_set = SUZHE_L_WEAPON
+ projectile_gfx = stormfire_auto_cannons_l
+ tags = {
+  weapon_type_kinetic
+  l_slot
+ }
+ ai_tags = {
+  weapon_role_artillery
+  artillery
+  artillery_stealth
+ }
+ ai_tag_weight = 0
+ resources = {
+  category = ship_components
+  cost = {
+   alloys = 333
+   exotic_gases = 3.520
+  }
+  upkeep = {
+   alloys = 0.608
+   energy = 3.04
+  }
+ }
+ ai_weight = {
+  weight = 0
+ }
+ entity = suizhe_l_entity
+ slot_restriction = {
+  suizhe_l_slot
+ }
+ use_ship_main_target = no
+ icon = GFX_pf46_light_array
+}
+weapon_component_template = {
+ type = point_defence
+ key = SUZHE_P_DEFENCE
+ size = point_defence
+ icon_frame = 1
+ potential = {
+  is_ship_size = pf075_suizhe_imperial
+ }
+ component_set = SUZHE_P_WEAPON
+ projectile_gfx = flak_pd_3
+ tags = {
+  weapon_type_point_defense
+  weapon_type_kinetic
+ }
+ ai_tags = {
+  weapon_role_point_defense
+  screen
+  screen_stealth
+ }
+ resources = {
+  category = ship_components
+  cost = {
+   alloys = 13
+  }
+  upkeep = {
+   energy = 0.13
+   alloys = 0.013
+  }
+ }
+ point_defence_targets = {
+  "missile"
+  "strike_craft"
+ }
+ ai_weight = {
+  weight = 0
+ }
+ entity = suizhe_p_entity
+ firing_arc = 180
+ min_range = 0
+ slot_restriction = {
+  suizhe_p_slot
+ }
+ icon = GFX_pf46_ancient_pd
+}

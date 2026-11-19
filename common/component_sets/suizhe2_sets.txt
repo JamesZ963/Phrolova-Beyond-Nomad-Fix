@@ -1,0 +1,2 @@
+component_set = { key = "SUZHE2_BLADE" icon = "GFX_ship_part_perdition_beam" icon_frame = 1 }
+component_set = { key = "SUZHE2_AURA_SET" required_component_set = yes icon = "GFX_ship_part_aura_inspiring_presence" icon_frame = 1 }

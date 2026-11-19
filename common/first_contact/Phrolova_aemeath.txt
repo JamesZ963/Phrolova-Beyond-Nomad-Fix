@@ -1,10 +1,30 @@
 pf_ame_contact_1 = {
- icon = GFX_firstcontact_icon_progress picture = GFX_evt_star_chart difficulty = 1
- stage_event = { summary = PF_ame_contact_1_summary event_weight = { weight = 1 } event = Phrolova_event.908 }
- on_roll_failed = { add_stage_clues = 1 }
+ icon = GFX_firstcontact_icon_progress
+ difficulty = 1
+ stage_event = {
+  summary = PF_ame_contact_1_summary
+  event_weight = {
+   weight = 1
+  }
+  event = Phrolova_event.908
+ }
+ on_roll_failed = {
+  add_stage_clues = 1
+ }
+ picture = GFX_pf_art_frequency_small
 }
 pf_ame_contact_2 = {
- icon = GFX_firstcontact_icon_success picture = GFX_pf_art_frequency_final_small difficulty = 1
- stage_event = { summary = PF_ame_contact_2_summary event_weight = { weight = 1 } event = Phrolova_event.909 }
- on_roll_failed = { add_stage_clues = 1 }
+ icon = GFX_firstcontact_icon_success
+ picture = GFX_pf_art_frequency_final_small
+ difficulty = 1
+ stage_event = {
+  summary = PF_ame_contact_2_summary
+  event_weight = {
+   weight = 1
+  }
+  event = Phrolova_event.909
+ }
+ on_roll_failed = {
+  add_stage_clues = 1
+ }
 }

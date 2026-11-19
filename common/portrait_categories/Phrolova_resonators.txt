@@ -1,0 +1,28 @@
+pf_resonator_portraits = {
+ name = PF_RESONATOR_PORTRAIT_CATEGORY
+ sets = {
+  pf_resonator_look_hum
+  pf_resonator_look_robot
+  pf_resonator_look_machine
+  pf_resonator_look_salvager
+  pf_resonator_look_shroudwalker
+  pf_resonator_look_mindwarden_enclave
+  pf_resonator_look_paragon
+  pf_resonator_look_msi_slaver
+  pf_resonator_look_solarpunk
+  pf_resonator_look_mam
+  pf_resonator_look_rep
+  pf_resonator_look_avi
+  pf_resonator_look_art
+  pf_resonator_look_mol
+  pf_resonator_look_fun
+  pf_resonator_look_plant
+  pf_resonator_look_lithoid
+  pf_resonator_look_necroid
+  pf_resonator_look_aquatic
+  pf_resonator_look_tox
+  pf_resonator_look_biogenesis_01
+  pf_resonator_look_mindwarden
+  pf_resonator_look_inf
+ }
+}

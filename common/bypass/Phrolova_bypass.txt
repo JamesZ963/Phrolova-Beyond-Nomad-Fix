@@ -5,6 +5,9 @@ pf_story_wormhole = {
  connection_type = one_to_one ftl_ship_effect = "wormhole_ftl_ship_effect_entity" ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
  prerequisites = { tech_wormhole_stabilization }
  potential = { always = yes }
- country_can_use = { custom_tooltip = { fail_text = PF_WORMHOLE_LOCK has_country_flag = pf_wormhole_open } }
+ country_can_use = {
+  custom_tooltip = { fail_text = PF_WORMHOLE_LOCK OR = { has_country_flag = pf_wormhole_open has_country_flag = pf_b_wormhole_open } }
+  custom_tooltip = { fail_text = PF_WORMHOLE_TECH has_technology = tech_wormhole_stabilization }
+ }
  on_action = on_entering_wormhole
 }

@@ -1,0 +1,46 @@
+pf_sk_central_build = {
+ situation_log_category = pf_beyond_journal
+    icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+    picture = GFX_pf_sk_network_small
+}
+
+pf_sk_network = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_network_small
+ counter = {
+  pf_sk_active_nodes = {
+
+  }
+ }
+}
+
+pf_sk_highest_invitation = {
+ situation_log_category = pf_beyond_journal
+    icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+    picture = GFX_pf_sk_highest_small
+}
+
+pf_sk_stage_1 = {
+ situation_log_category = pf_beyond_journal
+    icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+    picture = GFX_pf_sk_project_small
+}
+
+pf_sk_stage_2 = {
+ situation_log_category = pf_beyond_journal
+    icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+    picture = GFX_pf_sk_network_small
+}
+
+pf_sk_stage_3 = {
+ situation_log_category = pf_beyond_journal
+    icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+    picture = GFX_pf_sk_network_small
+}
+
+pf_sk_stage_4 = {
+ situation_log_category = pf_beyond_journal
+    icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+    picture = GFX_pf_sk_network_small
+}

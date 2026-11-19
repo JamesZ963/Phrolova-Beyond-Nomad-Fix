@@ -1,0 +1,86 @@
+component_set = {
+ key = SUZHE_BLADE
+ icon = GFX_ship_part_perdition_beam
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_X_WEAPON
+ icon = GFX_ship_part_energy_lance_1
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_L_WEAPON
+ icon_frame = 1
+ icon = GFX_pf46_light_array
+}
+component_set = {
+ key = SUZHE_P_WEAPON
+ icon_frame = 1
+ icon = GFX_pf46_ancient_pd
+}
+component_set = {
+ key = SUZHE_AUX_SENSOR_SET
+ icon = GFX_ship_part_sensor_4
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_AUX_TARGETING_SET
+ icon = GFX_ship_part_computer_artillery_basic
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_AUX_COOLING_SET
+ icon = GFX_ship_part_computer_artillery_advanced
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_ARMOR_SET
+ icon = GFX_ship_part_armor_5
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_SHIELD_SET
+ icon = GFX_ship_part_shield_5
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_REACTOR_SET
+ required_component_set = yes
+ is_core_component_set = yes
+ icon = GFX_ship_part_reactor_5
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_DRIVE_SET
+ required_component_set = yes
+ is_core_component_set = yes
+ icon = GFX_ship_part_hyper_drive_3
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_THRUSTER_SET
+ required_component_set = yes
+ is_core_component_set = yes
+ icon = GFX_ship_part_thruster_5
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_SENSOR_SET
+ required_component_set = yes
+ icon = GFX_ship_part_sensor_4
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_COMPUTER_SET
+ required_component_set = yes
+ is_core_component_set = yes
+ affects_target_type = yes
+ icon = GFX_ship_part_computer_artillery_basic
+ icon_frame = 1
+}
+component_set = {
+ key = SUZHE_AURA_SET
+ required_component_set = yes
+ icon = GFX_ship_part_aura_inspiring_presence
+ icon_frame = 1
+}

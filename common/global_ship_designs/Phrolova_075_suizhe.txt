@@ -1,0 +1,275 @@
+ship_design = {
+    use_design_name = yes
+    is_event_design = yes
+    allow_buildable_trigger = suizhe_design_not_buildable
+    section = {
+        template = SUZHE_TITAN_CORE
+        slot = core
+        component = {
+            slot = TITANIC_01
+            template = SUZHE_BLADE_T
+        }
+        component = {
+            slot = EXTRA_LARGE_01
+            template = SUZHE_X_CANNON
+        }
+        component = {
+            slot = EXTRA_LARGE_02
+            template = SUZHE_X_CANNON
+        }
+        component = {
+            slot = LARGE_GUN_01
+            template = SUZHE_L_CANNON
+        }
+        component = {
+            slot = LARGE_GUN_02
+            template = SUZHE_L_CANNON
+        }
+        component = {
+            slot = LARGE_GUN_03
+            template = SUZHE_L_CANNON
+        }
+        component = {
+            slot = LARGE_GUN_04
+            template = SUZHE_L_CANNON
+        }
+        component = {
+            slot = LARGE_GUN_05
+            template = SUZHE_L_CANNON
+        }
+        component = {
+            slot = LARGE_GUN_06
+            template = SUZHE_L_CANNON
+        }
+        component = {
+            slot = POINT_DEFENCE_01
+            template = SUZHE_P_DEFENCE
+        }
+        component = {
+            slot = POINT_DEFENCE_02
+            template = SUZHE_P_DEFENCE
+        }
+        component = {
+            slot = POINT_DEFENCE_03
+            template = SUZHE_P_DEFENCE
+        }
+        component = {
+            slot = POINT_DEFENCE_04
+            template = SUZHE_P_DEFENCE
+        }
+        component = {
+            slot = LARGE_UTILITY_1
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_2
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_3
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_4
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_5
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_6
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_7
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_8
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_9
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_10
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_11
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_12
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_13
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_14
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_15
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_16
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_17
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_18
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_19
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_20
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = AUX_UTILITY_1
+            template = SUZHE_AUX_SENSOR
+        }
+        component = {
+            slot = AUX_UTILITY_2
+            template = SUZHE_AUX_TARGETING
+        }
+        component = {
+            slot = AUX_UTILITY_3
+            template = SUZHE_AUX_COOLING
+        }
+    }
+    required_component = SUZHE_REACTOR_1
+    required_component = SUZHE_DRIVE_1
+    required_component = SUZHE_THRUSTER_1
+    required_component = SUZHE_SENSOR_1
+    required_component = SUZHE_COMPUTER_1
+    required_component = SUZHE_AURA_1
+    name = NAME_PF075_SUIZHE_IMPERIAL
+    ship_size = pf075_suizhe_imperial
+}
+
+ship_design = {
+    use_design_name = yes
+    is_event_design = yes
+    allow_buildable_trigger = suizhe_design_not_buildable
+    section = {
+        template = SUZHE2_TITAN_CORE
+        slot = core
+        component = {
+            slot = TITANIC_01
+            template = SUZHE2_BLADE_T
+        }
+        component = {
+            slot = LARGE_UTILITY_1
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_2
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_3
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_4
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_5
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_6
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_7
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_8
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_9
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_10
+            template = SUZHE_SHIELD_L
+        }
+        component = {
+            slot = LARGE_UTILITY_11
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_12
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_13
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_14
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_15
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_16
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_17
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_18
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_19
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = LARGE_UTILITY_20
+            template = SUZHE_ARMOR_L
+        }
+        component = {
+            slot = AUX_UTILITY_1
+            template = SUZHE_AUX_SENSOR
+        }
+        component = {
+            slot = AUX_UTILITY_2
+            template = SUZHE_AUX_TARGETING
+        }
+        component = {
+            slot = AUX_UTILITY_3
+            template = SUZHE_AUX_COOLING
+        }
+    }
+    required_component = SUZHE_REACTOR_1
+    required_component = SUZHE_DRIVE_1
+    required_component = SUZHE_THRUSTER_1
+    required_component = SUZHE_SENSOR_1
+    required_component = SUZHE_COMPUTER_1
+    required_component = SUZHE2_AURA_1
+    name = NAME_PF075_SUIZHE_MELEE
+    ship_size = pf075_suizhe_melee
+}

@@ -1,0 +1,5 @@
+on_monthly_pulse_country = { events = { Phrolova_event.11000 } }
+on_entering_battle = { events = { Phrolova_event.11060 } }
+on_space_battle_over = { events = { Phrolova_event.11061 } }
+on_ship_destroyed_victim = { events = { Phrolova_event.11062 } }
+on_ascension_perk_picked = { events = { Phrolova_event.11000 } }

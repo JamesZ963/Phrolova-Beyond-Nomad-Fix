@@ -1,0 +1,19 @@
+weapon_component_template = {
+    key = "SUZHE2_BLADE_T"
+    size = titanic
+    type = instant
+    icon = "GFX_ship_part_perdition_beam"
+    icon_frame = 1
+    component_set = "SUZHE2_BLADE"
+    potential = { is_ship_size = pf075_suizhe_melee }
+    slot_restriction = { suizhe2_t_slot }
+    firing_arc = 180
+    min_range = 0
+    prio_projectile = yes
+    use_ship_main_target = yes
+    tags = { weapon_type_energy t_slot }
+    ai_tags = { weapon_role_artillery }
+    projectile_gfx = "suizhe_sword_strike"
+    resources = { category = ship_components cost = { alloys = 1000 } upkeep = { energy = 2 } }
+    ai_weight = { weight = 0 }
+}

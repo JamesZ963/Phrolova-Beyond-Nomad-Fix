@@ -1,0 +1,34 @@
+ap_pf_resonator = {
+    potential = {
+        is_ai = no
+        has_country_flag = pf_sk_stage_4_done
+        NOT = {
+            has_ascension_perk = ap_pf_resonator
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = PF_SK_PERK_STAGE
+            has_country_flag = pf_sk_stage_4_done
+        }
+        custom_tooltip = {
+            fail_text = PF_SK_PERK_SLOTS
+            num_ascension_perks > 1
+        }
+        custom_tooltip = {
+            fail_text = PF_SK_PERK_TETHYS
+            pf_sk_has_tethys = yes
+        }
+    }
+    ai_weight = {
+        factor = 0
+    }
+    on_enabled = {
+        custom_tooltip = PF_RESONATOR_ASCENSION_EFFECT
+        hidden_effect = {
+            pf_sk_first_conversion = {
+                PORTRAIT = event_target:pf_sk_original_species
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+pf_b_archive_site = {
+ picture = Phrolova_events_solaris_ruins
+ desc = pf_b_archive_site_desc
+ stages = 3
+ weight = 0
+ on_roll_failed = { from = { add_stage_clues = 2 } }
+ visible = { default_site_visible_trigger = yes }
+ potential = { always = yes }
+ allow = {
+  from = { planet = { has_planet_flag = pf_b14_site_planet solar_system = { has_star_flag = pf_aleph@root.owner } } }
+  owner = { has_country_flag = pf_b14_started }
+ }
+ stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = Phrolova_event.9457 }
+ stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = Phrolova_event.9458 }
+ stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = Phrolova_event.9459 }
+}

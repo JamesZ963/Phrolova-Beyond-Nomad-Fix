@@ -1,0 +1,3 @@
+on_single_player_save_game_load = { events = { Phrolova_event.11980 } }
+on_leader_assigned = { events = { Phrolova_event.11981 } }
+on_leader_unassigned = { events = { Phrolova_event.11981 } }

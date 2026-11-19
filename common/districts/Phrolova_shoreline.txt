@@ -1,0 +1,23 @@
+district_pf_tidal_center = {
+    icon = pf_tidal_center
+    overlay_icon = GFX_pf_district_no_overlay
+    district_width = 1
+    base_buildtime = 180
+    is_uncapped = { always = no }
+    potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_sk_stage_1_done } }
+    allow = { pf_solaris_owner = yes num_districts = { type = district_pf_tidal_center value < 1 } }
+    zone_slots = { pf_tidal_slot }
+    resources = {
+        category = planet_districts
+        cost = { minerals = 1500 energy = 500 }
+        upkeep = { energy = 8 }
+    }
+    planet_modifier = {
+        planet_housing_add = 300
+        planet_bureaucrats_unity_produces_mult = 0.30
+        planet_crime_add = -20
+    }
+    on_built = {
+        owner = { country_event = { id = Phrolova_event.10401 days = 1 } }
+    }
+}

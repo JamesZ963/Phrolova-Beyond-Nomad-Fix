@@ -1,0 +1,5 @@
+pf_b21_invitation = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_ending_small
+}

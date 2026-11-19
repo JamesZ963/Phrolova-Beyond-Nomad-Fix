@@ -1,0 +1,1 @@
+on_monthly_pulse_country = { events = { Phrolova_event.11500 } }

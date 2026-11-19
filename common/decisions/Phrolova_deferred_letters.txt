@@ -1,0 +1,29 @@
+decision_pf_shorekeeper_letter = {
+ owned_planets_only = yes
+ icon = decision_politics
+ enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_shorekeeper_recruited OR = { AND = { has_country_flag = pf_sk_stage_1_unlocked NOT = { has_country_flag = pf_sk_stage_1_started } NOT = { has_country_flag = pf_sk_stage_1_done } }
+AND = { has_country_flag = pf_sk_stage_2_unlocked NOT = { has_country_flag = pf_sk_stage_2_started } NOT = { has_country_flag = pf_sk_stage_2_done } }
+AND = { has_country_flag = pf_sk_stage_3_unlocked NOT = { has_country_flag = pf_sk_stage_3_started } NOT = { has_country_flag = pf_sk_stage_3_done } }
+AND = { has_country_flag = pf_sk_stage_4_unlocked NOT = { has_country_flag = pf_sk_stage_4_started } NOT = { has_country_flag = pf_sk_stage_4_done } }
+AND = { has_country_flag = pf_sk_stage_4_done NOT = { has_country_flag = pf_sk_relic_received } }
+AND = { has_country_flag = pf_sk_highest_invited NOT = { has_country_flag = pf_shorekeeper_bond_4 } } } } }
+ allow = { is_controlled_by = owner }
+ effect = { owner = { if = { limit = { has_country_flag = pf_sk_stage_1_unlocked NOT = { has_country_flag = pf_sk_stage_1_started } NOT = { has_country_flag = pf_sk_stage_1_done } } country_event = { id = Phrolova_event.10410 } }
+else_if = { limit = { has_country_flag = pf_sk_stage_2_unlocked NOT = { has_country_flag = pf_sk_stage_2_started } NOT = { has_country_flag = pf_sk_stage_2_done } } country_event = { id = Phrolova_event.10420 } }
+else_if = { limit = { has_country_flag = pf_sk_stage_3_unlocked NOT = { has_country_flag = pf_sk_stage_3_started } NOT = { has_country_flag = pf_sk_stage_3_done } } country_event = { id = Phrolova_event.10430 } }
+else_if = { limit = { has_country_flag = pf_sk_stage_4_unlocked NOT = { has_country_flag = pf_sk_stage_4_started } NOT = { has_country_flag = pf_sk_stage_4_done } } country_event = { id = Phrolova_event.10440 } }
+else_if = { limit = { has_country_flag = pf_sk_stage_4_done NOT = { has_country_flag = pf_sk_relic_received } } country_event = { id = Phrolova_event.10442 } }
+else_if = { limit = { has_country_flag = pf_sk_highest_invited NOT = { has_country_flag = pf_shorekeeper_bond_4 } } country_event = { id = Phrolova_event.10460 } } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_morin_proposal_letter = {
+ owned_planets_only = yes
+ icon = decision_engineering_research
+ enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_morin_recruited has_country_flag = pf_b05_pending } }
+ allow = { is_controlled_by = owner }
+ effect = { owner = { remove_country_flag = pf_b05_pending country_event = { id = Phrolova_event.9416 } } }
+ ai_weight = { weight = 0 }
+}

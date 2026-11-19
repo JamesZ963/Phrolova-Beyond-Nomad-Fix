@@ -76,6 +76,7 @@ pf23_specimen_13_category = {
  on_success = { 1 = { max_once = no anomaly_event = Phrolova_event.1933 } }
 }
 
+# Kept for already-discovered anomalies in old saves. Nothing creates this category anymore.
 pf23_specimen_14_category = {
  desc = pf23_specimen_14_category_desc picture = Phrolova_events_solaris_ruins level = 1
  should_ai_use = no should_ai_and_humans_use = no max_once = no spawn_chance = { base = 0 }

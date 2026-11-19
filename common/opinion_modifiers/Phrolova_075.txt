@@ -1,0 +1,4 @@
+triggered_opinion_pf075_aid = {
+ trigger = { has_country_flag = pf075_aid_goodwill@from }
+ opinion = { base = 75 }
+}

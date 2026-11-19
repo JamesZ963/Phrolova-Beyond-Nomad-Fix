@@ -1,0 +1,100 @@
+# B12-B19 normal closure decisions. Costs are first-playable test values.
+
+decision_pf_b12_trial = {
+ icon = decision_engineering_research enactment_time = 1
+ potential = { always = no }
+ effect = { owner = { country_event = { id = Phrolova_event.9844 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b13_records = {
+ icon = decision_engineering_research enactment_time = 1
+ potential = { always = no }
+ effect = { owner = { country_event = { id = Phrolova_event.9844 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b14_archive = {
+ icon = decision_engineering_research enactment_time = 1
+ potential = { always = no }
+ effect = { owner = { country_event = { id = Phrolova_event.9844 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b15_half = {
+ icon = decision_engineering_research enactment_time = 720
+ resources = { category = decisions cost = { alloys = @pf_b_stage_2_alloys minerals = @pf_b_stage_2_minerals } }
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_b13_done has_country_flag = pf_b11_raid_won has_country_flag = pf_b_forge_stage_1 NOT = { has_country_flag = pf_b_forge_stage_2_started } NOT = { has_country_flag = pf_b_forge_stage_2 } } }
+ allow = { pf_solaris_owner = yes }
+ on_queued = { owner = { set_country_flag = pf_b_forge_stage_2_started set_country_flag = pf_b_new_queue_2 set_country_flag = pf_b_queue_owner_2@prev country_event = { id = Phrolova_event.9833 } } }
+ on_unqueued = { every_country = { limit = { has_country_flag = pf_b_queue_owner_2@prev } remove_country_flag = pf_b_forge_stage_2_started remove_country_flag = pf_b_new_queue_2 remove_country_flag = pf_b_queue_owner_2@prev } }
+ abort_trigger = { OR = { NOT = { pf_solaris_owner = yes } NOT = { owner = { has_country_flag = pf_b_queue_owner_2@prev } } } }
+ abort_effect = { every_country = { limit = { has_country_flag = pf_b_queue_owner_2@prev } remove_country_flag = pf_b_forge_stage_2_started remove_country_flag = pf_b_new_queue_2 remove_country_flag = pf_b_queue_owner_2@prev } }
+ effect = { owner = {
+  if = { limit = { has_country_flag = pf_b_queue_owner_2@prev NOT = { has_country_flag = pf_b_forge_stage_2 } }
+   remove_country_flag = pf_b_new_queue_2 remove_country_flag = pf_b_queue_owner_2@prev
+   pf_b_forge_complete_2 = yes country_event = { id = Phrolova_event.9421 }
+  }
+  country_event = { id = Phrolova_event.9833 }
+ } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b16_core = {
+ icon = decision_engineering_research enactment_time = 720
+ resources = { category = decisions cost = { alloys = @pf_b_stage_3_alloys minerals = @pf_b_stage_3_minerals } }
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_b14_done has_country_flag = pf_b_forge_stage_2 has_country_flag = pf_b15_raid_won NOT = { has_country_flag = pf_b_forge_stage_3_started } NOT = { has_country_flag = pf_b_forge_stage_3 } } }
+ allow = { pf_solaris_owner = yes }
+ on_queued = { owner = { set_country_flag = pf_b_forge_stage_3_started set_country_flag = pf_b_new_queue_3 set_country_flag = pf_b_queue_owner_3@prev country_event = { id = Phrolova_event.9833 } } }
+ on_unqueued = { every_country = { limit = { has_country_flag = pf_b_queue_owner_3@prev } remove_country_flag = pf_b_forge_stage_3_started remove_country_flag = pf_b_new_queue_3 remove_country_flag = pf_b_queue_owner_3@prev } }
+ abort_trigger = { OR = { NOT = { pf_solaris_owner = yes } NOT = { owner = { has_country_flag = pf_b_queue_owner_3@prev } } } }
+ abort_effect = { every_country = { limit = { has_country_flag = pf_b_queue_owner_3@prev } remove_country_flag = pf_b_forge_stage_3_started remove_country_flag = pf_b_new_queue_3 remove_country_flag = pf_b_queue_owner_3@prev } }
+ effect = { owner = {
+  if = { limit = { has_country_flag = pf_b_queue_owner_3@prev NOT = { has_country_flag = pf_b_forge_stage_3 } }
+   remove_country_flag = pf_b_new_queue_3 remove_country_flag = pf_b_queue_owner_3@prev
+   pf_b_forge_complete_3 = yes country_event = { id = Phrolova_event.9422 }
+  }
+  country_event = { id = Phrolova_event.9833 }
+ } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b18_prepare = {
+ icon = decision_engineering_research enactment_time = 1
+ potential = { always = no }
+ effect = { owner = { country_event = { id = Phrolova_event.9844 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b19_start = {
+ icon = decision_engineering_research enactment_time = 1
+ potential = { always = no }
+ effect = { owner = { country_event = { id = Phrolova_event.9844 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b11_raid_retry = {
+ icon = decision_politics
+ enactment_time = 1
+ potential = {
+  has_planet_flag = pf_solaris
+  owner = { has_country_flag = pf_b11_raid_failed NOT = { has_country_flag = pf_b11_raid_won } }
+ }
+ allow = { pf_solaris_owner = yes }
+ effect = { owner = { remove_country_flag = pf_b11_raid_failed set_timed_country_flag = { flag = pf_b11_raid_deadline days = 180 } pf_b11_check_raid = yes  country_event = { id = Phrolova_event.9833 } } }
+ ai_weight = { weight = 0 }
+}
+
+decision_pf_b15_raid_retry = {
+ icon = decision_politics
+ enactment_time = 1
+ potential = {
+  has_planet_flag = pf_solaris
+  owner = { has_country_flag = pf_b15_raid_failed NOT = { has_country_flag = pf_b15_raid_won } }
+ }
+ allow = { pf_solaris_owner = yes }
+ effect = { owner = { remove_country_flag = pf_b15_raid_failed set_timed_country_flag = { flag = pf_b15_raid_deadline days = 180 } pf_b15_check_raid = yes  country_event = { id = Phrolova_event.9833 } } }
+ ai_weight = { weight = 0 }
+}
+
+

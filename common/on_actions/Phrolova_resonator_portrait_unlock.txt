@@ -1,0 +1,2 @@
+on_single_player_save_game_load = { events = { Phrolova_event.11950 } }
+on_monthly_pulse_country = { events = { Phrolova_event.11951 } }

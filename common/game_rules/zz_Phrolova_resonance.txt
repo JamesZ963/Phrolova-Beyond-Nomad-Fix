@@ -1,0 +1,10 @@
+can_modify_organic_portraits = {
+    OR = {
+        has_tradition = tr_genetics_creation
+        has_tradition = tr_purity_exemplary_genetics
+        has_active_tradition = tr_cloning_somatic_synthesization
+        has_active_tradition = tr_cloning_somatic_synthesization_clone_army
+        has_tradition = tr_mutation_unnatural_selection
+        has_ascension_perk = ap_pf_resonator
+    }
+}

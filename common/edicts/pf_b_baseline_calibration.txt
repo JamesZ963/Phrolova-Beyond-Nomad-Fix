@@ -1,0 +1,36 @@
+pf_b_baseline_calibration = {
+ length = 1
+ potential = {
+  is_ai = no
+  has_tradition = tr_pf_b_dingjie_finish
+ }
+ resources = {
+  category = edicts
+  cost = {
+   unity = 2000
+  }
+ }
+ effect = {
+  custom_tooltip = PF_B_BASELINE_CALIBRATION_EFFECT
+  hidden_effect = {
+   every_owned_leader = {
+    limit = {
+     NOT = {
+      is_pool_leader = yes
+     }
+     NOT = {
+      has_leader_flag = pf_preview_candidate
+     }
+     NOT = {
+      has_leader_flag = is_in_recruit_window
+     }
+    }
+    remove_all_negative_traits = yes
+   }
+  }
+ }
+ ai_weight = {
+  weight = 0
+ }
+ icon = GFX_pf_edict_baseline_calibration
+}

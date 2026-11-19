@@ -1,0 +1,24 @@
+# Separate energy budget preserves the same excess-power modifiers as Suizhe.
+utility_component_template = {
+    key = "SUZHE2_AURA_1"
+    size = medium
+    icon = "GFX_ship_part_aura_targeting_grid"
+    icon_frame = 1
+    power = -6297.0
+    component_set = "SUZHE2_AURA_SET"
+    potential = { is_ship_size = pf075_suizhe_melee }
+    hostile_aura = {
+        name = "suizhe_suppression"
+        system_wide = yes
+        apply_on = ships
+        stack_info = { id = suizhe_suppression priority = 100 }
+        modifier = {
+            ship_weapon_damage = -0.25
+            ship_accuracy_mult = -0.25
+            ship_weapon_range_mult = -0.40
+            ship_disengage_chance_mult = -0.40
+        }
+    }
+    resources = { category = ship_components cost = { alloys = 500 } }
+    ai_weight = { weight = 0 }
+}

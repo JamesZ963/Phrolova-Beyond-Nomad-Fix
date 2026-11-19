@@ -1,0 +1,51 @@
+building_pf_tethys = {
+    base_buildtime = 360
+    can_build = yes
+    category = government
+    building_sets = { pf_tethys_set }
+    planet_limit = 1
+    empire_limit = { base = 1 }
+    potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_sk_stage_1_done } }
+    allow = { pf_solaris_owner = yes has_district = district_pf_tidal_center }
+    resources = {
+        category = planet_buildings
+        cost = { minerals = 3000 alloys = 1000 energy = 1000 }
+        upkeep = { energy = 20 }
+    }
+    country_modifier = { country_base_unity_produces_add = 300 empire_size_colonies_mult = -0.10 }
+    planet_modifier = { planet_jobs_unity_produces_mult = 0.20 }
+    triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_pf_blackflower_add = 200 }
+    triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_pf_blackflower_drone_add = 200 }
+    custom_tooltip = PF_SK_TETHYS_NETWORK
+    on_built = {
+        owner = {
+            if = {
+                limit = { NOT = { has_country_flag = pf_sk_tethys_recorded } }
+                set_country_flag = pf_sk_tethys_recorded
+                set_timed_country_flag = { flag = pf_sk_tethys_wait days = 360 }
+                country_event = { id = Phrolova_event.10412 }
+            }
+            country_event = { id = Phrolova_event.10401 }
+        }
+    }
+}
+
+building_pf_blackshore_node = {
+    base_buildtime = 240
+    can_build = yes
+    category = government
+    building_sets = { government }
+    planet_limit = 1
+    potential = { NOT = { has_planet_flag = pf_solaris } owner = { has_country_flag = pf_sk_stage_2_done } }
+    allow = { is_controlled_by = owner }
+    prerequisites = { tech_pf_blackshore_nodes }
+    resources = {
+        category = planet_buildings
+        cost = { minerals = 1500 alloys = 500 }
+        upkeep = { energy = 8 }
+    }
+    planet_modifier = { planet_building_build_speed_mult = 0.20 planet_crime_add = -15 }
+    triggered_planet_modifier = { potential = { owner = { is_gestalt = no } } job_pf_blackflower_add = 200 }
+    triggered_planet_modifier = { potential = { owner = { is_gestalt = yes } } job_pf_blackflower_drone_add = 200 }
+    on_built = { owner = { country_event = { id = Phrolova_event.10401 } } }
+}

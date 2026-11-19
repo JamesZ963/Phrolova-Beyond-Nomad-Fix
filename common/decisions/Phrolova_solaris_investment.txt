@@ -1,0 +1,10 @@
+decision_pf_solaris_investment = {
+ owned_planets_only = yes
+ icon = pf_solaris_investment
+ enactment_time = 0
+ potential = { has_planet_flag = pf_solaris }
+ allow = { is_controlled_by = owner NOT = { has_modifier = pf_solaris_investment } }
+ resources = { category = decisions cost = { energy = 1000 } }
+ effect = { add_modifier = { modifier = pf_solaris_investment days = 1800 } }
+ ai_weight = { weight = 0 }
+}

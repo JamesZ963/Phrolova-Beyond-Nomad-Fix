@@ -1,0 +1,1 @@
+suizhe2_t_slot = { size = titanic component = weapon is_fixed = yes }

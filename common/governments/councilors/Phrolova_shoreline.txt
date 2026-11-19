@@ -1,0 +1,10 @@
+councilor_pf_blackshore_observer = {
+    leader_class = { official }
+    possible = { has_country_flag = pf_sk_stage_4_done is_gestalt = no }
+    is_leader_possible = { has_leader_flag = pf_shorekeeper }
+    icon = GFX_pf_blackshore_observer
+    custom_unlock_title = PF_SK_COUNCIL_UNLOCK
+    conditional_tooltip = PF_SK_COUNCIL_LEADER
+    modifier = { council_agenda_progress_speed = 0.02 country_edict_fund_add = 2 }
+    ai_hiring_weight = { base = 0 }
+}

@@ -1,0 +1,160 @@
+pf28_guide_phrolova_0 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_phrolova_meet_small
+}
+pf28_guide_phrolova_1 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_phrolova_meet_small
+}
+pf28_guide_phrolova_2 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_phrolova_home_small
+}
+pf28_guide_phrolova_3 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_phrolova_home_small
+}
+pf28_guide_phrolova_4 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_concert_small
+}
+pf28_guide_phrolova_5 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_phrolova_grand_small
+}
+pf28_guide_denia_0 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_denia_meet_small
+}
+pf28_guide_shorekeeper_0 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_shorekeeper_meet_small
+}
+pf28_guide_shorekeeper_1 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_network_small
+}
+pf28_guide_shorekeeper_2 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_network_small
+}
+pf28_guide_shorekeeper_3 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_network_small
+}
+pf28_guide_shorekeeper_4 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_network_small
+}
+pf28_guide_shorekeeper_5 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_network_small
+}
+pf28_guide_shorekeeper_6 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_sk_highest_small
+}
+pf28_guide_aemeath_0 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_frequency_small
+}
+pf28_guide_aemeath_1 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_aemeath_meet_small
+}
+pf28_guide_aemeath_2 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_aemeath_life2_small
+}
+pf28_guide_aemeath_3 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_suizhe_diagnosis_small
+}
+pf28_guide_aemeath_4 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_suizhe_restart_small
+}
+pf28_guide_aemeath_5 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_aemeath_life2_small
+}
+pf28_guide_aemeath_6 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_075_aemeath_life2_small
+}
+pf28_guide_morin_0 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_shorekeeper_meet_small
+}
+pf28_guide_morin_1 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_meet_small
+}
+pf28_guide_morin_2 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf28_guide_morin_3 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_departure_small
+}
+pf28_guide_morin_4 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf28_guide_morin_5 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf28_guide_morin_6 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf28_guide_morin_7 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_project_small
+}
+pf28_guide_morin_8 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_record_small
+}
+pf28_guide_morin_9 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_denia_meet_small
+}
+pf28_guide_morin_10 = {
+ situation_log_category = pf_beyond_journal
+ icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+ picture = GFX_pf_art_morin_ending_small
+}

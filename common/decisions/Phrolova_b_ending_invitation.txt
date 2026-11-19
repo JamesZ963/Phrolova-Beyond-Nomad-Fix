@@ -1,0 +1,14 @@
+decision_pf_b21_accept_invitation = {
+ icon = decision_politics
+ enactment_time = 0
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf_b21_invited NOT = { has_country_flag = pf_b21_started } NOT = { has_country_flag = pf_b21_done } } }
+ allow = { pf_solaris_owner = yes }
+ effect = { owner = {
+  set_country_flag = pf_b21_started
+  set_country_flag = pf_b21_pending
+  remove_country_flag = pf_b21_invited
+  end_event_chain = pf_b21_invitation
+  country_event = { id = Phrolova_event.9835 }
+ } }
+ ai_weight = { weight = 0 }
+}

@@ -1,9 +1,17 @@
 on_game_start_country = { events = { Phrolova_event.1 } }
-on_monthly_pulse_country = { events = { Phrolova_event.9 Phrolova_event.930 } }
-on_leader_fired = { events = { Phrolova_event.4 Phrolova_event.720 Phrolova_event.820 Phrolova_event.919 } }
-on_leader_death = { events = { Phrolova_event.8 Phrolova_event.720 Phrolova_event.820 Phrolova_event.919 } }
+on_monthly_pulse_country = { events = { Phrolova_event.9 Phrolova_event.930 Phrolova_event.9401 } }
+on_leader_fired = {
+ events = {
+  Phrolova_event.11100
+ }
+}
+on_leader_death = {
+ events = {
+  Phrolova_event.11100
+ }
+}
 on_tech_increased = { events = { Phrolova_event.9 } }
-on_entering_system_fleet = { events = { Phrolova_event.415 Phrolova_event.417 } }
+on_entering_system_fleet = { events = { Phrolova_event.415 Phrolova_event.417 Phrolova_event.9863 } }
 on_fleet_destroyed_victim = { events = { Phrolova_event.625 } }
 on_first_contact_stage_1_no_path = { events = { Phrolova_event.907 } }
 on_first_contact_finished = { events = { Phrolova_event.920 } }

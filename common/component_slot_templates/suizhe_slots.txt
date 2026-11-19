@@ -1,0 +1,4 @@
+suizhe_t_slot = { size = titanic component = weapon is_fixed = yes }
+suizhe_x_slot = { size = extra_large component = weapon entities = { weapon_type_energy = "suizhe_x_entity" weapon_type_kinetic = "suizhe_x_entity" } }
+suizhe_l_slot = { size = large component = weapon entities = { weapon_type_energy = "suizhe_l_entity" weapon_type_kinetic = "suizhe_l_entity" } }
+suizhe_p_slot = { size = point_defence component = weapon entities = { weapon_type_energy = "suizhe_p_entity" weapon_type_kinetic = "suizhe_p_entity" } }

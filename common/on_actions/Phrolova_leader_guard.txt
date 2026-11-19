@@ -1,0 +1,5 @@
+on_monthly_pulse_country = { events = { Phrolova_event.11101 } }
+on_leader_spawned = { events = { Phrolova_event.11101 } }
+on_leader_assigned = { events = { Phrolova_event.11102 } }
+on_leader_unassigned = { events = { Phrolova_event.11102 } }
+on_leader_hired = { events = { Phrolova_event.11102 } }

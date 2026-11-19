@@ -17,8 +17,48 @@ decision_pf_resume_heart_secret = {
  effect = { owner = { country_event = { id = Phrolova_event.901 } } } ai_weight = { weight = 0 }
 }
 decision_pf_beyond_festival = {
- owned_planets_only = yes icon = decision_politics enactment_time = 30
- potential = { has_planet_flag = pf_solaris NOT = { has_planet_flag = pf_festival_done } owner = { has_country_flag = pf_aemeath_recruited } }
- allow = { custom_tooltip = { fail_text = PF_festival_waiting success_text = none owner = { pf17_all_bonds_complete = yes } pf_solaris_owner = yes NOT = { has_planet_flag = pf_festival_dialogue_open } } }
- effect = { set_planet_flag = pf_festival_started owner = { pf_resume_festival = yes } } ai_weight = { weight = 0 }
+    owned_planets_only = yes
+    icon = decision_politics
+    enactment_time = 30
+    potential = {
+        has_planet_flag = pf_solaris
+        NOT = {
+            has_planet_flag = pf_festival_done
+        }
+        owner = {
+            has_country_flag = pf_aemeath_recruited
+        }
+        owner = {
+            NOT = {
+                has_country_flag = pf075_party_prepared
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+    allow = {
+        pf_solaris_owner = yes
+        owner = {
+            custom_tooltip = {
+                fail_text = PF_festival_waiting
+                has_country_flag = pf075_party_invited
+                pf075_party_eligible = yes
+            }
+            custom_tooltip = {
+                fail_text = PF075_PARTY_WAIT_TT
+                NOT = {
+                    has_country_flag = pf075_performance_lock
+                }
+                NOT = {
+                    has_country_flag = pf075_party_reschedule
+                }
+            }
+        }
+    }
+    effect = {
+        owner = {
+            pf075_start_party = yes
+        }
+    }
 }

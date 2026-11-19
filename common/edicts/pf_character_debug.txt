@@ -1,0 +1,8 @@
+# Separate developer entry; not part of any character communication.
+pf_character_debug = {
+ length = 1
+ icon = GFX_pf46_debug_blackflower
+ potential = { is_ai = no }
+ effect = { country_event = { id = Phrolova_event.9900 } }
+ ai_weight = { weight = 0 }
+}

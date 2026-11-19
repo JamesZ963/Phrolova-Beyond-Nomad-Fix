@@ -1,0 +1,29 @@
+decision_pf075_home = { owned_planets_only = yes icon = decision_politics enactment_time = 10
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf075_home_invited NOT = { has_country_flag = pf075_home_done } } }
+ allow = { is_controlled_by = owner owner = { has_Phrolova_leader = yes pf075_has_solaris_buildings = yes NOT = { has_country_flag = pf075_home_running } } }
+ effect = { owner = { set_country_flag = pf075_home_running set_country_flag = pf_bond_pending country_event = { id = Phrolova_event.11020 } } } ai_weight = { weight = 0 } }
+
+decision_pf075_grand = { owned_planets_only = yes icon = decision_politics enactment_time = 10
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf075_grand_invited NOT = { has_country_flag = pf075_grand_done } } }
+ allow = { is_controlled_by = owner owner = { has_Phrolova_leader = yes custom_tooltip = { fail_text = PF075_GRAND_WAIT_TT NOT = { has_country_flag = pf075_performance_lock } NOT = { has_country_flag = pf075_grand_reschedule } } } }
+ effect = { owner = { pf075_start_grand = yes } } ai_weight = { weight = 0 } }
+
+decision_pf075_grand_ready = { owned_planets_only = yes icon = decision_politics enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf075_grand_prepared NOT = { has_country_flag = pf075_grand_done } } }
+ allow = { is_controlled_by = owner owner = { custom_tooltip = { fail_text = PF075_GRAND_WAIT_TT NOT = { has_country_flag = pf075_performance_lock } NOT = { has_country_flag = pf075_grand_reschedule } } } }
+ effect = { owner = { remove_country_flag = pf075_grand_prepared pf075_start_grand = yes } } ai_weight = { weight = 0 } }
+
+decision_pf075_party_ready = { owned_planets_only = yes icon = decision_politics enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf075_party_prepared NOT = { has_country_flag = pf22_finale_complete } } }
+ allow = { is_controlled_by = owner owner = { pf075_party_eligible = yes custom_tooltip = { fail_text = PF075_GRAND_WAIT_TT NOT = { has_country_flag = pf075_performance_lock } NOT = { has_country_flag = pf075_party_reschedule } } } }
+ effect = { owner = { remove_country_flag = pf075_party_prepared pf075_start_party = yes } } ai_weight = { weight = 0 } }
+
+decision_pf075_aemeath_daily = { owned_planets_only = yes icon = decision_politics enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf075_daily_invited NOT = { has_country_flag = pf_aemeath_bond_3 } } }
+ allow = { is_controlled_by = owner owner = { has_country_flag = pf_aemeath_bond_2 } }
+ effect = { owner = { country_event = { id = Phrolova_event.11016 } } } ai_weight = { weight = 0 } }
+
+decision_pf075_aemeath_final = { owned_planets_only = yes icon = decision_politics enactment_time = 1
+ potential = { has_planet_flag = pf_solaris owner = { has_country_flag = pf075_ame_final_invited NOT = { has_country_flag = pf075_ame_final_done } } }
+ allow = { is_controlled_by = owner owner = { any_owned_leader = { has_leader_flag = pf_aemeath } } }
+ effect = { owner = { country_event = { id = Phrolova_event.11018 } } } ai_weight = { weight = 0 } }
