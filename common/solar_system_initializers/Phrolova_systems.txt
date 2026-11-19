@@ -1,12 +1,53 @@
-pf_solaris_fallback = { name = NAME_PF_Solaris_System class = sc_g usage = misc_system_init
- planet = { class = star size = 25 orbit_distance = 0 }
- planet = { class = pc_molten size = 12 orbit_distance = 40 }
- planet = { class = pc_relic size = 25 orbit_distance = 40 orbit_angle = 150 init_effect = { pf_init_solaris = yes } }
- asteroid_belt = { type = rocky_asteroid_belt radius = 130 }
- planet = { class = pc_asteroid size = 5 orbit_distance = 50 }
- planet = { class = pc_gas_giant size = 30 orbit_distance = 60 }
- planet = { class = pc_frozen size = 18 orbit_distance = 50 }
- init_effect = { spawn_natural_wormhole = { bypass_type = pf_story_wormhole random_pos = no orbit_angle = 270 } }
+pf_solaris_fallback = {
+ name = NAME_PF_Solaris_System
+ class = sc_g
+ usage = misc_system_init
+ planet = {
+  class = star
+  size = 25
+  orbit_distance = 0
+ }
+ planet = {
+  class = pc_molten
+  size = 12
+  orbit_distance = 40
+ }
+ planet = {
+  class = pc_relic
+  size = 25
+  orbit_distance = 40
+  orbit_angle = 150
+  init_effect = {
+   pf_init_solaris = yes
+  }
+  deposit_blockers = none
+ }
+ asteroid_belt = {
+  type = rocky_asteroid_belt
+  radius = 130
+ }
+ planet = {
+  class = pc_asteroid
+  size = 5
+  orbit_distance = 50
+ }
+ planet = {
+  class = pc_gas_giant
+  size = 30
+  orbit_distance = 60
+ }
+ planet = {
+  class = pc_frozen
+  size = 18
+  orbit_distance = 50
+ }
+ init_effect = {
+  spawn_natural_wormhole = {
+   bypass_type = pf_story_wormhole
+   random_pos = no
+   orbit_angle = 270
+  }
+ }
 }
 pf_aleph_system = { name = NAME_PF_Aleph_System class = sc_black_hole usage = misc_system_init flags = { pf_aleph_system }
  planet = { name = NAME_PF_Aleph class = pc_black_hole size = 120 orbit_distance = 0 init_effect = { set_planet_entity = { picture = pf_aleph } add_modifier = { modifier = pf_aleph_star_lore days = -1 } } }

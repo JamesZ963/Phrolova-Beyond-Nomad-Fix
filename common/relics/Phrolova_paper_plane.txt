@@ -1,0 +1,69 @@
+r_pf_paper_plane = {
+ portrait = GFX_relic_r_pf_paper_plane
+ score = 0
+ can_be_stolen = no
+ resources = { category = relics }
+ triggered_country_modifier = {
+  potential = { always = yes }
+  custom_tooltip = r_pf_paper_plane_effect
+ }
+ possible = { custom_tooltip = { fail_text = none always = no } }
+ active_effect = { custom_tooltip = PF_AMX_PLANE_REST }
+ ai_weight = { weight = 0 }
+}
+
+r_pf_paper_plane_2 = {
+ portrait = GFX_relic_r_pf_paper_plane
+ score = 0
+ can_be_stolen = no
+ resources = { category = relics }
+ triggered_country_modifier = {
+  potential = { always = yes }
+  custom_tooltip = r_pf_paper_plane_effect
+ }
+ possible = { custom_tooltip = { fail_text = none always = no } }
+ active_effect = { custom_tooltip = PF_AMX_PLANE_REST }
+ ai_weight = { weight = 0 }
+}
+
+r_pf_paper_plane_3 = {
+ portrait = GFX_relic_r_pf_paper_plane
+ score = 0
+ can_be_stolen = no
+ resources = { category = relics }
+ triggered_country_modifier = {
+  potential = { always = yes }
+  custom_tooltip = r_pf_paper_plane_effect
+ }
+ possible = { custom_tooltip = { fail_text = none always = no } }
+ active_effect = { custom_tooltip = PF_AMX_PLANE_REST }
+ ai_weight = { weight = 0 }
+}
+
+r_pf_paper_plane_4 = {
+ portrait = GFX_relic_r_pf_paper_plane
+ score = 0
+ can_be_stolen = no
+ resources = { category = relics }
+ triggered_country_modifier = {
+  potential = { always = yes }
+  custom_tooltip = r_pf_paper_plane_effect
+ }
+ possible = { custom_tooltip = { fail_text = none always = no } }
+ active_effect = { custom_tooltip = PF_AMX_PLANE_REST }
+ ai_weight = { weight = 0 }
+}
+
+r_pf_paper_plane_5 = {
+ portrait = GFX_relic_r_pf_paper_plane
+ score = 0
+ can_be_stolen = no
+ resources = { category = relics }
+ triggered_country_modifier = {
+  potential = { always = yes }
+  custom_tooltip = r_pf_paper_plane_effect
+ }
+ possible = { custom_tooltip = { fail_text = none always = no } }
+ active_effect = { custom_tooltip = PF_AMX_PLANE_REST }
+ ai_weight = { weight = 0 }
+}

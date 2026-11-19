@@ -1,0 +1,26 @@
+pf_b19_start_preparation = {
+ if = { limit = { pf_b_has_solaris = yes NOT = { has_country_flag = pf_b19_won } NOT = { has_country_flag = pf_b19_engaged } NOT = { has_country_flag = pf_b19_preparing } }
+  set_country_flag = pf_b19_preparing set_variable = { which = pf_b19_prepare_days value = 0 }
+  pf_find_targets = yes start_situation = { type = pf_b19_prepare target = event_target:pf_solaris }
+  country_event = { id = Phrolova_event.9861 days = 1 } country_event = { id = Phrolova_event.9862 }
+ }
+}
+pf_b19_refresh_core_defense = {
+ if = {
+  limit = { OR = { pf_solaris_b_defense_active = yes has_country_flag = pf_b19_won } }
+  pf_find_targets = yes
+  pf_refresh_solaris_platform_construction = yes
+ }
+ every_owned_fleet = {
+  remove_modifier = pf_b19_core_defense
+  if = { limit = { owner = { has_country_flag = pf_b_forge_stage_3 OR = { has_country_flag = pf_b19_preparing has_country_flag = pf_b19_engaged } NOT = { has_country_flag = pf_b19_won } } exists = solar_system solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root } } }
+   add_modifier = { modifier = pf_b19_core_defense days = -1 }
+  }
+ }
+ every_owned_starbase = { fleet = {
+  remove_modifier = pf_b19_core_defense
+  if = { limit = { owner = { has_country_flag = pf_b_forge_stage_3 OR = { has_country_flag = pf_b19_preparing has_country_flag = pf_b19_engaged } NOT = { has_country_flag = pf_b19_won } } exists = solar_system solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root } } }
+   add_modifier = { modifier = pf_b19_core_defense days = -1 }
+  }
+ } }
+}

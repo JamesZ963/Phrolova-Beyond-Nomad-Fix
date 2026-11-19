@@ -1,0 +1,14 @@
+ship_behavior = {
+	name = "suizhe_artillery"
+	range_components = weapon
+	preferred_attack_range = 6
+	formation_distance = 6
+	return_to_formation_distance = 900
+	source_target_anchor_factor = 1.0
+	combat_target_anchor = root
+	collision_awareness = 0.3
+	collision_strafe = 1.5
+	collision_radius = 0.4
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+}

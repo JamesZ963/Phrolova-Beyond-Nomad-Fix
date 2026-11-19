@@ -1,0 +1,14 @@
+pf40_personal_ending_seen = {
+ OR = {
+  has_country_flag = pf_personal_ending_seen
+  has_country_flag = pf28_memory_seen_11021
+  has_country_flag = pf28_memory_seen_9468
+  has_country_flag = pf28_memory_seen_10461
+  has_country_flag = pf28_memory_seen_11018
+ }
+}
+pf40_rebuild_eligible = {
+ has_country_flag = pf075_suizhe_launched
+ has_country_flag = pf075_suizhe_destroyed
+ NOT = { pf075_suizhe_exists = yes }
+}

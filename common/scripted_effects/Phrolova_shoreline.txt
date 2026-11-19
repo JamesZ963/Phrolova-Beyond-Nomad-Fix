@@ -1,0 +1,304 @@
+# Country scope. Every lookup checks current ownership rather than a global target.
+pf_sk_find_solaris = {
+    save_event_target_as = pf_sk_owner
+    random_owned_planet = {
+        limit = { has_planet_flag = pf_solaris is_controlled_by = owner }
+        save_event_target_as = pf_sk_solaris
+    }
+}
+
+pf_sk_refresh_network = {
+    every_owned_fleet = {
+        if = {
+            limit = {
+                exists = leader
+                leader = {
+                    leader_class = scientist
+                    has_trait = leader_trait_pf_resonance_awakening
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_modifier = pf_sk_science_mia
+                    }
+                }
+                add_modifier = {
+                    modifier = pf_sk_science_mia
+                    days = -1
+                }
+            }
+        }
+        else = {
+            remove_modifier = pf_sk_science_mia
+        }
+    }
+    set_variable = {
+        which = pf_sk_node_count
+        value = 0
+    }
+    every_owned_planet = {
+        limit = {
+            NOT = {
+                has_planet_flag = pf_solaris
+            }
+            is_controlled_by = owner
+            has_active_building = building_pf_blackshore_node
+        }
+        root = {
+            change_variable = {
+                which = pf_sk_node_count
+                value = 1
+            }
+        }
+    }
+    set_variable = {
+        which = pf_sk_extra_nodes
+        value = pf_sk_node_count
+    }
+    subtract_variable = {
+        which = pf_sk_extra_nodes
+        value = 4
+    }
+    if = {
+        limit = {
+            check_variable = {
+                which = pf_sk_extra_nodes
+                value < 0
+            }
+        }
+        set_variable = {
+            which = pf_sk_extra_nodes
+            value = 0
+        }
+    }
+    remove_modifier = pf_sk_network_income
+    if = {
+        limit = {
+            pf_sk_has_tethys = yes
+            check_variable = {
+                which = pf_sk_node_count
+                value > 0
+            }
+        }
+        add_modifier = {
+            modifier = pf_sk_network_income
+            multiplier = pf_sk_node_count
+            days = -1
+        }
+    }
+    if = {
+        limit = {
+            check_variable = {
+                which = pf_sk_node_count
+                value >= 4
+            }
+            NOT = {
+                has_country_flag = pf_sk_four_recorded
+            }
+        }
+        set_country_flag = pf_sk_four_recorded
+        set_timed_country_flag = {
+            flag = pf_sk_four_wait
+            days = 180
+        }
+    }
+    if = {
+        limit = {
+            check_variable = {
+                which = pf_sk_node_count
+                value >= 8
+            }
+            NOT = {
+                has_country_flag = pf_sk_eight_recorded
+            }
+        }
+        set_country_flag = pf_sk_eight_recorded
+        set_timed_country_flag = {
+            flag = pf_sk_eight_wait
+            days = 90
+        }
+    }
+    every_owned_planet = {
+        limit = {
+            has_planet_flag = pf_solaris
+        }
+        if = {
+            limit = {
+                has_district = district_pf_tidal_center
+                NOT = {
+                    num_zones = {
+                        type = zone_pf_tidal_center
+                        value > 0
+                    }
+                }
+            }
+            add_zone = {
+                district = district_pf_tidal_center
+                zone = zone_pf_tidal_center
+                zone_slot = 0
+                replace = yes
+            }
+        }
+        if = {
+            limit = {
+                has_active_building = building_pf_tethys
+                owner = {
+                    NOT = {
+                        has_country_flag = pf_sk_tethys_recorded
+                    }
+                }
+            }
+            owner = {
+                set_country_flag = pf_sk_tethys_recorded
+                set_timed_country_flag = {
+                    flag = pf_sk_tethys_wait
+                    days = 360
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            has_country_flag = pf_sk_stage_3_done
+            has_country_flag = pf_shorekeeper_bond_3
+        }
+        every_owned_leader = {
+            limit = {
+                has_leader_flag = pf_shorekeeper
+                NOT = {
+                    has_trait = leader_trait_pf_shorekeeper_4
+                }
+            }
+            add_trait = {
+                trait = leader_trait_pf_shorekeeper_4
+                show_message = no
+            }
+        }
+    }
+    if = {
+        limit = {
+            has_country_flag = pf_sk_stage_4_done
+        }
+        every_pool_leader = {
+            limit = {
+                pf_sk_normal_leader = yes
+            }
+            add_trait = {
+                trait = leader_trait_pf_resonance_awakening
+                show_message = no
+            }
+        }
+        if = {
+            limit = {
+                is_gestalt = yes
+                any_owned_leader = {
+                    has_leader_flag = pf_shorekeeper
+                }
+                NOT = {
+                    has_modifier = pf_sk_gestalt_coordination
+                }
+            }
+            add_modifier = {
+                modifier = pf_sk_gestalt_coordination
+                days = -1
+            }
+        }
+    }
+    if = {
+        limit = {
+            has_ascension_perk = ap_pf_resonator
+        }
+        every_owned_leader = {
+            limit = {
+                pf_sk_normal_leader = yes
+                species = {
+                    has_trait = trait_pf_resonator
+                }
+            }
+            add_trait = {
+                trait = leader_trait_pf_resonance_awakening
+                show_message = no
+            }
+        }
+    }
+    if = {
+        limit = {
+            has_modifier = pf_sk_gestalt_coordination
+            OR = {
+                is_gestalt = no
+                NOT = {
+                    any_owned_leader = {
+                        has_leader_flag = pf_shorekeeper
+                    }
+                }
+            }
+        }
+        remove_modifier = pf_sk_gestalt_coordination
+    }
+    if = {
+        limit = {
+            has_event_chain = pf_sk_network
+        }
+        reset_event_chain_counter = {
+            event_chain = pf_sk_network
+            counter = pf_sk_active_nodes
+        }
+        add_event_chain_counter = {
+            event_chain = pf_sk_network
+            counter = pf_sk_active_nodes
+            amount = pf_sk_node_count
+        }
+    }
+}
+
+# Run in species scope, with country and source species targets acquired by the caller.
+pf_sk_apply_species_template = {
+    save_event_target_as = pf_sk_original_species
+    modify_species = {
+        species = this
+        change_scoped_species = no
+        portrait = $PORTRAIT$
+        add_trait = trait_pf_resonator
+        effect = { save_event_target_as = pf_sk_new_species }
+    }
+    event_target:pf_sk_owner = {
+        every_owned_pop_group = {
+            limit = { species = { is_same_value = event_target:pf_sk_original_species } }
+            change_species = event_target:pf_sk_new_species
+        }
+        every_owned_leader = {
+            limit = { pf_sk_ordinary_leader_identity = yes species = { is_same_value = event_target:pf_sk_original_species } }
+            change_species = event_target:pf_sk_new_species
+            add_trait = { trait = leader_trait_pf_resonance_awakening show_message = no }
+        }
+        if = {
+            limit = { species = { is_same_value = event_target:pf_sk_original_species } }
+            change_species = event_target:pf_sk_new_species
+        }
+    }
+}
+
+pf_sk_first_conversion = {
+ set_global_flag = pf_resonator_portraits_unlocked
+ refresh_portraits = character
+ save_event_target_as = pf_sk_owner
+ species = {
+  pf_sk_apply_species_template = {
+   PORTRAIT = $PORTRAIT$
+  }
+ }
+ if = {
+  limit = {
+   NOT = {
+    has_country_flag = pf_sk_ascension_completed
+   }
+  }
+  set_country_flag = pf_sk_ascension_completed
+  set_timed_country_flag = {
+   flag = pf_sk_highest_wait
+   days = 30
+  }
+ }
+ pf_sk_refresh_network = yes
+}

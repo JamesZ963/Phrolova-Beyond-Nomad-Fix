@@ -1,0 +1,168 @@
+special_project = {
+ situation_log_category = pf_beyond_journal
+ key = PF_AMX_PREPARE
+ cost = 0
+ days_to_research = 120
+ tech_department = engineering_technology
+ picture = GFX_pf_art_075_suizhe_diagnosis_small
+ event_scope = country_event
+ location = yes
+ requirements = {
+
+ }
+ on_success = {
+  pf46_offer_fire_control = yes
+  set_country_flag = pf075_prepare_finished
+  country_event = {
+   id = Phrolova_event.11011
+  }
+ }
+ on_cancel = {
+  remove_country_flag = pf075_payment_failed
+  set_timed_country_flag = {
+   flag = pf075_project_retry
+   days = 30
+  }
+ }
+}
+special_project = {
+ situation_log_category = pf_beyond_journal
+ key = PF_AMX_RESTART
+ cost = 0
+ days_to_research = 360
+ tech_department = engineering_technology
+ picture = GFX_pf_art_075_suizhe_restart_small
+ event_scope = ship_event
+ location = yes
+ requirements = {
+  shipclass_constructor = 1
+ }
+ triggered_requirement = {
+  text = PF_AMX_RESOURCE_REQUIREMENT
+  count = 1
+  trigger = {
+   owner = {
+    OR = {
+     has_country_flag = pf075_restart_paid
+     pf075_can_pay_suizhe = yes
+    }
+   }
+  }
+ }
+ on_start = {
+  owner = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf075_restart_paid
+     }
+     pf075_can_pay_suizhe = yes
+    }
+    add_resource = {
+     alloys = -10000
+     energy = -10000
+     minerals = -5000
+     volatile_motes = -1000
+    }
+    set_country_flag = pf075_restart_paid
+   }
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf075_restart_paid
+     }
+    }
+    set_country_flag = pf075_payment_failed
+   }
+  }
+ }
+ abort_trigger = {
+  has_country_flag = pf075_payment_failed
+ }
+ on_success = {
+  owner = {
+   pf46_offer_light_array = yes
+   set_country_flag = pf075_restart_finished
+   country_event = {
+    id = Phrolova_event.11014
+   }
+  }
+ }
+ on_cancel = {
+  remove_country_flag = pf075_payment_failed
+  set_timed_country_flag = {
+   flag = pf075_project_retry
+   days = 30
+  }
+ }
+}
+special_project = {
+ situation_log_category = pf_beyond_journal
+ key = PF_AMX_REBUILD
+ cost = 0
+ days_to_research = 1080
+ tech_department = engineering_technology
+ picture = GFX_pf_art_075_suizhe_restart_small
+ event_scope = ship_event
+ location = yes
+ requirements = {
+  shipclass_constructor = 1
+ }
+ triggered_requirement = {
+  text = PF_AMX_RESOURCE_REQUIREMENT
+  count = 1
+  trigger = {
+   owner = {
+    OR = {
+     has_country_flag = pf075_rebuild_paid
+     pf075_can_pay_suizhe = yes
+    }
+   }
+  }
+ }
+ on_start = {
+  owner = {
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf075_rebuild_paid
+     }
+     pf075_can_pay_suizhe = yes
+    }
+    add_resource = {
+     alloys = -10000
+     energy = -10000
+     minerals = -5000
+     volatile_motes = -1000
+    }
+    set_country_flag = pf075_rebuild_paid
+   }
+   if = {
+    limit = {
+     NOT = {
+      has_country_flag = pf075_rebuild_paid
+     }
+    }
+    set_country_flag = pf075_payment_failed
+   }
+  }
+ }
+ abort_trigger = {
+  has_country_flag = pf075_payment_failed
+ }
+ on_success = {
+  owner = {
+   set_country_flag = pf075_rebuild_finished
+   country_event = {
+    id = Phrolova_event.11015
+   }
+  }
+ }
+ on_cancel = {
+  remove_country_flag = pf075_payment_failed
+  set_timed_country_flag = {
+   flag = pf075_project_retry
+   days = 30
+  }
+ }
+}

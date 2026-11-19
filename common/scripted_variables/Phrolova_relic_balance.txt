@@ -1,0 +1,1 @@
+@pf_math_instrument_duration = 3600

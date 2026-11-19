@@ -1,7 +1,7 @@
 pf22_reserve_tunnel_wreck = {
  if = {
-  limit = { NOT = { has_planet_flag = pf_suizhe_model_fixed_0411 } }
-  # Replace the previous placeholder once, including in existing saves.
+  limit = { solar_system = { NOT = { has_star_flag = pf075_wreck_consumed } } OR = { NOT = { has_planet_flag = pf_suizhe_model_fixed_0411 } NOT = { solar_system = { any_system_ambient_object = { is_ambient_object_type = pf_tunnel_derelict } } } } }
+  # Rebuild when the actual wreck is missing, not merely because an old migration flag exists.
   solar_system = {
    every_system_ambient_object = {
     limit = { is_ambient_object_type = pf_tunnel_derelict }

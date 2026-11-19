@@ -1,0 +1,14 @@
+pf44_finish_aemeath_finale = {
+ if = {
+  limit = {
+   NOT = {
+    has_country_flag = pf075_ame_final_done
+   }
+  }
+  set_country_flag = pf_aemeath_bond_4
+  set_country_flag = pf075_ame_final_done
+  end_event_chain = pf075_ame_final_invitation
+  pf075_sync_finale_trait = yes
+ }
+ pf44_sync_everstar_route = yes
+}

@@ -11,12 +11,17 @@ r_pf_everstar = {
  resources = { category = relics cost = { unity = 1000 } }
  possible = { inline_script = { script = relics/activation_checks RELIC = r_pf_everstar } }
  active_effect = {
-  add_modifier = { modifier = pf_everstar_active days = 1800 }
+
+  add_modifier = { modifier = pf_everstar_active days = 3600 }
   if = {
    limit = { pf30_defender_ambition = yes }
-   add_resource = { integrity = 2000 }
+   custom_tooltip = PF_EVERSTAR_INTEGRITY_TT
+   hidden_effect = { add_resource = { integrity = 2000 } }
   }
-  add_modifier = { modifier = relic_activation_cooldown days = 3600 }
+ 
+  custom_tooltip = relic_triumph_cooldown
+  hidden_effect = { add_modifier = { modifier = relic_activation_cooldown days = 3600 } }
+ 
  }
  ai_weight = { weight = 0 }
 }

@@ -63,11 +63,6 @@ pf23_missing_WW13 = {
  NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW13@root has_anomaly = yes } } }
 }
 
-pf23_missing_WW14 = {
- NOT = { has_country_flag = pf_WW14_granted } NOT = { has_country_flag = pf_WW14_pending } NOT = { has_specimen = WW14 }
- NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW14@root has_anomaly = yes } } }
-}
-
 pf23_missing_WW15 = {
  NOT = { has_country_flag = pf_WW15_granted } NOT = { has_country_flag = pf_WW15_pending } NOT = { has_specimen = WW15 }
  NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW15@root has_anomaly = yes } } }
@@ -88,4 +83,4 @@ pf23_missing_WW18 = {
  NOT = { any_system = { any_system_planet = { has_planet_flag = pf23_WW18@root has_anomaly = yes } } }
 }
 
-pf23_has_missing_specimen = {  OR = { pf23_missing_WW01 = yes pf23_missing_WW02 = yes pf23_missing_WW03 = yes pf23_missing_WW04 = yes pf23_missing_WW05 = yes pf23_missing_WW06 = yes pf23_missing_WW07 = yes pf23_missing_WW08 = yes pf23_missing_WW09 = yes pf23_missing_WW10 = yes pf23_missing_WW11 = yes pf23_missing_WW12 = yes pf23_missing_WW13 = yes pf23_missing_WW14 = yes pf23_missing_WW15 = yes pf23_missing_WW16 = yes pf23_missing_WW17 = yes pf23_missing_WW18 = yes } }
+pf23_has_missing_specimen = {  OR = { pf23_missing_WW01 = yes pf23_missing_WW02 = yes pf23_missing_WW03 = yes pf23_missing_WW04 = yes pf23_missing_WW05 = yes pf23_missing_WW06 = yes pf23_missing_WW07 = yes pf23_missing_WW08 = yes pf23_missing_WW09 = yes pf23_missing_WW10 = yes pf23_missing_WW11 = yes pf23_missing_WW12 = yes pf23_missing_WW13 = yes pf23_missing_WW15 = yes pf23_missing_WW16 = yes pf23_missing_WW17 = yes pf23_missing_WW18 = yes } }

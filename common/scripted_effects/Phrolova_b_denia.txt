@@ -1,0 +1,14 @@
+pf_b20_finish_denia_recruitment = {
+ set_country_flag = pf_b20_shared_recruit_flow
+ set_country_flag = pf_b20_done
+ remove_country_flag = pf_b20_pending
+ remove_country_flag = pf_b20_recruit_flow_pending
+ remove_country_flag = pf_denia_recruit_pending
+ remove_country_flag = pf_denia_b_recruit_replay
+ if = { limit = { NOT = { has_country_flag = pf_b21_done } NOT = { has_country_flag = pf_b21_invitation_scheduled } }
+  set_country_flag = pf_b21_invitation_scheduled
+  set_timed_country_flag = { flag = pf_b21_invitation_wait days = 180 }
+  country_event = { id = Phrolova_event.9834 days = 180 }
+ }
+ country_event = { id = Phrolova_event.9833 }
+}

@@ -1,0 +1,578 @@
+pf_guard_reconcile_phrolova = {
+ if = {
+  limit = {
+   has_country_flag = researched_leaders_Phrolova
+  }
+  if = {
+   limit = {
+    NOT = {
+     AND = {
+      exists = event_target:pf_guard_primary_phrolova@root
+      event_target:pf_guard_primary_phrolova@root = {
+       pf_guard_id_phrolova = yes
+       exists = owner
+       owner = {
+        is_same_value = root
+       }
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      any_owned_leader = {
+       pf_guard_id_phrolova = yes
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+    if = {
+     limit = {
+      exists = event_target:pf_guard_primary_phrolova@root
+     }
+     clone_leader = {
+      target = event_target:pf_guard_primary_phrolova@root
+      immortal = yes
+      skip_background_generation = yes
+     }
+     last_created_leader = {
+      set_owner = root
+      remove_leader_flag = pf_guard_retired
+      save_global_event_target_as = pf_guard_primary_phrolova@root
+     }
+    }
+    else = {
+     create_Phrolova_leader = yes
+    }
+   }
+   random_owned_leader = {
+    limit = {
+     pf_guard_id_phrolova = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+    set_leader_flag = Phrolova_scientist
+    save_global_event_target_as = pf_guard_primary_phrolova@root
+   }
+  }
+  if = {
+   limit = {
+    exists = event_target:pf_guard_primary_phrolova@root
+   }
+   every_owned_leader = {
+    limit = {
+     pf_guard_id_phrolova = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_phrolova@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = Phrolova_scientist
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   every_pool_leader = {
+    limit = {
+     pf_guard_id_phrolova = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_phrolova@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = Phrolova_scientist
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   event_target:pf_guard_primary_phrolova@root = {
+    set_leader_flag = Phrolova_scientist
+    set_leader_flag = leader_death_events_blocked
+   }
+  }
+  pf_apply_portrait = yes
+ }
+}
+pf_guard_restore_phrolova = {
+ if = { limit = { has_country_flag = researched_leaders_Phrolova from = { pf_guard_id_phrolova = yes } }
+  if = { limit = { NOT = { any_owned_leader = { pf_guard_id_phrolova = yes NOT = { is_same_value = from } NOT = { is_pool_leader = yes } } } }
+   clone_leader = { target = from immortal = yes skip_background_generation = yes }
+   last_created_leader = { set_owner = root set_leader_flag = Phrolova_scientist remove_leader_flag = pf_guard_retired
+    set_leader_flag = leader_death_events_blocked save_global_event_target_as = pf_guard_primary_phrolova@root }
+  }
+  from = { set_leader_flag = pf_guard_retired remove_leader_flag = Phrolova_scientist }
+ }
+}
+
+pf_guard_reconcile_denia = {
+ if = {
+  limit = {
+   has_country_flag = pf_denia_recruited
+  }
+  if = {
+   limit = {
+    NOT = {
+     AND = {
+      exists = event_target:pf_guard_primary_denia@root
+      event_target:pf_guard_primary_denia@root = {
+       pf_guard_id_denia = yes
+       exists = owner
+       owner = {
+        is_same_value = root
+       }
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      any_owned_leader = {
+       pf_guard_id_denia = yes
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+    if = {
+     limit = {
+      exists = event_target:pf_guard_primary_denia@root
+     }
+     clone_leader = {
+      target = event_target:pf_guard_primary_denia@root
+      immortal = yes
+      skip_background_generation = yes
+     }
+     last_created_leader = {
+      set_owner = root
+      remove_leader_flag = pf_guard_retired
+      save_global_event_target_as = pf_guard_primary_denia@root
+     }
+    }
+    else = {
+     pf_create_denia = yes
+    }
+   }
+   random_owned_leader = {
+    limit = {
+     pf_guard_id_denia = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+    set_leader_flag = phrolova_denia
+    save_global_event_target_as = pf_guard_primary_denia@root
+   }
+  }
+  if = {
+   limit = {
+    exists = event_target:pf_guard_primary_denia@root
+   }
+   every_owned_leader = {
+    limit = {
+     pf_guard_id_denia = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_denia@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = phrolova_denia
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   every_pool_leader = {
+    limit = {
+     pf_guard_id_denia = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_denia@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = phrolova_denia
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   event_target:pf_guard_primary_denia@root = {
+    set_leader_flag = phrolova_denia
+    set_leader_flag = leader_death_events_blocked
+   }
+  }
+  pf_portrait_denia = yes
+ }
+}
+pf_guard_restore_denia = {
+ if = { limit = { has_country_flag = pf_denia_recruited from = { pf_guard_id_denia = yes } }
+  if = { limit = { NOT = { any_owned_leader = { pf_guard_id_denia = yes NOT = { is_same_value = from } NOT = { is_pool_leader = yes } } } }
+   clone_leader = { target = from immortal = yes skip_background_generation = yes }
+   last_created_leader = { set_owner = root set_leader_flag = phrolova_denia remove_leader_flag = pf_guard_retired
+    set_leader_flag = leader_death_events_blocked save_global_event_target_as = pf_guard_primary_denia@root }
+  }
+  from = { set_leader_flag = pf_guard_retired remove_leader_flag = phrolova_denia }
+ }
+}
+
+pf_guard_reconcile_shorekeeper = {
+ if = {
+  limit = {
+   has_country_flag = pf_shorekeeper_recruited
+  }
+  if = {
+   limit = {
+    NOT = {
+     AND = {
+      exists = event_target:pf_guard_primary_shorekeeper@root
+      event_target:pf_guard_primary_shorekeeper@root = {
+       pf_guard_id_shorekeeper = yes
+       exists = owner
+       owner = {
+        is_same_value = root
+       }
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      any_owned_leader = {
+       pf_guard_id_shorekeeper = yes
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+    if = {
+     limit = {
+      exists = event_target:pf_guard_primary_shorekeeper@root
+     }
+     clone_leader = {
+      target = event_target:pf_guard_primary_shorekeeper@root
+      immortal = yes
+      skip_background_generation = yes
+     }
+     last_created_leader = {
+      set_owner = root
+      remove_leader_flag = pf_guard_retired
+      save_global_event_target_as = pf_guard_primary_shorekeeper@root
+     }
+    }
+    else = {
+     pf_create_shorekeeper = yes
+    }
+   }
+   random_owned_leader = {
+    limit = {
+     pf_guard_id_shorekeeper = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+    set_leader_flag = pf_shorekeeper
+    save_global_event_target_as = pf_guard_primary_shorekeeper@root
+   }
+  }
+  if = {
+   limit = {
+    exists = event_target:pf_guard_primary_shorekeeper@root
+   }
+   every_owned_leader = {
+    limit = {
+     pf_guard_id_shorekeeper = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_shorekeeper@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = pf_shorekeeper
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   every_pool_leader = {
+    limit = {
+     pf_guard_id_shorekeeper = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_shorekeeper@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = pf_shorekeeper
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   event_target:pf_guard_primary_shorekeeper@root = {
+    set_leader_flag = pf_shorekeeper
+    set_leader_flag = leader_death_events_blocked
+   }
+  }
+  pf_portrait_shorekeeper = yes
+ }
+}
+pf_guard_restore_shorekeeper = {
+ if = { limit = { has_country_flag = pf_shorekeeper_recruited from = { pf_guard_id_shorekeeper = yes } }
+  if = { limit = { NOT = { any_owned_leader = { pf_guard_id_shorekeeper = yes NOT = { is_same_value = from } NOT = { is_pool_leader = yes } } } }
+   clone_leader = { target = from immortal = yes skip_background_generation = yes }
+   last_created_leader = { set_owner = root set_leader_flag = pf_shorekeeper remove_leader_flag = pf_guard_retired
+    set_leader_flag = leader_death_events_blocked save_global_event_target_as = pf_guard_primary_shorekeeper@root }
+  }
+  from = { set_leader_flag = pf_guard_retired remove_leader_flag = pf_shorekeeper }
+ }
+}
+
+pf_guard_reconcile_aemeath = {
+ if = {
+  limit = {
+   has_country_flag = pf_aemeath_recruited
+  }
+  if = {
+   limit = {
+    NOT = {
+     AND = {
+      exists = event_target:pf_guard_primary_aemeath@root
+      event_target:pf_guard_primary_aemeath@root = {
+       pf_guard_id_aemeath = yes
+       exists = owner
+       owner = {
+        is_same_value = root
+       }
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      any_owned_leader = {
+       pf_guard_id_aemeath = yes
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+    if = {
+     limit = {
+      exists = event_target:pf_guard_primary_aemeath@root
+     }
+     clone_leader = {
+      target = event_target:pf_guard_primary_aemeath@root
+      immortal = yes
+      skip_background_generation = yes
+     }
+     last_created_leader = {
+      set_owner = root
+      remove_leader_flag = pf_guard_retired
+      save_global_event_target_as = pf_guard_primary_aemeath@root
+     }
+    }
+    else = {
+     pf_create_aemeath = yes
+    }
+   }
+   random_owned_leader = {
+    limit = {
+     pf_guard_id_aemeath = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+    set_leader_flag = pf_aemeath
+    save_global_event_target_as = pf_guard_primary_aemeath@root
+   }
+  }
+  if = {
+   limit = {
+    exists = event_target:pf_guard_primary_aemeath@root
+   }
+   every_owned_leader = {
+    limit = {
+     pf_guard_id_aemeath = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_aemeath@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = pf_aemeath
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   every_pool_leader = {
+    limit = {
+     pf_guard_id_aemeath = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_aemeath@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = pf_aemeath
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   event_target:pf_guard_primary_aemeath@root = {
+    set_leader_flag = pf_aemeath
+    set_leader_flag = leader_death_events_blocked
+   }
+  }
+  pf_apply_aemeath_portrait = yes
+ }
+}
+pf_guard_restore_aemeath = {
+ if = { limit = { has_country_flag = pf_aemeath_recruited from = { pf_guard_id_aemeath = yes } }
+  if = { limit = { NOT = { any_owned_leader = { pf_guard_id_aemeath = yes NOT = { is_same_value = from } NOT = { is_pool_leader = yes } } } }
+   clone_leader = { target = from immortal = yes skip_background_generation = yes }
+   last_created_leader = { set_owner = root set_leader_flag = pf_aemeath remove_leader_flag = pf_guard_retired
+    set_leader_flag = leader_death_events_blocked save_global_event_target_as = pf_guard_primary_aemeath@root }
+  }
+  from = { set_leader_flag = pf_guard_retired remove_leader_flag = pf_aemeath }
+ }
+}
+
+pf_guard_reconcile_morin = {
+ if = {
+  limit = {
+   has_country_flag = pf_morin_recruited
+  }
+  if = {
+   limit = {
+    NOT = {
+     AND = {
+      exists = event_target:pf_guard_primary_morin@root
+      event_target:pf_guard_primary_morin@root = {
+       pf_guard_id_morin = yes
+       exists = owner
+       owner = {
+        is_same_value = root
+       }
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      any_owned_leader = {
+       pf_guard_id_morin = yes
+       NOT = {
+        is_pool_leader = yes
+       }
+      }
+     }
+    }
+    if = {
+     limit = {
+      exists = event_target:pf_guard_primary_morin@root
+     }
+     clone_leader = {
+      target = event_target:pf_guard_primary_morin@root
+      immortal = yes
+      skip_background_generation = yes
+     }
+     last_created_leader = {
+      set_owner = root
+      remove_leader_flag = pf_guard_retired
+      save_global_event_target_as = pf_guard_primary_morin@root
+     }
+    }
+    else = {
+     pf_create_morin = yes
+    }
+   }
+   random_owned_leader = {
+    limit = {
+     pf_guard_id_morin = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+    set_leader_flag = pf_morin
+    save_global_event_target_as = pf_guard_primary_morin@root
+   }
+  }
+  if = {
+   limit = {
+    exists = event_target:pf_guard_primary_morin@root
+   }
+   every_owned_leader = {
+    limit = {
+     pf_guard_id_morin = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_morin@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = pf_morin
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   every_pool_leader = {
+    limit = {
+     pf_guard_id_morin = yes
+     NOT = {
+      is_same_value = event_target:pf_guard_primary_morin@root
+     }
+    }
+    set_leader_flag = pf_guard_retired
+    remove_leader_flag = pf_morin
+    kill_leader = {
+     show_notification = no
+    }
+   }
+   event_target:pf_guard_primary_morin@root = {
+    set_leader_flag = pf_morin
+    set_leader_flag = leader_death_events_blocked
+   }
+  }
+  pf_portrait_morin = yes
+ }
+}
+pf_guard_restore_morin = {
+ if = { limit = { has_country_flag = pf_morin_recruited from = { pf_guard_id_morin = yes } }
+  if = { limit = { NOT = { any_owned_leader = { pf_guard_id_morin = yes NOT = { is_same_value = from } NOT = { is_pool_leader = yes } } } }
+   clone_leader = { target = from immortal = yes skip_background_generation = yes }
+   last_created_leader = { set_owner = root set_leader_flag = pf_morin remove_leader_flag = pf_guard_retired
+    set_leader_flag = leader_death_events_blocked save_global_event_target_as = pf_guard_primary_morin@root }
+  }
+  from = { set_leader_flag = pf_guard_retired remove_leader_flag = pf_morin }
+ }
+}
+
+pf_guard_all_leaders = {
+ if = { limit = { NOT = { has_country_flag = pf_guard_busy } }
+  set_country_flag = pf_guard_busy
+  pf_guard_reconcile_phrolova = yes
+  pf_guard_reconcile_denia = yes
+  pf_guard_reconcile_shorekeeper = yes
+  pf_guard_reconcile_aemeath = yes
+  pf_guard_reconcile_morin = yes
+  pf_ensure_companion_traits = yes
+  if = { limit = { has_country_flag = pf_morin_recruited } pf_ensure_morin_traits = yes }
+  remove_country_flag = pf_guard_busy
+ }
+}

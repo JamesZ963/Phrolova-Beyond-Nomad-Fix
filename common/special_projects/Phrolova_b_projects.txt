@@ -1,0 +1,174 @@
+# B线第一轮项目：B01-B04调查/唤醒，B11/B15/B16三阶段拟造炉芯调试原型。
+# 720天工期依据4.5.3原版 special_project 的 days_to_research 字段；cost 必须为0。
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B01_POLAR_SURVEY
+ cost = 0 days_to_research = 120 tech_department = physics_technology
+ picture = GFX_pf_art_solaris_2_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_start = { owner = {
+  if = { limit = { NOT = { has_country_flag = pf_b_polar_clock_initialized } }
+   set_country_flag = pf_b_polar_clock_initialized set_variable = { which = pf_b_polar_days value = 0 }
+  }
+  if = { limit = { NOT = { has_country_flag = pf_b_polar_ticking } }
+   set_country_flag = pf_b_polar_ticking country_event = { id = Phrolova_event.9840 days = 1 }
+  }
+ } }
+ on_success = { owner = {
+  set_country_flag = pf_b_polar_native_complete
+  if = { limit = { has_country_flag = pf_b01_done has_country_flag = pf_b02_done }
+   set_country_flag = pf_b03_wake_done remove_country_flag = pf_b_polar_ticking country_event = { id = Phrolova_event.9417 }
+  }
+ } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b01_cooldown days = 30 } }
+}
+
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B02_CHAMBER
+ cost = 0 days_to_research = 90 tech_department = engineering_technology
+ picture = GFX_pf_art_solaris_2_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = { set_country_flag = pf_b02_done country_event = { id = Phrolova_event.9412 }  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b02_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B03_WAKE
+ cost = 0 days_to_research = 90 tech_department = society_technology
+ picture = GFX_pf_art_solaris_2_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = { set_country_flag = pf_b03_wake_done if = { limit = { NOT = { has_country_flag = pf_cg_morin_meet_seen } } country_event = { id = Phrolova_event.9417 } } else = { country_event = { id = Phrolova_event.9413 } }  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b03_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B04_FRAGMENT
+ cost = 0 days_to_research = 180 tech_department = physics_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = { set_country_flag = pf_b04_done country_event = { id = Phrolova_event.9415 }  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b04_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B11_FRAME
+ cost = 0 days_to_research = 720 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = { pf_b_forge_complete_1 = yes country_event = { id = Phrolova_event.9420 }  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b_forge_1_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B15_HALF
+ cost = 0 days_to_research = 720 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = { pf_b_forge_complete_2 = yes country_event = { id = Phrolova_event.9421 }  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b_forge_2_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B16_CORE
+ cost = 0 days_to_research = 720 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = { pf_b_forge_complete_3 = yes country_event = { id = Phrolova_event.9422 }  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b_forge_3_cooldown days = 30 } }
+}
+
+# B06-B10 主线研究：费用在索拉里斯行星决议中支付，项目本身只消耗时间。
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B06_RESEARCH
+ cost = 0 days_to_research = 360 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b06_done
+  pf_find_targets = yes
+  if = { limit = { exists = event_target:pf_solaris } event_target:pf_solaris = { pf_b_sync_solaris_stage = yes } }
+  country_event = { id = Phrolova_event.9419 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b06_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B07_RECOVERY
+ cost = 0 days_to_research = 360 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b07_done
+  
+  country_event = { id = Phrolova_event.9431 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b07_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B08_FRAGMENT
+ cost = 0 days_to_research = 360 tech_department = physics_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b08_done
+  
+  country_event = { id = Phrolova_event.9432 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b08_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B09_TUNNEL
+ cost = 0 days_to_research = 180 tech_department = physics_technology
+ picture = GFX_pf_art_morin_departure_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ triggered_requirement = { text = PF_B09_REQUIRE_WRECK count = 1 trigger = {
+  owner = { has_country_flag = pf_b09_wreck_ready }
+  fromfrom = { solar_system = { any_system_ambient_object = { is_ambient_object_type = pf_tunnel_derelict } } }
+ } }
+ abort_trigger = {
+ owner = { has_country_flag = pf_b09_wreck_bound }
+ NOT = { fromfrom = { is_ambient_object_type = pf_tunnel_derelict } }
+}
+ on_success = { owner = {
+  set_country_flag = pf_b09_done country_event = { id = Phrolova_event.9852 }
+  set_country_flag = pf_b10_done
+  
+  country_event = { id = Phrolova_event.9434 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b09_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B10_VALIDATION
+ cost = 0 days_to_research = 360 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b10_done
+  country_event = { id = Phrolova_event.9435 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b10_cooldown days = 30 } }
+}

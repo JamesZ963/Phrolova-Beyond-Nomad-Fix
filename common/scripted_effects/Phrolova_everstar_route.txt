@@ -1,0 +1,49 @@
+pf44_sync_everstar_route = {
+ if = {
+  limit = { has_country_flag = pf075_ame_final_done }
+  set_variable = { which = pf44_defeated_crises value = 0 }
+  if = {
+ limit = { has_country_flag = pf075_fought_swarm has_global_flag = prethoryn_invasion_defeated }
+ change_variable = { which = pf44_defeated_crises value = 1 }
+}
+if = {
+ limit = { has_country_flag = pf075_fought_unbidden has_global_flag = extradimensional_invasion_defeated }
+ change_variable = { which = pf44_defeated_crises value = 1 }
+}
+if = {
+ limit = { has_country_flag = pf075_fought_contingency has_global_flag = ai_invasion_defeated }
+ change_variable = { which = pf44_defeated_crises value = 1 }
+}
+if = {
+ limit = { has_country_flag = pf075_fought_queen has_global_flag = synth_queen_defeated }
+ change_variable = { which = pf44_defeated_crises value = 1 }
+}
+if = {
+ limit = { check_variable = { which = pf44_defeated_crises value >= 3 } }
+ remove_modifier = pf44_everstar_route_1
+remove_modifier = pf44_everstar_route_2
+ if = {
+  limit = { NOT = { has_modifier = pf44_everstar_route_3 } }
+  add_modifier = { modifier = pf44_everstar_route_3 days = -1 }
+ }
+}
+else_if = {
+ limit = { check_variable = { which = pf44_defeated_crises value = 2 } }
+ remove_modifier = pf44_everstar_route_1
+remove_modifier = pf44_everstar_route_3
+ if = {
+  limit = { NOT = { has_modifier = pf44_everstar_route_2 } }
+  add_modifier = { modifier = pf44_everstar_route_2 days = -1 }
+ }
+}
+else_if = {
+ limit = { check_variable = { which = pf44_defeated_crises value = 1 } }
+ remove_modifier = pf44_everstar_route_2
+remove_modifier = pf44_everstar_route_3
+ if = {
+  limit = { NOT = { has_modifier = pf44_everstar_route_1 } }
+  add_modifier = { modifier = pf44_everstar_route_1 days = -1 }
+ }
+}
+ }
+}

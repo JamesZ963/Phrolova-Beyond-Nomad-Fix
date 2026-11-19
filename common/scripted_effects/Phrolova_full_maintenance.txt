@@ -1,5 +1,5 @@
 pf_full_maintenance = {
- pf24_migrate_void_pact = yes
+ pf28_refresh_crisis_interfaces = yes
  pf_migrate_gestalt_blocker_jobs = yes
  pf23_init_collection = yes
  pf22_maintenance = yes
@@ -14,6 +14,7 @@ pf_full_maintenance = {
 
 if = { limit = { has_country_flag = pf_denia_recruited } pf_create_denia = yes pf_portrait_denia = yes }
 if = { limit = { has_country_flag = pf_shorekeeper_recruited } pf_create_shorekeeper = yes pf_portrait_shorekeeper = yes pf_apply_solaris_rebuilt_background = yes }
+if = { limit = { has_country_flag = pf_morin_recruited } pf_create_morin = yes pf_portrait_morin = yes pf_ensure_morin_traits = yes }
 if = { limit = { has_country_flag = pf_heart_started has_relic = r_phrolova_heart_damaged NOT = { has_country_flag = pf_heart_discovery_ack } } set_country_flag = pf_heart_discovery_ack }
 pf_resume_heart_projects = yes pf_check_heart = yes
 pf_open_rescue = yes

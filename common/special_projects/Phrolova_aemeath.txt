@@ -1,4 +1,5 @@
 special_project = {
+ situation_log_category = pf_beyond_journal
  key = PF_AME_HEART cost = 0 days_to_research = 180 tech_department = physics_technology
  picture = Phrolova_events_yansuan event_scope = ship_event
  requirements = { shipclass_science_ship = 1 leader = scientist }
@@ -13,6 +14,7 @@ special_project = {
  }
 }
 special_project = {
+ situation_log_category = pf_beyond_journal
  key = PF_AME_FREQUENCY cost = 0 days_to_research = 180 tech_department = physics_technology
  picture = Phrolova_events_yansuan event_scope = ship_event
  requirements = { shipclass_science_ship = 1 leader = scientist }

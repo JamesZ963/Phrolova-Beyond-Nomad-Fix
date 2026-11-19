@@ -1,39 +1,53 @@
 create_Phrolova_leader = {
-    if = {
-        limit = { NOT = { has_Phrolova_leader = yes } }
-        create_leader = { background_ethic = ethic_egalitarian 
-            class = scientist
-            tier = leader_tier_legendary
-            species = root
-            name = NAME_Phrolova
-            custom_description = Phrolova_backstory
-            immortal = yes
-            hide_age = yes
-            gender = female
-            skill = 1
-            randomize_traits = no
-            skip_background_generation = yes
-            traits = {
-                trait = leader_trait_Phrolova_X
-                trait = leader_trait_Phrolova_Z
-                trait = leader_trait_Phrolova_Y
-            }
-            effect = {
-                change_leader_portrait = Phrolova0
-                set_leader_flag = Phrolova_scientist
-                set_leader_flag = leader_death_events_blocked
-                set_leader_flag = funeral_option_negative_traits
-                set_leader_flag = block_homeworld_traits
-            }
-        }
-        last_created_leader = {
-            set_owner = root
-            if = {
-                limit = { owner = { has_country_flag = Phrolova_finale_received } }
-                change_leader_portrait = Phrolova1
-            }
-        }
+ if = {
+  create_leader = {
+   background_ethic = ethic_egalitarian
+   class = scientist
+   tier = leader_tier_legendary
+   species = root
+   name = NAME_Phrolova
+   custom_description = Phrolova_backstory
+   immortal = yes
+   hide_age = yes
+   gender = female
+   skill = 6
+   randomize_traits = no
+   skip_background_generation = yes
+   traits = {
+    trait = leader_trait_Phrolova_X
+    trait = leader_trait_Phrolova_Z
+    trait = leader_trait_Phrolova_Y
+   }
+   effect = {
+    change_leader_portrait = Phrolova0
+    set_leader_flag = Phrolova_scientist
+    set_leader_flag = leader_death_events_blocked
+    set_leader_flag = funeral_option_negative_traits
+    set_leader_flag = block_homeworld_traits
+   }
+  }
+  last_created_leader = {
+   set_owner = root
+   if = {
+    limit = {
+     owner = {
+      has_country_flag = Phrolova_finale_received
+     }
     }
+    change_leader_portrait = Phrolova1
+   }
+  }
+  limit = {
+   NOT = {
+    any_owned_leader = {
+     pf_guard_id_phrolova = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+   }
+  }
+ }
 }
 add_Phrolova_leader_ruler = {
     random_owned_leader = {
@@ -66,59 +80,61 @@ pf_find_targets = {
  }
 }
 pf_apply_portrait = {
- every_owned_leader = {
-  limit = { has_leader_flag = Phrolova_scientist }
-  if = { limit = { owner = { has_country_flag = pf_portrait_2 has_country_flag = pf_solaris_complete } } change_leader_portrait = Phrolova2 }
-  else_if = { limit = { owner = { has_country_flag = pf_portrait_1 has_country_flag = Phrolova_bond_5 } } change_leader_portrait = Phrolova1 }
+ every_owned_leader = { limit = { has_leader_flag = Phrolova_scientist }
+  if = { limit = { owner = { has_country_flag = pf_portrait_2 has_country_flag = pf075_skin_3_unlocked } } change_leader_portrait = Phrolova2 }
+  else_if = { limit = { owner = { has_country_flag = pf_portrait_1 has_country_flag = pf075_skin_2_unlocked } } change_leader_portrait = Phrolova1 }
   else = { change_leader_portrait = Phrolova0 }
  }
 }
 pf_begin_bond_wait = {
- if = { limit = { NOT = { has_country_flag = Phrolova_bond_5 } }
-  set_country_flag = pf_bond_wait_started
-  set_timed_country_flag = { flag = pf_bond_wait days = 720 }
-  country_event = { id = Phrolova_event.220 days = 720 }
+ if = { limit = { NOT = { has_country_flag = Phrolova_bond_3 } }
+  set_country_flag = pf_bond_wait_started set_timed_country_flag = { flag = pf_bond_wait days = 1080 }
+  country_event = { id = Phrolova_event.220 days = 1080 }
  }
 }
 pf_begin_solaris_wait = {
- if = { limit = { has_country_flag = Phrolova_bond_5 NOT = { has_country_flag = pf_solaris_wait_started } NOT = { has_country_flag = pf_solaris_created } }
-  set_country_flag = pf_solaris_wait_started
-  set_timed_country_flag = { flag = pf_solaris_wait days = 90 }
-  country_event = { id = Phrolova_event.310 days = 90 }
+ if = { limit = { has_country_flag = Phrolova_bond_3 NOT = { has_country_flag = pf_solaris_created } NOT = { has_country_flag = pf_solaris_notice } }
+  remove_country_flag = pf_solaris_wait set_country_flag = pf_solaris_wait_started
+  country_event = { id = Phrolova_event.310 days = 1 }
  }
 }
 initialize_Phrolova_relationship = {
  if = { limit = { has_country_flag = researched_leaders_Phrolova NOT = { has_country_flag = pf_schema_f } }
-  set_country_flag = pf_schema_f
-  set_country_flag = Phrolova_bond_started
-  if = { limit = { has_country_flag = Phrolova_finale_received }
-   set_country_flag = Phrolova_bond_5
-  }
-  if = { limit = { has_country_flag = Phrolova_bond_5 } set_country_flag = Phrolova_bond_4 set_country_flag = pf_portrait_1 }
-  if = { limit = { has_country_flag = Phrolova_bond_4 } set_country_flag = Phrolova_bond_3 }
-  if = { limit = { has_country_flag = Phrolova_bond_3 } set_country_flag = Phrolova_bond_2 }
-  if = { limit = { has_country_flag = Phrolova_bond_2 } set_country_flag = Phrolova_bond_1 }
-  pf_begin_bond_wait = yes
-  pf_begin_solaris_wait = yes
+  set_country_flag = pf_schema_f set_country_flag = Phrolova_bond_started pf_begin_bond_wait = yes
  }
 }
-pf_init_solaris = { # planet, owner target inherited from creation chain
+pf_init_solaris = {
  set_name = NAME_PF_Solaris
- set_planet_entity = { picture = pf_solaris }
- add_modifier = { modifier = pf_solaris_memory days = -1 }
+ set_planet_entity = {
+  picture = pf_solaris
+ }
+ add_modifier = {
+  modifier = pf_solaris_memory
+  days = -1
+ }
  set_planet_flag = pf_solaris
+ pf_solaris_maintain_blockers = yes
  set_planet_flag = pf_solaris@event_target:pf_owner
  set_planet_flag = planet_under_investigation
  add_deposit = d_pf_sealed_archive
  add_deposit = d_pf_shattered_streets
- add_deposit = d_pf_submerged_vault pf17_add_ruins = yes
- 
+ add_deposit = d_pf_submerged_vault
+ pf17_add_ruins = yes
  prevent_anomaly = yes
- set_planet_flag = pf_flavor_initialized set_variable = { which = pf_flavor_count value = 0 }
- add_modifier = { modifier = pf_echo_uncalibrated days = -1 }
+ set_planet_flag = pf_flavor_initialized
+ set_variable = {
+  which = pf_flavor_count
+  value = 0
+ }
+ add_modifier = {
+  modifier = pf_echo_uncalibrated
+  days = -1
+ }
  create_archaeological_site = pf_solaris_site
  save_event_target_as = pf_solaris
- event_target:pf_owner = { set_country_flag = pf_solaris_created }
+ event_target:pf_owner = {
+  set_country_flag = pf_solaris_created
+ }
 }
 pf_reward_research = {
  add_monthly_resource_mult = { resource = physics_research value = 6 min = 300 max = 10000 }

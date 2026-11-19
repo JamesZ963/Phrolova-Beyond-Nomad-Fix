@@ -1,0 +1,30 @@
+# System scope. Use the persistent planet flag so colonies, names and owners can change.
+pf_cetana_can_use_system = {
+	NOT = { any_system_planet = { has_planet_flag = pf_solaris } }
+}
+
+# Vanilla 4.5 initial storm annexation, with the same exclusion as the capital selection.
+synth_queen_can_steal_system = {
+	pf_cetana_can_use_system = yes
+	NOT = { has_modifier = queen_scorn_storm }
+	OR = {
+		# Free system
+		NOT = { exists = owner }
+		# System owned by a non-standard empire (FE, enclave, marauders)
+		owner = {
+			NOT = { is_country_type = default }
+		}
+		# System owned by a player, but with no planets or megastructures
+		AND = {
+			owner = {
+				is_country_type = default
+			}
+			has_any_megastructure = no
+			NOT = {
+				any_system_planet = {
+					is_colony = yes
+				}
+			}
+		}
+	}
+}

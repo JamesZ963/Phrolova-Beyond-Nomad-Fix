@@ -1,0 +1,48 @@
+pf_b_merge_local_results = {
+ set_country_flag = pf_b06_done set_country_flag = pf_b07_done set_country_flag = pf_b08_done
+ 
+ 
+ every_owned_planet = { limit = { has_planet_flag = pf_solaris } pf_b_sync_solaris_stage = yes }
+ country_event = { id = Phrolova_event.9852 }
+}
+pf_b_pacing_refresh = {
+ if = { limit = { has_special_project = PF_B01_POLAR_SURVEY NOT = { has_country_flag = pf_b03_wake_done } }
+if = { limit = { NOT = { has_country_flag = pf_b_polar_clock_initialized } } set_country_flag = pf_b_polar_clock_initialized set_variable = { which = pf_b_polar_days value = 0 } }
+if = { limit = { NOT = { has_country_flag = pf_b_polar_ticking } } set_country_flag = pf_b_polar_ticking country_event = { id = Phrolova_event.9840 days = 1 } }
+ }
+
+ if = { limit = { has_special_project = PF_B09_TUNNEL } set_country_flag = pf_b_departure_confirmed }
+
+ if = { limit = { NOT = { has_country_flag = pf_b_pacing_v7 } }
+  set_country_flag = pf_b_pacing_v7
+  if = { limit = { has_special_project = PF_B01_POLAR_SURVEY NOT = { has_country_flag = pf_b_polar_clock_initialized } }
+   abort_special_project = { type = PF_B01_POLAR_SURVEY }
+   remove_country_flag = pf_b01_cooldown
+  }
+ if = { limit = { has_special_project = PF_B02_CHAMBER } abort_special_project = { type = PF_B02_CHAMBER } }
+ if = { limit = { has_special_project = PF_B03_WAKE } abort_special_project = { type = PF_B03_WAKE } }
+ if = { limit = { has_special_project = PF_B04_FRAGMENT } abort_special_project = { type = PF_B04_FRAGMENT } }
+ if = { limit = { has_special_project = PF_B06_RESEARCH } abort_special_project = { type = PF_B06_RESEARCH } }
+ if = { limit = { has_special_project = PF_B07_RECOVERY } abort_special_project = { type = PF_B07_RECOVERY } }
+ if = { limit = { has_special_project = PF_B08_FRAGMENT } abort_special_project = { type = PF_B08_FRAGMENT } }
+ if = { limit = { has_special_project = PF_B10_VALIDATION } abort_special_project = { type = PF_B10_VALIDATION } }
+ if = { limit = { has_special_project = PF_B12_TRIAL } abort_special_project = { type = PF_B12_TRIAL } }
+ if = { limit = { has_special_project = PF_B13_RECORDS } abort_special_project = { type = PF_B13_RECORDS } }
+ if = { limit = { has_special_project = PF_B18_PREP } abort_special_project = { type = PF_B18_PREP } }
+  if = { limit = { has_country_flag = pf_b04_started NOT = { has_country_flag = pf_b04_done } NOT = { has_country_flag = pf_b_local_research_active } }
+   set_country_flag = pf_b_local_research_active set_variable = { which = pf_b_local_days value = 0 }
+  }
+ }
+ if = { limit = { has_country_flag = pf_b_local_research_active NOT = { has_country_flag = pf_b04_done } NOT = { has_country_flag = pf_b_local_ticking } }
+  set_country_flag = pf_b_local_ticking country_event = { id = Phrolova_event.9841 days = 30 }
+ }
+ if = { limit = { has_country_flag = pf_b04_done } pf_b_merge_local_results = yes }
+ if = { limit = { has_country_flag = pf_b05_done NOT = { has_country_flag = pf_b09_started } NOT = { has_country_flag = pf_b09_done } } country_event = { id = Phrolova_event.9843 } }
+ if = { limit = { has_country_flag = pf_b09_done } set_country_flag = pf_b10_done }
+ if = { limit = { has_country_flag = pf_b11_raid_won NOT = { has_country_flag = pf_b_records_announced } } country_event = { id = Phrolova_event.9842 } }
+ if = { limit = { has_country_flag = pf_b17_done } set_country_flag = pf_b18_done }
+ if = { limit = { has_country_flag = pf_b_forge_stage_3 NOT = { has_country_flag = pf_b16_completion_seen } NOT = { has_country_flag = pf_b_completion_replay_pending } }
+  set_country_flag = pf_b_completion_replay_pending country_event = { id = Phrolova_event.9422 days = 1 }
+ }
+ country_event = { id = Phrolova_event.9852 }
+}

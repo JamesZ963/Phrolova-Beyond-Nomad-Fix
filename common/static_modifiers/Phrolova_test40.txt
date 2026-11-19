@@ -1,0 +1,5 @@
+pf40_aemeath_suizhe_command = {
+ icon = "gfx/interface/icons/relics/r_pf_everstar.dds"
+ ship_evasion_mult = 0.50
+ ship_accuracy_mult = 1.00
+}

@@ -1,0 +1,78 @@
+# Carrier scope. Keep only the deliberately placed Solaris story blockers.
+# remove_deposit does not execute on_cleared, so cleanup grants no story rewards.
+pf_solaris_maintain_blockers = {
+ if = {
+  limit = { has_planet_flag = pf_solaris }
+  every_deposit = {
+   limit = {
+    is_blocker = yes
+    NOT = {
+     OR = {
+      is_deposit_type = d_pf_sealed_archive
+      is_deposit_type = d_pf_shattered_streets
+      is_deposit_type = d_pf_submerged_vault
+      is_deposit_type = d_pf_solaris_ruin_01
+      is_deposit_type = d_pf_solaris_ruin_02
+      is_deposit_type = d_pf_solaris_ruin_03
+      is_deposit_type = d_pf_solaris_ruin_04
+      is_deposit_type = d_pf_solaris_ruin_05
+      is_deposit_type = d_pf_solaris_ruin_06
+      is_deposit_type = d_pf_solaris_ruin_07
+      is_deposit_type = d_pf_solaris_ruin_08
+      is_deposit_type = d_pf_solaris_ruin_09
+      is_deposit_type = d_pf_solaris_ruin_10
+      is_deposit_type = d_pf_solaris_ruin_11
+     }
+    }
+   }
+   remove_deposit = yes
+  }
+  if = {
+   limit = { NOT = { has_planet_flag = pf30_blocker_watch_started } }
+   set_planet_flag = pf30_blocker_watch_started
+   carrier_event = { id = Phrolova_event.11511 days = 30 }
+  }
+ }
+}
+
+# Planet scope. Remove misplaced story deposits, preserving every other deposit.
+pf_remove_misplaced_solaris_deposits = {
+ if = {
+  limit = { NOT = { has_planet_flag = pf_solaris } }
+  every_deposit = {
+   limit = {
+    OR = {
+     is_deposit_type = d_pf_sealed_archive
+     is_deposit_type = d_pf_shattered_streets
+     is_deposit_type = d_pf_submerged_vault
+     is_deposit_type = d_pf_solaris_ruin_01
+     is_deposit_type = d_pf_solaris_ruin_02
+     is_deposit_type = d_pf_solaris_ruin_03
+     is_deposit_type = d_pf_solaris_ruin_04
+     is_deposit_type = d_pf_solaris_ruin_05
+     is_deposit_type = d_pf_solaris_ruin_06
+     is_deposit_type = d_pf_solaris_ruin_07
+     is_deposit_type = d_pf_solaris_ruin_08
+     is_deposit_type = d_pf_solaris_ruin_09
+     is_deposit_type = d_pf_solaris_ruin_10
+     is_deposit_type = d_pf_solaris_ruin_11
+     is_deposit_type = d_pf_tower_restored
+     is_deposit_type = d_pf_pollution_cleared
+     is_deposit_type = d_pf_array_garrison
+     is_deposit_type = d_pf_ruin_01_restored
+     is_deposit_type = d_pf_ruin_02_restored
+     is_deposit_type = d_pf_ruin_03_restored
+     is_deposit_type = d_pf_ruin_04_restored
+     is_deposit_type = d_pf_ruin_05_restored
+     is_deposit_type = d_pf_ruin_06_restored
+     is_deposit_type = d_pf_ruin_07_restored
+     is_deposit_type = d_pf_ruin_08_restored
+     is_deposit_type = d_pf_ruin_09_restored
+     is_deposit_type = d_pf_ruin_10_restored
+     is_deposit_type = d_pf_ruin_11_restored
+    }
+   }
+   remove_deposit = yes
+  }
+ }
+}

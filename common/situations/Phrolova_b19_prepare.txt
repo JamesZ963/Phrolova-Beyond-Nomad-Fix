@@ -1,0 +1,12 @@
+pf_b19_prepare = {
+ situation_log_category = pf_beyond_journal
+ picture = GFX_evt_space_dragon category = negative initial_progress = 0 start_value = 0
+ stages = {
+  pf_b19_approach = { end = 40 icon = GFX_pf_defense_fleet }
+  pf_b19_approach_middle = { end = 80 icon = GFX_pf_defense_fleet }
+  pf_b19_approach_final = { end = 120 icon = GFX_pf_defense_fleet }
+ }
+ monthly_progress = { base = 0 }
+ approach = { name = pf_b19_hold default = yes custom_tooltip = PF_B19_CORE_DEFENSE_EFFECT icon = GFX_pf_defense_fleet ai_weight = { weight = 1 } }
+ on_progress_complete = { }
+}

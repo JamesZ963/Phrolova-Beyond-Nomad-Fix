@@ -1,8 +1,27 @@
 pf_echo_tides = { icon = "gfx/interface/icons/planet_modifiers/pm_gravity_storm.dds" planet_stability_add = -5 planet_jobs_physics_research_produces_mult = 0.10 }
-pf_old_memories = { icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds" planet_building_build_speed_mult = 0.20 logistic_growth_mult = 0.10 pop_housing_usage_mult = -0.10 }
-pf_institute_rebuilt = { icon = "gfx/interface/icons/planet_modifiers/pm_faith_in_science.dds" planet_researchers_produces_mult = 0.10 planet_jobs_unity_produces_mult = 0.10 }
-pf_blackshore_watch = { icon = "gfx/interface/icons/planet_modifiers/pm_enigmatic_cache.dds" custom_tooltip = PF_blackshore_watch_effects }
-pf_blackshore_empire = { icon = "gfx/interface/icons/planet_modifiers/pm_specialist_scholarium_neighbor.dds" all_technology_research_speed = 0.05 command_limit_add = 20 }
+# Upgraded "层叠的旧日": replaces pf_solaris_memory after excavation; never coexists.
+pf_old_memories = {
+ district_pf_tidal_center_max_add = 1
+ icon = "gfx/interface/icons/planet_modifiers/pm_minor_artifact_decision.dds"
+ district_pf_unique_1_max_add = 1 district_pf_unique_2_max_add = 1 district_pf_unique_3_max_add = 1
+ district_pf_unique_4_max_add = 1 district_pf_unique_5_max_add = 1 district_pf_unique_6_max_add = 1
+ planet_building_build_speed_mult = 0.20 logistic_growth_mult = 0.10 pop_housing_usage_mult = -0.10
+}
+pf_institute_rebuilt = {
+ custom_tooltip = PF_INSTITUTE_EMPIRE_EFFECTS
+ icon = gfx/interface/icons/planet_modifiers/pf_institute_rebuilt.dds
+}
+pf_blackshore_watch = {
+ custom_tooltip = PF_blackshore_watch_effects
+ icon = gfx/interface/icons/planet_modifiers/pf_blackshore_watch.dds
+}
+pf_blackshore_empire = {
+ country_edict_fund_add = 200
+ edicts_upkeep_mult = -0.25
+ pop_government_ethic_attraction = 0.25
+ planet_crime_add = -50
+ icon = gfx/interface/icons/planet_modifiers/pf_blackshore_watch.dds
+}
 pf_ghost_frequency = { icon = "gfx/interface/icons/planet_modifiers/pm_shroud_storm.dds" planet_orbital_bombardment_damage = -0.30 army_defense_damage_mult = 0.50 }
 pf_ghost_fleet = { icon = "gfx/interface/icons/planet_modifiers/pm_wraith_trophy.dds" ship_disengage_chance_mult = 0.05 ship_cloaking_strength_add = 5 }
 pf_echo_uncalibrated = { icon = "gfx/interface/icons/planet_modifiers/pm_strong_magnetic_field.dds" pop_happiness = -0.10 pop_environment_tolerance = -0.20 }
@@ -14,7 +33,10 @@ pf_new_solaris = { icon = "gfx/interface/icons/planet_modifiers/pm_planet_from_s
 pf_tower_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"  job_physicist_add = 200 }
 pf_tower_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_cybernetics.dds"  job_calculator_physicist_add = 200 }
 pf_pollution_cleared = { icon = "gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds"  planet_max_districts_add = 1 planet_researchers_produces_mult = 0.05 }
-pf_array_platforms = { icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"  starbase_defense_platform_capacity_add = 24 }
+pf_array_platforms = {
+ icon = gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds
+ starbase_defense_platform_capacity_add = 24
+}
 pf_array_garrison = { icon = "gfx/interface/icons/planet_modifiers/pm_martial_law.dds"  job_soldier_add = 800 army_defense_health_mult = 0.50 }
 pf_array_garrison_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_martial_law_machine.dds"  job_warrior_drone_add = 800 army_defense_health_mult = 0.50 }
 # Explicitly provisional companion / interaction / relic balance.
@@ -31,20 +53,55 @@ pf_flavor_defense = { icon = "gfx/interface/icons/planet_modifiers/pm_dimensiona
 pf_flavor_logs = { icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds" planet_researchers_produces_mult = 0.05 }
 pf_flavor_storm = { icon = "gfx/interface/icons/planet_modifiers/pm_electric_storm.dds" planet_jobs_energy_produces_mult = 0.05 }
 pf_flavor_shadow = { icon = "gfx/interface/icons/planet_modifiers/pm_shroud_aftermath_modifier.dds" planet_stability_add = 3 }
-pf_ruin_01_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_engineering_research.dds" job_physicist_add = 100 }
-pf_ruin_02_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds" planet_housing_add = 2 }
+pf_ruin_01_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_engineering_research.dds" job_physicist_add = 200 }
+pf_ruin_02_restored = {
+ icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
+ planet_building_build_speed_mult = 0.15
+}
 pf_ruin_03_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds" planet_jobs_produces_mult = 0.02 }
-pf_ruin_04_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds" planet_housing_add = 2 planet_amenities_add = 5 }
-pf_ruin_05_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_microscopic_life.dds" job_biologist_add = 100 }
-pf_ruin_06_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_galactic_senate.dds" job_clerk_add = 100 }
-pf_ruin_07_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_station_reactor.dds" job_technician_add = 100 }
+pf_ruin_04_restored = {
+ icon = gfx/interface/icons/planet_modifiers/pm_resort_planet.dds
+ planet_housing_add = 2000
+ planet_jobs_trade_produces_mult = 0.10
+ job_trader_add = 200
+}
+pf_ruin_05_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_microscopic_life.dds" job_biologist_add = 200 }
+pf_ruin_06_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_galactic_senate.dds" job_clerk_add = 200 }
+pf_ruin_07_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_station_reactor.dds" job_technician_add = 200 }
 pf_ruin_08_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_dyson_swarm_1.dds" planet_jobs_energy_produces_mult = 0.05 }
-pf_ruin_09_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds" job_farmer_add = 100 planet_amenities_add = 5 }
-pf_ruin_10_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds" planet_housing_add = 2 }
-pf_ruin_11_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_mineral_rich.dds" job_miner_add = 100 }
-pf_ruin_01_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_machine_sapience.dds" job_calculator_physicist_add = 100 }
-pf_ruin_05_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_ecosphere_pheromones.dds" job_calculator_biologist_add = 100 }
-pf_ruin_06_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_hyper_relays.dds" job_logistics_drone_add = 100 }
-pf_ruin_07_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds" job_technician_drone_add = 100 }
-pf_ruin_09_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_cultivated_worldscaping.dds" job_agri_drone_add = 100 planet_amenities_add = 5 }
-pf_ruin_11_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_mining_station.dds" job_mining_drone_add = 100 }
+pf_ruin_09_restored = {
+ icon = gfx/interface/icons/planet_modifiers/pm_lush.dds
+ job_farmer_add = 200
+ planet_amenities_add = 500
+}
+pf_ruin_10_restored = {
+ icon = gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds
+ planet_buildings_upkeep_mult = -0.10
+}
+pf_ruin_11_restored = { icon = "gfx/interface/icons/planet_modifiers/pm_mineral_rich.dds" job_miner_add = 200 }
+pf_ruin_01_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_machine_sapience.dds" job_calculator_physicist_add = 200 }
+pf_ruin_05_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_ecosphere_pheromones.dds" job_calculator_biologist_add = 200 }
+pf_ruin_06_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_hyper_relays.dds" job_logistics_drone_add = 200 }
+pf_ruin_07_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds" job_technician_drone_add = 200 }
+pf_ruin_09_restored_gestalt = {
+ icon = gfx/interface/icons/planet_modifiers/pm_cultivated_worldscaping.dds
+ job_agri_drone_add = 200
+ planet_amenities_add = 500
+}
+pf_ruin_11_restored_gestalt = { icon = "gfx/interface/icons/planet_modifiers/pm_mining_station.dds" job_mining_drone_add = 200 }
+
+pf_array_platforms_ring = {
+ icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"
+ starbase_defense_platform_capacity_add = 24
+}
+
+pf_institute_empire = {
+ all_technology_research_speed = 0.15
+ terraform_speed_mult = 0.30
+ planet_researchers_upkeep_mult = -0.15
+ icon = gfx/interface/icons/planet_modifiers/pf_institute_rebuilt.dds
+}
+# Kept to clear the retired modifier from existing saves.
+pf54_institute_shipyards = {
+ icon = gfx/interface/icons/planet_modifiers/pf_institute_rebuilt.dds
+}

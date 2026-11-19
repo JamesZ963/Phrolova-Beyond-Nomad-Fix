@@ -1,0 +1,25 @@
+pf075_suizhe_ship = { OR = { is_ship_size = pf075_suizhe_melee is_ship_size = pf075_suizhe_imperial } }
+# Country scope. Ships remain owned while retreating/MIA; also find captured ships by original owner.
+pf075_suizhe_exists = { any_country = { any_owned_ship = { has_ship_flag = pf075_suizhe_origin@event_target:pf_owner } } }
+pf075_can_pay_suizhe = { resource_stockpile_compare = { resource = alloys value >= 10000 }
+ resource_stockpile_compare = { resource = energy value >= 10000 }
+ resource_stockpile_compare = { resource = minerals value >= 5000 }
+ resource_stockpile_compare = { resource = volatile_motes value >= 1000 } }
+pf075_has_solaris_buildings = {
+ any_owned_planet = { has_planet_flag = pf_solaris has_district = district_pf_unique_1 has_building = building_Phrolova_Nocturne }
+}
+pf075_party_eligible = { pf_four_companions = yes has_country_flag = pf075_complete_denia
+ any_owned_leader = { has_leader_flag = Phrolova_scientist }
+ any_owned_leader = { has_leader_flag = phrolova_denia }
+ any_owned_leader = { has_leader_flag = pf_shorekeeper }
+ any_owned_leader = { has_leader_flag = pf_aemeath }
+ any_owned_planet = { has_planet_flag = pf_solaris NOT = { any_deposit = { is_blocker = yes } } }
+}
+pf075_crisis_country = { OR = { is_country_type = swarm is_country_type = extradimensional
+ is_country_type = extradimensional_2 is_country_type = extradimensional_3 is_country_type = ai_empire is_country_type = synth_queen is_country_type = awakened_synth_queen } }
+pf075_crisis_defeated = { OR = {
+ AND = { has_country_flag = pf075_fought_swarm has_global_flag = prethoryn_invasion_defeated }
+ AND = { has_country_flag = pf075_fought_unbidden has_global_flag = extradimensional_invasion_defeated }
+ AND = { has_country_flag = pf075_fought_contingency has_global_flag = ai_invasion_defeated }
+ AND = { has_country_flag = pf075_fought_queen has_global_flag = synth_queen_defeated }
+} }

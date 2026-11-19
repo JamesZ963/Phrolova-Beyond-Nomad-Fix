@@ -1,0 +1,6 @@
+pf_beyond_journal = {
+ collapsible = yes
+ priority = 9
+ localization = PF_SITUATION_LOG_CATEGORY
+ icon = "GFX_pf_situation_log_category"
+}

@@ -1,0 +1,4 @@
+# Shared recruitment floor; used only by preview and hire, never by recovery.
+pf_recruit_initial_level = {
+ if = { limit = { has_base_skill < 6 } set_skill = 6 }
+}

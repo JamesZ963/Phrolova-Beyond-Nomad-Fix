@@ -11,18 +11,18 @@ pf_speaker_phrolova = {
  event_target:pf_preview_country_phrolova = {
   if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_preview_candidate } } }
    create_leader = { background_ethic = ethic_egalitarian  class = scientist tier = leader_tier_legendary species = event_target:pf_preview_host name = NAME_Phrolova custom_description = Phrolova_backstory
-    immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+    immortal = yes hide_age = yes gender = female skill = 6 randomize_traits = no skip_background_generation = yes
     traits = { trait = leader_trait_Phrolova_X trait = leader_trait_Phrolova_Y trait = leader_trait_Phrolova_Z }
     effect = { set_leader_flag = pf_preview_candidate set_leader_flag = is_in_recruit_window change_leader_portrait = Phrolova0 }
    }
   }
-  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
+  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } pf_recruit_initial_level = yes change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
  }
  }
  pf_hire_phrolova = {
  if = { limit = { NOT = { any_owned_leader = { has_leader_flag = Phrolova_scientist } } exists = event_target:pf_speaker }
   clone_leader = { target = event_target:pf_speaker skip_background_generation = yes }
-  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate remove_leader_flag = is_in_recruit_window set_leader_flag = Phrolova_scientist set_leader_flag = leader_death_events_blocked }
+  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate pf_recruit_initial_level = yes remove_leader_flag = is_in_recruit_window set_leader_flag = Phrolova_scientist set_leader_flag = leader_death_events_blocked }
  }
  }
 pf_speaker_denia = {
@@ -38,18 +38,18 @@ pf_speaker_denia = {
  event_target:pf_preview_country_denia = {
   if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_preview_candidate } } }
    create_leader = { background_ethic = ethic_egalitarian  class = commander tier = leader_tier_legendary species = event_target:pf_preview_host name = NAME_PF_denia custom_description = PF_denia_bio
-    immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+    immortal = yes hide_age = yes gender = female skill = 6 randomize_traits = no skip_background_generation = yes
     traits = { trait = leader_trait_pf_denia trait = leader_trait_pf_denia_2 trait = leader_trait_pf_denia_3 }
     effect = { set_leader_flag = pf_preview_candidate set_leader_flag = is_in_recruit_window change_leader_portrait = PF_denia_0 }
    }
   }
-  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } if = { limit = { NOT = { has_trait = leader_trait_pf_denia } } add_trait = { trait = leader_trait_pf_denia show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_denia_2 } } add_trait = { trait = leader_trait_pf_denia_2 show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_denia_3 } } add_trait = { trait = leader_trait_pf_denia_3 show_message = no } } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
+  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } pf_recruit_initial_level = yes if = { limit = { NOT = { has_trait = leader_trait_pf_denia } } add_trait = { trait = leader_trait_pf_denia show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_denia_2 } } add_trait = { trait = leader_trait_pf_denia_2 show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_denia_3 } } add_trait = { trait = leader_trait_pf_denia_3 show_message = no } } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
  }
  }
  pf_hire_denia = {
  if = { limit = { NOT = { any_owned_leader = { has_leader_flag = phrolova_denia } } exists = event_target:pf_speaker }
   clone_leader = { target = event_target:pf_speaker skip_background_generation = yes }
-  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate remove_leader_flag = is_in_recruit_window set_leader_flag = phrolova_denia set_leader_flag = leader_death_events_blocked }
+  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate pf_recruit_initial_level = yes remove_leader_flag = is_in_recruit_window set_leader_flag = phrolova_denia set_leader_flag = leader_death_events_blocked }
  }
  }
 pf_speaker_shorekeeper = {
@@ -65,18 +65,18 @@ pf_speaker_shorekeeper = {
  event_target:pf_preview_country_shorekeeper = {
   if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_preview_candidate } } }
    create_leader = { background_ethic = ethic_egalitarian  class = official tier = leader_tier_legendary species = event_target:pf_preview_host name = NAME_PF_shorekeeper custom_description = PF_shorekeeper_bio
-    immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+    immortal = yes hide_age = yes gender = female skill = 6 randomize_traits = no skip_background_generation = yes
     traits = { trait = leader_trait_pf_shorekeeper trait = leader_trait_pf_shorekeeper_2 trait = leader_trait_pf_shorekeeper_3 }
     effect = { set_leader_flag = pf_preview_candidate set_leader_flag = is_in_recruit_window change_leader_portrait = PF_shorekeeper_0 }
    }
   }
-  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper } } add_trait = { trait = leader_trait_pf_shorekeeper show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper_2 } } add_trait = { trait = leader_trait_pf_shorekeeper_2 show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper_3 } } add_trait = { trait = leader_trait_pf_shorekeeper_3 show_message = no } } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
+  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } pf_recruit_initial_level = yes if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper } } add_trait = { trait = leader_trait_pf_shorekeeper show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper_2 } } add_trait = { trait = leader_trait_pf_shorekeeper_2 show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_shorekeeper_3 } } add_trait = { trait = leader_trait_pf_shorekeeper_3 show_message = no } } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
  }
  }
  pf_hire_shorekeeper = {
  if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_shorekeeper } } exists = event_target:pf_speaker }
   clone_leader = { target = event_target:pf_speaker skip_background_generation = yes }
-  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate remove_leader_flag = is_in_recruit_window set_leader_flag = pf_shorekeeper set_leader_flag = leader_death_events_blocked }
+  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate pf_recruit_initial_level = yes remove_leader_flag = is_in_recruit_window set_leader_flag = pf_shorekeeper set_leader_flag = leader_death_events_blocked }
  }
  }
 pf_speaker_aemeath = {
@@ -92,18 +92,18 @@ pf_speaker_aemeath = {
  event_target:pf_preview_country_aemeath = {
   if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_preview_candidate } } }
    create_leader = { background_ethic = ethic_egalitarian  class = commander tier = leader_tier_legendary species = event_target:pf_preview_host name = NAME_PF_aemeath custom_description = PF_aemeath_bio
-    immortal = yes hide_age = yes gender = female skill = 1 randomize_traits = no skip_background_generation = yes
+    immortal = yes hide_age = yes gender = female skill = 6 randomize_traits = no skip_background_generation = yes
     traits = { trait = leader_trait_pf_aemeath trait = leader_trait_pf_aemeath_2 trait = leader_trait_pf_aemeath_3 }
     effect = { set_leader_flag = pf_preview_candidate set_leader_flag = is_in_recruit_window change_leader_portrait = PF_aemeath_0 }
    }
   }
-  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath } } add_trait = { trait = leader_trait_pf_aemeath show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath_2 } } add_trait = { trait = leader_trait_pf_aemeath_2 show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath_3 } } add_trait = { trait = leader_trait_pf_aemeath_3 show_message = no } } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
+  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } pf_recruit_initial_level = yes if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath } } add_trait = { trait = leader_trait_pf_aemeath show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath_2 } } add_trait = { trait = leader_trait_pf_aemeath_2 show_message = no } } if = { limit = { NOT = { has_trait = leader_trait_pf_aemeath_3 } } add_trait = { trait = leader_trait_pf_aemeath_3 show_message = no } } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
  }
  }
  pf_hire_aemeath = {
  if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_aemeath } } exists = event_target:pf_speaker }
   clone_leader = { target = event_target:pf_speaker skip_background_generation = yes }
-  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate remove_leader_flag = is_in_recruit_window set_leader_flag = pf_aemeath set_leader_flag = leader_death_events_blocked }
+  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate pf_recruit_initial_level = yes remove_leader_flag = is_in_recruit_window set_leader_flag = pf_aemeath set_leader_flag = leader_death_events_blocked }
  }
  }
 pf_bond_denia_monthly = {
@@ -112,30 +112,31 @@ pf_bond_denia_monthly = {
  if = { limit = { has_country_flag = pf_denia_recruited NOT = { has_country_flag = pf_denia_bond_wait } NOT = { has_country_flag = pf_denia_bond_pending } NOT = { has_country_flag = pf_denia_bond_3 } }
  set_country_flag = pf_denia_bond_pending country_event = { id = Phrolova_event.9713 } }
  }
-pf_bond_shorekeeper_monthly = {
- if = { limit = { has_country_flag = pf_shorekeeper_recruited NOT = { has_country_flag = pf_shorekeeper_bond_initialized } }
- set_country_flag = pf_shorekeeper_bond_initialized set_timed_country_flag = { flag = pf_shorekeeper_bond_wait days = 720 } }
- if = { limit = { has_country_flag = pf_shorekeeper_recruited NOT = { has_country_flag = pf_shorekeeper_bond_wait } NOT = { has_country_flag = pf_shorekeeper_bond_pending } NOT = { has_country_flag = pf_shorekeeper_bond_3 } }
- set_country_flag = pf_shorekeeper_bond_pending country_event = { id = Phrolova_event.9723 } }
+# Shorekeeper relationship advancement is owned by the four construction projects.
+pf_bond_shorekeeper_monthly = { }
+pf_bond_aemeath_monthly = { }
+pf17_add_ruins = {
+ if = {
+  limit = {
+   has_planet_flag = pf_solaris
+   NOT = {
+    has_planet_flag = pf17_ruins_added
+   }
+  }
+  set_planet_flag = pf17_ruins_added
+  add_deposit = d_pf_solaris_ruin_01
+  add_deposit = d_pf_solaris_ruin_02
+  add_deposit = d_pf_solaris_ruin_03
+  add_deposit = d_pf_solaris_ruin_04
+  add_deposit = d_pf_solaris_ruin_05
+  add_deposit = d_pf_solaris_ruin_06
+  add_deposit = d_pf_solaris_ruin_07
+  add_deposit = d_pf_solaris_ruin_08
+  add_deposit = d_pf_solaris_ruin_09
+  add_deposit = d_pf_solaris_ruin_10
+  add_deposit = d_pf_solaris_ruin_11
  }
-pf_bond_aemeath_monthly = {
- if = { limit = { has_country_flag = pf_aemeath_recruited NOT = { has_country_flag = pf_aemeath_bond_initialized } }
- set_country_flag = pf_aemeath_bond_initialized set_timed_country_flag = { flag = pf_aemeath_bond_wait days = 720 } }
- if = { limit = { has_country_flag = pf_aemeath_recruited NOT = { has_country_flag = pf_aemeath_bond_wait } NOT = { has_country_flag = pf_aemeath_bond_pending } NOT = { has_country_flag = pf_aemeath_bond_3 } }
- set_country_flag = pf_aemeath_bond_pending country_event = { id = Phrolova_event.9733 } }
- }
-pf17_add_ruins = { if = { limit = { NOT = { has_planet_flag = pf17_ruins_added } } set_planet_flag = pf17_ruins_added add_deposit = d_pf_solaris_ruin_01
-add_deposit = d_pf_solaris_ruin_02
-add_deposit = d_pf_solaris_ruin_03
-add_deposit = d_pf_solaris_ruin_04
-add_deposit = d_pf_solaris_ruin_05
-add_deposit = d_pf_solaris_ruin_06
-add_deposit = d_pf_solaris_ruin_07
-add_deposit = d_pf_solaris_ruin_08
-add_deposit = d_pf_solaris_ruin_09
-add_deposit = d_pf_solaris_ruin_10
-add_deposit = d_pf_solaris_ruin_11
- } }
+}
 pf17_journal_refresh = {
 
 if = { limit = { has_country_flag = pf_ame_frequency_done NOT = { has_country_flag = pf_ame_first_contact_done } }
@@ -158,4 +159,98 @@ pf_apply_aemeath_portrait = {
   else_if = { limit = { owner = { check_variable = { which = pf_ame_skin value = 1 } } } change_leader_portrait = PF_aemeath_1 }
   else = { change_leader_portrait = PF_aemeath_0 }
  }
+}
+
+
+pf_denia_confirm_bond = {
+    if = {
+        limit = {
+            has_country_flag = pf_denia_bond_pending
+        }
+        remove_country_flag = pf_denia_bond_pending
+        if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_denia_bond_1
+                }
+            }
+            set_country_flag = pf_denia_bond_1
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_denia_bond_2
+                }
+            }
+            set_country_flag = pf_denia_bond_2
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_denia_bond_3
+                }
+            }
+            set_country_flag = pf_denia_bond_3
+            pf17_journal_refresh = yes
+        }
+        add_resource = {
+            energy = 2000
+            unity = 500
+        }
+        set_timed_country_flag = {
+            flag = pf_denia_bond_wait
+            days = 720
+        }
+    }
+}
+
+
+pf_aemeath_confirm_bond = {
+    if = {
+        limit = {
+            has_country_flag = pf_aemeath_bond_pending
+        }
+        remove_country_flag = pf_aemeath_bond_pending
+        if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_aemeath_bond_1
+                }
+            }
+            set_country_flag = pf_aemeath_bond_1
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_aemeath_bond_2
+                }
+            }
+            set_country_flag = pf_aemeath_bond_2
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_country_flag = pf_aemeath_bond_3
+                }
+            }
+            set_country_flag = pf_aemeath_bond_3
+            pf17_journal_refresh = yes
+        }
+        add_resource = { alloys = 1500 unity = 500 }
+        set_timed_country_flag = {
+            flag = pf_aemeath_bond_wait
+            days = 720
+        }
+    }
+    if = {
+        limit = {
+            has_country_flag = pf075_prepare_finished
+            NOT = {
+                has_country_flag = pf075_variant_chosen
+            }
+        }
+        country_event = {
+            id = Phrolova_event.11012
+        }
+    }
 }

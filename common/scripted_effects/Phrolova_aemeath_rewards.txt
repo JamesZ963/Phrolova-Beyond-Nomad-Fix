@@ -1,0 +1,125 @@
+pf46_offer_ancient_pd = {
+ if = {
+  limit = {
+   NOT = {
+    has_country_flag = pf46_offered_ancient_pd
+   }
+  }
+  set_country_flag = pf46_offered_ancient_pd
+  if = {
+   limit = {
+    NOT = {
+     has_technology = tech_pf_aemeath_ancient_pd
+    }
+   }
+   add_research_option = tech_pf_aemeath_ancient_pd
+   add_tech_progress = {
+    tech = tech_pf_aemeath_ancient_pd
+    progress = 0.25
+   }
+  }
+ }
+}
+pf46_offer_fire_control = {
+ if = {
+  limit = {
+   NOT = {
+    has_country_flag = pf46_offered_fire_control
+   }
+  }
+  set_country_flag = pf46_offered_fire_control
+  if = {
+   limit = {
+    NOT = {
+     has_technology = tech_pf_aemeath_fire_control
+    }
+   }
+   add_research_option = tech_pf_aemeath_fire_control
+   add_tech_progress = {
+    tech = tech_pf_aemeath_fire_control
+    progress = 0.25
+   }
+  }
+ }
+}
+pf46_offer_light_array = {
+ if = {
+  limit = {
+   NOT = {
+    has_country_flag = pf46_offered_light_array
+   }
+  }
+  set_country_flag = pf46_offered_light_array
+  if = {
+   limit = {
+    NOT = {
+     has_technology = tech_pf_aemeath_light_array
+    }
+   }
+   add_research_option = tech_pf_aemeath_light_array
+   add_tech_progress = {
+    tech = tech_pf_aemeath_light_array
+    progress = 0.25
+   }
+  }
+ }
+}
+pf46_offer_heavy_array = {
+ if = {
+  limit = {
+   NOT = {
+    has_country_flag = pf46_offered_heavy_array
+   }
+  }
+  set_country_flag = pf46_offered_heavy_array
+  if = {
+   limit = {
+    NOT = {
+     has_technology = tech_pf_tunnel_armament
+    }
+   }
+   add_research_option = tech_pf_tunnel_armament
+   add_tech_progress = {
+    tech = tech_pf_tunnel_armament
+    progress = 0.25
+   }
+  }
+ }
+}
+pf46_refresh_research_rewards = {
+ if = {
+  limit = {
+   pf_aemeath_heart_route_allowed = yes
+  }
+  if = {
+   limit = {
+    has_country_flag = pf_ame_interaction_3
+   }
+   pf46_offer_ancient_pd = yes
+  }
+  if = {
+   limit = {
+    has_country_flag = pf075_prepare_finished
+   }
+   pf46_offer_fire_control = yes
+  }
+  if = {
+   limit = {
+    has_country_flag = pf075_restart_finished
+   }
+   pf46_offer_light_array = yes
+  }
+  if = {
+   limit = {
+    has_country_flag = pf_ame_secret_ack
+   }
+   pf46_offer_heavy_array = yes
+  }
+  if = {
+   limit = {
+    has_country_flag = pf075_suizhe_launched
+   }
+   pf46_offer_light_array = yes
+  }
+ }
+}

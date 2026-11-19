@@ -1,0 +1,8 @@
+pf_b_civil_rewards = {
+ if = { limit = { has_country_flag = pf_b06_done NOT = { has_technology = tech_pf_b_recovery } } give_technology = { tech = tech_pf_b_recovery message = no } }
+ if = { limit = { has_country_flag = pf_b09_done NOT = { has_technology = tech_pf_b_tunnel } } give_technology = { tech = tech_pf_b_tunnel message = no } }
+ if = { limit = { has_country_flag = pf_b_forge_stage_1 NOT = { has_technology = tech_pf_b_trial } } give_technology = { tech = tech_pf_b_trial message = no } }
+ if = { limit = { OR = { has_country_flag = pf_b_ecology_found has_country_flag = pf_b14_done } NOT = { has_technology = tech_pf_b_fragment } } give_technology = { tech = tech_pf_b_fragment message = no } }
+ if = { limit = { has_country_flag = pf_b_forge_stage_2 NOT = { has_technology = tech_pf_b_forge } } give_technology = { tech = tech_pf_b_forge message = no } }
+ if = { limit = { has_country_flag = pf_b14_done has_country_flag = pf_b_forge_stage_2 NOT = { has_technology = tech_pf_b_receiver } } give_technology = { tech = tech_pf_b_receiver message = no } }
+}

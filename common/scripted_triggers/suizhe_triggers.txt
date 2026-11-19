@@ -1,0 +1,4 @@
+# Global designs take a scripted-trigger name, not an inline trigger block.
+suizhe_design_not_buildable = {
+    always = no
+}

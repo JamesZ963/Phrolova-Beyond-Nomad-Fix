@@ -1,0 +1,22 @@
+pf_morin_recruit_timeline = {
+ if = { limit = { has_country_flag = pf_morin_recruited NOT = { has_country_flag = pf_morin_timeline_initialized } }
+  set_country_flag = pf_morin_timeline_initialized
+  if = { limit = { has_country_flag = pf_b04_done }
+   # Completed legacy research already required a full 180-day fragment survey.
+   country_event = { id = Phrolova_event.9830 days = 1 }
+  }
+  else = {
+  set_timed_country_flag = { flag = pf_morin_rehabilitation_wait days = 180 }
+  set_timed_country_flag = { flag = pf_morin_fragment_wait days = 360 }
+  every_owned_leader = { limit = { has_leader_flag = pf_morin } add_trait = { trait = leader_trait_pf_morin_injured show_message = no } }
+  # Migrate an unfinished early-test fragment project to its newly requested opening.
+  if = { limit = { NOT = { has_country_flag = pf_b04_done } }
+   if = { limit = { has_special_project = PF_B04_FRAGMENT } abort_special_project = { type = PF_B04_FRAGMENT } }
+   remove_country_flag = pf_b04_started
+   remove_country_flag = pf_b04_briefing_seen
+  }
+  country_event = { id = Phrolova_event.9830 days = 180 }
+  country_event = { id = Phrolova_event.9831 days = 360 }
+  }
+ }
+}

@@ -1,0 +1,42 @@
+tech_pf_aemeath_ancient_pd = {
+ area = engineering
+ tier = 3
+ cost = 6000
+ category = {
+  voidcraft
+ }
+ icon = pf46_ancient_pd
+ is_rare = yes
+ weight = 0
+ ai_weight = {
+  weight = 0
+ }
+}
+tech_pf_aemeath_fire_control = {
+ area = physics
+ tier = 3
+ cost = 8000
+ category = {
+  computing
+ }
+ icon = pf46_fire_control
+ is_rare = yes
+ weight = 0
+ ai_weight = {
+  weight = 0
+ }
+}
+tech_pf_aemeath_light_array = {
+ area = engineering
+ tier = 4
+ cost = 10000
+ category = {
+  propulsion
+ }
+ icon = pf46_light_array
+ is_rare = yes
+ weight = 0
+ ai_weight = {
+  weight = 0
+ }
+}

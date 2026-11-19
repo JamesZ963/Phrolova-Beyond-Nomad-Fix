@@ -1,0 +1,365 @@
+# B-line first-playable closure: B11 raid, B14 archive, B16 rewards,
+# B19 two-dragon defence, B20 Denia return, B21/B22 ending and Morin bond.
+
+# ---------- B11/B15: two escalating pirate waves ----------
+# Rough tuning knobs; actual fleet power is read in game, not asserted here.
+@pf_b_wave1_galleons = 5
+@pf_b_wave1_cruisers = 2
+@pf_b_wave1_destroyers = 4
+@pf_b_wave2_galleons = 10
+@pf_b_wave2_cruisers = 4
+@pf_b_wave2_destroyers = 8
+
+pf_b11_spawn_raid = {
+ pf_find_targets = yes
+ if = { limit = { any_country = { has_country_flag = pf_b_raid_enemy has_country_flag = pf_b_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b_raid_enemy_fleet } } NOT = { has_country_flag = pf_b11_raid_spawned } }
+  set_country_flag = pf_b11_raid_spawned
+ set_country_flag = pf_b_raid_wave_1
+  set_timed_country_flag = { flag = pf_b11_raid_deadline days = 180 }
+  country_event = { id = Phrolova_event.9451 days = 1 }
+ }
+ if = { limit = {
+   NOT = { any_country = { has_country_flag = pf_b_raid_enemy has_country_flag = pf_b_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b_raid_enemy_fleet } } }
+   exists = event_target:pf_solaris
+   event_target:pf_solaris = { pf_solaris_owner = yes }
+   NOT = { has_country_flag = pf_b11_raid_spawned }
+   NOT = { has_country_flag = pf_b11_raid_won }
+  }
+  remove_country_flag = pf_b11_raid_failed
+  event_target:pf_solaris = {
+   owner = {
+    create_country = {
+     name = "NAME_PF_B_RAIDERS"
+     type = pirate
+     species = owner_main_species
+     effect = {
+      set_country_flag = pf_b_raid_enemy
+      set_country_flag = pf_b_raid_owner@event_target:pf_owner
+      set_faction_hostility = { set_hostile = yes }
+      create_fleet = {
+       name = "NAME_PF_B_RAID_FLEET"
+       effect = {
+        set_owner = prev
+        set_location = event_target:pf_solaris
+        set_fleet_flag = pf_b_raid_enemy_fleet
+        set_fleet_stance = aggressive
+        create_ship_design = { design = "NAME_Pirate_Galleon" }
+        while = { count = @pf_b_wave1_galleons create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" effect = { set_ship_flag = pf_b_raid_ship } } }
+        create_ship_design = { design = "NAME_Black_Earl" }
+        while = { count = @pf_b_wave1_cruisers create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" effect = { set_ship_flag = pf_b_raid_ship } } }
+        create_ship_design = { design = "NAME_Marauder" }
+        while = { count = @pf_b_wave1_destroyers create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" effect = { set_ship_flag = pf_b_raid_ship } } }
+       }
+      }
+     }
+    }
+   }
+  }
+  if = { limit = { any_country = { has_country_flag = pf_b_raid_enemy has_country_flag = pf_b_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b_raid_enemy_fleet } } }
+   set_country_flag = pf_b11_raid_spawned
+ set_country_flag = pf_b_raid_wave_1
+   set_timed_country_flag = { flag = pf_b11_raid_deadline days = 180 }
+   country_event = { id = Phrolova_event.9451 days = 1 }
+  }
+ }
+}
+
+pf_b11_check_raid = {
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_b11_raid_spawned NOT = { has_country_flag = pf_b11_raid_won } }
+  if = { limit = { NOT = { any_country = { has_country_flag = pf_b_raid_enemy has_country_flag = pf_b_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b_raid_enemy_fleet } } } pf_b_has_solaris = yes }
+   set_country_flag = pf_b11_raid_won
+   remove_country_flag = pf_b11_raid_failed
+   remove_country_flag = pf_b11_raid_deadline
+   country_event = { id = Phrolova_event.9452 }
+  }
+  else_if = { limit = { NOT = { has_country_flag = pf_b11_raid_failed }
+    OR = {
+     NOT = { pf_b_has_solaris = yes }
+     NOT = { has_country_flag = pf_b11_raid_deadline }
+    }
+   }
+   set_country_flag = pf_b11_raid_failed
+   remove_country_flag = pf_b11_raid_deadline
+   
+  }
+ }
+}
+
+pf_b15_spawn_raid = {
+ pf_find_targets = yes
+ if = { limit = { any_country = { has_country_flag = pf_b15_raid_enemy has_country_flag = pf_b15_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b15_raid_enemy_fleet } } NOT = { has_country_flag = pf_b15_raid_spawned } }
+  set_country_flag = pf_b15_raid_spawned
+ set_country_flag = pf_b_raid_wave_2
+  set_timed_country_flag = { flag = pf_b15_raid_deadline days = 180 }
+  country_event = { id = Phrolova_event.9478 days = 1 }
+ }
+ if = { limit = {
+   has_country_flag = pf_b11_raid_won
+   NOT = { any_country = { has_country_flag = pf_b15_raid_enemy has_country_flag = pf_b15_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b15_raid_enemy_fleet } } }
+   exists = event_target:pf_solaris
+   event_target:pf_solaris = { pf_solaris_owner = yes }
+   NOT = { has_country_flag = pf_b15_raid_spawned }
+   NOT = { has_country_flag = pf_b15_raid_won }
+  }
+  remove_country_flag = pf_b15_raid_failed
+  event_target:pf_solaris = {
+   owner = {
+    create_country = {
+     name = "NAME_PF_B_WAVE2_RAIDERS"
+     type = pirate
+     species = owner_main_species
+     effect = {
+      set_country_flag = pf_b15_raid_enemy
+      set_country_flag = pf_b15_raid_owner@event_target:pf_owner
+      set_faction_hostility = { set_hostile = yes }
+      create_fleet = {
+       name = "NAME_PF_B_WAVE2_FLEET"
+       effect = {
+        set_owner = prev
+        set_location = event_target:pf_solaris
+        set_fleet_flag = pf_b15_raid_enemy_fleet
+        set_fleet_stance = aggressive
+        create_ship_design = { design = "NAME_Pirate_Galleon" }
+        while = { count = @pf_b_wave2_galleons create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" effect = { set_ship_flag = pf_b15_raid_ship } } }
+        create_ship_design = { design = "NAME_Black_Earl" }
+        while = { count = @pf_b_wave2_cruisers create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" effect = { set_ship_flag = pf_b15_raid_ship } } }
+        create_ship_design = { design = "NAME_Corsair" }
+        while = { count = @pf_b_wave2_destroyers create_ship = { name = random design = last_created_design graphical_culture = "pirate_01" effect = { set_ship_flag = pf_b15_raid_ship } } }
+       }
+      }
+     }
+    }
+   }
+  }
+  if = { limit = { any_country = { has_country_flag = pf_b15_raid_enemy has_country_flag = pf_b15_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b15_raid_enemy_fleet } } }
+   set_country_flag = pf_b15_raid_spawned
+ set_country_flag = pf_b_raid_wave_2
+   set_timed_country_flag = { flag = pf_b15_raid_deadline days = 180 }
+   country_event = { id = Phrolova_event.9478 days = 1 }
+  }
+ }
+}
+
+pf_b15_check_raid = {
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_b15_raid_spawned NOT = { has_country_flag = pf_b15_raid_won } }
+  if = { limit = { NOT = { any_country = { has_country_flag = pf_b15_raid_enemy has_country_flag = pf_b15_raid_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b15_raid_enemy_fleet } } } pf_b_has_solaris = yes }
+   set_country_flag = pf_b15_raid_won
+   remove_country_flag = pf_b15_raid_failed
+   remove_country_flag = pf_b15_raid_deadline
+   country_event = { id = Phrolova_event.9479 }
+  }
+  else_if = { limit = { NOT = { has_country_flag = pf_b15_raid_failed }
+    OR = {
+     NOT = { pf_b_has_solaris = yes }
+     NOT = { has_country_flag = pf_b15_raid_deadline }
+    }
+   }
+   set_country_flag = pf_b15_raid_failed
+   remove_country_flag = pf_b15_raid_deadline
+   
+  }
+ }
+}
+
+# ---------- B14: three-stage Star Guild archive site on the mystery system ----------
+pf_b14_spawn_site = {
+ 
+ if = { limit = { is_scope_type = country }
+ save_event_target_as = pf_owner
+ # Local event targets are reacquired from persistent country-linked flags.
+ random_system = {
+  limit = { any_system_planet = { has_planet_flag = pf_solaris@event_target:pf_owner } }
+  random_system_planet = { limit = { has_planet_flag = pf_solaris@event_target:pf_owner } save_event_target_as = pf_solaris }
+ }
+ random_system = {
+  limit = { has_star_flag = pf_aleph@event_target:pf_owner }
+  save_event_target_as = pf_aleph_system
+  random_system_planet = { limit = { has_planet_flag = pf_aleph@event_target:pf_owner } save_event_target_as = pf_aleph }
+ }
+
+ }
+
+ if = { limit = {
+   exists = event_target:pf_aleph_system
+   event_target:pf_aleph_system = { has_star_flag = pf_aleph@event_target:pf_owner }
+   NOT = { event_target:pf_aleph_system = { any_system_planet = { has_planet_flag = pf_b14_site_planet } } }
+  }
+  event_target:pf_aleph_system = {
+   random_system_planet = {
+    limit = {
+     OR = { is_planet_class = pc_broken is_planet_class = pc_shattered }
+     NOT = { has_owner = yes }
+     NOT = { is_colony = yes }
+     NOT = { has_planet_flag = pf_aleph_asteroid }
+     NOT = { has_planet_flag = pf_b14_site_planet }
+     NOT = { exists = archaeological_site }
+    }
+    set_planet_flag = pf_b14_site_planet
+    set_planet_flag = pf_b14_site_created
+    create_archaeological_site = pf_b_archive_site
+   }
+  }
+ }
+ if = { limit = {
+   exists = event_target:pf_aleph_system
+   event_target:pf_aleph_system = { has_star_flag = pf_aleph@event_target:pf_owner any_system_planet = { has_planet_flag = pf_b14_site_planet NOT = { exists = archaeological_site } } }
+  }
+  event_target:pf_aleph_system = {
+   random_system_planet = {
+    limit = { has_planet_flag = pf_b14_site_planet NOT = { exists = archaeological_site } }
+    create_archaeological_site = pf_b_archive_site
+   }
+  }
+ }
+}
+
+pf_b14_site_ensure = {
+ if = { limit = { has_country_flag = pf_b14_started NOT = { has_country_flag = pf_b14_done } } pf_b14_spawn_site = yes }
+}
+
+# ---------- B16: relic, tradition, technology, facility and cabinet hook ----------
+pf_b16_grant_rewards = {
+ if = { limit = { NOT = { has_country_flag = pf_b16_rewards_granted } }
+  set_country_flag = pf_b16_rewards_granted
+  
+  pf_find_targets = yes
+  if = { limit = { exists = event_target:pf_solaris } event_target:pf_solaris = { pf_b_sync_solaris_stage = yes } }
+ }
+}
+
+# ---------- B19: two ether dragons, one final defence ----------
+pf_b19_spawn_battle = {
+ if = { limit = { has_country_flag = pf_b19_failed } set_country_flag = pf_b19_engaged }
+ remove_country_flag = pf_b19_failed
+ pf_find_targets = yes
+ if = { limit = { any_country = { has_country_flag = pf_b_dragon_enemy has_country_flag = pf_b_dragon_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b_dragon_enemy_fleet } } }
+  set_country_flag = pf_b19_engaged
+   set_country_flag = pf_b19_battle_started
+  set_timed_country_flag = { flag = pf_b19_deadline days = 180 }
+  country_event = { id = Phrolova_event.9464 }
+ }
+ if = { limit = {
+   NOT = { has_country_flag = pf_b19_engaged }
+   NOT = { any_country = { has_country_flag = pf_b_dragon_enemy has_country_flag = pf_b_dragon_owner@event_target:pf_owner any_owned_fleet = { has_fleet_flag = pf_b_dragon_enemy_fleet } } }
+   exists = event_target:pf_solaris
+   event_target:pf_solaris = { pf_solaris_owner = yes }
+  }
+  event_target:pf_solaris = {
+   owner = {
+    create_country = {
+     name = "NAME_PF_B_DRAGONS"
+     type = pirate
+     species = owner_main_species
+     effect = {
+      set_country_flag = pf_b_dragon_enemy
+      set_country_flag = pf_b_dragon_owner@event_target:pf_owner
+      set_faction_hostility = { set_hostile = yes }
+      create_fleet = {
+       name = "NAME_PF_B_DRAGON_FLEET"
+       settings = { is_boss = yes spawn_debris = no }
+       effect = {
+        set_owner = prev
+        set_location = event_target:pf_solaris
+        set_fleet_flag = pf_b_dragon_enemy_fleet
+        set_fleet_stance = aggressive
+        set_aggro_range_measure_from = self
+        set_aggro_range = 350
+        create_ship = { name = "NAME_PF_B_DRAGON_1" design = "NAME_Grand_Dragon" effect = { set_ship_flag = pf_b_dragon_ship_1 } }
+        create_ship = { name = "NAME_PF_B_DRAGON_2" design = "NAME_Grand_Dragon" effect = { set_ship_flag = pf_b_dragon_ship_2 } }
+       }
+      }
+     }
+    }
+   }
+  }
+  if = { limit = { any_country = { has_country_flag = pf_b_dragon_enemy has_country_flag = pf_b_dragon_owner@event_target:pf_owner any_owned_ship = { has_ship_flag = pf_b_dragon_ship_1 } any_owned_ship = { has_ship_flag = pf_b_dragon_ship_2 } } }
+   set_country_flag = pf_b19_engaged
+   set_country_flag = pf_b19_battle_started
+   set_timed_country_flag = { flag = pf_b19_deadline days = 180 }
+   country_event = { id = Phrolova_event.9464 }
+  }
+ }
+}
+
+pf_b19_check_battle = {
+ pf_find_targets = yes
+ if = { limit = { OR = { has_country_flag = pf_b19_battle_started has_country_flag = pf_b19_failed has_country_flag = pf_b19_engaged } NOT = { has_country_flag = pf_b19_won } }
+  if = { limit = { NOT = { any_country = { has_country_flag = pf_b_dragon_enemy has_country_flag = pf_b_dragon_owner@event_target:pf_owner any_owned_ship = { OR = { has_ship_flag = pf_b_dragon_ship_1 has_ship_flag = pf_b_dragon_ship_2 } } } } pf_b_has_solaris = yes }
+   set_country_flag = pf_b19_won
+   remove_country_flag = pf_b19_failed
+   remove_country_flag = pf_b19_battle_started
+   remove_country_flag = pf_b19_deadline
+   country_event = { id = Phrolova_event.9862 } country_event = { id = Phrolova_event.9465 }
+  }
+  else_if = { limit = { has_country_flag = pf_b19_battle_started
+    OR = {
+     NOT = { pf_b_has_solaris = yes }
+     NOT = { has_country_flag = pf_b19_deadline }
+    }
+   }
+   set_country_flag = pf_b19_failed
+   remove_country_flag = pf_b19_battle_started
+   remove_country_flag = pf_b19_deadline
+   
+  }
+ }
+}
+
+# ---------- B20: return Denia through the shared identity system ----------
+pf_b20_recruit_denia = {
+ set_country_flag = pf_denia_b_route
+ if = { limit = { has_country_flag = pf_denia_recruited NOT = { has_country_flag = pf_b20_shared_recruit_flow } } set_country_flag = pf_denia_b_recruit_replay }
+ if = { limit = { NOT = { has_country_flag = pf_b20_recruit_flow_pending } NOT = { has_country_flag = pf_b20_shared_recruit_flow } }
+  set_country_flag = pf_b20_recruit_flow_pending
+  set_country_flag = pf_denia_recruit_pending
+  if = { limit = { NOT = { has_country_flag = pf_b21_done } } remove_country_flag = pf_b21_pending }
+  country_event = { id = Phrolova_event.9710 }
+ }
+}
+
+# ---------- Morin bond: 720-day stages, portraits and memory CG ----------
+pf_b_morin_bond_monthly = {
+ if = { limit = { has_country_flag = pf_morin_recruited NOT = { has_country_flag = pf_morin_bond_initialized } }
+  set_country_flag = pf_morin_bond_initialized
+  set_timed_country_flag = { flag = pf_morin_bond_wait days = 720 }
+ }
+ if = { limit = {
+   has_country_flag = pf_morin_recruited
+   NOT = { has_country_flag = pf_morin_bond_wait }
+   NOT = { has_country_flag = pf_morin_bond_pending }
+   NOT = { has_country_flag = pf_morin_bond_3 }
+  }
+  set_country_flag = pf_morin_bond_pending
+  if = { limit = { NOT = { has_country_flag = pf_morin_bond_1 } } country_event = { id = Phrolova_event.9480 days = 1 } }
+  else_if = { limit = { has_country_flag = pf_morin_bond_1 NOT = { has_country_flag = pf_morin_bond_2 } } country_event = { id = Phrolova_event.9481 days = 1 } }
+  else = { country_event = { id = Phrolova_event.9482 days = 1 } }
+ }
+}
+
+# ---------- monthly closure driver ----------
+pf_b_morin_stage_up = {
+ every_owned_leader = { limit = { has_leader_flag = pf_morin } if = { limit = { NOT = { has_trait = leader_trait_pf_morin_4 } } add_trait = { trait = leader_trait_pf_morin_4 show_message = no } } }
+}
+
+pf_b_closure_monthly = {
+ country_event = { id = Phrolova_event.9862 }
+ if = { limit = { has_country_flag = pf_b_forge_stage_3 } pf_b16_grant_rewards = yes }
+ pf_b11_check_raid = yes
+ pf_b15_check_raid = yes
+ pf_b14_site_ensure = yes
+ pf_b19_check_battle = yes
+ pf_b_morin_bond_monthly = yes
+ if = { limit = { has_country_flag = pf_b_forge_stage_1 NOT = { has_country_flag = pf_b11_raid_preparing } NOT = { has_country_flag = pf_b11_raid_spawned } NOT = { has_country_flag = pf_b11_raid_won } NOT = { has_country_flag = pf_b11_raid_failed } } country_event = { id = Phrolova_event.9450 days = 1 } }
+ if = { limit = { has_country_flag = pf_b_forge_stage_2 has_country_flag = pf_b11_raid_won NOT = { has_country_flag = pf_b15_raid_preparing } NOT = { has_country_flag = pf_b15_raid_spawned } NOT = { has_country_flag = pf_b15_raid_won } } country_event = { id = Phrolova_event.9477 days = 30 } }
+ if = { limit = { has_country_flag = pf_b14_done has_country_flag = pf_b16_done has_country_flag = pf_b16_gift_confirmed NOT = { has_country_flag = pf_b17_done } NOT = { has_country_flag = pf_b17_pending } } set_country_flag = pf_b17_started set_timed_country_flag = { flag = pf_b17_pending days = 30 } country_event = { id = Phrolova_event.9460 days = 1 } }
+
+ if = { limit = { has_country_flag = pf_b19_won NOT = { has_country_flag = pf_b20_shared_recruit_flow } NOT = { has_country_flag = pf_b20_recruit_flow_pending } }
+  set_country_flag = pf_b20_pending country_event = { id = Phrolova_event.9467 days = 1 }
+ }
+ if = { limit = { has_country_flag = pf_b20_shared_recruit_flow NOT = { has_country_flag = pf_b21_done } NOT = { has_country_flag = pf_b21_invitation_scheduled } }
+  set_country_flag = pf_b21_invitation_scheduled set_timed_country_flag = { flag = pf_b21_invitation_wait days = 180 }
+  country_event = { id = Phrolova_event.9834 days = 180 }
+ }
+}

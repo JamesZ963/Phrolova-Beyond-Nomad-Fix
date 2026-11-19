@@ -1,0 +1,14 @@
+pf36_sync_platforms_and_relic = {
+ pf_refresh_array_platforms = yes
+ if = {
+  limit = { has_relic = r_pf_math_instrument NOT = { has_country_flag = pf36_math_timing_checked } }
+  if = {
+   limit = { has_modifier = pf_math_instrument_active }
+   remove_modifier = pf_math_instrument_active
+   add_modifier = { modifier = pf_math_instrument_active days = @pf_math_instrument_duration }
+   remove_modifier = relic_activation_cooldown
+   add_modifier = { modifier = relic_activation_cooldown days = @pf_math_instrument_duration }
+  }
+  set_country_flag = pf36_math_timing_checked
+ }
+}

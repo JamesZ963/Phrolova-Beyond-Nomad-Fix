@@ -1,0 +1,11 @@
+tech_pf_blackshore_nodes = {
+    area = society
+    tier = 2
+    category = { statecraft }
+    cost = 8000
+    icon = tech_pf_blackshore_nodes
+    is_rare = yes
+    weight = 0
+    potential = { has_country_flag = pf_sk_stage_2_done }
+    ai_weight = { weight = 0 }
+}

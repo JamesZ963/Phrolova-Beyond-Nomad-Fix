@@ -1,7 +1,20 @@
 pf_aemeath_cast_ready = {
- any_owned_leader = { has_leader_flag = pf_shorekeeper leader_class = official }
- any_owned_leader = { has_leader_flag = Phrolova_scientist leader_class = scientist }
- any_owned_leader = { has_leader_flag = phrolova_denia leader_class = commander }
+    NOT = {
+        has_country_flag = pf_heart_abandoned
+    }
+    has_relic = r_phrolova_heart
+    any_owned_leader = {
+        has_leader_flag = pf_shorekeeper
+        leader_class = official
+    }
+    any_owned_leader = {
+        has_leader_flag = Phrolova_scientist
+        leader_class = scientist
+    }
+    any_owned_leader = {
+        has_leader_flag = phrolova_denia
+        leader_class = commander
+    }
 }
 pf_aemeath_location_ready = {
  has_Phrolova_leader = yes
@@ -13,3 +26,5 @@ pf_four_companions = {
  has_country_flag = pf_denia_recruited
  has_country_flag = pf_aemeath_recruited
 }
+
+pf_aemeath_heart_route_allowed = { NOT = { has_country_flag = pf_heart_abandoned } }

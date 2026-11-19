@@ -1,0 +1,5 @@
+# Evaluated in leader scope, as in vanilla dynamic leader traits.
+pf_sk_extra_nodes_value = {
+    base = 0
+    modifier = { owner = { is_variable_set = pf_sk_extra_nodes } add = owner.pf_sk_extra_nodes }
+}

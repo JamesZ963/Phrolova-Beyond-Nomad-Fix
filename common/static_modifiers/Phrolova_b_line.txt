@@ -1,0 +1,34 @@
+# B06 恢复的地下研究站：独立于A线重建状态的B线设施记录，效果为调试值。
+pf_b_research_station = {
+ planet_researchers_produces_mult = 0.05
+ icon = gfx/interface/icons/planet_modifiers/pf_b_research_station.dds
+}
+
+# B15/B16 索拉里斯设施升级；B16 验收后挂载。
+pf_b_forge_facility_3 = {
+ icon = "gfx/interface/icons/planet_modifiers/pm_dyson_sphere.dds"
+ planet_jobs_energy_produces_mult = 0.10
+ planet_researchers_produces_mult = 0.15
+}
+
+# 宙算仪轨主动效果：能源、工程研究与救援防护主题，临时数值。
+pf_math_instrument_active = {
+ country_energy_produces_mult = 0.25
+ planet_researchers_produces_mult = 0.20
+ country_megastructure_build_cap_add = 2
+ megastructure_build_speed_mult = 0.30
+ megastructures_upkeep_mult = -0.30
+}
+
+pf_b_forge_facility_2 = {
+ icon = "gfx/interface/icons/planet_modifiers/pm_dyson_swarm_2.dds"
+ planet_jobs_energy_produces_mult = 0.05
+ planet_researchers_produces_mult = 0.10
+}
+
+pf_b_forge_facility_1 = {
+ icon = "gfx/interface/icons/planet_modifiers/pm_station_reactor.dds"
+ planet_researchers_produces_mult = 0.05
+}
+
+pf_b19_core_defense = { ship_fire_rate_mult = 0.20 ship_shield_mult = 0.30 ship_armor_mult = 0.30 }

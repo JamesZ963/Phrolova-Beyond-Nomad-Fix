@@ -1,1 +1,1 @@
-pf17_all_bonds_complete = { pf_four_companions = yes has_country_flag = Phrolova_bond_5 has_country_flag = pf_denia_bond_3 has_country_flag = pf_shorekeeper_bond_3 has_country_flag = pf_aemeath_bond_3 }
+pf17_all_bonds_complete = { OR = { has_country_flag = pf075_party_running pf075_party_eligible = yes } }

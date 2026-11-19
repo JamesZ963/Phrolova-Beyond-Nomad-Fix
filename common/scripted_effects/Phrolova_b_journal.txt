@@ -1,0 +1,41 @@
+pf_b_journal_refresh = {
+ if = { limit = { NOT = { has_country_flag = pf_b_journal_v7 } } set_country_flag = pf_b_journal_v7
+ end_event_chain = pf_b_progress_06_restore remove_country_flag = pf_b_progress_06_restore_open
+ end_event_chain = pf_b_progress_07_recovery remove_country_flag = pf_b_progress_07_recovery_open
+ end_event_chain = pf_b_progress_08_fragment remove_country_flag = pf_b_progress_08_fragment_open
+ end_event_chain = pf_b_progress_09_tunnel remove_country_flag = pf_b_progress_09_tunnel_open
+ end_event_chain = pf_b_progress_10_validation remove_country_flag = pf_b_progress_10_validation_open
+ end_event_chain = pf_b_progress_11_frame remove_country_flag = pf_b_progress_11_frame_open
+ end_event_chain = pf_b_progress_12_trial remove_country_flag = pf_b_progress_12_trial_open
+ end_event_chain = pf_b_progress_13_records remove_country_flag = pf_b_progress_13_records_open
+ end_event_chain = pf_b_progress_14_archive remove_country_flag = pf_b_progress_14_archive_open
+ end_event_chain = pf_b_progress_15_half remove_country_flag = pf_b_progress_15_half_open
+ end_event_chain = pf_b_progress_16_core remove_country_flag = pf_b_progress_16_core_open
+ end_event_chain = pf_b_progress_18_prepare remove_country_flag = pf_b_progress_18_prepare_open
+ end_event_chain = pf_b_progress_19_start remove_country_flag = pf_b_progress_19_start_open
+ }
+ if = { limit = { has_country_flag = pf_morin_recruited pf_b_has_solaris = yes has_country_flag = pf_b_local_research_active NOT = { has_country_flag = pf_b04_done } }
+  if = { limit = { NOT = { has_country_flag = pf_b_local_research_open } } set_country_flag = pf_b_local_research_open begin_event_chain = { event_chain = pf_b_local_research target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_local_research_open } remove_country_flag = pf_b_local_research_open end_event_chain = pf_b_local_research } }
+ if = { limit = { has_country_flag = pf_morin_recruited pf_b_has_solaris = yes has_country_flag = pf_b05_done NOT = { has_country_flag = pf_b09_started } NOT = { has_country_flag = pf_b09_done } NOT = { has_technology = tech_wormhole_stabilization } }
+  if = { limit = { NOT = { has_country_flag = pf_b_expedition_wait_open } } set_country_flag = pf_b_expedition_wait_open begin_event_chain = { event_chain = pf_b_expedition_wait target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_expedition_wait_open } remove_country_flag = pf_b_expedition_wait_open end_event_chain = pf_b_expedition_wait } }
+ if = { limit = { has_country_flag = pf_morin_recruited pf_b_has_solaris = yes has_country_flag = pf_b10_done NOT = { has_country_flag = pf_b_forge_stage_1_started } NOT = { has_country_flag = pf_b_forge_stage_1 } }
+  if = { limit = { NOT = { has_country_flag = pf_b_progress_11_frame_open } } set_country_flag = pf_b_progress_11_frame_open begin_event_chain = { event_chain = pf_b_progress_11_frame target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_progress_11_frame_open } remove_country_flag = pf_b_progress_11_frame_open end_event_chain = pf_b_progress_11_frame } }
+ if = { limit = { has_country_flag = pf_morin_recruited pf_b_has_solaris = yes has_country_flag = pf_b13_done has_country_flag = pf_b11_raid_won has_country_flag = pf_b_forge_stage_1 NOT = { has_country_flag = pf_b_forge_stage_2_started } NOT = { has_country_flag = pf_b_forge_stage_2 } }
+  if = { limit = { NOT = { has_country_flag = pf_b_progress_15_half_open } } set_country_flag = pf_b_progress_15_half_open begin_event_chain = { event_chain = pf_b_progress_15_half target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_progress_15_half_open } remove_country_flag = pf_b_progress_15_half_open end_event_chain = pf_b_progress_15_half } }
+ if = { limit = { has_country_flag = pf_morin_recruited pf_b_has_solaris = yes has_country_flag = pf_b14_done has_country_flag = pf_b15_raid_won has_country_flag = pf_b_forge_stage_2 NOT = { has_country_flag = pf_b_forge_stage_3_started } NOT = { has_country_flag = pf_b_forge_stage_3 } }
+  if = { limit = { NOT = { has_country_flag = pf_b_progress_16_core_open } } set_country_flag = pf_b_progress_16_core_open begin_event_chain = { event_chain = pf_b_progress_16_core target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_progress_16_core_open } remove_country_flag = pf_b_progress_16_core_open end_event_chain = pf_b_progress_16_core } }
+ if = { limit = { has_country_flag = pf_morin_recruited pf_b_has_solaris = yes has_country_flag = pf_b17_done NOT = { has_country_flag = pf_b19_preparing } NOT = { has_country_flag = pf_b19_engaged } NOT = { has_country_flag = pf_b19_won } NOT = { has_country_flag = pf_b19_battle_started } }
+  if = { limit = { NOT = { has_country_flag = pf_b_receive_ready_open } } set_country_flag = pf_b_receive_ready_open begin_event_chain = { event_chain = pf_b_receive_ready target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_receive_ready_open } remove_country_flag = pf_b_receive_ready_open end_event_chain = pf_b_receive_ready } }
+ if = { limit = { pf_b_has_solaris = yes has_country_flag = pf_b11_raid_failed NOT = { has_country_flag = pf_b11_raid_won } }
+  if = { limit = { NOT = { has_country_flag = pf_b_raid_11_retry_open } } set_country_flag = pf_b_raid_11_retry_open begin_event_chain = { event_chain = pf_b_raid_11_retry target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_raid_11_retry_open } remove_country_flag = pf_b_raid_11_retry_open end_event_chain = pf_b_raid_11_retry } }
+ if = { limit = { pf_b_has_solaris = yes has_country_flag = pf_b15_raid_failed NOT = { has_country_flag = pf_b15_raid_won } }
+  if = { limit = { NOT = { has_country_flag = pf_b_raid_15_retry_open } } set_country_flag = pf_b_raid_15_retry_open begin_event_chain = { event_chain = pf_b_raid_15_retry target = this } }
+ } else = { if = { limit = { has_country_flag = pf_b_raid_15_retry_open } remove_country_flag = pf_b_raid_15_retry_open end_event_chain = pf_b_raid_15_retry } }
+}

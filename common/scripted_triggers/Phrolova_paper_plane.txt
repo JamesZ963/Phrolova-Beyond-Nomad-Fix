@@ -1,0 +1,9 @@
+pf44_has_paper_plane = {
+ OR = {
+  has_relic = r_pf_paper_plane
+  has_relic = r_pf_paper_plane_2
+  has_relic = r_pf_paper_plane_3
+  has_relic = r_pf_paper_plane_4
+  has_relic = r_pf_paper_plane_5
+ }
+}

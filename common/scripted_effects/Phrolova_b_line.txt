@@ -1,0 +1,449 @@
+# B线第一轮：莫宁单实例身份、B00-B05状态机、三阶段拟造炉芯调试原型。
+# 本文件只使用 pf_b_ / pf_morin / PF_B_ 前缀，避免影响A线、祭典和既有角色返场。
+
+# ---------- 莫宁身份 ----------
+pf_preview_morin = {
+ save_event_target_as = pf_preview_host
+ random_country = { limit = { has_country_flag = pf_preview_morin@event_target:pf_preview_host } save_event_target_as = pf_preview_country_morin }
+ if = { limit = { NOT = { exists = event_target:pf_preview_country_morin } }
+  create_country = { name = NAME_leader_country type = faction auto_delete = no }
+  last_created_country = { set_country_flag = pf_preview_morin@event_target:pf_preview_host save_event_target_as = pf_preview_country_morin }
+ }
+ event_target:pf_preview_country_morin = {
+  if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_preview_candidate } } }
+   create_leader = { background_ethic = ethic_egalitarian class = scientist tier = leader_tier_legendary species = event_target:pf_preview_host name = NAME_PF_MORIN custom_description = PF_morin_bio
+    immortal = yes hide_age = yes gender = female skill = 6 randomize_traits = no skip_background_generation = yes
+    traits = { trait = leader_trait_pf_morin trait = leader_trait_pf_morin_2 trait = leader_trait_pf_morin_3 trait = leader_trait_cyborg trait = leader_trait_pf_morin_injured }
+    effect = { set_leader_flag = pf_preview_candidate set_leader_flag = is_in_recruit_window change_leader_portrait = PF_morin_0 }
+   }
+  }
+  random_owned_leader = { limit = { has_leader_flag = pf_preview_candidate } pf_recruit_initial_level = yes
+   if = { limit = { NOT = { has_trait = leader_trait_pf_morin } } add_trait = { trait = leader_trait_pf_morin show_message = no } }
+   if = { limit = { NOT = { has_trait = leader_trait_pf_morin_2 } } add_trait = { trait = leader_trait_pf_morin_2 show_message = no } }
+   if = { limit = { NOT = { has_trait = leader_trait_pf_morin_3 } } add_trait = { trait = leader_trait_pf_morin_3 show_message = no } }
+   if = { limit = { NOT = { has_trait = leader_trait_cyborg } } add_trait = { trait = leader_trait_cyborg show_message = no } }
+   if = { limit = { NOT = { has_trait = leader_trait_pf_morin_injured } } add_trait = { trait = leader_trait_pf_morin_injured show_message = no } }
+   change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker
+  }
+ }
+}
+pf_hire_morin = {
+ if = { limit = { NOT = { any_owned_leader = { has_leader_flag = pf_morin } } exists = event_target:pf_speaker }
+  clone_leader = { target = event_target:pf_speaker skip_background_generation = yes }
+  last_created_leader = { set_owner = root remove_leader_flag = pf_preview_candidate pf_recruit_initial_level = yes remove_leader_flag = is_in_recruit_window set_leader_flag = pf_morin set_leader_flag = leader_death_events_blocked }
+ }
+}
+pf_create_morin = {
+ if = {
+  create_leader = {
+   background_ethic = ethic_egalitarian
+   class = scientist
+   tier = leader_tier_legendary
+   species = root
+   name = NAME_PF_MORIN
+   custom_description = PF_morin_bio
+   immortal = yes
+   hide_age = yes
+   gender = female
+   skill = 6
+   randomize_traits = no
+   skip_background_generation = yes
+   traits = {
+    trait = leader_trait_pf_morin
+    trait = leader_trait_pf_morin_2
+    trait = leader_trait_pf_morin_3
+    trait = leader_trait_cyborg
+    trait = leader_trait_pf_morin_injured
+   }
+   effect = {
+    set_leader_flag = pf_morin
+    set_leader_flag = leader_death_events_blocked
+    change_leader_portrait = PF_morin_0
+   }
+  }
+  last_created_leader = {
+   set_owner = root
+  }
+  limit = {
+   NOT = {
+    any_owned_leader = {
+     pf_guard_id_morin = yes
+     NOT = {
+      is_pool_leader = yes
+     }
+    }
+   }
+  }
+ }
+}
+pf_portrait_morin = {
+ every_owned_leader = { limit = { has_leader_flag = pf_morin }
+  if = { limit = { owner = { has_country_flag = pf_morin_outfit_base } } change_leader_portrait = PF_morin_0 }
+  else_if = { limit = { owner = { has_country_flag = pf_morin_outfit_1 OR = { has_country_flag = pf_morin_portrait_1 has_country_flag = pf_morin_portrait_2 } } } change_leader_portrait = PF_morin_1 }
+  else_if = { limit = { owner = { has_country_flag = pf_morin_outfit_2 has_country_flag = pf_morin_portrait_2 } } change_leader_portrait = PF_morin_2 }
+  else_if = { limit = { owner = { has_country_flag = pf_morin_portrait_2 } } change_leader_portrait = PF_morin_2 }
+  else_if = { limit = { owner = { has_country_flag = pf_morin_portrait_1 } } change_leader_portrait = PF_morin_1 }
+  else = { change_leader_portrait = PF_morin_0 }
+ }
+}
+pf_ensure_morin_traits = {
+ if = { limit = { has_country_flag = pf_morin_rehabilitation_done } every_owned_leader = { limit = { has_leader_flag = pf_morin } remove_trait = leader_trait_pf_morin_injured } }
+ every_owned_leader = { limit = { has_leader_flag = pf_morin }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_morin } } add_trait = { trait = leader_trait_pf_morin show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_morin }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_morin_2 } } add_trait = { trait = leader_trait_pf_morin_2 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_morin }
+  if = { limit = { NOT = { has_trait = leader_trait_pf_morin_3 } } add_trait = { trait = leader_trait_pf_morin_3 show_message = no } }
+ }
+ every_owned_leader = { limit = { has_leader_flag = pf_morin }
+  if = { limit = { NOT = { has_trait = leader_trait_cyborg } } add_trait = { trait = leader_trait_cyborg show_message = no } }
+ }
+ if = { limit = { has_country_flag = pf_b21_done }
+ every_owned_leader = { limit = { has_leader_flag = pf_morin NOT = { has_trait = leader_trait_pf_morin_4 } } add_trait = { trait = leader_trait_pf_morin_4 show_message = no } }
+ }
+}
+pf_speaker_morin = {
+ random_owned_leader = { limit = { has_leader_flag = pf_morin } change_background_ethic = ethic_egalitarian save_event_target_as = pf_speaker }
+ if = { limit = { NOT = { exists = event_target:pf_speaker } } pf_preview_morin = yes }
+}
+
+# ---------- B00-B05 状态机 ----------
+pf_b_after_recruit = {
+ if = { limit = { has_country_flag = pf_b03_done has_country_flag = pf_morin_timeline_initialized NOT = { has_country_flag = pf_morin_fragment_wait } NOT = { has_country_flag = pf_b04_started } NOT = { has_country_flag = pf_b04_done } }
+  set_country_flag = pf_b04_started country_event = { id = Phrolova_event.9414 days = 1 }
+ }
+}
+pf_b_enable_project = { # country, $KEY$ = special project key, always on the story's Solaris
+ pf_find_targets = yes
+ if = { limit = { exists = event_target:pf_solaris event_target:pf_solaris = { pf_solaris_owner = yes } NOT = { has_special_project = $KEY$ } }
+  event_target:pf_solaris = { enable_special_project = { name = $KEY$ owner = event_target:pf_owner location = this } }
+ }
+}
+
+# B09 is the only research project away from Solaris. There is exactly one
+# spatial destination per player: the existing A-line pf_aleph system/asteroid.
+# A B-line expedition creates that same site when absent; it never creates a
+# second pf_b_aleph site.
+pf_b09_find_target = {
+    pf_find_targets = yes
+    if = {
+        limit = {
+            exists = event_target:pf_aleph
+        }
+        event_target:pf_aleph = {
+            save_event_target_as = pf_b09_target
+        }
+    }
+    if = {
+        limit = {
+            exists = event_target:pf_aleph_system
+        }
+        event_target:pf_aleph_system = {
+            random_system_ambient_object = {
+                limit = {
+                    is_ambient_object_type = pf_tunnel_derelict
+                }
+                save_event_target_as = pf_b09_wreck
+            }
+        }
+    }
+}
+
+pf_b09_migrate_legacy_site = {
+ # Old 0.75 test builds could have a B-specific pf_b_aleph asteroid. Fold it
+ # into the single pf_aleph identity before any new target/spawn decision.
+ pf_find_targets = yes
+ if = { limit = { NOT = { has_country_flag = pf_aleph_created } }
+  random_system = {
+   limit = { has_star_flag = pf_b_aleph@event_target:pf_owner }
+   set_star_flag = pf_aleph@event_target:pf_owner
+   random_system_planet = { limit = { has_planet_flag = pf_b_aleph@event_target:pf_owner }
+    set_planet_flag = pf_aleph@event_target:pf_owner
+    save_event_target_as = pf_b09_target
+   }
+   event_target:pf_owner = {
+    set_country_flag = pf_aleph_created
+    set_country_flag = pf_wormhole_open
+    set_country_flag = pf_b_aleph_created_by_b
+    set_country_flag = pf_b09_wreck_ready
+    
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_wormhole_open exists = event_target:pf_solaris exists = event_target:pf_aleph_system }
+  add_seen_bypass_type = pf_story_wormhole
+  set_country_flag = pf_passage_registered
+ }
+
+   }
+  }
+ }
+}
+
+pf_b09_spawn_site = {
+ pf_find_targets = yes
+ if = { limit = {
+   exists = event_target:pf_solaris
+   event_target:pf_solaris = { pf_solaris_owner = yes }
+   NOT = { has_country_flag = pf_aleph_created }
+  }
+  event_target:pf_solaris = { solar_system = {
+   save_event_target_as = pf_b_solaris_system
+   spawn_system = { min_distance = 20 max_distance = 30 initializer = pf_aleph_system hyperlane = no is_discovered = yes
+    effect = {
+     set_star_flag = pf_aleph@event_target:pf_owner
+     save_event_target_as = pf_aleph_system
+     link_wormholes = event_target:pf_b_solaris_system
+     random_system_planet = { limit = { has_planet_flag = pf_aleph_asteroid }
+      set_planet_flag = pf_aleph@event_target:pf_owner
+      create_archaeological_site = pf_aleph_site
+      pf22_reserve_tunnel_wreck = yes
+     }
+     event_target:pf_owner = {
+      set_country_flag = pf_aleph_created
+      set_country_flag = pf_wormhole_open
+      set_country_flag = pf_b_aleph_created_by_b
+      set_country_flag = pf_b09_wreck_ready
+      
+ pf_find_targets = yes
+ if = { limit = { has_country_flag = pf_wormhole_open exists = event_target:pf_solaris exists = event_target:pf_aleph_system }
+  add_seen_bypass_type = pf_story_wormhole
+  set_country_flag = pf_passage_registered
+ }
+
+      country_event = { id = Phrolova_event.9436 }
+     }
+    }
+   }
+  } }
+ }
+}
+
+pf_b09_acquire_site = {
+ pf_b09_migrate_legacy_site = yes
+ pf_find_targets = yes
+ if = { limit = { NOT = { has_country_flag = pf_aleph_created } } pf_b09_spawn_site = yes }
+ pf_b09_find_target = yes
+ if = { limit = { exists = event_target:pf_owner } event_target:pf_owner = { remove_country_flag = pf_b09_wreck_ready } }
+ if = { limit = { exists = event_target:pf_b09_target } event_target:pf_owner = { set_country_flag = pf_b_aleph_created_by_b } }
+ if = { limit = { exists = event_target:pf_b09_target } event_target:pf_b09_target = { pf22_reserve_tunnel_wreck = yes } }
+ if = { limit = { exists = event_target:pf_b09_target event_target:pf_b09_target = { solar_system = { any_system_ambient_object = { is_ambient_object_type = pf_tunnel_derelict } } } } event_target:pf_owner = { set_country_flag = pf_b09_wreck_ready } }
+}
+
+pf_b09_enable = {
+ pf_b09_find_target = yes
+ if = { limit = { has_country_flag = pf_wormhole_open } pf_register_passage = yes }
+ # Relocate offered projects only; active legacy research keeps its progress.
+ if = { limit = {
+  exists = event_target:pf_b09_wreck has_special_project = PF_B09_TUNNEL
+  NOT = { has_country_flag = pf_b09_wreck_bound }
+  NOT = { is_researching_special_project = PF_B09_TUNNEL }
+  NOT = { any_owned_leader = { is_researching_special_project = PF_B09_TUNNEL } }
+ }
+  abort_special_project = { type = PF_B09_TUNNEL location = event_target:pf_b09_target }
+ }
+ if = { limit = { exists = event_target:pf_b09_wreck NOT = { has_special_project = PF_B09_TUNNEL } }
+  set_country_flag = pf_b09_wreck_bound
+  event_target:pf_b09_wreck = { enable_special_project = { name = PF_B09_TUNNEL owner = event_target:pf_owner location = this } }
+ }
+}
+
+pf_b09_resume = {
+ if = { limit = { has_country_flag = pf_b09_started has_country_flag = pf_b_departure_confirmed NOT = { has_country_flag = pf_b09_done } NOT = { has_country_flag = pf_b09_cooldown } }
+  country_event = { id = Phrolova_event.9823 }
+ }
+}
+
+pf_b_resume_projects = {
+ if = { limit = { has_country_flag = pf_b01_started NOT = { has_country_flag = pf_b03_wake_done } NOT = { has_country_flag = pf_b01_cooldown } } pf_b_enable_project = { KEY = PF_B01_POLAR_SURVEY } }
+ if = { limit = { has_country_flag = pf_b_forge_stage_1_started NOT = { has_country_flag = pf_b_new_queue_1 } NOT = { has_country_flag = pf_b_forge_stage_1 } NOT = { has_country_flag = pf_b_forge_1_cooldown } } pf_b_enable_project = { KEY = PF_B11_FRAME } }
+ if = { limit = { has_country_flag = pf_b_forge_stage_2_started NOT = { has_country_flag = pf_b_new_queue_2 } NOT = { has_country_flag = pf_b_forge_stage_2 } NOT = { has_country_flag = pf_b_forge_2_cooldown } } pf_b_enable_project = { KEY = PF_B15_HALF } }
+ if = { limit = { has_country_flag = pf_b_forge_stage_3_started NOT = { has_country_flag = pf_b_new_queue_3 } NOT = { has_country_flag = pf_b_forge_stage_3 } NOT = { has_country_flag = pf_b_forge_3_cooldown } } pf_b_enable_project = { KEY = PF_B16_CORE } }
+}
+pf_b_research_station_ensure = {
+ every_owned_planet = { limit = { has_planet_flag = pf_solaris } pf_b_sync_solaris_stage = yes }
+}
+pf_b_monthly = {
+ country_event = { id = Phrolova_event.9844 }
+ country_event = { id = Phrolova_event.9833 }
+ if = { limit = { has_country_flag = pf_morin_recruited NOT = { has_country_flag = pf_morin_timeline_initialized } } country_event = { id = Phrolova_event.9832 } }
+ if = { limit = { has_country_flag = pf_heart_abandoned NOT = { has_modifier = pf_heart_legacy } } add_modifier = { modifier = pf_heart_legacy days = -1 } }
+ if = { limit = { has_country_flag = pf_heart_abandoned NOT = { has_country_flag = pf_b00_done } } set_country_flag = pf_b_eligible country_event = { id = Phrolova_event.9400 days = 1 } }
+ if = { limit = { has_country_flag = pf_morin_recruited } pf_create_morin = yes pf_portrait_morin = yes pf_ensure_morin_traits = yes }
+ pf_b_research_station_ensure = yes
+ if = { limit = { has_country_flag = pf_b00_done NOT = { has_country_flag = pf_b01_dismantle_wait } has_country_flag = pf_shorekeeper_recruited NOT = { has_country_flag = pf_b01_started } NOT = { has_country_flag = pf_b01_done } } country_event = { id = Phrolova_event.9410 days = 1 } }
+ if = { limit = { has_country_flag = pf_b03_done NOT = { has_country_flag = pf_b04_started } NOT = { has_country_flag = pf_b04_done } } country_event = { id = Phrolova_event.9825 } }
+ if = { limit = { has_country_flag = pf_b04_started NOT = { has_country_flag = pf_b04_done } NOT = { has_country_flag = pf_b04_briefing_seen } } country_event = { id = Phrolova_event.9414 days = 1 } }
+ if = { limit = { has_country_flag = pf_b04_done NOT = { has_country_flag = pf_b05_started } NOT = { has_country_flag = pf_b05_done } NOT = { has_country_flag = pf_b05_pending } } country_event = { id = Phrolova_event.9416 days = 1 } }
+ country_event = { id = Phrolova_event.9820 }
+ country_event = { id = Phrolova_event.9824 }
+ country_event = { id = Phrolova_event.9821 }
+ country_event = { id = Phrolova_event.9822 }
+}
+
+# ---------- 三阶段拟造炉芯调试原型 ----------
+pf_b_forge_adopt = { # bind pre-flag prototypes at the same owner/Solaris/type identity before removal or repair
+ # Acquire country-bound targets here to keep startup effect expansion shallow.
+
+ if = { limit = { is_scope_type = country }
+ save_event_target_as = pf_owner
+ # Local event targets are reacquired from persistent country-linked flags.
+ random_system = {
+  limit = { any_system_planet = { has_planet_flag = pf_solaris@event_target:pf_owner } }
+  random_system_planet = { limit = { has_planet_flag = pf_solaris@event_target:pf_owner } save_event_target_as = pf_solaris }
+ }
+ random_system = {
+  limit = { has_star_flag = pf_aleph@event_target:pf_owner }
+  save_event_target_as = pf_aleph_system
+  random_system_planet = { limit = { has_planet_flag = pf_aleph@event_target:pf_owner } save_event_target_as = pf_aleph }
+ }
+
+ }
+
+ every_owned_megastructure = {
+  limit = {
+   is_owned_by = event_target:pf_owner
+   NOT = { has_megastructure_flag = pf_b_forge }
+   OR = { is_megastructure_type = pf_forge_frame is_megastructure_type = pf_forge_half is_megastructure_type = pf_forge_core }
+   solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = event_target:pf_owner pf_solaris_owner = yes } }
+  }
+  set_megastructure_flag = pf_b_forge
+ }
+}
+pf_b_forge_remove = {
+ pf_b_forge_adopt = yes
+ pf_find_targets = yes
+ every_owned_megastructure = {
+  limit = {
+   is_owned_by = event_target:pf_owner
+   has_megastructure_flag = pf_b_forge
+   OR = { is_megastructure_type = pf_forge_frame is_megastructure_type = pf_forge_half is_megastructure_type = pf_forge_core }
+   solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = event_target:pf_owner pf_solaris_owner = yes } }
+  }
+  remove_megastructure = this
+ }
+}
+pf_b_forge_remove_strays = { # debug reset only: same owner and type, outside the current Solaris; never other countries
+ every_owned_megastructure = {
+  limit = {
+   is_owned_by = root
+   OR = { is_megastructure_type = pf_forge_frame is_megastructure_type = pf_forge_half is_megastructure_type = pf_forge_core }
+   NOT = { solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root pf_solaris_owner = yes } } }
+  }
+  remove_megastructure = this
+ }
+}
+pf_b_forge_spawn = { # country, $TYPE$ = pf_forge_frame/pf_forge_half/pf_forge_core
+ pf_find_targets = yes
+ if = { limit = {
+   exists = event_target:pf_solaris
+   event_target:pf_solaris = { pf_solaris_owner = yes }
+   NOT = { pf_b_forge_any_in_system = yes }
+  }
+  event_target:pf_solaris = {
+   solar_system = {
+    spawn_megastructure = { type = $TYPE$ name = "PF_B_FORGE_NAME" owner = event_target:pf_owner planet = star orbit_distance = 0 orbit_angle = 0 graphical_culture = event_target:pf_owner
+     init_effect = { set_megastructure_flag = pf_b_forge }
+    }
+   }
+  }
+ }
+}
+pf_b_forge_start_1 = {
+ if = { limit = { NOT = { has_country_flag = pf_b_forge_stage_1_started } NOT = { has_country_flag = pf_b_forge_stage_1 } }
+  set_country_flag = pf_b_forge_stage_1_started
+  pf_b_enable_project = { KEY = PF_B11_FRAME }
+ }
+}
+pf_b_forge_start_2 = {
+ if = { limit = { has_country_flag = pf_b_forge_stage_1 NOT = { has_country_flag = pf_b_forge_stage_2_started } NOT = { has_country_flag = pf_b_forge_stage_2 } }
+  set_country_flag = pf_b_forge_stage_2_started
+  pf_b_enable_project = { KEY = PF_B15_HALF }
+ }
+}
+pf_b_forge_start_3 = {
+ if = { limit = { has_country_flag = pf_b_forge_stage_2 NOT = { has_country_flag = pf_b_forge_stage_3_started } NOT = { has_country_flag = pf_b_forge_stage_3 } }
+  set_country_flag = pf_b_forge_stage_3_started
+  pf_b_enable_project = { KEY = PF_B16_CORE }
+ }
+}
+pf_b_forge_complete_1 = {
+ pf_b_forge_remove = yes
+ pf_b_forge_spawn = { TYPE = pf_forge_frame }
+ set_country_flag = pf_b_forge_stage_1
+ set_country_flag = pf_b11_done
+ every_owned_planet = { limit = { has_planet_flag = pf_solaris } pf_b_sync_solaris_stage = yes }
+ remove_country_flag = pf_b_forge_stage_1_started
+ country_event = { id = Phrolova_event.9852 }
+}
+pf_b_forge_complete_2 = {
+ pf_b_forge_remove = yes
+ pf_b_forge_spawn = { TYPE = pf_forge_half }
+ set_country_flag = pf_b_forge_stage_2
+ set_country_flag = pf_b15_done
+ pf_find_targets = yes
+ if = { limit = { exists = event_target:pf_solaris } event_target:pf_solaris = { pf_b_sync_solaris_stage = yes } }
+ remove_country_flag = pf_b_forge_stage_2_started
+ country_event = { id = Phrolova_event.9852 }
+}
+pf_b_forge_complete_3 = {
+ pf_b_forge_remove = yes
+ pf_b_forge_spawn = { TYPE = pf_forge_core }
+ set_country_flag = pf_b_forge_stage_3
+ set_country_flag = pf_b16_done
+ set_country_flag = pf_b_forge_complete
+ remove_country_flag = pf_b_forge_stage_3_started
+ pf_b16_grant_rewards = yes
+}
+pf_b_forge_pay_1 = { add_resource = { alloys = @pf_b_stage_1_alloys_cost minerals = @pf_b_stage_1_minerals_cost } }
+pf_b_forge_pay_2 = { add_resource = { alloys = @pf_b_stage_2_alloys_cost minerals = @pf_b_stage_2_minerals_cost } }
+pf_b_forge_pay_3 = { add_resource = { alloys = @pf_b_stage_3_alloys_cost minerals = @pf_b_stage_3_minerals_cost } }
+pf_b_forge_ensure = { # idempotent repair, bound to the current country's Solaris and expected stage type
+ pf_b_forge_adopt = yes
+ if = { limit = { has_country_flag = pf_b_forge_stage_1 NOT = { has_country_flag = pf_b_forge_stage_2 } NOT = { pf_b_forge_has_frame = yes } }
+  pf_b_forge_remove = yes
+  pf_b_forge_spawn = { TYPE = pf_forge_frame }
+ }
+ if = { limit = { has_country_flag = pf_b_forge_stage_2 NOT = { has_country_flag = pf_b_forge_stage_3 } NOT = { pf_b_forge_has_half = yes } }
+  pf_b_forge_remove = yes
+  pf_b_forge_spawn = { TYPE = pf_forge_half }
+ }
+ if = { limit = { has_country_flag = pf_b_forge_stage_3 NOT = { pf_b_forge_has_core = yes } }
+  pf_b_forge_remove = yes
+  pf_b_forge_spawn = { TYPE = pf_forge_core }
+ }
+}
+
+# ---------- 调试入口 ----------
+pf_b_debug_setup = {
+ set_country_flag = pf_b_eligible
+ set_country_flag = pf_b00_done
+ set_country_flag = pf_b01_done
+ set_country_flag = pf_b02_done
+ set_country_flag = pf_b03_wake_done
+ set_country_flag = pf_b03_done
+ set_country_flag = pf_b04_done
+ set_country_flag = pf_b05_done
+ set_country_flag = pf_morin_recruited
+ pf_create_morin = yes
+ pf_portrait_morin = yes
+ pf_ensure_morin_traits = yes
+ add_resource = { energy = @pf_b_debug_energy minerals = @pf_b_debug_minerals alloys = @pf_b_debug_alloys }
+}
+pf_b_debug_reset = {
+ pf_b_forge_remove = yes
+ pf_b_forge_remove_strays = yes
+ pf_find_targets = yes
+ if = { limit = { exists = event_target:pf_solaris }
+  if = { limit = { has_special_project = PF_B11_FRAME } abort_special_project = { type = PF_B11_FRAME location = event_target:pf_solaris } }
+  if = { limit = { has_special_project = PF_B15_HALF } abort_special_project = { type = PF_B15_HALF location = event_target:pf_solaris } }
+  if = { limit = { has_special_project = PF_B16_CORE } abort_special_project = { type = PF_B16_CORE location = event_target:pf_solaris } }
+ }
+ remove_country_flag = pf_b_forge_stage_1
+ remove_country_flag = pf_b_forge_stage_2
+ remove_country_flag = pf_b_forge_stage_3
+ remove_country_flag = pf_b_forge_complete
+ remove_country_flag = pf_b_forge_stage_1_started
+ remove_country_flag = pf_b_forge_stage_2_started
+ remove_country_flag = pf_b_forge_stage_3_started
+}

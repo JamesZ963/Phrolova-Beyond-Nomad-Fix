@@ -1,0 +1,107 @@
+ship_section_template = {
+    key = SUZHE_TITAN_CORE
+    fits_on_slot = core
+    entity = suizhe_section_entity
+    icon = GFX_ship_part_core_mid
+    ai_tags = {
+        artillery
+    }
+    component_slot = {
+        name = TITANIC_01
+        template = suizhe_t_slot
+        locatorname = sword_mount
+    }
+    component_slot = {
+        name = EXTRA_LARGE_01
+        template = suizhe_x_slot
+        locatorname = xl_01
+    }
+    component_slot = {
+        name = EXTRA_LARGE_02
+        template = suizhe_x_slot
+        locatorname = xl_02
+    }
+    component_slot = {
+        name = LARGE_GUN_01
+        template = suizhe_l_slot
+        locatorname = large_01
+    }
+    component_slot = {
+        name = LARGE_GUN_02
+        template = suizhe_l_slot
+        locatorname = large_02
+    }
+    component_slot = {
+        name = LARGE_GUN_03
+        template = suizhe_l_slot
+        locatorname = large_03
+    }
+    component_slot = {
+        name = LARGE_GUN_04
+        template = suizhe_l_slot
+        locatorname = large_04
+    }
+    component_slot = {
+        name = LARGE_GUN_05
+        template = suizhe_l_slot
+        locatorname = large_05
+    }
+    component_slot = {
+        name = LARGE_GUN_06
+        template = suizhe_l_slot
+        locatorname = large_06
+    }
+    component_slot = {
+        name = POINT_DEFENCE_01
+        template = suizhe_p_slot
+        locatorname = pd_01
+    }
+    component_slot = {
+        name = POINT_DEFENCE_02
+        template = suizhe_p_slot
+        locatorname = pd_02
+    }
+    component_slot = {
+        name = POINT_DEFENCE_03
+        template = suizhe_p_slot
+        locatorname = pd_03
+    }
+    component_slot = {
+        name = POINT_DEFENCE_04
+        template = suizhe_p_slot
+        locatorname = pd_04
+    }
+    large_utility_slots = 20
+    aux_utility_slots = 3
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 1000
+        }
+    }
+    ship_size = pf075_suizhe_imperial
+}
+
+ship_section_template = {
+    key = SUZHE2_TITAN_CORE
+    fits_on_slot = core
+    entity = suizhe_section_entity
+    icon = GFX_ship_part_core_mid
+    ai_tags = {
+        artillery
+    }
+    component_slot = {
+        name = TITANIC_01
+        template = suizhe2_t_slot
+        locatorname = sword_mount
+    }
+    large_utility_slots = 20
+    aux_utility_slots = 3
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 1000
+        }
+    }
+    ship_size = pf075_suizhe_melee
+}

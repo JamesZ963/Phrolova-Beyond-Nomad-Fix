@@ -4,11 +4,7 @@ pf24_has_target_crisis = {
 }
 pf24_can_give_void = { NOT = { pf24_has_target_crisis = yes } }
 # Recognize already-completed old choices even before the next monthly migration.
-pf24_void_pact_bound = {
- OR = { has_country_flag = pf24_void_pact
-  AND = { has_country_flag = pf_void_choice_done NOT = { has_country_flag = pf_void_kept } }
- }
-}
+pf24_void_pact_bound = { has_country_flag = pf24_void_pact }
 pf24_nemesis_resonance = { has_ascension_perk = ap_become_the_crisis }
 pf24_cosmogenesis_resonance = {
  has_ascension_perk = ap_cosmogenesis NOT = { has_ascension_perk = ap_become_the_crisis }

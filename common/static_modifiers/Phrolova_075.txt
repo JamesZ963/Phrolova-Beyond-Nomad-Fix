@@ -1,0 +1,21 @@
+pf_solaris_home_reborn = {
+ district_pf_unique_1_max_add = 1
+ district_pf_unique_2_max_add = 1
+ district_pf_unique_3_max_add = 1
+ district_pf_unique_4_max_add = 1
+ district_pf_unique_5_max_add = 1
+ district_pf_unique_6_max_add = 1
+ district_pf_tidal_center_max_add = 1
+ planet_building_build_speed_mult = 0.40
+ logistic_growth_mult = 0.20
+ pop_housing_usage_mult = -0.20
+ planet_jobs_produces_mult = 0.20
+ pop_happiness = 0.20
+ planet_stability_add = 20
+ icon = gfx/interface/icons/planet_modifiers/pf075_home_reborn.dds
+}
+pf075_aid_trust = {
+ country_trust_cap_add = 30
+ country_trust_growth = 0.25
+ icon = gfx/interface/icons/planet_modifiers/pf44_everstar.dds
+}

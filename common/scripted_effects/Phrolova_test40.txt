@@ -1,0 +1,79 @@
+
+pf40_cleanup_rebuild_state = {
+ save_event_target_as = pf_owner
+ if = {
+  limit = {
+   NOT = {
+    pf40_rebuild_eligible = yes
+   }
+  }
+  if = {
+   limit = {
+    has_special_project = PF_AMX_REBUILD
+   }
+   while = {
+    count = 64
+    limit = {
+     has_special_project = PF_AMX_REBUILD
+    }
+    abort_special_project = {
+     type = PF_AMX_REBUILD
+    }
+   }
+   if = {
+    limit = {
+     NOT = {
+      has_special_project = PF_AMX_REBUILD
+     }
+    }
+    log = PF41_INVALID_REBUILD_PROJECTS_PURGED
+   }
+  }
+  remove_country_flag = pf40_rebuild_registered
+  if = {
+   limit = {
+    has_country_flag = pf075_rebuild_paid
+   }
+   add_resource = {
+    alloys = 10000
+    energy = 10000
+    minerals = 5000
+    volatile_motes = 1000
+   }
+   remove_country_flag = pf075_rebuild_paid
+  }
+  remove_country_flag = pf075_rebuild_finished
+  if = {
+   limit = {
+    NOT = {
+     has_country_flag = pf075_suizhe_launched
+    }
+   }
+   remove_country_flag = pf075_suizhe_destroyed
+  }
+  if = {
+   limit = {
+    pf075_suizhe_exists = yes
+   }
+   remove_country_flag = pf075_suizhe_destroyed
+  }
+ }
+ if = {
+  limit = {
+   NOT = {
+    has_special_project = PF_AMX_REBUILD
+   }
+  }
+  remove_country_flag = pf40_rebuild_registered
+ }
+}
+pf40_sync_suizhe_command = {
+ every_owned_ship = {
+  limit = { OR = { pf075_suizhe_ship = yes has_modifier = pf40_aemeath_suizhe_command } }
+  if = { limit = { pf075_suizhe_ship = yes exists = fleet fleet = { exists = leader leader = { has_leader_flag = pf_aemeath } } }
+   if = { limit = { NOT = { has_modifier = pf40_aemeath_suizhe_command } }
+    add_modifier = { modifier = pf40_aemeath_suizhe_command days = -1 }
+   }
+  } else = { remove_modifier = pf40_aemeath_suizhe_command }
+ }
+}

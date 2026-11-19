@@ -36,3 +36,37 @@ tech_pf_special_4 = { area = physics tier = 1 cost = 3000 category = { field_man
 tech_pf_special_5 = { area = society tier = 1 cost = 3000 category = { statecraft } is_rare = yes weight = 0 ai_weight = { weight = 0 } }
 tech_pf_special_6 = { area = society tier = 1 cost = 3000 category = { statecraft } is_rare = yes weight = 0 ai_weight = { weight = 0 } }
 tech_pf_theatre = { area = society tier = 1 cost = 3000 category = { statecraft } is_rare = yes weight = 0 ai_weight = { weight = 0 } }
+
+# B06-B10 的小型技术奖励。效果为调试值，正式平衡待作者与主管确认。
+tech_pf_b_recovery = {
+ area = engineering tier = 2 cost = 3000 category = { materials }
+ icon = "tech_pf_b_recovery" is_rare = yes weight = 0 ai_weight = { weight = 0 }
+ modifier = { planet_building_build_speed_mult = 0.15 }
+}
+tech_pf_b_fragment = {
+ area = society tier = 2 cost = 3000 category = { biology }
+ icon = "tech_pf_b_fragment" is_rare = yes weight = 0 ai_weight = { weight = 0 }
+ modifier = { planet_jobs_food_produces_mult = 0.35 pop_environment_tolerance = 0.10 }
+}
+tech_pf_b_tunnel = {
+ area = engineering tier = 2 cost = 3000 category = { materials }
+ icon = "tech_pf_b_tunnel" is_rare = yes weight = 0 ai_weight = { weight = 0 }
+ modifier = { planet_jobs_minerals_produces_mult = 0.15 }
+}
+
+# B12/B14/B16 首版试验科技。数值集中记录在交回报告，正式平衡待定。
+tech_pf_b_trial = {
+ area = society tier = 2 cost = 3000 category = { biology }
+ icon = "tech_pf_b_trial" is_rare = yes weight = 0 ai_weight = { weight = 0 }
+ modifier = { pop_environment_tolerance = 0.05 pop_amenities_usage_mult = -0.10 }
+}
+tech_pf_b_receiver = {
+ area = engineering tier = 2 cost = 3000 category = { industry }
+ icon = "tech_pf_b_receiver" is_rare = yes weight = 0 ai_weight = { weight = 0 }
+ modifier = { planet_building_build_speed_mult = 0.50 planet_buildings_cost_mult = -0.20 planet_districts_cost_mult = -0.20 }
+}
+tech_pf_b_forge = {
+ area = physics tier = 2 cost = 3000 category = { field_manipulation }
+ icon = "tech_pf_b_forge" is_rare = yes weight = 0 ai_weight = { weight = 0 }
+ modifier = { planet_jobs_energy_produces_mult = 0.25 planet_buildings_upkeep_mult = -0.15 }
+}

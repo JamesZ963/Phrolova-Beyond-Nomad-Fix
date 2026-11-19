@@ -1,0 +1,78 @@
+# B线第一轮资格与调试检查。所有状态使用独立 pf_b_ 前缀，避免与A线、祭典和原角色返场共用。
+pf_b_eligible = { # country: the heart was explicitly dismantled, never repaired or kept
+ has_country_flag = pf_heart_abandoned
+}
+pf_b_has_solaris = { # country: reusable Solaris ownership gate for B projects
+ any_owned_planet = { has_planet_flag = pf_solaris pf_solaris_owner = yes }
+}
+pf_b_debug_on = { has_country_flag = pf_b_debug_mode }
+pf_b_can_pay_stage_1 = {
+ has_resource = { type = alloys amount >= @pf_b_stage_1_alloys }
+ has_resource = { type = minerals amount >= @pf_b_stage_1_minerals }
+}
+pf_b_can_pay_stage_2 = {
+ has_resource = { type = alloys amount >= @pf_b_stage_2_alloys }
+ has_resource = { type = minerals amount >= @pf_b_stage_2_minerals }
+}
+pf_b_can_pay_stage_3 = {
+ has_resource = { type = alloys amount >= @pf_b_stage_3_alloys }
+ has_resource = { type = minerals amount >= @pf_b_stage_3_minerals }
+}
+
+# 炉芯身份 = 当前国家拥有 + 带B线身份标记 + 索拉里斯系 + 三种拟造炉芯类型之一。
+# 这些检查只用于当前国家自己的索拉里斯实体，不用于跨国家清理。
+# 重复生成防护，不是归属过滤器：只要当前国家的索拉里斯系内已有同类型实体（含被占领/旧版未标记实体），
+# 就不再生成第二座。移除/存在性判断仍走下面的“当前国家+pf_b_forge+索拉里斯+类型”身份。
+pf_b_forge_any_in_system = {
+ any_owned_planet = {
+  has_planet_flag = pf_solaris
+  solar_system = {
+   any_system_megastructure = {
+    OR = { is_megastructure_type = pf_forge_frame is_megastructure_type = pf_forge_half is_megastructure_type = pf_forge_core }
+   }
+  }
+ }
+}
+pf_b_forge_has_any = {
+ any_owned_megastructure = {
+  is_owned_by = root
+  has_megastructure_flag = pf_b_forge
+  OR = { is_megastructure_type = pf_forge_frame is_megastructure_type = pf_forge_half is_megastructure_type = pf_forge_core }
+  solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root pf_solaris_owner = yes } }
+ }
+}
+pf_b_forge_has_frame = {
+ any_owned_megastructure = {
+  is_owned_by = root
+  has_megastructure_flag = pf_b_forge
+  is_megastructure_type = pf_forge_frame
+  solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root pf_solaris_owner = yes } }
+ }
+}
+pf_b_forge_has_half = {
+ any_owned_megastructure = {
+  is_owned_by = root
+  has_megastructure_flag = pf_b_forge
+  is_megastructure_type = pf_forge_half
+  solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root pf_solaris_owner = yes } }
+ }
+}
+pf_b_forge_has_core = {
+ any_owned_megastructure = {
+  is_owned_by = root
+  has_megastructure_flag = pf_b_forge
+  is_megastructure_type = pf_forge_core
+  solar_system = { any_system_planet = { has_planet_flag = pf_solaris is_owned_by = root pf_solaris_owner = yes } }
+ }
+}
+
+pf_solaris_a_defense_active = {
+ has_country_flag = pf_defense_started
+ NOT = { has_country_flag = pf_entity_defeated }
+}
+
+pf_solaris_b_defense_active = {
+ has_country_flag = pf_b_forge_stage_3
+ OR = { has_country_flag = pf_b19_preparing has_country_flag = pf_b19_engaged }
+ NOT = { has_country_flag = pf_b19_won }
+}

@@ -1,0 +1,7 @@
+agenda_pf_b_ai_assistant_finish = {
+ icon = "gfx/interface/icons/agenda_icons/pf_b_ai_assistant.dds"
+ science_ship_survey_speed = 1.00
+ ship_archaeological_site_clues_add = 5
+ ship_anomaly_generation_chance_mult = 0.50
+ species_leader_exp_gain = 0.60
+}

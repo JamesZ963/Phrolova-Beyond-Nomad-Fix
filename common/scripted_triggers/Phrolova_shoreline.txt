@@ -1,0 +1,42 @@
+pf_sk_has_solaris = {
+    any_owned_planet = { has_planet_flag = pf_solaris is_controlled_by = owner }
+}
+pf_sk_has_tethys = {
+    any_owned_planet = { has_planet_flag = pf_solaris is_controlled_by = owner has_active_building = building_pf_tethys }
+}
+pf_sk_ordinary_leader_identity = {
+    is_event_leader = no
+    OR = { leader_class = commander leader_class = scientist leader_class = official }
+    NOR = {
+        has_leader_flag = Phrolova_scientist
+        has_leader_flag = phrolova_denia
+        has_leader_flag = pf_shorekeeper
+        has_leader_flag = pf_aemeath
+        has_leader_flag = pf_morin
+    }
+}
+
+pf_sk_normal_leader = {
+    pf_sk_ordinary_leader_identity = yes
+    NOT = { has_trait = leader_trait_pf_resonance_awakening }
+}
+
+pf_sk_resonatable_species = {
+    is_sapient = yes
+    OR = { is_archetype = BIOLOGICAL is_archetype = LITHOID is_archetype = MACHINE is_archetype = ROBOT }
+}
+
+# Debug entry mirrors natural survey eligibility, without changing the normal roll.
+pf46_can_debug_resonance_survey = {
+ exists = leader
+ leader = { has_trait = leader_trait_pf_resonance_awakening leader_class = scientist }
+ exists = solar_system
+ solar_system = { any_system_planet = { pf_resonance_survey_target = yes } }
+}
+
+pf_resonance_survey_target = {
+ is_star = no
+ is_colony = no
+ has_anomaly = no
+ NOT = { has_planet_flag = pf_resonance_survey_checked }
+}

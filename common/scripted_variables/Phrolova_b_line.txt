@@ -1,0 +1,50 @@
+# B线第一轮中央调试数值。正式发布值由作者与主管确认，不在事件正文中重复。
+# 三阶段材料成本（在启动阶段项目时一次性扣除）。
+@pf_b_stage_1_alloys = 5000
+@pf_b_stage_1_minerals = 5000
+@pf_b_stage_2_alloys = 7500
+@pf_b_stage_2_minerals = 7500
+@pf_b_stage_3_alloys = 10000
+@pf_b_stage_3_minerals = 10000
+
+# 同一组成本的负值，供 add_resource 一次性扣除使用。
+@pf_b_stage_1_alloys_cost = -5000
+@pf_b_stage_1_minerals_cost = -5000
+@pf_b_stage_2_alloys_cost = -7500
+@pf_b_stage_2_minerals_cost = -7500
+@pf_b_stage_3_alloys_cost = -10000
+@pf_b_stage_3_minerals_cost = -10000
+
+# 三阶段实体产出（能量币/月）与研究速度加成。
+@pf_b_forge_energy_1 = 0
+@pf_b_forge_energy_2 = 2000
+@pf_b_forge_energy_3 = 4000
+@pf_b_forge_research_1 = 0.02
+@pf_b_forge_research_2 = 0.035
+@pf_b_forge_research_3 = 0.05
+
+# 调试菜单一次性补充量。
+@pf_b_debug_energy = 100000
+@pf_b_debug_minerals = 100000
+@pf_b_debug_alloys = 100000
+
+# B06-B10研究项目的调试费用（在索拉里斯行星决议界面显示并一次性扣除）。
+@pf_b_b06_energy = 5000
+@pf_b_b06_minerals = 3000
+@pf_b_b07_minerals = 3000
+@pf_b_b08_energy = 4000
+@pf_b_b09_energy = 6000
+@pf_b_b09_gases = 500
+@pf_b_b10_alloys = 4000
+@pf_b_b10_energy = 6000
+
+# B12-B19 首版闭环费用（决议界面显示，一次性扣除）。
+@pf_b_b12_energy = 2500
+@pf_b_b12_minerals = 1500
+@pf_b_b13_energy = 3000
+@pf_b_b14_energy = 3000
+@pf_b_b14_minerals = 2000
+@pf_b_b18_alloys = 3000
+@pf_b_b18_energy = 3000
+@pf_b_b19_alloys = 5000
+@pf_b_b19_energy = 5000

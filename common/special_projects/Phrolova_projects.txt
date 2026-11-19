@@ -1,4 +1,5 @@
 special_project = {
+ situation_log_category = pf_beyond_journal
  key = PF_ALEPH_POSITION
  cost = 0
  days_to_research = 180
@@ -17,24 +18,28 @@ special_project = {
  }
 }
 
-special_project = { key = PF_HEART_1
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_HEART_1
  abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
  cost = 0 days_to_research = 180 tech_department = engineering_technology
  picture = Phrolova_events_solaris_lab event_scope = ship_event requirements = { shipclass_science_ship = 1 leader = scientist }
  on_success = { owner = { set_country_flag = pf_heart_repair_1 country_event = { id = Phrolova_event.1602 } } } }
 
-special_project = { key = PF_HEART_2
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_HEART_2
  abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
  cost = 0 days_to_research = 180 tech_department = engineering_technology
  picture = Phrolova_events_solaris_lab event_scope = ship_event requirements = { shipclass_science_ship = 1 leader = scientist }
  on_success = { owner = { set_country_flag = pf_heart_repair_2 country_event = { id = Phrolova_event.1603 } } } }
 
-special_project = { key = PF_HEART_3
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_HEART_3
  abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
  cost = 0 days_to_research = 180 tech_department = engineering_technology
  picture = Phrolova_events_solaris_lab event_scope = ship_event requirements = { shipclass_science_ship = 1 leader = scientist }
  on_success = { owner = { set_country_flag = pf_heart_repair_3 country_event = { id = Phrolova_event.1604 } } } }
-special_project = { key = PF_RESCUE
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_RESCUE
  abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
  cost = 0 days_to_research = 180 tech_department = society_technology picture = Phrolova_events_chongfeng event_scope = ship_event
  requirements = { shipclass_science_ship = 1 leader = scientist }

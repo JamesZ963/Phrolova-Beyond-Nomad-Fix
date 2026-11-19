@@ -1,0 +1,44 @@
+# B12/B13/B18 closure projects. B14 is a 3-stage archaeological site, not a project.
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B12_TRIAL
+ cost = 0 days_to_research = 360 tech_department = engineering_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b12_done
+  
+  country_event = { id = Phrolova_event.9455 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b12_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B13_RECORDS
+ cost = 0 days_to_research = 180 tech_department = physics_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b13_done
+  country_event = { id = Phrolova_event.9456 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b13_cooldown days = 30 } }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal key = PF_B18_PREP
+ cost = 0 days_to_research = 180 tech_department = physics_technology
+ picture = GFX_pf_art_morin_project_small event_scope = ship_event
+ requirements = { shipclass_science_ship = 1 leader = scientist }
+ triggered_requirement = { text = PF_B_REQUIRE_MORIN count = 1 trigger = { exists = leader leader = { has_leader_flag = pf_morin } } }
+ abort_trigger = { NOT = { fromfrom = { pf_solaris_owner = yes has_planet_flag = pf_solaris@root } } }
+ on_success = { owner = {
+  set_country_flag = pf_b18_done
+  country_event = { id = Phrolova_event.9463 }
+  country_event = { id = Phrolova_event.9833 } } }
+ on_cancel = { set_timed_country_flag = { flag = pf_b18_cooldown days = 30 } }
+}

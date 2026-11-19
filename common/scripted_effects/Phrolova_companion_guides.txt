@@ -1,0 +1,235 @@
+pf28_clear_guides_phrolova = { if = { limit = { has_country_flag = pf28_guide_phrolova_0_active } remove_country_flag = pf28_guide_phrolova_0_active end_event_chain = pf28_guide_phrolova_0 }
+if = { limit = { has_country_flag = pf28_guide_phrolova_1_active } remove_country_flag = pf28_guide_phrolova_1_active end_event_chain = pf28_guide_phrolova_1 }
+if = { limit = { has_country_flag = pf28_guide_phrolova_2_active } remove_country_flag = pf28_guide_phrolova_2_active end_event_chain = pf28_guide_phrolova_2 }
+if = { limit = { has_country_flag = pf28_guide_phrolova_3_active } remove_country_flag = pf28_guide_phrolova_3_active end_event_chain = pf28_guide_phrolova_3 }
+if = { limit = { has_country_flag = pf28_guide_phrolova_4_active } remove_country_flag = pf28_guide_phrolova_4_active end_event_chain = pf28_guide_phrolova_4 }
+if = { limit = { has_country_flag = pf28_guide_phrolova_5_active } remove_country_flag = pf28_guide_phrolova_5_active end_event_chain = pf28_guide_phrolova_5 } }
+
+pf28_refresh_guide_phrolova = { if = { limit = { has_country_flag = researched_leaders_Phrolova NOT = { has_country_flag = pf075_grand_done } } if = { limit = { NOT = { has_country_flag = pf_solaris_created } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_phrolova_0_active } }
+    pf28_clear_guides_phrolova = yes set_country_flag = pf28_guide_phrolova_0_active
+    begin_event_chain = { event_chain = pf28_guide_phrolova_0 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_alignment_ready } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_phrolova_1_active } }
+    pf28_clear_guides_phrolova = yes set_country_flag = pf28_guide_phrolova_1_active
+    begin_event_chain = { event_chain = pf28_guide_phrolova_1 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf075_home_invited } NOT = { has_country_flag = pf075_home_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_phrolova_2_active } }
+    pf28_clear_guides_phrolova = yes set_country_flag = pf28_guide_phrolova_2_active
+    begin_event_chain = { event_chain = pf28_guide_phrolova_2 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf075_home_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_phrolova_3_active } }
+    pf28_clear_guides_phrolova = yes set_country_flag = pf28_guide_phrolova_3_active
+    begin_event_chain = { event_chain = pf28_guide_phrolova_3 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf075_grand_invited } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_phrolova_4_active } }
+    pf28_clear_guides_phrolova = yes set_country_flag = pf28_guide_phrolova_4_active
+    begin_event_chain = { event_chain = pf28_guide_phrolova_4 target = this }
+   }
+  }
+else_if = { limit = { always = yes }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_phrolova_5_active } }
+    pf28_clear_guides_phrolova = yes set_country_flag = pf28_guide_phrolova_5_active
+    begin_event_chain = { event_chain = pf28_guide_phrolova_5 target = this }
+   }
+  } } else = { pf28_clear_guides_phrolova = yes } }
+
+pf28_clear_guides_denia = { if = { limit = { has_country_flag = pf28_guide_denia_0_active } remove_country_flag = pf28_guide_denia_0_active end_event_chain = pf28_guide_denia_0 } }
+
+pf28_refresh_guide_denia = { if = { limit = { has_country_flag = pf_denia_recruited NOT = { has_country_flag = pf_denia_bond_3 } } if = { limit = { always = yes }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_denia_0_active } }
+    pf28_clear_guides_denia = yes set_country_flag = pf28_guide_denia_0_active
+    begin_event_chain = { event_chain = pf28_guide_denia_0 target = this }
+   }
+  } } else = { pf28_clear_guides_denia = yes } }
+
+pf28_clear_guides_shorekeeper = { if = { limit = { has_country_flag = pf28_guide_shorekeeper_0_active } remove_country_flag = pf28_guide_shorekeeper_0_active end_event_chain = pf28_guide_shorekeeper_0 }
+if = { limit = { has_country_flag = pf28_guide_shorekeeper_1_active } remove_country_flag = pf28_guide_shorekeeper_1_active end_event_chain = pf28_guide_shorekeeper_1 }
+if = { limit = { has_country_flag = pf28_guide_shorekeeper_2_active } remove_country_flag = pf28_guide_shorekeeper_2_active end_event_chain = pf28_guide_shorekeeper_2 }
+if = { limit = { has_country_flag = pf28_guide_shorekeeper_3_active } remove_country_flag = pf28_guide_shorekeeper_3_active end_event_chain = pf28_guide_shorekeeper_3 }
+if = { limit = { has_country_flag = pf28_guide_shorekeeper_4_active } remove_country_flag = pf28_guide_shorekeeper_4_active end_event_chain = pf28_guide_shorekeeper_4 }
+if = { limit = { has_country_flag = pf28_guide_shorekeeper_5_active } remove_country_flag = pf28_guide_shorekeeper_5_active end_event_chain = pf28_guide_shorekeeper_5 }
+if = { limit = { has_country_flag = pf28_guide_shorekeeper_6_active } remove_country_flag = pf28_guide_shorekeeper_6_active end_event_chain = pf28_guide_shorekeeper_6 } }
+
+pf28_refresh_guide_shorekeeper = { if = { limit = { has_country_flag = pf_shorekeeper_recruited NOT = { has_country_flag = pf_shorekeeper_bond_4 } } if = { limit = { NOT = { has_country_flag = pf_sk_stage_1_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_0_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_0_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_0 target = this }
+   }
+  }
+else_if = { limit = { NOT = { pf_sk_has_tethys = yes } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_1_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_1_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_1 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_sk_stage_2_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_2_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_2_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_2 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_sk_stage_3_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_3_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_3_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_3 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_sk_stage_4_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_4_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_4_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_4 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_sk_ascension_completed } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_5_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_5_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_5 target = this }
+   }
+  }
+else_if = { limit = { always = yes }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_shorekeeper_6_active } }
+    pf28_clear_guides_shorekeeper = yes set_country_flag = pf28_guide_shorekeeper_6_active
+    begin_event_chain = { event_chain = pf28_guide_shorekeeper_6 target = this }
+   }
+  } } else = { pf28_clear_guides_shorekeeper = yes } }
+
+pf28_clear_guides_aemeath = { if = { limit = { has_country_flag = pf28_guide_aemeath_0_active } remove_country_flag = pf28_guide_aemeath_0_active end_event_chain = pf28_guide_aemeath_0 }
+if = { limit = { has_country_flag = pf28_guide_aemeath_1_active } remove_country_flag = pf28_guide_aemeath_1_active end_event_chain = pf28_guide_aemeath_1 }
+if = { limit = { has_country_flag = pf28_guide_aemeath_2_active } remove_country_flag = pf28_guide_aemeath_2_active end_event_chain = pf28_guide_aemeath_2 }
+if = { limit = { has_country_flag = pf28_guide_aemeath_3_active } remove_country_flag = pf28_guide_aemeath_3_active end_event_chain = pf28_guide_aemeath_3 }
+if = { limit = { has_country_flag = pf28_guide_aemeath_4_active } remove_country_flag = pf28_guide_aemeath_4_active end_event_chain = pf28_guide_aemeath_4 }
+if = { limit = { has_country_flag = pf28_guide_aemeath_5_active } remove_country_flag = pf28_guide_aemeath_5_active end_event_chain = pf28_guide_aemeath_5 }
+if = { limit = { has_country_flag = pf28_guide_aemeath_6_active } remove_country_flag = pf28_guide_aemeath_6_active end_event_chain = pf28_guide_aemeath_6 } }
+
+pf28_refresh_guide_aemeath = { if = { limit = { pf_aemeath_heart_route_allowed = yes OR = { has_country_flag = pf_ame_intro_seen has_country_flag = pf_ame_contact_unlocked has_country_flag = pf_aemeath_recruited } NOT = { has_country_flag = pf075_complete_aemeath } } if = { limit = { NOT = { has_country_flag = pf_ame_contact_unlocked } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_0_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_0_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_0 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_aemeath_recruited } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_1_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_1_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_1 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf075_life_seen } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_2_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_2_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_2 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf075_prepare_finished } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_3_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_3_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_3 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf075_suizhe_launched } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_4_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_4_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_4 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_aemeath_bond_3 } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_5_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_5_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_5 target = this }
+   }
+  }
+else_if = { limit = { always = yes }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_aemeath_6_active } }
+    pf28_clear_guides_aemeath = yes set_country_flag = pf28_guide_aemeath_6_active
+    begin_event_chain = { event_chain = pf28_guide_aemeath_6 target = this }
+   }
+  } } else = { pf28_clear_guides_aemeath = yes } }
+
+pf28_clear_guides_morin = { if = { limit = { has_country_flag = pf28_guide_morin_0_active } remove_country_flag = pf28_guide_morin_0_active end_event_chain = pf28_guide_morin_0 }
+if = { limit = { has_country_flag = pf28_guide_morin_1_active } remove_country_flag = pf28_guide_morin_1_active end_event_chain = pf28_guide_morin_1 }
+if = { limit = { has_country_flag = pf28_guide_morin_2_active } remove_country_flag = pf28_guide_morin_2_active end_event_chain = pf28_guide_morin_2 }
+if = { limit = { has_country_flag = pf28_guide_morin_3_active } remove_country_flag = pf28_guide_morin_3_active end_event_chain = pf28_guide_morin_3 }
+if = { limit = { has_country_flag = pf28_guide_morin_4_active } remove_country_flag = pf28_guide_morin_4_active end_event_chain = pf28_guide_morin_4 }
+if = { limit = { has_country_flag = pf28_guide_morin_5_active } remove_country_flag = pf28_guide_morin_5_active end_event_chain = pf28_guide_morin_5 }
+if = { limit = { has_country_flag = pf28_guide_morin_6_active } remove_country_flag = pf28_guide_morin_6_active end_event_chain = pf28_guide_morin_6 }
+if = { limit = { has_country_flag = pf28_guide_morin_7_active } remove_country_flag = pf28_guide_morin_7_active end_event_chain = pf28_guide_morin_7 }
+if = { limit = { has_country_flag = pf28_guide_morin_8_active } remove_country_flag = pf28_guide_morin_8_active end_event_chain = pf28_guide_morin_8 }
+if = { limit = { has_country_flag = pf28_guide_morin_9_active } remove_country_flag = pf28_guide_morin_9_active end_event_chain = pf28_guide_morin_9 }
+if = { limit = { has_country_flag = pf28_guide_morin_10_active } remove_country_flag = pf28_guide_morin_10_active end_event_chain = pf28_guide_morin_10 } }
+
+pf28_refresh_guide_morin = { if = { limit = { OR = { has_country_flag = pf_heart_abandoned has_country_flag = pf_morin_recruited } NOT = { has_country_flag = pf_b21_done } } if = { limit = { NOT = { has_country_flag = pf_morin_recruited } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_0_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_0_active
+    begin_event_chain = { event_chain = pf28_guide_morin_0 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b04_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_1_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_1_active
+    begin_event_chain = { event_chain = pf28_guide_morin_1 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b06_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_2_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_2_active
+    begin_event_chain = { event_chain = pf28_guide_morin_2 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b09_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_3_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_3_active
+    begin_event_chain = { event_chain = pf28_guide_morin_3 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b10_done } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_4_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_4_active
+    begin_event_chain = { event_chain = pf28_guide_morin_4 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b_forge_stage_1 } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_5_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_5_active
+    begin_event_chain = { event_chain = pf28_guide_morin_5 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b_forge_stage_2 } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_6_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_6_active
+    begin_event_chain = { event_chain = pf28_guide_morin_6 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b_forge_stage_3 } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_7_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_7_active
+    begin_event_chain = { event_chain = pf28_guide_morin_7 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b19_won } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_8_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_8_active
+    begin_event_chain = { event_chain = pf28_guide_morin_8 target = this }
+   }
+  }
+else_if = { limit = { NOT = { has_country_flag = pf_b20_shared_recruit_flow } }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_9_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_9_active
+    begin_event_chain = { event_chain = pf28_guide_morin_9 target = this }
+   }
+  }
+else_if = { limit = { always = yes }
+   if = { limit = { NOT = { has_country_flag = pf28_guide_morin_10_active } }
+    pf28_clear_guides_morin = yes set_country_flag = pf28_guide_morin_10_active
+    begin_event_chain = { event_chain = pf28_guide_morin_10 target = this }
+   }
+  } } else = { pf28_clear_guides_morin = yes } }
+
+pf28_refresh_all_guides = { pf28_refresh_guide_phrolova = yes pf28_refresh_guide_denia = yes pf28_refresh_guide_shorekeeper = yes pf28_refresh_guide_aemeath = yes pf28_refresh_guide_morin = yes }

@@ -1,0 +1,149 @@
+pf075_suizhe_imperial = {
+    formation_priority = 10
+    max_speed = 200
+    acceleration = 0.8
+    rotation_speed = 0.25
+    collision_radius = 5
+    max_hitpoints = 60000
+    modifier = {
+        ship_evasion_add = 66
+        ship_weapon_damage = 0.50
+        ship_fire_rate_mult = 0.25
+    }
+    size_multiplier = 32
+    combat_size_multiplier = 32
+    map_counter_icon = ship_counter_64
+    icon = ship_size_military_16
+    entity = suizhe_frame_entity
+    fleet_slot_size = 32
+    section_slots = {
+        "core" = {
+            locator = part1
+        }
+    }
+    num_target_locators = 4
+    is_space_station = no
+    base_buildtime = 1800
+    can_have_federation_design = no
+    enable_default_design = no
+    enable_3dview_in_ship_browser = yes
+    is_designable = no
+    can_be_inspected = no
+    default_behavior = suizhe_artillery
+    ship_roles = {
+        artillery
+        gunship
+    }
+    class = shipclass_military
+    construction_type = starbase_shipyard
+    required_component_set = SUZHE_REACTOR_SET
+    required_component_set = SUZHE_DRIVE_SET
+    required_component_set = SUZHE_THRUSTER_SET
+    required_component_set = SUZHE_SENSOR_SET
+    required_component_set = SUZHE_COMPUTER_SET
+    required_component_set = SUZHE_AURA_SET
+    potential_construction = {
+        always = no
+    }
+    possible_construction = {
+        always = no
+    }
+    resources = {
+        category = ships
+        cost = {
+            alloys = 12000
+        }
+        upkeep = {
+            energy = 20
+            alloys = 5
+        }
+    }
+    min_upgrade_cost = {
+        alloys = 100
+    }
+    ai_ship_data = {
+        min = 0
+        max = 0
+    }
+    can_lead_armada = no
+    hero_ship = {
+        capabilities = {
+            can_repair
+        }
+    }
+}
+
+pf075_suizhe_melee = {
+    formation_priority = 10
+    max_speed = 200
+    acceleration = 0.8
+    rotation_speed = 0.25
+    collision_radius = 5
+    max_hitpoints = 60000
+    modifier = {
+        ship_evasion_add = 66
+        ship_weapon_damage = 0.50
+        ship_fire_rate_mult = 0.25
+    }
+    size_multiplier = 32
+    combat_size_multiplier = 32
+    map_counter_icon = ship_counter_64
+    icon = ship_size_military_16
+    entity = suizhe_frame_entity
+    fleet_slot_size = 32
+    section_slots = {
+        "core" = {
+            locator = part1
+        }
+    }
+    num_target_locators = 4
+    is_space_station = no
+    base_buildtime = 1800
+    can_have_federation_design = no
+    enable_default_design = no
+    enable_3dview_in_ship_browser = yes
+    is_designable = no
+    can_be_inspected = no
+    default_behavior = suizhe_artillery
+    ship_roles = {
+        artillery
+        gunship
+    }
+    class = shipclass_military
+    construction_type = starbase_shipyard
+    required_component_set = SUZHE_REACTOR_SET
+    required_component_set = SUZHE_DRIVE_SET
+    required_component_set = SUZHE_THRUSTER_SET
+    required_component_set = SUZHE_SENSOR_SET
+    required_component_set = SUZHE_COMPUTER_SET
+    required_component_set = SUZHE2_AURA_SET
+    potential_construction = {
+        always = no
+    }
+    possible_construction = {
+        always = no
+    }
+    resources = {
+        category = ships
+        cost = {
+            alloys = 12000
+        }
+        upkeep = {
+            energy = 20
+            alloys = 5
+        }
+    }
+    min_upgrade_cost = {
+        alloys = 100
+    }
+    ai_ship_data = {
+        min = 0
+        max = 0
+    }
+    can_lead_armada = no
+    hero_ship = {
+        capabilities = {
+            can_repair
+        }
+    }
+}

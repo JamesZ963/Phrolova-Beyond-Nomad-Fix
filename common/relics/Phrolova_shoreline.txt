@@ -1,0 +1,25 @@
+# Provisional high-strength civic/reconstruction reward, requested 2026-11-14.
+r_pf_star_order = {
+    activation_duration = 3600
+    portrait = GFX_relic_r_pf_star_order
+    score = 5000
+    triggered_country_modifier = {
+        potential = { always = yes }
+        empire_size_mult = -0.10
+        planet_bureaucrats_produces_mult = 0.30
+        country_edict_fund_add = 100
+    }
+    resources = { category = relics cost = { unity = 3000 } }
+    possible = { inline_script = { script = relics/activation_checks RELIC = r_pf_star_order } }
+    active_effect = {
+
+  custom_tooltip = PF50_STAR_ORDER_ENERGY
+  hidden_effect = { add_resource = { energy = 30000 } }
+  add_modifier = { modifier = pf_sk_star_order_active days = 3600 }
+ 
+  custom_tooltip = relic_triumph_cooldown
+  hidden_effect = { add_modifier = { modifier = relic_activation_cooldown days = 3600 } }
+ 
+ }
+    ai_weight = { weight = 0 }
+}

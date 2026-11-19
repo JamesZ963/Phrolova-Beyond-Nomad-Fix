@@ -1,0 +1,30 @@
+pf_refresh_array_platforms = {
+ save_event_target_as = pf_array_owner
+ every_owned_starbase = {
+  if = {
+   limit = { has_modifier = pf54_institute_shipyards }
+   remove_modifier = pf54_institute_shipyards
+  }
+
+  if = {
+   limit = { solar_system = { any_system_planet = {
+    has_planet_flag = pf_solaris has_deposit = d_pf_array_garrison is_owned_by = event_target:pf_array_owner
+   } } }
+   if = { limit = { NOT = { has_modifier = pf_array_platforms } }
+    add_modifier = { modifier = pf_array_platforms days = -1 }
+   }
+   if = {
+    limit = { solar_system = { any_system_planet = {
+     has_planet_flag = pf_solaris has_deposit = d_pf_array_garrison is_owned_by = event_target:pf_array_owner
+     exists = orbital_defence
+     orbital_defence = { is_disabled = no exists = starbase starbase = { has_starbase_size >= orbital_ring_tier_1 } }
+    } } }
+    if = { limit = { NOT = { has_modifier = pf_array_platforms_ring } }
+     add_modifier = { modifier = pf_array_platforms_ring days = -1 }
+    }
+   }
+   else = { remove_modifier = pf_array_platforms_ring }
+  }
+  else = { remove_modifier = pf_array_platforms remove_modifier = pf_array_platforms_ring }
+ }
+}

@@ -1,0 +1,81 @@
+pf_solaris_flavor_picture = {
+ random_list = {
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_0 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_0
+  }
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_1 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_1
+  }
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_2 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_2
+  }
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_3 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_3
+  }
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_4 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_4
+  }
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_5 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_5
+  }
+  1 = {
+   modifier = { factor = 0 has_planet_flag = pf_flavor_picture_6 }
+   remove_planet_flag = pf_flavor_picture_0
+   remove_planet_flag = pf_flavor_picture_1
+   remove_planet_flag = pf_flavor_picture_2
+   remove_planet_flag = pf_flavor_picture_3
+   remove_planet_flag = pf_flavor_picture_4
+   remove_planet_flag = pf_flavor_picture_5
+   remove_planet_flag = pf_flavor_picture_6
+   set_planet_flag = pf_flavor_picture_6
+  }
+ }
+}

@@ -1,0 +1,79 @@
+special_project = {
+ situation_log_category = pf_beyond_journal
+    key = PF_SK_PROJECT_1
+    cost = 0
+    days_to_research = 180
+    tech_department = society_technology
+    picture = GFX_pf_sk_project_small
+    event_scope = country_event
+    location = no
+    requirements = { }
+    on_success = {
+        if = { limit = { is_scope_type = country } set_country_flag = pf_sk_stage_1_finished country_event = { id = Phrolova_event.10411 } }
+        else = { owner = { set_country_flag = pf_sk_stage_1_finished country_event = { id = Phrolova_event.10411 } } }
+    }
+    on_cancel = {
+        if = { limit = { is_scope_type = country } remove_country_flag = pf_sk_stage_1_started }
+        else = { owner = { remove_country_flag = pf_sk_stage_1_started } }
+    }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal
+    key = PF_SK_PROJECT_2
+    cost = 0
+    days_to_research = 180
+    tech_department = society_technology
+    picture = GFX_pf_sk_network_small
+    event_scope = country_event
+    location = no
+    requirements = { }
+    on_success = {
+        if = { limit = { is_scope_type = country } set_country_flag = pf_sk_stage_2_finished country_event = { id = Phrolova_event.10421 } }
+        else = { owner = { set_country_flag = pf_sk_stage_2_finished country_event = { id = Phrolova_event.10421 } } }
+    }
+    on_cancel = {
+        if = { limit = { is_scope_type = country } remove_country_flag = pf_sk_stage_2_started }
+        else = { owner = { remove_country_flag = pf_sk_stage_2_started } }
+    }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal
+    key = PF_SK_PROJECT_3
+    cost = 0
+    days_to_research = 180
+    tech_department = society_technology
+    picture = GFX_pf_sk_network_small
+    event_scope = country_event
+    location = no
+    requirements = { }
+    on_success = {
+        if = { limit = { is_scope_type = country } set_country_flag = pf_sk_stage_3_finished country_event = { id = Phrolova_event.10431 } }
+        else = { owner = { set_country_flag = pf_sk_stage_3_finished country_event = { id = Phrolova_event.10431 } } }
+    }
+    on_cancel = {
+        if = { limit = { is_scope_type = country } remove_country_flag = pf_sk_stage_3_started }
+        else = { owner = { remove_country_flag = pf_sk_stage_3_started } }
+    }
+}
+
+special_project = {
+ situation_log_category = pf_beyond_journal
+    key = PF_SK_PROJECT_4
+    cost = 0
+    days_to_research = 180
+    tech_department = society_technology
+    picture = GFX_pf_sk_network_small
+    event_scope = country_event
+    location = no
+    requirements = { }
+    on_success = {
+        if = { limit = { is_scope_type = country } set_country_flag = pf_sk_stage_4_finished country_event = { id = Phrolova_event.10441 } }
+        else = { owner = { set_country_flag = pf_sk_stage_4_finished country_event = { id = Phrolova_event.10441 } } }
+    }
+    on_cancel = {
+        if = { limit = { is_scope_type = country } remove_country_flag = pf_sk_stage_4_started }
+        else = { owner = { remove_country_flag = pf_sk_stage_4_started } }
+    }
+}

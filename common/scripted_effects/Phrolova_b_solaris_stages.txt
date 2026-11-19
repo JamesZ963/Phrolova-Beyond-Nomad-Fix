@@ -1,0 +1,31 @@
+pf_b_sync_solaris_stage = {
+ if = { limit = { owner = { has_country_flag = pf_b_forge_stage_3 } }
+  remove_modifier = pf_b_research_station
+  remove_modifier = pf_b_forge_facility_1
+  remove_modifier = pf_b_forge_facility_2
+  if = { limit = { NOT = { has_modifier = pf_b_forge_facility_3 } } add_modifier = { modifier = pf_b_forge_facility_3 days = -1 } }
+  set_planet_flag = pf_b_forge_stabilized
+  set_planet_flag = pf_echo_ended
+  remove_modifier = pf_echo_tides
+  remove_modifier = pf_echo_uncalibrated
+  remove_modifier = pf_echo_relief
+ }
+ else_if = { limit = { owner = { has_country_flag = pf_b_forge_stage_2 } }
+  remove_modifier = pf_b_research_station
+  remove_modifier = pf_b_forge_facility_1
+  remove_modifier = pf_b_forge_facility_3
+  if = { limit = { NOT = { has_modifier = pf_b_forge_facility_2 } } add_modifier = { modifier = pf_b_forge_facility_2 days = -1 } }
+ }
+ else_if = { limit = { owner = { has_country_flag = pf_b_forge_stage_1 } }
+  remove_modifier = pf_b_research_station
+  remove_modifier = pf_b_forge_facility_2
+  remove_modifier = pf_b_forge_facility_3
+  if = { limit = { NOT = { has_modifier = pf_b_forge_facility_1 } } add_modifier = { modifier = pf_b_forge_facility_1 days = -1 } }
+ }
+ else_if = { limit = { owner = { has_country_flag = pf_b06_done } }
+  remove_modifier = pf_b_forge_facility_1
+  remove_modifier = pf_b_forge_facility_2
+  remove_modifier = pf_b_forge_facility_3
+  if = { limit = { NOT = { has_modifier = pf_b_research_station } } add_modifier = { modifier = pf_b_research_station days = -1 } }
+ }
+}

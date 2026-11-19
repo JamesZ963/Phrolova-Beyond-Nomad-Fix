@@ -1,0 +1,34 @@
+pf_guard_id_phrolova = {
+  NOT = { has_leader_flag = pf_guard_retired }
+  NOT = { has_leader_flag = pf_preview_candidate }
+  NOT = { has_leader_flag = is_in_recruit_window }
+  OR = { has_leader_flag = Phrolova_scientist has_trait = leader_trait_Phrolova_X }
+ }
+
+pf_guard_id_denia = {
+  NOT = { has_leader_flag = pf_guard_retired }
+  NOT = { has_leader_flag = pf_preview_candidate }
+  NOT = { has_leader_flag = is_in_recruit_window }
+  OR = { has_leader_flag = phrolova_denia has_trait = leader_trait_pf_denia }
+ }
+
+pf_guard_id_shorekeeper = {
+  NOT = { has_leader_flag = pf_guard_retired }
+  NOT = { has_leader_flag = pf_preview_candidate }
+  NOT = { has_leader_flag = is_in_recruit_window }
+  OR = { has_leader_flag = pf_shorekeeper has_trait = leader_trait_pf_shorekeeper }
+ }
+
+pf_guard_id_aemeath = {
+  NOT = { has_leader_flag = pf_guard_retired }
+  NOT = { has_leader_flag = pf_preview_candidate }
+  NOT = { has_leader_flag = is_in_recruit_window }
+  OR = { has_leader_flag = pf_aemeath has_trait = leader_trait_pf_aemeath }
+ }
+
+pf_guard_id_morin = {
+  NOT = { has_leader_flag = pf_guard_retired }
+  NOT = { has_leader_flag = pf_preview_candidate }
+  NOT = { has_leader_flag = is_in_recruit_window }
+  OR = { has_leader_flag = pf_morin has_trait = leader_trait_pf_morin }
+ }

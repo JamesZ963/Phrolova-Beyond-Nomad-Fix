@@ -1,0 +1,14 @@
+pf_sk_network_income = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_enigmatic_cache.dds"
+    country_base_unity_produces_add = 80
+    country_edict_fund_add = 25
+}
+pf_sk_gestalt_coordination = { council_agenda_progress_speed = 0.20 country_edict_fund_add = 20 }
+
+pf_sk_science_mia = { fleet_mia_time_mult = -0.75 }
+
+pf_sk_star_order_active = {
+    icon = "gfx/interface/icons/relics/r_pf_star_order.dds"
+    planet_jobs_produces_mult = 0.25
+    planet_building_build_speed_mult = 0.50
+}
