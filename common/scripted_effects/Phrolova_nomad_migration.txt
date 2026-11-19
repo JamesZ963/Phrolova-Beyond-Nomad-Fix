@@ -1,0 +1,370 @@
+
+# ============================================================
+# Transfer one planet flag to the destination Arkship.
+# Called in the original Solaris planet scope.
+# ============================================================
+
+pf_nomad_copy_flag = {
+    if = {
+        limit = {
+            has_planet_flag = $FLAG$
+        }
+
+        event_target:pf_nomad_arkship = {
+            set_carrier_flag = $FLAG$
+        }
+
+        remove_planet_flag = $FLAG$
+    }
+}
+
+
+# ============================================================
+# Transfer one deposit to the destination Arkship.
+# ============================================================
+
+pf_nomad_copy_deposit = {
+    if = {
+        limit = {
+            has_deposit = $DEPOSIT$
+        }
+
+        event_target:pf_nomad_arkship = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_deposit = $DEPOSIT$
+                    }
+                }
+                add_deposit = $DEPOSIT$
+            }
+        }
+
+        remove_deposit = $DEPOSIT$
+    }
+}
+
+
+# ============================================================
+# Transfer one modifier.
+# DAYS = -1 for permanent modifiers.
+# ============================================================
+
+pf_nomad_copy_modifier = {
+    if = {
+        limit = {
+            has_modifier = $MODIFIER$
+        }
+
+        event_target:pf_nomad_arkship = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_modifier = $MODIFIER$
+                    }
+                }
+                add_modifier = {
+                    modifier = $MODIFIER$
+                    days = $DAYS$
+                }
+            }
+        }
+
+        remove_modifier = $MODIFIER$
+    }
+}
+
+
+# ============================================================
+# Main Solaris migration.
+# Called in country scope.
+# ============================================================
+
+pf_nomad_transfer_solaris = {
+
+    event_target:pf_solaris = {
+
+        # ----------------------------------------------------
+        # Identity and initialization
+        # ----------------------------------------------------
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_solaris
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_solaris@event_target:pf_owner
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_initialized
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf17_ruins_added
+        }
+
+
+        # ----------------------------------------------------
+        # Solaris progress flags
+        # ----------------------------------------------------
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_echo_calibrated
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_echo_ended
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_tower_cleared
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_pollution_cleared
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_array_cleared
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_array_garrisoned
+        }
+
+
+        # ----------------------------------------------------
+        # Solaris ruin progress flags
+        # ----------------------------------------------------
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_01_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_02_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_03_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_04_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_05_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_06_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_07_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_08_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_09_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_10_restored
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_ruin_11_restored
+        }
+
+
+        # ----------------------------------------------------
+        # Solaris flavour event progress
+        # ----------------------------------------------------
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_seen_1
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_seen_2
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_seen_3
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_seen_4
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_seen_5
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_seen_6
+        }
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_claimed_1
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_claimed_2
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_claimed_3
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_claimed_4
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_claimed_5
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_flavor_claimed_6
+        }
+
+
+        # ----------------------------------------------------
+        # Festival progress
+        # ----------------------------------------------------
+
+        pf_nomad_copy_flag = {
+            FLAG = pf_festival_started
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_festival_done
+        }
+        pf_nomad_copy_flag = {
+            FLAG = pf_festival_dialogue_open
+        }
+
+
+        # ----------------------------------------------------
+        # Permanent Solaris modifiers
+        # ----------------------------------------------------
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_solaris_memory
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_echo_uncalibrated
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_echo_tides
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_echo_final
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_old_memories
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_institute_rebuilt
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_ghost_frequency
+            DAYS = -1
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_blackshore_watch
+            DAYS = -1
+        }
+
+
+        # ----------------------------------------------------
+        # Six temporary flavour modifiers
+        # All have their original 360-day duration.
+        # ----------------------------------------------------
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_flavor_research
+            DAYS = 360
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_flavor_flowers
+            DAYS = 360
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_flavor_defense
+            DAYS = 360
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_flavor_logs
+            DAYS = 360
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_flavor_storm
+            DAYS = 360
+        }
+
+        pf_nomad_copy_modifier = {
+            MODIFIER = pf_flavor_shadow
+            DAYS = 360
+        }
+
+
+        # ----------------------------------------------------
+        # Three original blockers
+        # ----------------------------------------------------
+
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_sealed_archive
+        }
+
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_shattered_streets
+        }
+
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_submerged_vault
+        }
+
+
+        # ----------------------------------------------------
+        # Eleven Solaris ruin blockers
+        # ----------------------------------------------------
+
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_01
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_02
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_03
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_04
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_05
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_06
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_07
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_08
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_09
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_10
+        }
+        pf_nomad_copy_deposit = {
+            DEPOSIT = d_pf_solaris_ruin_11
+        }
+    }
+}
