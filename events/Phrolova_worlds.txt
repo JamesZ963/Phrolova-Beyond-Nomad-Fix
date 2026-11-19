@@ -373,6 +373,7 @@ fleet_event = {
                             tech = tech_pf_theatre
                             message = yes
                         }
+                        country_event = { id = Phrolova_event.328 days = 1 }
                     }
                 }
             }
