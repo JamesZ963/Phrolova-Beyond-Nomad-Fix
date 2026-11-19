@@ -113,7 +113,7 @@ pf_init_solaris = {
   days = -1
  }
  set_planet_flag = pf_solaris
- pf_solaris_maintain_blockers = yes
+# pf_solaris_maintain_blockers = yes
  set_planet_flag = pf_solaris@event_target:pf_owner
  set_planet_flag = planet_under_investigation
  add_deposit = d_pf_sealed_archive
