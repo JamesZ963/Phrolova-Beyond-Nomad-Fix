@@ -29,6 +29,6 @@ tr_pf_b_dingjie_5 = {
 }
 tr_pf_b_dingjie_finish = {
  custom_tooltip_with_modifiers = tr_pf_b_dingjie_finish_desc
- modifier = { planet_decision_enact_speed_mult = 0.15 country_edict_fund_add = 40 planet_bureaucrats_produces_mult = 0.1 }
+ modifier = { planet_decision_enact_speed_mult = 0.15 country_edict_fund_add = 40 planet_bureaucrats_produces_mult = 0.1 ascension_perks_add = 1 }
  ai_weight = { weight = 0 }
 }

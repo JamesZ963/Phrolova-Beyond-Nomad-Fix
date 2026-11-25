@@ -63,63 +63,22 @@ remove_Phrolova_leader_ruler = {
         root = { set_leader = prev }
     }
 }
-
 pf_find_targets = {
-    if = {
-        limit = {
-            is_scope_type = country
-        }
+ if = { limit = { is_scope_type = country }
+ save_event_target_as = pf_owner
+ # Local event targets are reacquired from persistent country-linked flags.
+ random_system = {
+  limit = { any_system_planet = { has_planet_flag = pf_solaris@event_target:pf_owner } }
+  random_system_planet = { limit = { has_planet_flag = pf_solaris@event_target:pf_owner } save_event_target_as = pf_solaris }
+ }
+ random_system = {
+  limit = { has_star_flag = pf_aleph@event_target:pf_owner }
+  save_event_target_as = pf_aleph_system
+  random_system_planet = { limit = { has_planet_flag = pf_aleph@event_target:pf_owner } save_event_target_as = pf_aleph }
+ }
 
-        save_event_target_as = pf_owner
-
-        # After migration, Solaris is the capital Arkship.
-        if = {
-            limit = {
-                has_country_flag = pf_solaris_migrated_to_arkship
-                exists = capital_scope
-            }
-
-            capital_scope = {
-                save_event_target_as = pf_solaris
-            }
-        }
-
-        # Before migration, locate the original Solaris planet.
-        else = {
-            random_system = {
-                limit = {
-                    any_system_planet = {
-                        has_planet_flag = pf_solaris@event_target:pf_owner
-                    }
-                }
-
-                random_system_planet = {
-                    limit = {
-                        has_planet_flag = pf_solaris@event_target:pf_owner
-                    }
-                    save_event_target_as = pf_solaris
-                }
-            }
-        }
-
-        # Aleph lookup remains unchanged.
-        random_system = {
-            limit = {
-                has_star_flag = pf_aleph@event_target:pf_owner
-            }
-
-            save_event_target_as = pf_aleph_system
-
-            random_system_planet = {
-                limit = {
-                    has_planet_flag = pf_aleph@event_target:pf_owner
-                }
-                save_event_target_as = pf_aleph
-            }
-        }
-    }
+ }
 }
-
 pf_apply_portrait = {
  every_owned_leader = { limit = { has_leader_flag = Phrolova_scientist }
   if = { limit = { owner = { has_country_flag = pf_portrait_2 has_country_flag = pf075_skin_3_unlocked } } change_leader_portrait = Phrolova2 }
@@ -154,7 +113,7 @@ pf_init_solaris = {
   days = -1
  }
  set_planet_flag = pf_solaris
-# pf_solaris_maintain_blockers = yes
+ pf_solaris_maintain_blockers = yes
  set_planet_flag = pf_solaris@event_target:pf_owner
  set_planet_flag = planet_under_investigation
  add_deposit = d_pf_sealed_archive

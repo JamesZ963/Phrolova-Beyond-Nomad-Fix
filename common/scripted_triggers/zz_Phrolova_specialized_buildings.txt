@@ -381,5 +381,11 @@ has_any_fortress_zone = {
 		has_zone = {
 			zone = zone_ark_flight_decks
 		}
+		has_zone = {
+			zone = zone_rural_fortress
+		}
+		has_zone = {
+			zone = zone_rural_fortress_wilderness
+		}
 	}
 }
