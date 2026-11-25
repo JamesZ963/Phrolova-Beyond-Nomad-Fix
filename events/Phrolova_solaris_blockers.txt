@@ -1,43 +1,43 @@
-#namespace = Phrolova_event
-#
+namespace = Phrolova_event
+
 # One galaxy-wide pass for deposits that were generated before the scope fix.
-#country_event = {
-# id = Phrolova_event.11510
-# hide_window = yes
-# is_triggered_only = yes
-# trigger = {
-#  is_ai = no
-#  NOT = { has_global_flag = pf30_solaris_deposits_sanitized }
-# }
-# immediate = {
-#  every_galaxy_planet = {
-#   if = {
-#    limit = { has_planet_flag = pf_solaris }
-#    pf_solaris_maintain_blockers = yes
-#   }
-#   else = { pf_remove_misplaced_solaris_deposits = yes }
-#  }
-#  set_global_flag = pf30_solaris_deposits_sanitized
-# }
-#}
-#
+country_event = {
+ id = Phrolova_event.11510
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = {
+  is_ai = no
+  NOT = { has_global_flag = pf30_solaris_deposits_sanitized }
+ }
+ immediate = {
+  every_galaxy_planet = {
+   if = {
+    limit = { has_planet_flag = pf_solaris }
+    pf_solaris_maintain_blockers = yes
+   }
+   else = { pf_remove_misplaced_solaris_deposits = yes }
+  }
+  set_global_flag = pf30_solaris_deposits_sanitized
+ }
+}
+
 # One timer per Solaris, including uncolonized planets or changes of ownership.
-#carrier_event = {
-# id = Phrolova_event.11511
-# hide_window = yes
-# is_triggered_only = yes
-# trigger = { has_planet_flag = pf_solaris }
-# immediate = {
-#  pf_solaris_maintain_blockers = yes
-#  carrier_event = { id = Phrolova_event.11511 days = 30 }
-# }
-#}
-#
+carrier_event = {
+ id = Phrolova_event.11511
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_planet_flag = pf_solaris }
+ immediate = {
+  pf_solaris_maintain_blockers = yes
+  carrier_event = { id = Phrolova_event.11511 days = 30 }
+ }
+}
+
 # Native colonization and terraforming hooks; this does not start another timer.
-#carrier_event = {
-# id = Phrolova_event.11512
-# hide_window = yes
-# is_triggered_only = yes
-# trigger = { has_planet_flag = pf_solaris }
-# immediate = { pf_solaris_maintain_blockers = yes }
-#}
+carrier_event = {
+ id = Phrolova_event.11512
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_planet_flag = pf_solaris }
+ immediate = { pf_solaris_maintain_blockers = yes }
+}
