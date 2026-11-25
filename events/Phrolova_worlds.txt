@@ -373,6 +373,7 @@ fleet_event = {
                             tech = tech_pf_theatre
                             message = yes
                         }
+                        country_event = { id = Phrolova_event.328 days = 1 }
                     }
                 }
             }
@@ -388,6 +389,50 @@ fleet_event = {
                     }
                 }
             }
+        }
+    }
+}
+
+
+country_event = {
+    id = Phrolova_event.328
+    is_triggered_only = yes
+
+    trigger = {
+        is_nomadic = yes
+        has_country_flag = pf_solaris_complete
+        NOT = {
+            has_country_flag = pf_solaris_migrated_to_arkship
+        }
+    }
+
+    immediate = {
+        pf_find_targets = yes
+
+        capital_scope = {
+            save_event_target_as = pf_nomad_arkship
+        }
+    }
+
+    title = Phrolova_event.328.name
+    desc = Phrolova_event.328.desc
+    picture = GFX_leader_recruitment_bg_renowned
+
+    diplomatic = yes
+    event_window_type = leader_conversation
+
+    option = {
+        name = PF_nomad_solaris_transfer
+
+        trigger = {
+            exists = event_target:pf_solaris
+            exists = event_target:pf_nomad_arkship
+        }
+
+        hidden_effect = {
+            pf_nomad_transfer_solaris = yes
+
+            set_country_flag = pf_solaris_migrated_to_arkship
         }
     }
 }
