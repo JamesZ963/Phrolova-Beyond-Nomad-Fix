@@ -7,7 +7,7 @@ ap_become_the_crisis = {
 		has_nemesis = yes
 		NOR = {
 			is_player_crisis = yes
-			has_defender_of_the_galaxy_ap = yes
+			has_ambition = yes
 			has_origin = origin_slavers
 			has_origin = origin_endbringers # No additional crisis for Endbringers
 		}
@@ -141,7 +141,7 @@ ap_cosmogenesis = {
 		has_machine_age_dlc = yes
 		NOR = {
 			is_player_crisis = yes
-			has_defender_of_the_galaxy_ap = yes
+			has_ambition = yes
 			has_origin = origin_slavers # No crisis for MSI
 			has_origin = origin_endbringers # No additional crisis for Endbringers
 		}
@@ -244,7 +244,7 @@ ap_behemoths = {
 		has_biogenesis_dlc = yes
 		NOR = {
 			is_player_crisis = yes
-			has_defender_of_the_galaxy_ap = yes
+			has_ambition = yes
 			has_origin = origin_slavers # No crisis for MSI
 			has_origin = origin_endbringers # No additional crisis for Endbringers
 		}
@@ -352,7 +352,7 @@ ap_galactic_hyperthermia = {
 		has_infernals = yes
 		NOR = {
 			is_player_crisis = yes
-			has_defender_of_the_galaxy_ap = yes
+			has_ambition = yes
 			has_origin = origin_slavers
 			has_origin = origin_endbringers
 			is_wilderness_empire = yes

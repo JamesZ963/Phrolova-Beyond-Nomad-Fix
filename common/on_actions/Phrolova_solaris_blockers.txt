@@ -1,4 +1,4 @@
-#on_monthly_pulse_country = { events = { Phrolova_event.11510 } }
-#on_colonization_started = { events = { Phrolova_event.11512 } }
-#on_colonized = { events = { Phrolova_event.11512 } }
-#on_terraforming_complete = { events = { Phrolova_event.11512 } }
+on_monthly_pulse_country = { events = { Phrolova_event.11510 } }
+on_colonization_started = { events = { Phrolova_event.11512 } }
+on_colonized = { events = { Phrolova_event.11512 } }
+on_terraforming_complete = { events = { Phrolova_event.11512 } }

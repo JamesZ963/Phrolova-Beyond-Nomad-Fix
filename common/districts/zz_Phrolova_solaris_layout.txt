@@ -1,4 +1,4 @@
-# Narrow 4.5.2 overrides: Solaris uses the lower three UI cells as one research district.
+# Narrow 4.6.0 overrides: Solaris uses the lower three UI cells as one research district.
 @base_cost = 300
 @city_cost = 500
 @rural_district_ai_coefficient = 0.75
@@ -16,6 +16,7 @@ district_generator = {
 
 	zone_slots = {
 		slot_energy
+		slot_energy_urban
 	}
 
 	show_on_uncolonized = {
@@ -133,6 +134,7 @@ district_mining = {
 
 	zone_slots = {
 		slot_minerals
+		slot_minerals_urban
 	}
 
 	desc = {
@@ -268,6 +270,7 @@ district_farming = {
 
 	zone_slots = {
 		slot_food
+		slot_food_urban
 	}
 
 	show_on_uncolonized = {
